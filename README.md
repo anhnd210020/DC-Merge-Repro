@@ -121,6 +121,7 @@ The datasets are structured as follows. For FFT merging, specify the `data_locat
        └─ ...
     └─ val
 ```
+You can also download the well-structured datasets [from ModelScope](https://www.modelscope.cn/datasets/Hanchenzh/Vision_Datasets_DCMerge).
 
 ### Checkpoints
 The checkpoints we used for Table 1 (LoRA merging) are provided [in this link](https://drive.google.com/drive/folders/13-X9wjnHc4zSkQuZqcfEtVnKVsZItYYP?usp=drive_link). The classification heads we used for Table 1 (LoRA merging) are provided [in this link](https://drive.google.com/drive/folders/1l3A1ncH9xqJD8HLLtc2FyuiC2_EP6xH7?usp=drive_link). Remember to specify the `FT_DIR` with `/your_model_path/lora_checkpoints` and `HEAD_DIR` with `/your_model_path/lora_heads` in scripts under the [configs](vision_lora_merge/configs) directory before running the code.
