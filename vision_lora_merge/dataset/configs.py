@@ -1,3 +1,4 @@
+import os
 from .eurosat import EuroSATBase
 from .cars import Cars
 from .dtd import DTD
@@ -16,7 +17,7 @@ from .fer2013 import FER2013
 from .cifar10 import CIFAR10
 
 
-BASE_DIR = ''
+BASE_DIR = os.environ.get('DCMERGE_DATA_DIR', '')
 
 
 eurosat = {

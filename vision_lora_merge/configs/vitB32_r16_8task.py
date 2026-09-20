@@ -1,10 +1,10 @@
 import os
 
 VIT_ARCH = 'ViT-B-32'  # Model Architecture
-MODEL_DIR = ''              # Model Directory
-CACHE_DIR = ''              # Where to cache HF pretrained checkpoints
-HEAD_DIR = ''               # CLIP Head Directory
-FT_DIR = ''                 # Fine-tuned LoRA models Directory
+MODEL_DIR = os.environ.get('DCMERGE_MODEL_DIR', '')  # Local CLIP model directory
+CACHE_DIR = os.environ.get('DCMERGE_CACHE_DIR', MODEL_DIR)  # For LoRA this is used as model_name
+HEAD_DIR = os.environ.get('DCMERGE_HEAD_DIR', '')  # CLIP Head Directory
+FT_DIR = os.environ.get('DCMERGE_FT_DIR', '')  # Fine-tuned LoRA models Directory
 
 config = {
     'dataset': [
