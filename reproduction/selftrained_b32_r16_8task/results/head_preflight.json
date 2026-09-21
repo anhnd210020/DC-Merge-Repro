@@ -1,0 +1,180 @@
+{
+  "failures": [],
+  "generated_at": "2026-09-21T13:43:13.819449+00:00",
+  "passed": true,
+  "purpose": "reproducibility comparison only; official heads are not training inputs",
+  "tasks": {
+    "dtd": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999999135,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 2.288818359375e-05,
+      "mean_absolute_difference": 1.3759288600204913e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/dtd_head.pt",
+      "official_shape": [
+        47,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/dtd_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        47,
+        512
+      ]
+    },
+    "eurosat": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999998739,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 1.9073486328125e-05,
+      "mean_absolute_difference": 1.7180493557589215e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/eurosat_head.pt",
+      "official_shape": [
+        10,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/eurosat_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        10,
+        512
+      ]
+    },
+    "gtsrb": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999998752,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 1.52587890625e-05,
+      "mean_absolute_difference": 1.711523719442338e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/gtsrb_head.pt",
+      "official_shape": [
+        43,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/gtsrb_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        43,
+        512
+      ]
+    },
+    "mnist": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999998852,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 1.9073486328125e-05,
+      "mean_absolute_difference": 1.6420608453415752e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/mnist_head.pt",
+      "official_shape": [
+        10,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/mnist_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        10,
+        512
+      ]
+    },
+    "resisc45": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999999512,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 1.9073486328125e-05,
+      "mean_absolute_difference": 9.662379461082713e-07,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/resisc45_head.pt",
+      "official_shape": [
+        45,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/resisc45_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        45,
+        512
+      ]
+    },
+    "stanford_cars": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.999999999999897,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 2.6702880859375e-05,
+      "mean_absolute_difference": 1.4173985827395319e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/stanford_cars_head.pt",
+      "official_shape": [
+        196,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/stanford_cars_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        196,
+        512
+      ]
+    },
+    "sun397": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999998704,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 3.0517578125e-05,
+      "mean_absolute_difference": 1.5066688807965232e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/sun397_head.pt",
+      "official_shape": [
+        397,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/sun397_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        397,
+        512
+      ]
+    },
+    "svhn": {
+      "allclose": true,
+      "atol": 1e-05,
+      "cosine_similarity": 0.9999999999998852,
+      "dtype": "torch.float32",
+      "max_absolute_difference": 1.9073486328125e-05,
+      "mean_absolute_difference": 1.6420608453415752e-06,
+      "official_dtype": "torch.float32",
+      "official_path": "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads/ViT-B-32/svhn_head.pt",
+      "official_shape": [
+        10,
+        512
+      ],
+      "passed": true,
+      "regenerated_path": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/svhn_head.pt",
+      "rtol": 0.0001,
+      "shape": [
+        10,
+        512
+      ]
+    }
+  },
+  "tolerance": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  }
+}

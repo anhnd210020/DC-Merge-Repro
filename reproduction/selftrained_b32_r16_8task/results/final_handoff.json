@@ -1,0 +1,233 @@
+{
+  "all_expected_artifacts_exist": true,
+  "artifact_checks": {
+    "all_checkpoints": true,
+    "all_heads": true,
+    "all_task_statuses_done": true,
+    "dcmerge_result_json": true,
+    "final_dcmerge_log": true,
+    "master_training_log": true,
+    "pipeline_status_complete": true,
+    "python_scripts": true,
+    "reproduction_comparison_markdown": true,
+    "selftrained_config": true,
+    "selftrained_test_json": true,
+    "selftrained_val_json": true,
+    "shell_scripts": true,
+    "smoke_config_jsons": true
+  },
+  "artifact_paths": {
+    "checkpoints": "/workspace/selftrained_b32_r16_8task/checkpoints",
+    "comparison": "/workspace/selftrained_b32_r16_8task/results/reproduction_comparison.md",
+    "dcmerge_results": "/workspace/selftrained_b32_r16_8task/results/selftrained_dcmerge_results.json",
+    "final_dcmerge_log": "/workspace/selftrained_b32_r16_8task/logs/dcmerge_selftrained.log",
+    "heads": "/workspace/selftrained_b32_r16_8task/heads",
+    "master_training_log": "/workspace/selftrained_b32_r16_8task/logs/master.log",
+    "scripts": [
+      "/workspace/selftrained_b32_r16_8task/adapter_io.py",
+      "/workspace/selftrained_b32_r16_8task/baseline_processes.py",
+      "/workspace/selftrained_b32_r16_8task/compare_heads.py",
+      "/workspace/selftrained_b32_r16_8task/evaluate_dcmerge.py",
+      "/workspace/selftrained_b32_r16_8task/evaluate_single_tasks.py",
+      "/workspace/selftrained_b32_r16_8task/generate_heads.py",
+      "/workspace/selftrained_b32_r16_8task/make_comparison.py",
+      "/workspace/selftrained_b32_r16_8task/pipeline_common.py",
+      "/workspace/selftrained_b32_r16_8task/smoke_test_adapter_roundtrip.py",
+      "/workspace/selftrained_b32_r16_8task/train_task.py",
+      "/workspace/selftrained_b32_r16_8task/validate_checkpoint.py",
+      "/workspace/selftrained_b32_r16_8task/overnight_finalize.sh",
+      "/workspace/selftrained_b32_r16_8task/resume_post_training.sh",
+      "/workspace/selftrained_b32_r16_8task/run_selftrain_pipeline.sh",
+      "/workspace/selftrained_b32_r16_8task/watch_baseline_then_train.sh"
+    ],
+    "selftrained_config": "/workspace/DC-Merge-Repro/vision_lora_merge/configs/vitB32_r16_8task_selftrained.py",
+    "single_task_test": "/workspace/selftrained_b32_r16_8task/results/selftrained_test_acc.json",
+    "single_task_val": "/workspace/selftrained_b32_r16_8task/results/selftrained_val_acc.json",
+    "smoke_config_jsons": [
+      "/workspace/selftrained_b32_r16_8task/results/dcmerge_config_smoke.json",
+      "/workspace/selftrained_b32_r16_8task/results/head_preflight.json",
+      "/workspace/selftrained_b32_r16_8task/results/serializer_smoke_test.json",
+      "/workspace/selftrained_b32_r16_8task/results/stanford_cars_evaluation_smoke.json"
+    ]
+  },
+  "dcmerge_best_alpha": 0.8,
+  "dcmerge_final_average_accuracy": 64.42434622882365,
+  "dcmerge_final_average_normalized_accuracy": 75.11890294582719,
+  "dcmerge_per_task": {
+    "dtd": {
+      "accuracy_percent": 50.31914893617021,
+      "normalized_accuracy_percent": 74.3710691802851
+    },
+    "eurosat": {
+      "accuracy_percent": 46.18518518518518,
+      "normalized_accuracy_percent": 46.91497366652739
+    },
+    "gtsrb": {
+      "accuracy_percent": 68.87371338083928,
+      "normalized_accuracy_percent": 71.08273748966567
+    },
+    "mnist": {
+      "accuracy_percent": 84.6,
+      "normalized_accuracy_percent": 85.33602320010087
+    },
+    "resisc45": {
+      "accuracy_percent": 76.17460317460318,
+      "normalized_accuracy_percent": 81.83833560653589
+    },
+    "stanford_cars": {
+      "accuracy_percent": 63.06544380537852,
+      "normalized_accuracy_percent": 86.0810524091677
+    },
+    "sun397": {
+      "accuracy_percent": 65.5793450881612,
+      "normalized_accuracy_percent": 92.3718289826582
+    },
+    "svhn": {
+      "accuracy_percent": 60.59733026025162,
+      "normalized_accuracy_percent": 62.95520303167677
+    }
+  },
+  "dcmerge_validation_normalized_average": 75.18056652042226,
+  "differences": {
+    "selftrained_minus_official_reproduction": {
+      "average_accuracy_percentage_points": 0.27534622882365056,
+      "average_normalized_accuracy_percentage_points": 1.2399029458271826
+    },
+    "selftrained_minus_paper_table1": {
+      "average_accuracy_percentage_points": 0.25434622882364977,
+      "average_normalized_accuracy_percentage_points": 1.2189029458271818
+    }
+  },
+  "generated_at": "2026-09-21T16:16:06.295127+00:00",
+  "git_commit": "7a0644b55951845d8b2624f2782518de271dc3e4",
+  "git_status": "?? vision_lora_merge/__pycache__/\n?? vision_lora_merge/configs/__pycache__/\n?? vision_lora_merge/configs/vitB32_r16_8task_selftrained.py\n?? vision_lora_merge/dataset/__pycache__/\n?? vision_lora_merge/logs/\n?? vision_lora_merge/models/__pycache__/",
+  "official_reproduction": {
+    "average_accuracy_percent": 64.149,
+    "average_normalized_accuracy_percent": 73.879,
+    "best_alpha": 0.4,
+    "source": "/workspace/dcmerge_b32_8task.log"
+  },
+  "paper_target": {
+    "average_accuracy_percent": 64.17,
+    "average_normalized_accuracy_percent": 73.9,
+    "source": "/workspace/selftrained_b32_r16_8task/results/reproduction_comparison.md"
+  },
+  "pipeline_status": "COMPLETE",
+  "single_task_test": {
+    "dtd": 67.65957447,
+    "eurosat": 98.44444444,
+    "gtsrb": 96.89231987,
+    "mnist": 99.1375,
+    "resisc45": 93.07936508,
+    "stanford_cars": 73.26286336,
+    "sun397": 70.99496222,
+    "svhn": 96.25468165
+  },
+  "single_task_test_average": 86.96571388625,
+  "single_task_val": {
+    "dtd": 67.5,
+    "eurosat": 98.51851852,
+    "gtsrb": 96.79334917,
+    "mnist": 99.5,
+    "resisc45": 93.98412698,
+    "stanford_cars": 75.43532338,
+    "sun397": 72.36775819,
+    "svhn": 96.44640799
+  },
+  "single_task_val_average": 87.56818552875,
+  "task_statuses": {
+    "dtd": "DONE",
+    "eurosat": "DONE",
+    "gtsrb": "DONE",
+    "mnist": "DONE",
+    "resisc45": "DONE",
+    "stanford_cars": "DONE",
+    "sun397": "DONE",
+    "svhn": "DONE"
+  },
+  "warnings": [
+    "/workspace/selftrained_b32_r16_8task/logs/dcmerge.log:2: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/dcmerge.log:180: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/dcmerge_selftrained.log:295: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/dtd.log:5: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/dtd.log:41: training dtd:   0%|          | 33/10000 [03:07<15:46:42,  5.70s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/dtd.log:150: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/dtd.log:167: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/dtd.log:203: training dtd:   0%|          | 33/10000 [03:06<15:40:56,  5.66s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/eurosat.log:5: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/eurosat.log:10: training eurosat:   0%|          | 2/10000 [01:41<141:21:51, 50.90s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/eurosat.log:453: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/eurosat.log:470: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/eurosat.log:475: training eurosat:   0%|          | 2/10000 [01:43<143:26:17, 51.65s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/gtsrb.log:6: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/gtsrb.log:11: training gtsrb:   0%|          | 2/10000 [02:06<175:49:04, 63.31s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/gtsrb.log:646: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/gtsrb.log:664: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/gtsrb.log:669: training gtsrb:   0%|          | 2/10000 [02:06<175:26:07, 63.17s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:607: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:617: training stanford_cars:   0%|          | 7/10000 [02:20<55:53:05, 20.13s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:912: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:930: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:966: training dtd:   0%|          | 33/10000 [03:07<15:46:42,  5.70s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1075: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1093: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1098: training eurosat:   0%|          | 2/10000 [01:41<141:21:51, 50.90s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1541: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1560: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:1565: training gtsrb:   0%|          | 2/10000 [02:06<175:49:04, 63.31s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:2200: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:2219: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:2223: training mnist:   0%|          | 1/10000 [02:20<389:39:54, 140.29s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:3336: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:3354: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:3360: training resisc45:   0%|          | 3/10000 [02:15<126:04:39, 45.40s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:3873: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:3892: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:4498: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:4508: training stanford_cars:   0%|          | 7/10000 [02:20<55:44:14, 20.08s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:5988: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:6024: training dtd:   0%|          | 33/10000 [03:06<15:40:56,  5.66s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:6720: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:6725: training eurosat:   0%|          | 2/10000 [01:43<143:26:17, 51.65s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:8946: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:8951: training gtsrb:   0%|          | 2/10000 [02:06<175:26:07, 63.17s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:12126: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:12130: training mnist:   0%|          | 1/10000 [02:19<388:45:19, 139.97s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:17704: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:17710: training resisc45:   0%|          | 3/10000 [02:17<127:44:19, 46.00s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:20292: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:20298: training sun397:   0%|          | 3/10000 [03:37<192:15:55, 69.24s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:24530: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:24533: training svhn:   0%|          | 0/10000 [00:00<?, ?it/s]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:32421: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/master.log:32426: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/mnist.log:6: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/mnist.log:10: training mnist:   0%|          | 1/10000 [02:20<389:39:54, 140.29s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/mnist.log:1123: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/mnist.log:1141: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/mnist.log:1145: training mnist:   0%|          | 1/10000 [02:19<388:45:19, 139.97s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/post_training.log:23: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/post_training.log:932: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/resisc45.log:5: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/resisc45.log:11: training resisc45:   0%|          | 3/10000 [02:15<126:04:39, 45.40s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/resisc45.log:524: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/resisc45.log:541: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/resisc45.log:547: training resisc45:   0%|          | 3/10000 [02:17<127:44:19, 46.00s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/serializer_smoke_test.log:1: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/single_task_eval.log:3: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/single_task_eval.log:8: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/single_task_eval.log:24: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars.log:6: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars.log:16: training stanford_cars:   0%|          | 7/10000 [02:20<55:53:05, 20.13s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars.log:311: Traceback (most recent call last):",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars.log:329: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars.log:339: training stanford_cars:   0%|          | 7/10000 [02:20<55:44:14, 20.08s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars_postfix_smoke.log:9: /workspace/selftrained_b32_r16_8task/evaluate_single_tasks.py:98: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/stanford_cars_postfix_smoke.log:12: /workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/sun397.log:6: /workspace/selftrained_b32_r16_8task/train_task.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/sun397.log:14: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/sun397.log:20: training sun397:   0%|          | 3/10000 [03:37<192:15:55, 69.24s/it]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/svhn.log:6: /workspace/selftrained_b32_r16_8task/train_task.py:174: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+    "/workspace/selftrained_b32_r16_8task/logs/svhn.log:9: training svhn:   0%|          | 0/10000 [00:00<?, ?it/s]/workspace/DC-Merge-Repro/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "elapsed_seconds": 271.76677401695633,
+  "generated_at": "2026-09-21T13:47:50.802648+00:00",
+  "individual_average_test_accuracy_percent": 86.96571388625,
+  "test_accuracy_percent": {
+    "dtd": 67.65957447,
+    "eurosat": 98.44444444,
+    "gtsrb": 96.89231987,
+    "mnist": 99.1375,
+    "resisc45": 93.07936508,
+    "stanford_cars": 73.26286336,
+    "sun397": 70.99496222,
+    "svhn": 96.25468165
+  },
+  "validation_accuracy_percent": {
+    "dtd": 67.5,
+    "eurosat": 98.51851852,
+    "gtsrb": 96.79334917,
+    "mnist": 99.5,
+    "resisc45": 93.98412698,
+    "stanford_cars": 75.43532338,
+    "sun397": 72.36775819,
+    "svhn": 96.44640799
+  }
+}

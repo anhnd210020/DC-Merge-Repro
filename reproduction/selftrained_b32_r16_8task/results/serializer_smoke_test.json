@@ -1,0 +1,40 @@
+{
+  "all_saved_tensor_digests_present": true,
+  "changed_lora_tensors": 96,
+  "completed_at": "2026-09-21T09:44:26.734428+00:00",
+  "inference_output_shape": [
+    1,
+    512
+  ],
+  "inference_succeeded": true,
+  "loaded_tensor_comparison": {
+    "allclose": true,
+    "exact_equal": true,
+    "max_absolute_difference": 0.0,
+    "tensor_count": 96
+  },
+  "losses": [
+    2.8556082248687744,
+    2.5136313438415527,
+    2.073943853378296
+  ],
+  "optimizer_steps": 3,
+  "peft_object_type": "peft.peft_model.PeftModel",
+  "saved_tensor_comparison": {
+    "allclose": true,
+    "exact_equal": true,
+    "max_absolute_difference": 0.0,
+    "tensor_count": 96
+  },
+  "temporary_checkpoint_only": true,
+  "temporary_checkpoint_removed_on_exit": true,
+  "tensor_count": 96,
+  "trained_copied_object_diagnostic": {
+    "adapter_name": "default",
+    "object_type": "peft.peft_model.PeftModel",
+    "peft_config_type": "peft.tuners.lora.LoraConfig",
+    "peft_type_after_authors_deepcopy": "None",
+    "r_after_authors_deepcopy": 8,
+    "target_modules_after_authors_deepcopy": null
+  }
+}

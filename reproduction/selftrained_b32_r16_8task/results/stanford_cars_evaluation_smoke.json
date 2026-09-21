@@ -1,0 +1,11 @@
+{
+  "adapter_checkpoint": "/workspace/selftrained_b32_r16_8task/checkpoints/stanford_cars",
+  "classification_head": "/workspace/selftrained_b32_r16_8task/heads/ViT-B-32/stanford_cars_head.pt",
+  "elapsed_seconds": 41.0517156549613,
+  "first_batch_inference_passed": true,
+  "generated_at": "2026-09-21T13:22:59.797251+00:00",
+  "pretrained_model": "/workspace/models/clip-vit-base-patch32",
+  "task": "stanford_cars",
+  "test_accuracy_percent": 73.26286336,
+  "validation_accuracy_percent": 75.43532338
+}
