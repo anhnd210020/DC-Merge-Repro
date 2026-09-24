@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local research assets and generated ablation outputs are never source files.
+artifacts/
+analysis_outputs/task_scale_ablation/
+**/adapter_model.bin

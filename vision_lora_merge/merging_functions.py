@@ -1,3 +1,5 @@
+import math
+
 import torch
 from collections import defaultdict, OrderedDict
 from copy import deepcopy
@@ -157,50 +159,151 @@ def generate_linear_distribution(num_classes, ratio):
     return s
 
 
-def dc_merge(deltas_dict, smoothing_strategy='avg', rho=5.0):
+def _validate_task_scales(task_scales, num_tasks):
+    """Return a validated positional task-scale tuple.
+
+    ``dc_merge`` receives matrices without task names, so callers must resolve
+    names to this exact positional order before calling it.
+    """
+    if task_scales is None:
+        return (1.0,) * num_tasks
+    if isinstance(task_scales, torch.Tensor):
+        task_scales = task_scales.detach().cpu().reshape(-1).tolist()
+    try:
+        scales = tuple(float(value) for value in task_scales)
+    except (TypeError, ValueError) as error:
+        raise ValueError("task_scales must be a finite positive sequence") from error
+    if len(scales) != num_tasks:
+        raise ValueError(
+            f"task_scales has length {len(scales)}; expected {num_tasks}"
+        )
+    if any(not math.isfinite(value) or value <= 0.0 for value in scales):
+        raise ValueError("every task scale must be finite and greater than zero")
+    return scales
+
+
+def _dc_merge_matrix_group(
+    vecs,
+    smoothing_strategy='avg',
+    rho=5.0,
+    task_scales=None,
+    return_intermediates=False,
+):
+    """Merge one module's task matrices, optionally exposing test diagnostics.
+
+    Task scaling is a post-smoothing amplitude intervention.  The shared cover
+    bases below are constructed only from each task's singular directions, so
+    positive task scales cannot change those bases, the singular directions,
+    or the within-task normalized smoothed singular-value distribution.  The
+    scaled amplitudes enter before projection, top-k, and TIES, where task
+    interactions are intentionally allowed to change.
+    """
+    N = len(vecs)
+    if N == 0:
+        raise ValueError("dc_merge requires at least one task delta")
+    scales = _validate_task_scales(task_scales, N)
+    low_rank_per_task = 16
+    smoothed_vecs = []
+    singular_directions_u = []
+    singular_directions_v = []
+    normalized_smoothed_distributions = []
+    smoothed_singular_values = []
+
+    for i in range(N):
+        u, s, v = torch.linalg.svd(vecs[i], full_matrices=False)
+        if min(u.shape[1], v.shape[0], s.numel()) < low_rank_per_task:
+            raise ValueError(
+                "DC-Merge rank-16 processing requires matrices with at least "
+                "16 singular directions"
+            )
+        if i == 0:
+            if u.shape[1] < N * low_rank_per_task or v.shape[0] < N * low_rank_per_task:
+                raise ValueError(
+                    "matrix dimensions are too small for the shared rank-16 "
+                    f"cover space of {N} tasks"
+                )
+            sum_u = torch.zeros_like(u)
+            sum_v = torch.zeros_like(v)
+
+        # Only directions populate the cover-space inputs.  Scaled singular
+        # magnitudes never enter sum_u/sum_v.
+        task_u = u[:, :low_rank_per_task]
+        task_v = v[:low_rank_per_task, :]
+        sum_u[:, i * low_rank_per_task : (i + 1) * low_rank_per_task] = task_u
+        sum_v[i * low_rank_per_task : (i + 1) * low_rank_per_task, :] = task_v
+
+        orig_energy = s[:low_rank_per_task].clone()
+        if smoothing_strategy == 'linear':
+            smoothed_ratio = min(rho, orig_energy[0] / orig_energy[-1])
+            smoothed_energy_dist = generate_linear_distribution(low_rank_per_task, smoothed_ratio)
+        elif smoothing_strategy == 'avg':
+            smoothed_energy_dist = torch.ones_like(orig_energy) / len(orig_energy)
+        else:
+            raise ValueError("Invalid smoothing strategy")
+
+        smoothed_energy = orig_energy.sum() * smoothed_energy_dist
+        # Skip the multiply for 1.0 so None/explicit all-ones preserve the
+        # legacy floating-point path exactly.
+        if scales[i] != 1.0:
+            smoothed_energy = smoothed_energy * scales[i]
+        smoothed_vecs.append(task_u @ torch.diag(smoothed_energy) @ task_v)
+        if return_intermediates:
+            singular_directions_u.append(task_u.clone())
+            singular_directions_v.append(task_v.clone())
+            normalized_smoothed_distributions.append(smoothed_energy_dist.clone())
+            smoothed_singular_values.append(smoothed_energy.clone())
+
+    u_u, _s_u, v_u = torch.linalg.svd(sum_u, full_matrices=False)
+    u_v, _s_v, v_v = torch.linalg.svd(sum_v, full_matrices=False)
+    cover_space_u = (u_u @ v_u)[:, :N * low_rank_per_task]
+    cover_space_vT = (u_v @ v_v)[:N * low_rank_per_task, :]
+
+    Ms = [
+        torch.linalg.multi_dot((cover_space_u.T, smoothed_vecs[i], cover_space_vT.T))
+        for i in range(N)
+    ]
+    filtered_Ms = keep_topk_percent(Ms, 1e-3)
+    agg_M = ties_small(filtered_Ms)
+    mask_M = torch.zeros_like(agg_M)
+    d_per_task = mask_M.shape[0] // N
+    for i in range(N):
+        mask_M[
+            i * d_per_task : (i + 1) * d_per_task,
+            i * d_per_task : (i + 1) * d_per_task,
+        ] = 1
+
+    merged = torch.linalg.multi_dot((cover_space_u, agg_M * mask_M, cover_space_vT))
+    if not return_intermediates:
+        return merged
+    return merged, {
+        'task_scales': scales,
+        'singular_directions_u': singular_directions_u,
+        'singular_directions_v': singular_directions_v,
+        'normalized_smoothed_distributions': normalized_smoothed_distributions,
+        'smoothed_singular_values': smoothed_singular_values,
+        'cover_space_u': cover_space_u,
+        'cover_space_vT': cover_space_vT,
+        'projected_matrices': Ms,
+        'filtered_matrices': filtered_Ms,
+        'ties_aggregate': agg_M,
+        'structural_mask': mask_M,
+    }
+
+
+def dc_merge(deltas_dict, smoothing_strategy='avg', rho=5.0, task_scales=None):
+    """Run DC-Merge with an optional post-smoothing task-amplitude intervention.
+
+    ``task_scales`` is not part of the original DC-Merge algorithm.  ``None``
+    and an explicit all-ones sequence reproduce the original implementation.
+    """
     dc_dict = {}
-
-
     for k, vecs in tqdm(deltas_dict.items(), desc='DC-Merge Processing...'):
-        N = len(vecs)
-        low_rank_per_task = 16
-        smoothed_vecs = []
-        
-        for i in range(N):
-            u, s, v = torch.linalg.svd(vecs[i], full_matrices=False)
-            if i == 0:
-                sum_u = torch.zeros_like(u)
-                sum_v = torch.zeros_like(v)
-
-            sum_u[:, i * low_rank_per_task : (i + 1) * low_rank_per_task] = u[:, :low_rank_per_task]
-            sum_v[i * low_rank_per_task : (i + 1) * low_rank_per_task, :] = v[:low_rank_per_task, :]
-            
-            orig_energy = s[:low_rank_per_task].clone()
-            if smoothing_strategy == 'linear':
-                smoothed_ratio = min(rho, orig_energy[0] / orig_energy[-1])
-                smoothed_energy_dist = generate_linear_distribution(low_rank_per_task, smoothed_ratio)
-            elif smoothing_strategy == 'avg':
-                smoothed_energy_dist = torch.ones_like(orig_energy) / len(orig_energy)
-            else:
-                raise ValueError("Invalid smoothing strategy")
-            
-            smoothed_energy = orig_energy.sum() * smoothed_energy_dist
-            smoothed_vecs.append(u[:, :low_rank_per_task] @ torch.diag(smoothed_energy) @ v[:low_rank_per_task, :])
-           
-        u_u, s_u, v_u = torch.linalg.svd(sum_u, full_matrices=False)
-        u_v, s_v, v_v = torch.linalg.svd(sum_v, full_matrices=False)
-        cover_space_u = (u_u @ v_u)[:, :N * low_rank_per_task]
-        cover_space_vT = (u_v @ v_v)[:N * low_rank_per_task, :]
-
-        Ms = [torch.linalg.multi_dot((cover_space_u.T, smoothed_vecs[i], cover_space_vT.T, )) for i in range(N)]
-        filtered_Ms = keep_topk_percent(Ms, 1e-3)
-        agg_M = ties_small(filtered_Ms)
-        mask_M = torch.zeros_like(agg_M)
-        d_per_task = mask_M.shape[0] // N
-        for i in range(N):
-            mask_M[i * d_per_task : (i+1) * d_per_task, i * d_per_task : (i+1) * d_per_task] = 1
-        
-        dc_dict[k] = torch.linalg.multi_dot((cover_space_u, agg_M * mask_M , cover_space_vT, ))
+        dc_dict[k] = _dc_merge_matrix_group(
+            vecs,
+            smoothing_strategy=smoothing_strategy,
+            rho=rho,
+            task_scales=task_scales,
+        )
 
     return OrderedDict(sorted(dc_dict.items()))
 

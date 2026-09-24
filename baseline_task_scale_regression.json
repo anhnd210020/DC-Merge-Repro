@@ -1,0 +1,28 @@
+{
+  "definition_version": "dcmerge-diagonal-block-squared-frobenius-v1",
+  "effective_block_weight_percent": {
+    "stanford_cars": 17.871237,
+    "dtd": 15.025584,
+    "eurosat": 5.446574,
+    "gtsrb": 8.539899,
+    "mnist": 5.960379,
+    "resisc45": 10.725403,
+    "sun397": 28.015644,
+    "svhn": 8.415281
+  },
+  "selected_alpha": 0.8,
+  "merged_test_accuracy_percent": {
+    "stanford_cars": 63.06544380537852,
+    "dtd": 50.31914893617021,
+    "eurosat": 46.18518518518518,
+    "gtsrb": 68.87371338083928,
+    "mnist": 84.6,
+    "resisc45": 76.17460317460318,
+    "sun397": 65.5793450881612,
+    "svhn": 60.59733026025162
+  },
+  "tolerances": {
+    "effective_weight_absolute_percent": 0.00002,
+    "final_accuracy_absolute_pp": 0.05
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "task_order": [
+    "stanford_cars",
+    "dtd",
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "resisc45",
+    "sun397",
+    "svhn"
+  ],
+  "configs": [
+    {
+      "run_id": "baseline",
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 1.0,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 1.0,
+        "svhn": 1.0
+      }
+    },
+    {
+      "run_id": "partial_balance",
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 2.0,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.8,
+        "svhn": 1.0
+      }
+    },
+    {
+      "run_id": "full_balance_initial",
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 3.07,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.6,
+        "svhn": 1.0
+      }
+    },
+    {
+      "run_id": "strong_reallocation",
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 4.0,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.42,
+        "svhn": 1.0
+      }
+    },
+    {
+      "run_id": "strong_reversal",
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 4.5,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.32,
+        "svhn": 1.0
+      }
+    }
+  ]
+}
