@@ -1,0 +1,175 @@
+{
+  "schema_version": 2,
+  "series_id": "primary_diagnostic_calibrated_pair_total",
+  "series_role": "primary_controlled_redistribution",
+  "description": "Primary causal series calibrated only on the offline effective-weight diagnostic to preserve the baseline EuroSAT+SUN397 pair total.",
+  "frozen_before_accuracy_evaluation": true,
+  "task_order": [
+    "stanford_cars",
+    "dtd",
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "resisc45",
+    "sun397",
+    "svhn"
+  ],
+  "calibration": {
+    "uses_accuracy": false,
+    "effective_weight_definition_version": "dcmerge-diagonal-block-squared-frobenius-v1",
+    "baseline_pair_total_percent": 33.46221773857707,
+    "pair_penalty": 4.0,
+    "objective": "(w_eurosat-target_eurosat)^2 + (w_sun397-target_sun397)^2 + pair_penalty*((w_eurosat+w_sun397)-baseline_pair_total)^2",
+    "algorithm": "deterministic 9x9 log-space grid over positive EuroSAT/SUN397 scales in [0.25,4.0], followed by bounded scipy least_squares; all other task scales fixed at 1.0"
+  },
+  "configs": [
+    {
+      "run_id": "baseline",
+      "label": "Baseline allocation",
+      "target_effective_weight_percent": {
+        "eurosat": 5.4465737850664535,
+        "sun397": 28.01564395351061
+      },
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 1.0,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 1.0,
+        "svhn": 1.0
+      },
+      "achieved_effective_weight_percent": {
+        "eurosat": 5.4465737850664535,
+        "sun397": 28.01564395351061
+      },
+      "achieved_pair_total_percent": 33.46221773857707,
+      "pair_total_error_percent": 0.0,
+      "per_task_target_error_percent": {
+        "eurosat": 0.0,
+        "sun397": 0.0
+      },
+      "target_rmse_percent": 0.0,
+      "calibration_objective": 0.0,
+      "search_diagnostics": {
+        "method": "identity baseline",
+        "least_squares_nfev": 0
+      }
+    },
+    {
+      "run_id": "controlled_moderate",
+      "label": "Moderate pair-total-preserving redistribution",
+      "target_effective_weight_percent": {
+        "eurosat": 10.0,
+        "sun397": 23.462217738577067
+      },
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 1.354996908325602,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.9151330196280323,
+        "svhn": 1.0
+      },
+      "achieved_effective_weight_percent": {
+        "eurosat": 10.0,
+        "sun397": 23.462217738577067
+      },
+      "achieved_pair_total_percent": 33.46221773857707,
+      "pair_total_error_percent": 0.0,
+      "per_task_target_error_percent": {
+        "eurosat": 0.0,
+        "sun397": 0.0
+      },
+      "target_rmse_percent": 0.0,
+      "calibration_objective": 0.0,
+      "search_diagnostics": {
+        "coarse_grid_best_log_scales": [
+          0.0,
+          0.0
+        ],
+        "least_squares_nfev": 7,
+        "least_squares_status": 1
+      }
+    },
+    {
+      "run_id": "controlled_balanced",
+      "label": "Balanced pair-total-preserving redistribution",
+      "target_effective_weight_percent": {
+        "eurosat": 16.731108869288533,
+        "sun397": 16.731108869288533
+      },
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 1.752672073758906,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.7727910040743281,
+        "svhn": 1.0
+      },
+      "achieved_effective_weight_percent": {
+        "eurosat": 16.731108869288533,
+        "sun397": 16.731108869288537
+      },
+      "achieved_pair_total_percent": 33.46221773857707,
+      "pair_total_error_percent": 0.0,
+      "per_task_target_error_percent": {
+        "eurosat": 0.0,
+        "sun397": 3.552713678800501e-15
+      },
+      "target_rmse_percent": 2.5121479338940403e-15,
+      "calibration_objective": 1.262177448353619e-29,
+      "search_diagnostics": {
+        "coarse_grid_best_log_scales": [
+          0.6931471805599452,
+          -0.3465735902799727
+        ],
+        "least_squares_nfev": 7,
+        "least_squares_status": 3
+      }
+    },
+    {
+      "run_id": "controlled_reversal",
+      "label": "Reversed pair-total-preserving redistribution",
+      "target_effective_weight_percent": {
+        "eurosat": 23.462217738577067,
+        "sun397": 10.0
+      },
+      "task_scales": {
+        "stanford_cars": 1.0,
+        "dtd": 1.0,
+        "eurosat": 2.0755004636705694,
+        "gtsrb": 1.0,
+        "mnist": 1.0,
+        "resisc45": 1.0,
+        "sun397": 0.5974474272627641,
+        "svhn": 1.0
+      },
+      "achieved_effective_weight_percent": {
+        "eurosat": 23.462217738577067,
+        "sun397": 10.0
+      },
+      "achieved_pair_total_percent": 33.46221773857707,
+      "pair_total_error_percent": 0.0,
+      "per_task_target_error_percent": {
+        "eurosat": 0.0,
+        "sun397": 0.0
+      },
+      "target_rmse_percent": 0.0,
+      "calibration_objective": 0.0,
+      "search_diagnostics": {
+        "coarse_grid_best_log_scales": [
+          0.6931471805599452,
+          -0.3465735902799727
+        ],
+        "least_squares_nfev": 7,
+        "least_squares_status": 3
+      }
+    }
+  ]
+}

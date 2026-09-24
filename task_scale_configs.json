@@ -1,5 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "series_id": "secondary_heuristic_input_scale_stress_tests",
+  "series_role": "secondary_heuristic_stress_test",
+  "description": "Secondary heuristic input-scale interventions retained unchanged from the original preregistration. They do not preserve the realized EuroSAT+SUN397 pair contribution and are not the primary controlled causal series.",
+  "frozen_before_accuracy_evaluation": true,
   "task_order": [
     "stanford_cars",
     "dtd",
@@ -10,9 +14,22 @@
     "sun397",
     "svhn"
   ],
+  "design_note": {
+    "uses_accuracy": false,
+    "input_scale_basis": "linear proxy based on baseline percentage weights",
+    "warning": "Realized squared-Frobenius weights are nonlinear in input scales; this series increases the EuroSAT+SUN397 pair total and is retained only as a secondary stress-test ablation.",
+    "observed_realized_pair_total_percent": {
+      "baseline": 33.46221773857707,
+      "partial_balance": 37.37861520951205,
+      "full_balance_initial": 47.99981865867046,
+      "strong_reallocation": 58.05338704155639,
+      "strong_reversal": 62.972792374687325
+    }
+  },
   "configs": [
     {
       "run_id": "baseline",
+      "label": "Secondary-series baseline",
       "task_scales": {
         "stanford_cars": 1.0,
         "dtd": 1.0,
@@ -26,6 +43,7 @@
     },
     {
       "run_id": "partial_balance",
+      "label": "Heuristic partial-balance input scales",
       "task_scales": {
         "stanford_cars": 1.0,
         "dtd": 1.0,
@@ -39,6 +57,7 @@
     },
     {
       "run_id": "full_balance_initial",
+      "label": "Heuristic linear-proxy balance input scales",
       "task_scales": {
         "stanford_cars": 1.0,
         "dtd": 1.0,
@@ -52,6 +71,7 @@
     },
     {
       "run_id": "strong_reallocation",
+      "label": "Heuristic strong-reallocation stress test",
       "task_scales": {
         "stanford_cars": 1.0,
         "dtd": 1.0,
@@ -65,6 +85,7 @@
     },
     {
       "run_id": "strong_reversal",
+      "label": "Heuristic strong-reversal stress test",
       "task_scales": {
         "stanford_cars": 1.0,
         "dtd": 1.0,

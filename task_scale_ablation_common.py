@@ -36,8 +36,13 @@ def config_hash(value) -> str:
 
 def load_scale_configs(path: Path, expected_tasks: Sequence[str] = TASKS) -> dict:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 1:
+    if payload.get("schema_version") not in (1, 2):
         raise ValueError("unsupported task-scale config schema")
+    if payload.get("series_role") == "primary_controlled_redistribution":
+        if payload.get("frozen_before_accuracy_evaluation") is not True:
+            raise ValueError("primary configurations must be frozen before accuracy")
+        if payload.get("calibration", {}).get("uses_accuracy") is not False:
+            raise ValueError("primary calibration must explicitly exclude accuracy")
     task_order = payload.get("task_order")
     if task_order != list(expected_tasks):
         raise ValueError(
@@ -49,8 +54,8 @@ def load_scale_configs(path: Path, expected_tasks: Sequence[str] = TASKS) -> dic
     run_ids = []
     validated = []
     for entry in configs:
-        if not isinstance(entry, dict) or set(entry) != {"run_id", "task_scales"}:
-            raise ValueError("each config must contain exactly run_id and task_scales")
+        if not isinstance(entry, dict) or not {"run_id", "task_scales"}.issubset(entry):
+            raise ValueError("each config must contain run_id and task_scales")
         run_id = entry["run_id"]
         if not isinstance(run_id, str) or not RUN_ID_PATTERN.fullmatch(run_id):
             raise ValueError(f"invalid run_id: {run_id!r}")
@@ -61,12 +66,24 @@ def load_scale_configs(path: Path, expected_tasks: Sequence[str] = TASKS) -> dic
                 "run_id": run_id,
                 "task_scales": scales,
                 "ordered_scale_vector": [scales[task] for task in expected_tasks],
+                "metadata": {
+                    key: value
+                    for key, value in entry.items()
+                    if key not in {"run_id", "task_scales"}
+                },
             }
         )
     if len(run_ids) != len(set(run_ids)):
         raise ValueError("run_id values must be unique")
     return {
-        "schema_version": 1,
+        "schema_version": payload["schema_version"],
+        "series_id": payload.get("series_id", "legacy_unspecified_series"),
+        "series_role": payload.get("series_role", "unspecified"),
+        "series_metadata": {
+            key: value
+            for key, value in payload.items()
+            if key not in {"schema_version", "task_order", "configs"}
+        },
         "task_order": list(expected_tasks),
         "configs": validated,
         "config_hash": config_hash(payload),

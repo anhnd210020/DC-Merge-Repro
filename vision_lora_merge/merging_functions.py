@@ -195,8 +195,11 @@ def _dc_merge_matrix_group(
     bases below are constructed only from each task's singular directions, so
     positive task scales cannot change those bases, the singular directions,
     or the within-task normalized smoothed singular-value distribution.  The
-    scaled amplitudes enter before projection, top-k, and TIES, where task
-    interactions are intentionally allowed to change.
+    scaled amplitudes enter before projection, top-k, and TIES.  Projection is
+    linear and top-k is applied independently per task, so a positive uniform
+    scale preserves that task's top-k support apart from numerical/tie edge
+    cases.  TIES can still change because its consensus sign comes from the
+    magnitude-weighted sum across tasks.
     """
     N = len(vecs)
     if N == 0:

@@ -244,6 +244,8 @@ def preflight(args, scale_config, tasks) -> dict:
         "config": args.config,
         "scale_config_path": str(args.scale_config.resolve()),
         "scale_config_hash": scale_config["config_hash"],
+        "series_id": scale_config["series_id"],
+        "series_role": scale_config["series_role"],
         "task_order": list(tasks),
         "checkpoint_paths": checkpoint_paths,
         "checkpoint_adapter_sha256": checkpoint_sha256,
@@ -408,6 +410,8 @@ def validation_run(args, runtime, entry, scale_config, preflight_record, referen
         "task_scales": scales,
         "ordered_scale_vector": entry["ordered_scale_vector"],
         "scale_config_hash": scale_config["config_hash"],
+        "series_id": scale_config["series_id"],
+        "series_role": scale_config["series_role"],
         "git_commit": preflight_record["git_commit"],
         "smoothing": SMOOTHING,
         "rho": RHO,
@@ -471,6 +475,7 @@ def validation_run(args, runtime, entry, scale_config, preflight_record, referen
         "effective_weight_definition_version": EFFECTIVE_WEIGHT_DEFINITION_VERSION,
         "validation_objective": "mean normalized validation accuracy over eight tasks",
         "training_invocations": [],
+        "scale_config_metadata": entry["metadata"],
     }
     if metadata_path.exists():
         existing_metadata = read_json(metadata_path)
@@ -503,6 +508,21 @@ def validation_run(args, runtime, entry, scale_config, preflight_record, referen
         abs_tol=1e-10,
     ):
         raise AssertionError("realized effective weights do not sum to 100%")
+    if scale_config["series_role"] == "primary_controlled_redistribution":
+        calibrated = entry["metadata"].get("achieved_effective_weight_percent")
+        if set(calibrated or {}) != {"eurosat", "sun397"}:
+            raise RuntimeError(f"primary calibration metadata is missing for {run_id}")
+        calibration_errors = {
+            task: abs(
+                diagnostic["effective_block_weight_percent"][task] - calibrated[task]
+            )
+            for task in ("eurosat", "sun397")
+        }
+        if max(calibration_errors.values()) > 1e-8:
+            raise AssertionError(
+                f"primary realized weights differ from frozen calibration: "
+                f"{calibration_errors}"
+            )
 
     vector = entry["ordered_scale_vector"]
     with runtime["torch"].no_grad():
@@ -564,6 +584,9 @@ def validation_run(args, runtime, entry, scale_config, preflight_record, referen
     summary = {
         "run_id": run_id,
         "run_hash": run_hash,
+        "series_id": scale_config["series_id"],
+        "series_role": scale_config["series_role"],
+        "scale_config_metadata": entry["metadata"],
         "task_scales": scales,
         "ordered_scale_vector": vector,
         "realized_effective_weight_percent": diagnostic[
@@ -627,9 +650,12 @@ def freeze_manifest(args, scale_config, summaries, preflight_record, tasks) -> P
 
     path = args.output_dir / "selected_for_test.json"
     body = {
-        "schema_version": 1,
+        "schema_version": 2,
         "created_at": utc_now(),
-        "purpose": "frozen preregistered configurations approved before test evaluation",
+        "purpose": "all preregistered configurations frozen before test evaluation",
+        "series_id": scale_config["series_id"],
+        "series_role": scale_config["series_role"],
+        "series_metadata": scale_config["series_metadata"],
         "scale_config_path": str(args.scale_config.resolve()),
         "scale_config_hash": scale_config["config_hash"],
         "experiment_config_hash": config_hash(
@@ -650,6 +676,7 @@ def freeze_manifest(args, scale_config, summaries, preflight_record, tasks) -> P
             {
                 "run_id": summary["run_id"],
                 "run_hash": summary["run_hash"],
+                "scale_config_metadata": summary["scale_config_metadata"],
                 "task_scales": summary["task_scales"],
                 "ordered_scale_vector": summary["ordered_scale_vector"],
                 "selected_global_alpha": summary["selected_global_alpha"],
@@ -726,6 +753,10 @@ def validate_manifest(path: Path, scale_config, tasks) -> dict:
         raise RuntimeError("selection manifest hash is invalid")
     if manifest.get("scale_config_hash") != scale_config["config_hash"]:
         raise RuntimeError("selection manifest does not match the scale config")
+    if manifest.get("series_id") != scale_config["series_id"]:
+        raise RuntimeError("selection manifest series ID is invalid")
+    if manifest.get("series_role") != scale_config["series_role"]:
+        raise RuntimeError("selection manifest series role is invalid")
     if manifest.get("task_order") != list(tasks):
         raise RuntimeError("selection manifest task order is invalid")
     configured = {entry["run_id"]: entry for entry in scale_config["configs"]}
@@ -735,6 +766,12 @@ def validate_manifest(path: Path, scale_config, tasks) -> dict:
     approved_ids = [entry.get("run_id") for entry in approved]
     if len(approved_ids) != len(set(approved_ids)):
         raise RuntimeError("selection manifest contains duplicate run IDs")
+    configured_ids = [entry["run_id"] for entry in scale_config["configs"]]
+    if approved_ids != configured_ids:
+        raise RuntimeError(
+            "selection manifest must contain every preregistered configuration "
+            "in frozen order"
+        )
     for entry in approved:
         run_id = entry["run_id"]
         if run_id not in configured:
@@ -856,7 +893,9 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default=CONFIG_NAME_DEFAULT)
     parser.add_argument(
-        "--scale-config", type=Path, default=REPO_DEFAULT / "task_scale_configs.json"
+        "--scale-config",
+        type=Path,
+        default=REPO_DEFAULT / "task_scale_configs_primary_calibrated.json",
     )
     parser.add_argument("--stage", required=True, choices=("validation", "final-test"))
     parser.add_argument(

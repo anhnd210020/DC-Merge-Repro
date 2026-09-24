@@ -138,6 +138,143 @@ def validate_named_task_scales(
     return scales
 
 
+def load_adapter_collection(
+    checkpoint_dirs: Mapping[str, Path],
+    task_names: Sequence[str],
+    rank: int = RANK,
+):
+    """Load and validate the common adapter layout once."""
+    names = tuple(task_names)
+    if not names:
+        raise ValueError("at least one task is required")
+    if set(checkpoint_dirs) != set(names):
+        raise ValueError("checkpoint mapping must contain exactly the task names")
+    states: dict[str, dict[str, torch.Tensor]] = {}
+    scalings: dict[str, float] = {}
+    for task in names:
+        directory = Path(checkpoint_dirs[task])
+        states[task] = load_state(directory / "adapter_model.bin")
+        scalings[task] = load_scaling(directory / "adapter_config.json", rank)
+    if len(set(scalings.values())) != 1:
+        raise ValueError(f"Adapters have inconsistent LoRA scaling: {scalings}")
+    prefixes = adapter_prefixes(states[names[0]])
+    for task in names[1:]:
+        if adapter_prefixes(states[task]) != prefixes:
+            raise ValueError(f"LoRA module layout differs for task {task}")
+    return states, next(iter(scalings.values())), prefixes
+
+
+def prepare_projection_cache(
+    checkpoint_dirs: Mapping[str, Path],
+    task_names: Sequence[str],
+    *,
+    rank: int = RANK,
+    rho: float = RHO,
+    top_percent: float = TOP_PERCENT,
+    progress: bool = False,
+) -> dict:
+    """Cache baseline projections for deterministic diagnostic-only calibration.
+
+    ``keep_topk_percent`` thresholds each projected task matrix independently.
+    For positive scalar ``c``, both every absolute entry and the selected
+    threshold are multiplied by ``c``.  Thus support is invariant except for
+    floating-point/tie edge cases, and the filtered matrix is ``c`` times its
+    baseline value.  The cache exploits exactly that property; TIES is still
+    recomputed for every scale pair because its consensus sign uses the
+    magnitude-weighted sum across tasks.
+    """
+    names = tuple(task_names)
+    states, lora_scaling, prefixes = load_adapter_collection(
+        checkpoint_dirs, names, rank
+    )
+    modules = []
+    raw_energy = defaultdict(float)
+    smoothed_energy = defaultdict(float)
+    for module_index, prefix in enumerate(prefixes, start=1):
+        svds = {}
+        for task in names:
+            u, singular, vh = low_rank_svd(
+                states[task][prefix + ".lora_A.weight"],
+                states[task][prefix + ".lora_B.weight"],
+                lora_scaling,
+            )
+            svds[task] = (u, singular, vh)
+            raw_energy[task] += float(singular.square().sum())
+        sum_u = torch.cat([svds[task][0][:, :rank] for task in names], dim=1)
+        sum_v = torch.cat([svds[task][2][:rank, :] for task in names], dim=0)
+        uu, _, vhu = torch.linalg.svd(sum_u, full_matrices=False)
+        uv, _, vhv = torch.linalg.svd(sum_v, full_matrices=False)
+        cover_u = uu @ vhu
+        cover_vt = uv @ vhv
+        task_entries = []
+        for task in names:
+            u, singular, vh = svds[task]
+            tail = float(singular[rank - 1])
+            observed_ratio = (
+                math.inf
+                if abs(tail) < 1e-15
+                else float(singular[0] / singular[rank - 1])
+            )
+            ratio = min(rho, observed_ratio)
+            smoothed_singular = singular.sum() * linear_distribution(rank, ratio)
+            smoothed_energy[task] += float(smoothed_singular.square().sum())
+            left = cover_u.T @ u[:, :rank]
+            right = vh[:rank, :] @ cover_vt.T
+            projected = left @ torch.diag(smoothed_singular) @ right
+            filtered = keep_topk_percent([projected], top_percent)[0]
+            task_entries.append(
+                {
+                    "task": task,
+                    "left": left,
+                    "right": right,
+                    "smoothed_singular": smoothed_singular,
+                    "projected": projected,
+                    "filtered": filtered,
+                    "topk_support": projected.abs()
+                    >= torch.topk(
+                        projected.abs().reshape(-1),
+                        max(1, int(top_percent * projected.numel())),
+                    ).values.min(),
+                }
+            )
+        modules.append({"module": prefix, "tasks": task_entries})
+        if progress:
+            print(f"[{module_index:02d}/{len(prefixes):02d}] {prefix}", flush=True)
+    return {
+        "task_order": list(names),
+        "rank": rank,
+        "rho": rho,
+        "top_percent": top_percent,
+        "lora_scaling": lora_scaling,
+        "modules": modules,
+        "raw_energy": {task: raw_energy[task] for task in names},
+        "smoothed_energy": {task: smoothed_energy[task] for task in names},
+    }
+
+
+def effective_weights_from_projection_cache(
+    cache: Mapping, task_scales: Mapping[str, float]
+) -> dict[str, float]:
+    """Evaluate realized weights without accuracy data or repeated adapter SVDs."""
+    names = tuple(cache["task_order"])
+    scales = validate_named_task_scales(names, task_scales)
+    rank = int(cache["rank"])
+    block_energy = defaultdict(float)
+    for module in cache["modules"]:
+        scaled_filtered = [
+            task_entry["filtered"] * scales[task]
+            for task, task_entry in zip(names, module["tasks"])
+        ]
+        merged_cover, _ = ties_small_with_sources(scaled_filtered)
+        for index, task in enumerate(names):
+            start, end = index * rank, (index + 1) * rank
+            block_energy[task] += float(
+                merged_cover[start:end, start:end].square().sum()
+            )
+    weights = normalise({task: block_energy[task] for task in names})
+    return {task: 100.0 * weights[task] for task in names}
+
+
 def compute_effective_weights(
     checkpoint_dirs: Mapping[str, Path],
     task_names: Sequence[str],
@@ -159,23 +296,9 @@ def compute_effective_weights(
     if not names:
         raise ValueError("at least one task is required")
     scales = validate_named_task_scales(names, task_scales)
-    if set(checkpoint_dirs) != set(names):
-        raise ValueError("checkpoint mapping must contain exactly the task names")
-
-    states: dict[str, dict[str, torch.Tensor]] = {}
-    lora_scalings: dict[str, float] = {}
-    for task in names:
-        directory = Path(checkpoint_dirs[task])
-        states[task] = load_state(directory / "adapter_model.bin")
-        lora_scalings[task] = load_scaling(directory / "adapter_config.json", rank)
-    if len(set(lora_scalings.values())) != 1:
-        raise ValueError(f"Adapters have inconsistent LoRA scaling: {lora_scalings}")
-    lora_scaling = next(iter(lora_scalings.values()))
-
-    prefixes = adapter_prefixes(states[names[0]])
-    for task in names[1:]:
-        if adapter_prefixes(states[task]) != prefixes:
-            raise ValueError(f"LoRA module layout differs for task {task}")
+    states, lora_scaling, prefixes = load_adapter_collection(
+        checkpoint_dirs, names, rank
+    )
 
     raw_energy = defaultdict(float)
     smoothed_energy = defaultdict(float)

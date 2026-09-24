@@ -1,4 +1,5 @@
 import json
+import importlib
 import sys
 import unittest
 from collections import OrderedDict
@@ -19,7 +20,12 @@ from merging_functions import (  # noqa: E402
     keep_topk_percent,
     ties_small,
 )
-from dcmerge_effective_weights import adapter_prefixes, load_state  # noqa: E402
+from dcmerge_effective_weights import (  # noqa: E402
+    adapter_prefixes,
+    effective_weights_from_projection_cache,
+    load_state,
+    prepare_projection_cache,
+)
 from task_scale_ablation_common import (  # noqa: E402
     TASKS,
     load_scale_configs,
@@ -168,10 +174,77 @@ class TaskScaleCoreTests(unittest.TestCase):
         )
         self.assertTrue(torch.equal(legacy[prefix], explicit[prefix]))
 
+    @unittest.skipUnless(
+        (REPO / "artifacts" / "selftrained_b32_r16_8task" / "checkpoints").is_dir(),
+        "local downloaded adapters are not present",
+    )
+    def test_all_real_modules_preserve_positive_scaled_topk_support(self):
+        root = REPO / "artifacts" / "selftrained_b32_r16_8task" / "checkpoints"
+        cache = prepare_projection_cache(
+            {task: root / task for task in TASKS}, TASKS, progress=False
+        )
+        positive_scales = (0.37, 0.53, 0.79, 1.1, 1.7, 2.3, 3.1, 4.2)
+        for module in cache["modules"]:
+            for task_entry, scale in zip(module["tasks"], positive_scales):
+                scaled_projected = (
+                    task_entry["left"]
+                    @ torch.diag(task_entry["smoothed_singular"] * scale)
+                    @ task_entry["right"]
+                )
+                torch.testing.assert_close(
+                    scaled_projected,
+                    task_entry["projected"] * scale,
+                    rtol=5e-12,
+                    atol=1e-12,
+                    msg=f"projection linearity failed for {module['module']}",
+                )
+                scaled_filtered = keep_topk_percent([scaled_projected], 1e-3)[0]
+                flat = scaled_projected.abs().reshape(-1)
+                k = max(1, int(1e-3 * flat.numel()))
+                scaled_threshold = torch.topk(flat, k).values.min()
+                scaled_support = scaled_projected.abs() >= scaled_threshold
+                self.assertTrue(
+                    torch.equal(task_entry["topk_support"], scaled_support),
+                    msg=f"top-k support changed for {module['module']}",
+                )
+                torch.testing.assert_close(
+                    scaled_filtered,
+                    task_entry["filtered"] * scale,
+                    rtol=5e-12,
+                    atol=1e-12,
+                    msg=f"retained values failed to scale for {module['module']}",
+                )
+        primary = load_scale_configs(
+            REPO / "task_scale_configs_primary_calibrated.json"
+        )
+        for entry in primary["configs"]:
+            realized = effective_weights_from_projection_cache(
+                cache, entry["task_scales"]
+            )
+            expected = entry["metadata"]["achieved_effective_weight_percent"]
+            for task in ("eurosat", "sun397"):
+                self.assertAlmostEqual(realized[task], expected[task], places=10)
+
 
 class ConfigurationTests(unittest.TestCase):
+    def test_model_checkpoint_head_dataset_and_scale_order_mapping(self):
+        module = importlib.import_module(
+            "configs.vitB32_r16_8task_selftrained"
+        )
+        config = module.config
+        names = [item["name"] for item in config["dataset"]]
+        self.assertEqual(names, list(TASKS))
+        self.assertEqual(
+            [Path(path).name for path in config["model"]["bases"]], list(TASKS)
+        )
+        self.assertEqual(
+            [Path(item["clip_encodings"]).stem for item in config["dataset"]],
+            [f"{task}_head" for task in TASKS],
+        )
+
     def test_preregistered_configurations_are_exact_and_full(self):
         loaded = load_scale_configs(REPO / "task_scale_configs.json")
+        self.assertEqual(loaded["series_role"], "secondary_heuristic_stress_test")
         expected_pairs = {
             "baseline": (1.0, 1.0),
             "partial_balance": (2.0, 0.8),
@@ -187,6 +260,42 @@ class ConfigurationTests(unittest.TestCase):
             self.assertEqual(item["task_scales"]["sun397"], pair[1])
             for task in set(TASKS) - {"eurosat", "sun397"}:
                 self.assertEqual(item["task_scales"][task], 1.0)
+
+    def test_primary_calibrated_series_is_frozen_complete_and_pair_controlled(self):
+        loaded = load_scale_configs(
+            REPO / "task_scale_configs_primary_calibrated.json"
+        )
+        self.assertEqual(
+            loaded["series_role"], "primary_controlled_redistribution"
+        )
+        self.assertTrue(
+            loaded["series_metadata"]["frozen_before_accuracy_evaluation"]
+        )
+        self.assertFalse(
+            loaded["series_metadata"]["calibration"]["uses_accuracy"]
+        )
+        expected_ids = [
+            "baseline",
+            "controlled_moderate",
+            "controlled_balanced",
+            "controlled_reversal",
+        ]
+        self.assertEqual(
+            [entry["run_id"] for entry in loaded["configs"]], expected_ids
+        )
+        baseline_pair = loaded["series_metadata"]["calibration"][
+            "baseline_pair_total_percent"
+        ]
+        for entry in loaded["configs"]:
+            metadata = entry["metadata"]
+            achieved = metadata["achieved_effective_weight_percent"]
+            self.assertAlmostEqual(
+                achieved["eurosat"] + achieved["sun397"], baseline_pair, places=11
+            )
+            self.assertLess(abs(metadata["pair_total_error_percent"]), 1e-10)
+            self.assertLess(metadata["target_rmse_percent"], 1e-10)
+            for task in set(TASKS) - {"eurosat", "sun397"}:
+                self.assertEqual(entry["task_scales"][task], 1.0)
 
     def test_alpha_selection_is_strict_and_uses_normalized_mean(self):
         results = [
@@ -208,6 +317,14 @@ class ConfigurationTests(unittest.TestCase):
         source = (REPO / "run_task_scale_ablation.py").read_text(encoding="utf-8")
         self.assertNotIn("torch.optim", source)
         self.assertNotIn("train_task", source)
+        calibration = (REPO / "calibrate_primary_task_scales.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertNotIn("torch.optim", calibration)
+        self.assertNotIn("train_task", calibration)
+        self.assertNotIn("selftrained_val_acc", calibration)
+        self.assertNotIn("selftrained_test_acc", calibration)
+        self.assertNotIn("evaluate_cliphead", calibration)
 
 
 if __name__ == "__main__":
