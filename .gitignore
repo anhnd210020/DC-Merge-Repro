@@ -5,4 +5,5 @@ __pycache__/
 # Local research assets and generated ablation outputs are never source files.
 artifacts/
 analysis_outputs/task_scale_ablation/
+analysis_outputs/state_dependent_task_drift/
 **/adapter_model.bin
