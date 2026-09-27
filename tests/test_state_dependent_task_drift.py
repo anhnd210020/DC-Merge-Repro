@@ -1,4 +1,5 @@
 import builtins
+import csv
 import copy
 import json
 import math
@@ -68,7 +69,7 @@ from state_dependent_task_drift.run_plan import (
     seed_pairs,
     unordered_task_pairs,
 )
-from state_dependent_task_drift.state_io import atomic_write_json, read_json, run_action, set_status
+from state_dependent_task_drift.state_io import atomic_write_csv, atomic_write_json, read_json, run_action, set_status
 from state_dependent_task_drift.training import (
     apply_reproduction_scheduler_step,
     git_dirty,
@@ -545,6 +546,41 @@ class RepairAggregateTests(unittest.TestCase):
         self.assertEqual(len(summary["seed_pair_observations"]), 3)
         self.assertEqual(summary["mean_macro_drift"], 2.0)
         self.assertEqual(summary["sample_std_macro_drift"], 1.0)
+
+    def test_mixed_stochastic_summaries_write_stable_csv_schema(self):
+        observations = [
+            {"category": category, "target_task": "svhn", "anchor_task": anchor,
+             "seed_left": left, "seed_right": right, "macro_mean_drift": value}
+            for category, anchor, values in (
+                ("baseline_same_anchor_seed_drift", None, (1.0, 2.0, 3.0)),
+                ("conditional_same_anchor_seed_drift", "dtd", (0.2, 0.4, 0.6)),
+            )
+            for (left, right), value in zip(seed_pairs((420, 421, 422)), values)
+        ]
+        summaries = _seed_drift_summaries(observations)
+        self.assertEqual(len(summaries), 2)
+        self.assertEqual(set(summaries[0]), set(summaries[1]))
+        rows = [
+            {**row, "seed_pair_observations": json.dumps(row["seed_pair_observations"])}
+            for row in summaries
+        ]
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "stochastic_summaries.csv"
+            atomic_write_csv(path, rows)
+            with path.open(newline="", encoding="utf-8") as stream:
+                reader = csv.DictReader(stream)
+                self.assertIn("anchor_task", reader.fieldnames)
+                written = list(reader)
+        self.assertEqual(len(written), 2)
+        self.assertEqual(written[0]["category"], "baseline_same_anchor_seed_drift")
+        self.assertEqual(written[0]["anchor_task"], "")
+        self.assertEqual(written[1]["category"], "conditional_same_anchor_seed_drift")
+        self.assertEqual(written[1]["anchor_task"], "dtd")
+        for actual, expected in zip(written, summaries):
+            self.assertEqual(int(actual["count"]), expected["count"])
+            self.assertEqual(float(actual["mean_macro_drift"]), expected["mean_macro_drift"])
+            self.assertEqual(float(actual["sample_std_macro_drift"]), expected["sample_std_macro_drift"])
+            self.assertEqual(json.loads(actual["seed_pair_observations"]), expected["seed_pair_observations"])
 
     def test_symmetric_state_drift_formula(self):
         directed = [

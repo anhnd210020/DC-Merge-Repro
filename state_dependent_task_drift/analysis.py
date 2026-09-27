@@ -69,7 +69,7 @@ def _seed_drift_summaries(observations: list[dict[str, Any]]) -> list[dict[str, 
             mean, std = mean_and_sample_std(numeric)
             summaries.append(
                 {
-                    "category": category, **dict(zip(keys, group)),
+                    "category": category, "anchor_task": None, **dict(zip(keys, group)),
                     "seed_pair_observations": raw, "count": len(numeric),
                     "mean_macro_drift": mean, "sample_std_macro_drift": std,
                     "std_convention": "sample standard deviation (N-1); zero for a single observation",
