@@ -1,0 +1,44 @@
+{
+  "active_oracles": [
+    "scale",
+    "rank",
+    "density"
+  ],
+  "auc_definition": "For each resource, use the Card deficit reference R_i(1.5) for scale, R_i(16) for rank, and R_i(1) for density. Map the tested minimum and maximum linearly to x=[0,1]; calculate signed trapezoidal integral with no further interval-width division. Preserve signed values.",
+  "configuration_count": 1360,
+  "context_manifest_sha256": "b581008c01ec694751dbaaacb00ad1f0d794dbbce3b1811fc216f8260152010e",
+  "density_decision_required": null,
+  "density_oracle_status": "enabled; task-wide global top-K convention frozen",
+  "design_sha256": "14729cd45ab7192c81528b9fc2a81ea166732a2f6483f3fc8f155a2239955202",
+  "experiment": "can-task-merge-demand-be-predicted-before-evaluation",
+  "experiment_card": {
+    "file": "../docs/experiment_card_pre_evaluation_task_merge_demand.docx",
+    "fully_read": true,
+    "sha256": "737c583b6ad2ee0c991b491f5e218fa62941a55dcf7decb84b4a78a25150a3c3"
+  },
+  "external_input_identity": "Future registration binds base model files, adapter weights and configs, heads, dataset/split files, both split reference files, critical source code, and frozen design/manifest/preregistration hashes.",
+  "grouped_evaluation": "Phase A leave-one-task-out; validation only for fitting/tuning. Final-test held task/context fitted from validation rows excluding the held group. No final-test label used for fitting, feature/oracle selection, or tuning.",
+  "phase_a_configurations": 644,
+  "phase_a_contexts": 28,
+  "phase_b_configurations": 465,
+  "phase_b_focal_context_rows": 40,
+  "phase_b_unique_contexts": 25,
+  "phase_c_configurations": 251,
+  "phase_c_focal_context_rows": 22,
+  "phase_c_status": "9 exact unique six-task memberships and 22 focal rows registered from Experiment 3 context-selection archive; no old responses reused.",
+  "phase_c_unique_six_task_contexts": 9,
+  "prior_result_audit": {
+    "file": "prior_result_audit.json",
+    "sha256": "0752bb2362f78cc96788eb621b48312a81643b1feee0195e0521b8fe231afbff"
+  },
+  "protocol_frozen": true,
+  "registered_focal_context_rows": 118,
+  "schema_version": 1,
+  "server_status": "protocol frozen; asset/input-identity preflight required before real validation/final-test evaluation",
+  "status": "protocol_frozen_pending_asset_input_identity_preflight",
+  "task_evaluation_cells_per_split": 4654,
+  "unresolved_decisions": [],
+  "auc_rationale": "A unit normalized tested axis makes resource ranges comparable while retaining signed area; another interval-width divisor computes an average instead of the requested integral.",
+  "density_operational_rule": "For focal-task baseline post-projection/top-k support N, retain K=round-half-up(d*N) globally across modules by descending absolute value; deterministic ties use stable module name then flattened coordinate index. d=1 exactly reproduces baseline support. Record requested density, target, actual, and per-module counts.",
+  "composite_estimator_gate": "The Card requires a reasonable single-feature signal before using a composite but defines no threshold. Preregistered operationalization: allow composite only if at least one individual feature has a validation whole-context-bootstrap Spearman 95% interval excluding zero. The gate uses validation labels only; final-test labels never select features, thresholds, or estimators."
+}

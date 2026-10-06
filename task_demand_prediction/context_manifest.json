@@ -1,0 +1,814 @@
+{
+  "schema_version": 1,
+  "experiment": "can-task-merge-demand-be-predicted-before-evaluation",
+  "task_order": [
+    "stanford_cars",
+    "dtd",
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "resisc45",
+    "sun397",
+    "svhn"
+  ],
+  "phase_a_contexts": [
+    {
+      "context_id": "ctx2-stanford_cars-dtd",
+      "tasks": [
+        "stanford_cars",
+        "dtd"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-eurosat",
+      "tasks": [
+        "stanford_cars",
+        "eurosat"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-gtsrb",
+      "tasks": [
+        "stanford_cars",
+        "gtsrb"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-mnist",
+      "tasks": [
+        "stanford_cars",
+        "mnist"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-resisc45",
+      "tasks": [
+        "stanford_cars",
+        "resisc45"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-sun397",
+      "tasks": [
+        "stanford_cars",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-stanford_cars-svhn",
+      "tasks": [
+        "stanford_cars",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-eurosat",
+      "tasks": [
+        "dtd",
+        "eurosat"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-gtsrb",
+      "tasks": [
+        "dtd",
+        "gtsrb"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-mnist",
+      "tasks": [
+        "dtd",
+        "mnist"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-resisc45",
+      "tasks": [
+        "dtd",
+        "resisc45"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-sun397",
+      "tasks": [
+        "dtd",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-dtd-svhn",
+      "tasks": [
+        "dtd",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-eurosat-gtsrb",
+      "tasks": [
+        "eurosat",
+        "gtsrb"
+      ]
+    },
+    {
+      "context_id": "ctx2-eurosat-mnist",
+      "tasks": [
+        "eurosat",
+        "mnist"
+      ]
+    },
+    {
+      "context_id": "ctx2-eurosat-resisc45",
+      "tasks": [
+        "eurosat",
+        "resisc45"
+      ]
+    },
+    {
+      "context_id": "ctx2-eurosat-sun397",
+      "tasks": [
+        "eurosat",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-eurosat-svhn",
+      "tasks": [
+        "eurosat",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-gtsrb-mnist",
+      "tasks": [
+        "gtsrb",
+        "mnist"
+      ]
+    },
+    {
+      "context_id": "ctx2-gtsrb-resisc45",
+      "tasks": [
+        "gtsrb",
+        "resisc45"
+      ]
+    },
+    {
+      "context_id": "ctx2-gtsrb-sun397",
+      "tasks": [
+        "gtsrb",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-gtsrb-svhn",
+      "tasks": [
+        "gtsrb",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-mnist-resisc45",
+      "tasks": [
+        "mnist",
+        "resisc45"
+      ]
+    },
+    {
+      "context_id": "ctx2-mnist-sun397",
+      "tasks": [
+        "mnist",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-mnist-svhn",
+      "tasks": [
+        "mnist",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-resisc45-sun397",
+      "tasks": [
+        "resisc45",
+        "sun397"
+      ]
+    },
+    {
+      "context_id": "ctx2-resisc45-svhn",
+      "tasks": [
+        "resisc45",
+        "svhn"
+      ]
+    },
+    {
+      "context_id": "ctx2-sun397-svhn",
+      "tasks": [
+        "sun397",
+        "svhn"
+      ]
+    }
+  ],
+  "phase_b_focal_contexts": [
+    {
+      "focal_task": "stanford_cars",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "stanford_cars",
+      "context_id": "ctx4-stanford_cars-dtd-gtsrb-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "gtsrb",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "stanford_cars",
+      "context_id": "ctx4-stanford_cars-eurosat-gtsrb-sun397",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "gtsrb",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "stanford_cars",
+      "context_id": "ctx4-stanford_cars-gtsrb-mnist-sun397",
+      "tasks": [
+        "stanford_cars",
+        "gtsrb",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "stanford_cars",
+      "context_id": "ctx4-stanford_cars-resisc45-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "dtd",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "dtd",
+      "context_id": "ctx4-stanford_cars-dtd-gtsrb-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "gtsrb",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "dtd",
+      "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "dtd",
+      "context_id": "ctx4-dtd-gtsrb-mnist-sun397",
+      "tasks": [
+        "dtd",
+        "gtsrb",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "dtd",
+      "context_id": "ctx4-dtd-resisc45-sun397-svhn",
+      "tasks": [
+        "dtd",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "eurosat",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "eurosat",
+      "context_id": "ctx4-stanford_cars-eurosat-gtsrb-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "gtsrb",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "eurosat",
+      "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "eurosat",
+      "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "eurosat",
+      "context_id": "ctx4-eurosat-resisc45-sun397-svhn",
+      "tasks": [
+        "eurosat",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "gtsrb",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "gtsrb",
+      "context_id": "ctx4-stanford_cars-eurosat-gtsrb-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "gtsrb",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "gtsrb",
+      "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "gtsrb",
+      "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "gtsrb",
+      "context_id": "ctx4-gtsrb-resisc45-sun397-svhn",
+      "tasks": [
+        "gtsrb",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "mnist",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-mnist",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "mnist"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "mnist",
+      "context_id": "ctx4-stanford_cars-eurosat-mnist-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "mnist",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "mnist",
+      "context_id": "ctx4-dtd-eurosat-mnist-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "mnist",
+      "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "mnist",
+      "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "resisc45",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-resisc45",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "resisc45"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "resisc45",
+      "context_id": "ctx4-stanford_cars-eurosat-resisc45-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "resisc45",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "resisc45",
+      "context_id": "ctx4-dtd-eurosat-resisc45-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "resisc45",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "resisc45",
+      "context_id": "ctx4-eurosat-gtsrb-resisc45-sun397",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "resisc45",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "resisc45",
+      "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "sun397",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-sun397",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "sun397"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "sun397",
+      "context_id": "ctx4-stanford_cars-eurosat-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "sun397",
+      "context_id": "ctx4-dtd-eurosat-resisc45-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "resisc45",
+        "sun397"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "sun397",
+      "context_id": "ctx4-eurosat-gtsrb-resisc45-sun397",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "resisc45",
+        "sun397"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "sun397",
+      "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    },
+    {
+      "focal_task": "svhn",
+      "context_id": "ctx4-stanford_cars-dtd-eurosat-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "svhn"
+      ],
+      "selection_ordinal": 1
+    },
+    {
+      "focal_task": "svhn",
+      "context_id": "ctx4-stanford_cars-eurosat-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 2
+    },
+    {
+      "focal_task": "svhn",
+      "context_id": "ctx4-dtd-eurosat-resisc45-svhn",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "resisc45",
+        "svhn"
+      ],
+      "selection_ordinal": 3
+    },
+    {
+      "focal_task": "svhn",
+      "context_id": "ctx4-eurosat-gtsrb-resisc45-svhn",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "resisc45",
+        "svhn"
+      ],
+      "selection_ordinal": 4
+    },
+    {
+      "focal_task": "svhn",
+      "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "selection_ordinal": 5
+    }
+  ],
+  "phase_c_reused_contexts": [
+    {
+      "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-resisc45",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "resisc45"
+      ],
+      "focal_tasks": [
+        "dtd",
+        "gtsrb"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "dtd",
+        "eurosat"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "dtd",
+        "svhn"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-dtd-eurosat-resisc45-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "eurosat",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "stanford_cars",
+        "sun397"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-dtd-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "dtd",
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "dtd",
+        "mnist",
+        "resisc45",
+        "svhn"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-eurosat-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "eurosat",
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "stanford_cars",
+        "eurosat"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-stanford_cars-gtsrb-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "stanford_cars",
+        "gtsrb",
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "gtsrb",
+        "svhn"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-dtd-eurosat-gtsrb-mnist-resisc45-sun397",
+      "tasks": [
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "resisc45",
+        "sun397"
+      ],
+      "focal_tasks": [
+        "dtd",
+        "eurosat",
+        "gtsrb",
+        "sun397"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    },
+    {
+      "context_id": "ctx6-eurosat-gtsrb-mnist-resisc45-sun397-svhn",
+      "tasks": [
+        "eurosat",
+        "gtsrb",
+        "mnist",
+        "resisc45",
+        "sun397",
+        "svhn"
+      ],
+      "focal_tasks": [
+        "mnist",
+        "resisc45"
+      ],
+      "source": "Experiment 3 exact context membership; no response reuse"
+    }
+  ],
+  "phase_c_status": "12 exact six-task Experiment 3 contexts registered; historical joint-scale responses not reused",
+  "counts": {
+    "phase_a_contexts": 28,
+    "phase_a_focal_context_rows": 56,
+    "phase_b_focal_context_rows": 40,
+    "phase_b_unique_contexts": 25,
+    "phase_c_reused_contexts": 9,
+    "phase_c_focal_context_rows": 22,
+    "total_focal_context_rows_ab": 96
+  }
+}

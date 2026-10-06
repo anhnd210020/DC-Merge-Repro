@@ -1,0 +1,874 @@
+{
+  "compatibility_rule": "Prior observations can be reused only for the exact context task set, focal intervention, resource levels, split, merge method, and identical hashed model/checkpoint/head/dataset/reference inputs. Never transfer across contexts.",
+  "experiment2_scale_results": {
+    "completed_splits": [
+      "validation",
+      "final_test"
+    ],
+    "configurations": 48,
+    "design": "two tasks changed jointly at the four .75/1.25 corners inside the full eight-task merge",
+    "direct_single_focal_auc_points_reusable": 0,
+    "mode": "scientific",
+    "path": "D:\\Research\\DCMerge-Exp234\\results-exp2\\extracted",
+    "reason": "No unchanged baseline and no one-task-at-a-time scale sweep; current manifest has no exact eight-task context.",
+    "scale_corners": [
+      0.75,
+      1.25
+    ],
+    "selected_pair_contexts": 12
+  },
+  "experiment3_context_results": {
+    "archive_path": "D:\\Research\\DCMerge-Exp234\\results-exp34\\dcmerge_experiment3_context_20260930T191807Z.tar.gz",
+    "archive_sha256": "0ffe7e9baa59f5bb833bcd44842633f9ed943cc7e6eb4167f18b9776a00a3be1",
+    "completed_splits": [
+      "validation",
+      "final_test"
+    ],
+    "conditions": [
+      "baseline",
+      "jointly scale selected task pair to 1.25"
+    ],
+    "configurations": 48,
+    "context_size_counts": {
+      "4": 24,
+      "6": 24
+    },
+    "exact_phase_b_context_matches": {
+      "ctx4-dtd-eurosat-gtsrb-sun397": {
+        "exp3_scaled_pair": [
+          [
+            "dtd",
+            "sun397"
+          ]
+        ],
+        "registered_focals": [
+          "dtd",
+          "eurosat",
+          "gtsrb"
+        ],
+        "tasks": [
+          "dtd",
+          "eurosat",
+          "gtsrb",
+          "sun397"
+        ]
+      },
+      "ctx4-mnist-resisc45-sun397-svhn": {
+        "exp3_scaled_pair": [
+          [
+            "resisc45",
+            "svhn"
+          ]
+        ],
+        "registered_focals": [
+          "mnist",
+          "resisc45",
+          "sun397",
+          "svhn"
+        ],
+        "tasks": [
+          "mnist",
+          "resisc45",
+          "sun397",
+          "svhn"
+        ]
+      },
+      "ctx4-stanford_cars-dtd-eurosat-gtsrb": {
+        "exp3_scaled_pair": [
+          [
+            "dtd",
+            "gtsrb"
+          ]
+        ],
+        "registered_focals": [
+          "stanford_cars",
+          "dtd",
+          "eurosat",
+          "gtsrb"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "dtd",
+          "eurosat",
+          "gtsrb"
+        ]
+      },
+      "ctx4-stanford_cars-dtd-eurosat-svhn": {
+        "exp3_scaled_pair": [
+          [
+            "dtd",
+            "eurosat"
+          ],
+          [
+            "eurosat",
+            "svhn"
+          ]
+        ],
+        "registered_focals": [
+          "svhn"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "dtd",
+          "eurosat",
+          "svhn"
+        ]
+      },
+      "ctx4-stanford_cars-resisc45-sun397-svhn": {
+        "exp3_scaled_pair": [
+          [
+            "stanford_cars",
+            "sun397"
+          ]
+        ],
+        "registered_focals": [
+          "stanford_cars"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "resisc45",
+          "sun397",
+          "svhn"
+        ]
+      }
+    },
+    "mode": "scientific",
+    "path": "D:\\Research\\DCMerge-Exp234\\results-exp34\\dcmerge_experiment3_context_20260930T191807Z",
+    "single_focal_scale_curve_reuse": "none; paired interventions change two tasks jointly at 1.25. Exact-context baseline records do not provide a max-resource endpoint or complete focal curve and are not imported; historical identity is incomplete."
+  },
+  "experiment_card": {
+    "comments": 0,
+    "exists": true,
+    "paragraphs": 104,
+    "path": "D:\\Research\\DC-Merge-Repro\\docs\\experiment_card_pre_evaluation_task_merge_demand.docx",
+    "read_fully": true,
+    "resolved_protocol": {
+      "auc_axis": "Resolved operational convention: min-max map each tested resource axis to [0,1], integrate signed trapezoids without another interval-width divisor.",
+      "density": "Resolved operational convention: global K=round-half-up(d*N), descending absolute value; ties by stable module name then flattened coordinate index.",
+      "evaluation": "validation-only grouped fitting; final test held groups scored from models fit on validation labels only",
+      "features": "Card feature set fully implemented; see README and features.py",
+      "rank": "AUC of R_i(16)-R_i(r), r in [2,4,8,12,16]",
+      "retention": "normalized accuracy retention percent",
+      "scale": "AUC of R_i(1.5)-R_i(s), s in [.5,.75,1,1.25,1.5]"
+    },
+    "sha256": "737c583b6ad2ee0c991b491f5e218fa62941a55dcf7decb84b4a78a25150a3c3",
+    "tables": 5,
+    "tracked_changes": false
+  },
+  "input_identity_comparison": {
+    "archive_registered_identity_fields": [
+      "adapter_delta_shapes",
+      "adapter_model_sha256",
+      "code_sha256",
+      "dataset",
+      "design_sha256",
+      "head_sha256",
+      "mode",
+      "model_dir",
+      "model_files",
+      "reference_root",
+      "task_order",
+      "validation_reference_sha256",
+      "validation_reference_values"
+    ],
+    "archive_registration_sha256": "f4bd6d5ad90c433a716b07756df79780b3b4bb49fcc5f2788e28469a2f63a406",
+    "checks": {
+      "vision_lora_merge/configs/vitB32_r16_8task_selftrained.py": {
+        "archive_sha256": "efd7174f0a6cd0e07edec53dd5e2836d535a5902e4e1bb84121df7e4f2563096",
+        "current_sha256": "efd7174f0a6cd0e07edec53dd5e2836d535a5902e4e1bb84121df7e4f2563096",
+        "matches": true
+      },
+      "vision_lora_merge/dataset/shuffled_idxs/cars_shuffled_idxs.pt": {
+        "archive_sha256": "e1b796ecd96766e13b10a404ed62dbf317c55fb54a920dcbba60ce0622c77ffc",
+        "current_sha256": "e1b796ecd96766e13b10a404ed62dbf317c55fb54a920dcbba60ce0622c77ffc",
+        "matches": true
+      },
+      "vision_lora_merge/eval.py": {
+        "archive_sha256": "abfe4ae10ea837f2b58961786ff4e1c9b4182ca81e008d3771ce7189b848d2ed",
+        "current_sha256": "abfe4ae10ea837f2b58961786ff4e1c9b4182ca81e008d3771ce7189b848d2ed",
+        "matches": true
+      },
+      "vision_lora_merge/ft_handlers.py": {
+        "archive_sha256": "f9193b1c4795a669d92d80d105493f2979228dc86f2cd7ce61f8f45c9cc23d89",
+        "current_sha256": "f9193b1c4795a669d92d80d105493f2979228dc86f2cd7ce61f8f45c9cc23d89",
+        "matches": true
+      },
+      "vision_lora_merge/merging_functions.py": {
+        "archive_sha256": "cf40c1f9249b396f8017fcc80d2e8d83e0cb4ef48d296160ef37c192b9fbcd68",
+        "current_sha256": "49821716c340ea374cf836a1288dbc74ac6f0bad55bde5aa2f9c84c45798ec29",
+        "matches": false
+      },
+      "vision_lora_merge/utils.py": {
+        "archive_sha256": "70f937c455ee9bb14244323325760ae80b8fcd64686a3e35d7b0f91912634d66",
+        "current_sha256": "e6f51c8b0a8f426e0a6e08e3ff81422cf5fe791855d4872a8836eeffcb66549d",
+        "matches": false
+      }
+    },
+    "current_preflight_hashes": [
+      "base model files",
+      "adapter weights and adapter_config.json",
+      "head files",
+      "required dataset/split files",
+      "validation and final-test reference files",
+      "code files",
+      "design/context/preregistration artifacts"
+    ],
+    "historical_hashes_missing": [
+      "adapter_config.json per task as a content hash",
+      "selftrained_test_acc.json as a content hash"
+    ],
+    "historical_hashes_present": [
+      "base model files (path/size/SHA-256)",
+      "adapter_model.bin per task",
+      "head files per task",
+      "required dataset/split files",
+      "validation reference file",
+      "critical merge/evaluation/data source files"
+    ],
+    "local_asset_availability": "No DCMERGE_MODEL_DIR or DCMERGE_DATA_DIR is set; repository default adapter/head assets are incomplete. Full current-vs-archive input identity comparison cannot be performed locally.",
+    "partial_local_matches": {
+      "adapter_config_hashes_historical": "not stored in archive registration; current configs cannot be compared byte-for-byte to the historical run",
+      "adapter_model_bin_sha256_by_task": {
+        "dtd": true,
+        "eurosat": true,
+        "gtsrb": true,
+        "mnist": true,
+        "resisc45": true,
+        "stanford_cars": true,
+        "sun397": true,
+        "svhn": true
+      },
+      "all_adapter_weights_match": true,
+      "base_model_hashes_historical": "stored in archive, but current model path is not configured/available for comparison",
+      "current_test_reference_sha256": "b597460ce56127fda5cb3edc0abe1b8463c68e8cb4c1555f29808ae32bf7be96",
+      "current_validation_reference_sha256": "ea41870ab35b9aec08e9a35af68adc124e7be22a3419c203f90697d318750ff4",
+      "dataset_split_hashes_historical": "stored in archive, but no local dataset root is configured/available for comparison",
+      "head_hashes_historical": "stored in archive, but repository heads directory is absent",
+      "test_reference_matches_all_420_final_test_stage_hashes": true,
+      "validation_reference_matches_archive_identity": true
+    },
+    "reuse_decision": "No archived rank output currently certified. Exact Phase A raw rank observations are eligible for reuse only after every comparable input hash matches and missing historical hashes are independently resolved. Recompute AUC using the frozen min-max axis, and never transfer across contexts or splits."
+  },
+  "overall_status": "Card formulas, features, contexts, grouped evaluation, normalized-AUC axis, and task-wide density rule reconciled; protocol frozen pending external asset/input-identity preflight.",
+  "pairwise_rank_density_archive": {
+    "archive_member_count": 4218,
+    "complete_split_status": {
+      "final_test": {
+        "configuration_count": 420,
+        "status": "complete",
+        "task_configuration_cells": 840
+      },
+      "validation": {
+        "configuration_count": 420,
+        "status": "complete",
+        "task_configuration_cells": 840
+      }
+    },
+    "configuration_count_per_split": 420,
+    "context_matches": [
+      {
+        "archive_pair_id": "stanford_cars--dtd",
+        "context_id": "ctx2-stanford_cars-dtd",
+        "focal_tasks": [
+          "stanford_cars",
+          "dtd"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "dtd"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--eurosat",
+        "context_id": "ctx2-stanford_cars-eurosat",
+        "focal_tasks": [
+          "stanford_cars",
+          "eurosat"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "eurosat"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--gtsrb",
+        "context_id": "ctx2-stanford_cars-gtsrb",
+        "focal_tasks": [
+          "stanford_cars",
+          "gtsrb"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "gtsrb"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--mnist",
+        "context_id": "ctx2-stanford_cars-mnist",
+        "focal_tasks": [
+          "stanford_cars",
+          "mnist"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "mnist"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--resisc45",
+        "context_id": "ctx2-stanford_cars-resisc45",
+        "focal_tasks": [
+          "stanford_cars",
+          "resisc45"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "resisc45"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--sun397",
+        "context_id": "ctx2-stanford_cars-sun397",
+        "focal_tasks": [
+          "stanford_cars",
+          "sun397"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "stanford_cars--svhn",
+        "context_id": "ctx2-stanford_cars-svhn",
+        "focal_tasks": [
+          "stanford_cars",
+          "svhn"
+        ],
+        "tasks": [
+          "stanford_cars",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--eurosat",
+        "context_id": "ctx2-dtd-eurosat",
+        "focal_tasks": [
+          "dtd",
+          "eurosat"
+        ],
+        "tasks": [
+          "dtd",
+          "eurosat"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--gtsrb",
+        "context_id": "ctx2-dtd-gtsrb",
+        "focal_tasks": [
+          "dtd",
+          "gtsrb"
+        ],
+        "tasks": [
+          "dtd",
+          "gtsrb"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--mnist",
+        "context_id": "ctx2-dtd-mnist",
+        "focal_tasks": [
+          "dtd",
+          "mnist"
+        ],
+        "tasks": [
+          "dtd",
+          "mnist"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--resisc45",
+        "context_id": "ctx2-dtd-resisc45",
+        "focal_tasks": [
+          "dtd",
+          "resisc45"
+        ],
+        "tasks": [
+          "dtd",
+          "resisc45"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--sun397",
+        "context_id": "ctx2-dtd-sun397",
+        "focal_tasks": [
+          "dtd",
+          "sun397"
+        ],
+        "tasks": [
+          "dtd",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "dtd--svhn",
+        "context_id": "ctx2-dtd-svhn",
+        "focal_tasks": [
+          "dtd",
+          "svhn"
+        ],
+        "tasks": [
+          "dtd",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "eurosat--gtsrb",
+        "context_id": "ctx2-eurosat-gtsrb",
+        "focal_tasks": [
+          "eurosat",
+          "gtsrb"
+        ],
+        "tasks": [
+          "eurosat",
+          "gtsrb"
+        ]
+      },
+      {
+        "archive_pair_id": "eurosat--mnist",
+        "context_id": "ctx2-eurosat-mnist",
+        "focal_tasks": [
+          "eurosat",
+          "mnist"
+        ],
+        "tasks": [
+          "eurosat",
+          "mnist"
+        ]
+      },
+      {
+        "archive_pair_id": "eurosat--resisc45",
+        "context_id": "ctx2-eurosat-resisc45",
+        "focal_tasks": [
+          "eurosat",
+          "resisc45"
+        ],
+        "tasks": [
+          "eurosat",
+          "resisc45"
+        ]
+      },
+      {
+        "archive_pair_id": "eurosat--sun397",
+        "context_id": "ctx2-eurosat-sun397",
+        "focal_tasks": [
+          "eurosat",
+          "sun397"
+        ],
+        "tasks": [
+          "eurosat",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "eurosat--svhn",
+        "context_id": "ctx2-eurosat-svhn",
+        "focal_tasks": [
+          "eurosat",
+          "svhn"
+        ],
+        "tasks": [
+          "eurosat",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "gtsrb--mnist",
+        "context_id": "ctx2-gtsrb-mnist",
+        "focal_tasks": [
+          "gtsrb",
+          "mnist"
+        ],
+        "tasks": [
+          "gtsrb",
+          "mnist"
+        ]
+      },
+      {
+        "archive_pair_id": "gtsrb--resisc45",
+        "context_id": "ctx2-gtsrb-resisc45",
+        "focal_tasks": [
+          "gtsrb",
+          "resisc45"
+        ],
+        "tasks": [
+          "gtsrb",
+          "resisc45"
+        ]
+      },
+      {
+        "archive_pair_id": "gtsrb--sun397",
+        "context_id": "ctx2-gtsrb-sun397",
+        "focal_tasks": [
+          "gtsrb",
+          "sun397"
+        ],
+        "tasks": [
+          "gtsrb",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "gtsrb--svhn",
+        "context_id": "ctx2-gtsrb-svhn",
+        "focal_tasks": [
+          "gtsrb",
+          "svhn"
+        ],
+        "tasks": [
+          "gtsrb",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "mnist--resisc45",
+        "context_id": "ctx2-mnist-resisc45",
+        "focal_tasks": [
+          "mnist",
+          "resisc45"
+        ],
+        "tasks": [
+          "mnist",
+          "resisc45"
+        ]
+      },
+      {
+        "archive_pair_id": "mnist--sun397",
+        "context_id": "ctx2-mnist-sun397",
+        "focal_tasks": [
+          "mnist",
+          "sun397"
+        ],
+        "tasks": [
+          "mnist",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "mnist--svhn",
+        "context_id": "ctx2-mnist-svhn",
+        "focal_tasks": [
+          "mnist",
+          "svhn"
+        ],
+        "tasks": [
+          "mnist",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "resisc45--sun397",
+        "context_id": "ctx2-resisc45-sun397",
+        "focal_tasks": [
+          "resisc45",
+          "sun397"
+        ],
+        "tasks": [
+          "resisc45",
+          "sun397"
+        ]
+      },
+      {
+        "archive_pair_id": "resisc45--svhn",
+        "context_id": "ctx2-resisc45-svhn",
+        "focal_tasks": [
+          "resisc45",
+          "svhn"
+        ],
+        "tasks": [
+          "resisc45",
+          "svhn"
+        ]
+      },
+      {
+        "archive_pair_id": "sun397--svhn",
+        "context_id": "ctx2-sun397-svhn",
+        "focal_tasks": [
+          "sun397",
+          "svhn"
+        ],
+        "tasks": [
+          "sun397",
+          "svhn"
+        ]
+      }
+    ],
+    "density": {
+      "curve_points_include_shared_baseline": true,
+      "diagnostic_records": {
+        "final-test": {
+          "0.25": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 0,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 0.0
+          },
+          "0.5": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 2688,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 1.0
+          },
+          "0.75": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 2688,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 1.0
+          }
+        },
+        "validation": {
+          "0.25": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 0,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 0.0
+          },
+          "0.5": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 2688,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 1.0
+          },
+          "0.75": {
+            "baseline_support_coordinate_total": 2688,
+            "baseline_support_coordinates_per_record_min_median_max": [
+              48,
+              48,
+              48
+            ],
+            "focal_context_records": 56,
+            "min_median_max_per_record_fraction": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "per_record_total_coordinates_min_median_max": [
+              49152,
+              49152,
+              49152
+            ],
+            "retained_coordinate_total": 2688,
+            "target_equals_retained_for_all": true,
+            "total_coordinate_count": 2752512,
+            "weighted_retained_fraction_of_legacy_support": 1.0
+          }
+        }
+      },
+      "diagnostics_scope": "Archived result rows aggregate per-task diagnostics over all modules (all 49,152 coordinates per focal/task record); module-by-module allocations are absent. Across 56 focal-context records per split: d=.25 retained 0/2,688 baseline support coordinates; d=.50 and .75 retained 2,688/2,688 each.",
+      "direct_curve_reuse_status": "INVALID: archived per-module rounding retained 0/2688 at d=.25 and 2688/2688 at d=.50 and .75; these are not a valid multi-level task-wide density oracle.",
+      "focal_context_curves_per_split": 56,
+      "invalid_curve_reason": "Card defines density as a task-wide fraction of baseline retained components after projection/top-k. Current/archive per-module rounding is a different allocation rule and collapses levels in practice.",
+      "resource_levels": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "x_axis": "nominal density fraction"
+    },
+    "direct_curve_reuse_status": "Rank raw retention observations are eligible only for their exact Phase A pair contexts and splits after remaining identity checks; recompute AUC on the frozen min-max axis. Density curves are invalid and excluded.",
+    "matched_phase_a_contexts": 28,
+    "path": "D:\\Research\\pairwise_rank_density_results\\pairwise_rank_density_preprocessfix_20261001T161433Z.tar.gz",
+    "rank": {
+      "axis": "Archived values were integrated using r/16; raw retention points must be reintegrated using (r-2)/(16-2).",
+      "code_hash_comparison": {
+        "vision_lora_merge/configs/vitB32_r16_8task_selftrained.py": {
+          "archive_sha256": "efd7174f0a6cd0e07edec53dd5e2836d535a5902e4e1bb84121df7e4f2563096",
+          "current_sha256": "efd7174f0a6cd0e07edec53dd5e2836d535a5902e4e1bb84121df7e4f2563096",
+          "matches": true
+        },
+        "vision_lora_merge/dataset/shuffled_idxs/cars_shuffled_idxs.pt": {
+          "archive_sha256": "e1b796ecd96766e13b10a404ed62dbf317c55fb54a920dcbba60ce0622c77ffc",
+          "current_sha256": "e1b796ecd96766e13b10a404ed62dbf317c55fb54a920dcbba60ce0622c77ffc",
+          "matches": true
+        },
+        "vision_lora_merge/eval.py": {
+          "archive_sha256": "abfe4ae10ea837f2b58961786ff4e1c9b4182ca81e008d3771ce7189b848d2ed",
+          "current_sha256": "abfe4ae10ea837f2b58961786ff4e1c9b4182ca81e008d3771ce7189b848d2ed",
+          "matches": true
+        },
+        "vision_lora_merge/ft_handlers.py": {
+          "archive_sha256": "f9193b1c4795a669d92d80d105493f2979228dc86f2cd7ce61f8f45c9cc23d89",
+          "current_sha256": "f9193b1c4795a669d92d80d105493f2979228dc86f2cd7ce61f8f45c9cc23d89",
+          "matches": true
+        },
+        "vision_lora_merge/merging_functions.py": {
+          "archive_sha256": "cf40c1f9249b396f8017fcc80d2e8d83e0cb4ef48d296160ef37c192b9fbcd68",
+          "current_sha256": "49821716c340ea374cf836a1288dbc74ac6f0bad55bde5aa2f9c84c45798ec29",
+          "matches": false
+        },
+        "vision_lora_merge/utils.py": {
+          "archive_sha256": "70f937c455ee9bb14244323325760ae80b8fcd64686a3e35d7b0f91912634d66",
+          "current_sha256": "e6f51c8b0a8f426e0a6e08e3ff81422cf5fe791855d4872a8836eeffcb66549d",
+          "matches": false
+        }
+      },
+      "focal_context_curves_per_split": 56,
+      "method_comparison": "The merge source hash changed because task-wide density allocation was implemented. At d=1, tests verify each module reproduces legacy post-top-k support exactly, so the rank path is behaviorally unchanged; strict source-hash identity still requires review.",
+      "normalized_x": [
+        0.0,
+        0.14285714285714285,
+        0.42857142857142855,
+        0.7142857142857143,
+        1.0
+      ],
+      "remaining_identity_gaps": [
+        "adapter_config.json historical content hash absent",
+        "base model files not locally available for comparison",
+        "heads not locally available for comparison",
+        "dataset and fixed split files not locally available for comparison"
+      ],
+      "resource_levels": [
+        2,
+        4,
+        8,
+        12,
+        16
+      ],
+      "reuse_status": {
+        "axis_status": "Archive raw rank observations can be reintegrated using (r-2)/(16-2); do not reuse archived pre-integrated AUC values using r/16.",
+        "contexts": "exactly the 28 unordered Phase A pairs listed in this audit; no transfer across context task sets",
+        "current_reuse_status": "candidate only; 0 certified until all input identity hashes are compared",
+        "identity_check": "not verified against current local assets: no DCMERGE_MODEL_DIR or DCMERGE_DATA_DIR configured and default adapter/head/data assets are absent. Require exact historical/current model, adapter weights/config, head, dataset/split files, validation/test reference, and rank-method/code hashes before import.",
+        "levels": [
+          2,
+          4,
+          8,
+          12,
+          16
+        ],
+        "observations_per_split": 56,
+        "response_deficit_formula_matches_card": true,
+        "splits": [
+          "validation",
+          "final_test"
+        ],
+        "verified_partial_identity_matches": [
+          "all eight adapter_model.bin SHA-256 values",
+          "selftrained_val_acc.json SHA-256",
+          "selftrained_test_acc.json SHA-256 (matches stage_reference_sha256 in all 420 archived final-test results)"
+        ]
+      },
+      "archived_x": [
+        0.125,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "registration_mode": "real",
+    "regular_file_count": 3373,
+    "scale": {
+      "reusable_observations": 0,
+      "status": "no scale configurations in this archive"
+    },
+    "sha256": "6516650caeaa86e280d9db3a5e8f597d3e307034967cb7079e975a9a9893b5b5",
+    "task_pair_contexts": 28,
+    "uncompressed_regular_bytes": 33016291
+  },
+  "phase_c_registration": {
+    "focal_context_rows": 22,
+    "historical_response_reuse": 0,
+    "input_identity_note": "Historical Experiment 3 archive lacks model/head/dataset content hashes; contexts only are reused.",
+    "reason": "source run scales a task pair jointly and lacks model/head/dataset content hashes; context membership only is reused",
+    "source_archive": "D:\\Research\\DCMerge-Exp234\\results-exp34\\dcmerge_experiment3_context_20260930T191807Z.tar.gz",
+    "unique_six_task_contexts_registered": 9
+  },
+  "schema_version": 1
+}

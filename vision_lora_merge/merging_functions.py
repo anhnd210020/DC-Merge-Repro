@@ -1,3 +1,5 @@
+import math
+
 import torch
 from collections import defaultdict, OrderedDict
 from copy import deepcopy
@@ -157,52 +159,370 @@ def generate_linear_distribution(num_classes, ratio):
     return s
 
 
-def dc_merge(deltas_dict, smoothing_strategy='avg', rho=5.0):
-    dc_dict = {}
+def _validate_task_scales(task_scales, num_tasks):
+    """Return a validated positional task-scale tuple.
+
+    ``dc_merge`` receives matrices without task names, so callers must resolve
+    names to this exact positional order before calling it.
+    """
+    if task_scales is None:
+        return (1.0,) * num_tasks
+    if isinstance(task_scales, torch.Tensor):
+        task_scales = task_scales.detach().cpu().reshape(-1).tolist()
+    try:
+        scales = tuple(float(value) for value in task_scales)
+    except (TypeError, ValueError) as error:
+        raise ValueError("task_scales must be a finite positive sequence") from error
+    if len(scales) != num_tasks:
+        raise ValueError(
+            f"task_scales has length {len(scales)}; expected {num_tasks}"
+        )
+    if any(not math.isfinite(value) or value <= 0.0 for value in scales):
+        raise ValueError("every task scale must be finite and greater than zero")
+    return scales
 
 
-    for k, vecs in tqdm(deltas_dict.items(), desc='DC-Merge Processing...'):
-        N = len(vecs)
-        low_rank_per_task = 16
-        smoothed_vecs = []
-        
-        for i in range(N):
-            u, s, v = torch.linalg.svd(vecs[i], full_matrices=False)
-            if i == 0:
+def _validate_task_ranks(task_ranks, num_tasks):
+    if task_ranks is None:
+        return (16,) * num_tasks
+    try:
+        values = tuple(task_ranks)
+    except TypeError as error:
+        raise ValueError("task_ranks must be a sequence of integers in [1, 16]") from error
+    if len(values) != num_tasks:
+        raise ValueError(f"task_ranks has length {len(values)}; expected {num_tasks}")
+    if any(isinstance(value, bool) or not isinstance(value, int) or not 1 <= value <= 16 for value in values):
+        raise ValueError("every task rank must be an integer in [1, 16]")
+    return values
+
+
+def _validate_task_densities(task_densities, num_tasks):
+    if task_densities is None:
+        return (1.0,) * num_tasks
+    try:
+        values = tuple(float(value) for value in task_densities)
+    except (TypeError, ValueError) as error:
+        raise ValueError("task_densities must be a sequence of fractions in (0, 1]") from error
+    if len(values) != num_tasks:
+        raise ValueError(f"task_densities has length {len(values)}; expected {num_tasks}")
+    if any(not math.isfinite(value) or not 0.0 < value <= 1.0 for value in values):
+        raise ValueError("every task density must be finite and in (0, 1]")
+    return values
+
+
+def _baseline_topk_mask(matrix, percent):
+    flat_abs = matrix.abs().reshape(-1)
+    k = max(1, int(percent * flat_abs.numel()))
+    threshold = torch.topk(flat_abs, k).values.min()
+    return matrix.abs() >= threshold
+
+
+def _density_filter_matrix(matrix, density, baseline_percent=1e-3):
+    """Apply a fraction of the legacy per-matrix top-k support.
+
+    Density one delegates to the original helper, preserving its exact threshold
+    and tie behavior. Lower densities choose a rounded count from that support;
+    stable descending magnitude order leaves equal magnitudes in flat-index
+    order, making tie resolution deterministic.
+    """
+    baseline_mask = _baseline_topk_mask(matrix, baseline_percent)
+    baseline_count = int(baseline_mask.sum().item())
+    if density == 1.0:
+        filtered = keep_topk_percent([matrix], baseline_percent)[0]
+        retained_mask = baseline_mask
+        target_count = baseline_count
+    else:
+        target_count = min(baseline_count, int(math.floor(density * baseline_count + 0.5)))
+        flat_indices = torch.nonzero(baseline_mask.reshape(-1), as_tuple=False).reshape(-1)
+        magnitudes = matrix.abs().reshape(-1)[flat_indices]
+        # nonzero() returns ascending flat indices; stable sorting preserves that
+        # order among tied magnitudes on supported PyTorch versions.
+        order = torch.argsort(magnitudes, descending=True, stable=True)
+        chosen = flat_indices[order[:target_count]]
+        retained_mask = torch.zeros_like(baseline_mask).reshape(-1)
+        retained_mask[chosen] = True
+        retained_mask = retained_mask.reshape_as(matrix)
+        filtered = matrix * retained_mask
+    retained_count = int(retained_mask.sum().item())
+    retained_nonzero = int(torch.count_nonzero(filtered).item())
+    stats = {
+        "nominal_density": float(density),
+        "baseline_mask_count": baseline_count,
+        "target_mask_count": int(target_count),
+        "retained_mask_count": retained_count,
+        "retained_nonzero_count": retained_nonzero,
+        "total_coordinates": int(matrix.numel()),
+        "actual_mask_fraction": retained_count / matrix.numel() if matrix.numel() else 0.0,
+        "actual_nonzero_fraction": retained_nonzero / matrix.numel() if matrix.numel() else 0.0,
+        "actual_baseline_support_fraction": retained_count / baseline_count if baseline_count else 0.0,
+    }
+    return filtered, stats
+
+
+def _density_filter_modules(matrices, density, baseline_percent=1e-3):
+    """Allocate one deterministic retained-coordinate budget across modules.
+
+    The candidate pool is the union of each module's legacy post-projection
+    top-k support.  Ties are resolved by stable module name, then flattened
+    coordinate index.  Density one delegates to each module's original
+    top-k result exactly.
+    """
+    if not matrices:
+        raise ValueError("task-wide density requires at least one module")
+    names = sorted(matrices, key=str)
+    baseline = {}
+    masks = {}
+    for name in names:
+        matrix = matrices[name]
+        mask = _baseline_topk_mask(matrix, baseline_percent)
+        masks[name] = mask
+        baseline[name] = keep_topk_percent([matrix], baseline_percent)[0]
+    per_module_target = {name: 0 for name in names}
+    candidates = []
+    for name in names:
+        vals = matrices[name].detach().abs().reshape(-1).cpu().tolist()
+        indices = torch.nonzero(masks[name].reshape(-1), as_tuple=False).reshape(-1).cpu().tolist()
+        for index in indices:
+            candidates.append((float(vals[index]), str(name), int(index)))
+    total = len(candidates)
+    target = min(total, int(math.floor(float(density) * total + 0.5)))
+    if density == 1.0:
+        filtered = baseline
+        for name in names:
+            per_module_target[name] = int(masks[name].sum().item())
+    else:
+        candidates.sort(key=lambda item: (-item[0], item[1], item[2]))
+        selected = {(name, index) for _, name, index in candidates[:target]}
+        filtered = {}
+        for name in names:
+            mask = torch.zeros_like(masks[name]).reshape(-1)
+            chosen = [index for selected_name, index in selected if selected_name == str(name)]
+            if chosen:
+                mask[torch.as_tensor(chosen, device=mask.device, dtype=torch.long)] = True
+            mask = mask.reshape_as(masks[name])
+            filtered[name] = matrices[name] * mask
+            per_module_target[name] = len(chosen)
+    # Retained mask counts include selected zero-valued coordinates, which are
+    # meaningful when legacy threshold ties include zeros.
+    per_stats = {}
+    for name in names:
+        baseline_count = int(masks[name].sum().item())
+        if density == 1.0:
+            kept_count = baseline_count
+        else:
+            kept_count = per_module_target[name]
+        per_stats[name] = {
+            "nominal_density": float(density),
+            "baseline_mask_count": baseline_count,
+            "target_mask_count": per_module_target[name],
+            "retained_mask_count": kept_count,
+            "retained_nonzero_count": int(torch.count_nonzero(filtered[name]).item()),
+            "total_coordinates": int(matrices[name].numel()),
+            "task_target_mask_count": target,
+            "task_retained_mask_count": target,
+            "task_baseline_mask_count": total,
+        }
+    return filtered, per_stats, {"baseline_mask_count": total, "target_mask_count": target,
+                                 "retained_mask_count": target, "requested_density": float(density)}
+
+
+def _dc_merge_matrix_group(
+    vecs,
+    smoothing_strategy='avg',
+    rho=5.0,
+    task_scales=None,
+    return_intermediates=False,
+    task_ranks=None,
+    task_densities=None,
+    top_percent=1e-3,
+):
+    """Merge one module's task matrices, optionally exposing test diagnostics.
+
+    Task scaling is a post-smoothing amplitude intervention.  The shared cover
+    bases below are constructed only from each task's singular directions, so
+    positive task scales cannot change those bases, the singular directions,
+    or the within-task normalized smoothed singular-value distribution.  The
+    scaled amplitudes enter before projection, top-k, and TIES.  Projection is
+    linear and top-k is applied independently per task, so a positive uniform
+    scale preserves that task's top-k support apart from numerical/tie edge
+    cases.  TIES can still change because its consensus sign comes from the
+    magnitude-weighted sum across tasks.
+    """
+    N = len(vecs)
+    if N == 0:
+        raise ValueError("dc_merge requires at least one task delta")
+    scales = _validate_task_scales(task_scales, N)
+    ranks = _validate_task_ranks(task_ranks, N)
+    densities = _validate_task_densities(task_densities, N)
+    rank_offsets = []
+    offset = 0
+    for rank in ranks:
+        rank_offsets.append((offset, offset + rank))
+        offset += rank
+    cover_rank = offset
+    smoothed_vecs = []
+    singular_directions_u = []
+    singular_directions_v = []
+    normalized_smoothed_distributions = []
+    smoothed_singular_values = []
+    density_stats = []
+
+    for i in range(N):
+        u, s, v = torch.linalg.svd(vecs[i], full_matrices=False)
+        rank = ranks[i]
+        if min(u.shape[1], v.shape[0], s.numel()) < rank:
+            raise ValueError(
+                f"DC-Merge rank-{rank} processing requires at least {rank} "
+                "singular directions"
+            )
+        if i == 0:
+            if cover_rank > min(vecs[i].shape):
+                raise ValueError(
+                    f"matrix dimensions are too small for shared cover rank {cover_rank}"
+                )
+            if all(value == 16 for value in ranks):
+                # Keep the released allocation/SVD shape for the default path.
                 sum_u = torch.zeros_like(u)
                 sum_v = torch.zeros_like(v)
-
-            sum_u[:, i * low_rank_per_task : (i + 1) * low_rank_per_task] = u[:, :low_rank_per_task]
-            sum_v[i * low_rank_per_task : (i + 1) * low_rank_per_task, :] = v[:low_rank_per_task, :]
-            
-            orig_energy = s[:low_rank_per_task].clone()
-            if smoothing_strategy == 'linear':
-                smoothed_ratio = min(rho, orig_energy[0] / orig_energy[-1])
-                smoothed_energy_dist = generate_linear_distribution(low_rank_per_task, smoothed_ratio)
-            elif smoothing_strategy == 'avg':
-                smoothed_energy_dist = torch.ones_like(orig_energy) / len(orig_energy)
             else:
-                raise ValueError("Invalid smoothing strategy")
-            
-            smoothed_energy = orig_energy.sum() * smoothed_energy_dist
-            smoothed_vecs.append(u[:, :low_rank_per_task] @ torch.diag(smoothed_energy) @ v[:low_rank_per_task, :])
-           
-        u_u, s_u, v_u = torch.linalg.svd(sum_u, full_matrices=False)
-        u_v, s_v, v_v = torch.linalg.svd(sum_v, full_matrices=False)
-        cover_space_u = (u_u @ v_u)[:, :N * low_rank_per_task]
-        cover_space_vT = (u_v @ v_v)[:N * low_rank_per_task, :]
+                sum_u = torch.zeros((u.shape[0], cover_rank), dtype=u.dtype, device=u.device)
+                sum_v = torch.zeros((cover_rank, v.shape[1]), dtype=v.dtype, device=v.device)
 
-        Ms = [torch.linalg.multi_dot((cover_space_u.T, smoothed_vecs[i], cover_space_vT.T, )) for i in range(N)]
-        filtered_Ms = keep_topk_percent(Ms, 1e-3)
-        agg_M = ties_small(filtered_Ms)
-        mask_M = torch.zeros_like(agg_M)
-        d_per_task = mask_M.shape[0] // N
-        for i in range(N):
-            mask_M[i * d_per_task : (i+1) * d_per_task, i * d_per_task : (i+1) * d_per_task] = 1
-        
-        dc_dict[k] = torch.linalg.multi_dot((cover_space_u, agg_M * mask_M , cover_space_vT, ))
+        # Only directions populate the cover-space inputs.  Scaled singular
+        # magnitudes never enter sum_u/sum_v.
+        task_u = u[:, :rank]
+        task_v = v[:rank, :]
+        start, end = rank_offsets[i]
+        sum_u[:, start:end] = task_u
+        sum_v[start:end, :] = task_v
 
-    return OrderedDict(sorted(dc_dict.items()))
+        orig_energy = s[:rank].clone()
+        if smoothing_strategy == 'linear':
+            smoothed_ratio = min(rho, orig_energy[0] / orig_energy[-1])
+            smoothed_energy_dist = generate_linear_distribution(rank, smoothed_ratio)
+        elif smoothing_strategy == 'avg':
+            smoothed_energy_dist = torch.ones_like(orig_energy) / len(orig_energy)
+        else:
+            raise ValueError("Invalid smoothing strategy")
+
+        smoothed_energy = orig_energy.sum() * smoothed_energy_dist
+        # Skip the multiply for 1.0 so None/explicit all-ones preserve the
+        # legacy floating-point path exactly.
+        if scales[i] != 1.0:
+            smoothed_energy = smoothed_energy * scales[i]
+        smoothed_vecs.append(task_u @ torch.diag(smoothed_energy) @ task_v)
+        if return_intermediates:
+            singular_directions_u.append(task_u.clone())
+            singular_directions_v.append(task_v.clone())
+            normalized_smoothed_distributions.append(smoothed_energy_dist.clone())
+            smoothed_singular_values.append(smoothed_energy.clone())
+
+    u_u, _s_u, v_u = torch.linalg.svd(sum_u, full_matrices=False)
+    u_v, _s_v, v_v = torch.linalg.svd(sum_v, full_matrices=False)
+    cover_space_u = (u_u @ v_u)[:, :cover_rank]
+    cover_space_vT = (u_v @ v_v)[:cover_rank, :]
+
+    Ms = [
+        torch.linalg.multi_dot((cover_space_u.T, smoothed_vecs[i], cover_space_vT.T))
+        for i in range(N)
+    ]
+    if task_densities is None:
+        filtered_Ms = keep_topk_percent(Ms, top_percent)
+        density_stats = [
+            _density_filter_matrix(matrix, 1.0, top_percent)[1]
+            for matrix in Ms
+        ] if return_intermediates else []
+    else:
+        filtered_Ms = []
+        for matrix, density in zip(Ms, densities):
+            filtered, stats = _density_filter_matrix(matrix, density, top_percent)
+            filtered_Ms.append(filtered)
+            density_stats.append(stats)
+    agg_M = ties_small(filtered_Ms)
+    mask_M = torch.zeros_like(agg_M)
+    for i, (start, end) in enumerate(rank_offsets):
+        mask_M[
+            start:end,
+            start:end,
+        ] = 1
+
+    merged = torch.linalg.multi_dot((cover_space_u, agg_M * mask_M, cover_space_vT))
+    if not return_intermediates:
+        return merged
+    return merged, {
+        'task_scales': scales,
+        'task_ranks': ranks,
+        'task_densities': densities,
+        'rank_offsets': tuple(rank_offsets),
+        'cover_rank': cover_rank,
+        'singular_directions_u': singular_directions_u,
+        'singular_directions_v': singular_directions_v,
+        'normalized_smoothed_distributions': normalized_smoothed_distributions,
+        'smoothed_singular_values': smoothed_singular_values,
+        'cover_space_u': cover_space_u,
+        'cover_space_vT': cover_space_vT,
+        'projected_matrices': Ms,
+        'filtered_matrices': filtered_Ms,
+        'density': density_stats,
+        'ties_aggregate': agg_M,
+        'structural_mask': mask_M,
+    }
+
+
+def dc_merge(
+    deltas_dict, smoothing_strategy='avg', rho=5.0, task_scales=None,
+    task_ranks=None, task_densities=None, return_intermediates=False,
+):
+    """Run DC-Merge with an optional post-smoothing task-amplitude intervention.
+
+    ``task_scales`` is not part of the original DC-Merge algorithm.  ``None``
+    and an explicit all-ones sequence reproduce the original implementation.
+    """
+    dc_dict = {}
+    intermediate_dict = OrderedDict()
+    requested_densities = None if task_densities is None else _validate_task_densities(
+        task_densities, len(next(iter(deltas_dict.values()))) if deltas_dict else 0)
+    # First build the unthinned post-projection/top-k support in each module.
+    # The density budget is then allocated over that complete task-wide pool.
+    defer_global_density = task_densities is not None
+    need_intermediates = return_intermediates or defer_global_density
+    for k, vecs in tqdm(deltas_dict.items(), desc='DC-Merge Processing...'):
+        result = _dc_merge_matrix_group(
+            vecs,
+            smoothing_strategy=smoothing_strategy,
+            rho=rho,
+            task_scales=task_scales,
+            task_ranks=task_ranks,
+            task_densities=None if defer_global_density else task_densities,
+            return_intermediates=need_intermediates,
+        )
+        if return_intermediates:
+            dc_dict[k], intermediate_dict[k] = result
+        else:
+            dc_dict[k] = result
+
+    if defer_global_density:
+        module_names = list(intermediate_dict)
+        for task_index, density in enumerate(requested_densities):
+            matrices = {name: intermediate_dict[name]['projected_matrices'][task_index] for name in module_names}
+            filtered, stats, _task_stats = _density_filter_modules(matrices, density)
+            for name in module_names:
+                detail = intermediate_dict[name]
+                detail['filtered_matrices'][task_index] = filtered[name]
+                detail['density'][task_index] = stats[name]
+        # Recompute each module's TIES aggregate and merged result with its
+        # globally allocated masks.
+        for name in module_names:
+            detail = intermediate_dict[name]
+            agg = ties_small(detail['filtered_matrices'])
+            detail['ties_aggregate'] = agg
+            merged_matrix = torch.linalg.multi_dot((detail['cover_space_u'], agg * detail['structural_mask'], detail['cover_space_vT']))
+            dc_dict[name] = merged_matrix
+
+    merged = OrderedDict(sorted(dc_dict.items()))
+    if return_intermediates:
+        return merged, OrderedDict(sorted(intermediate_dict.items()))
+    return merged
 
 
 def keep_topk_percent(tensor_list, percent=0.1):

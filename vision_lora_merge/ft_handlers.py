@@ -70,7 +70,7 @@ class GeneralHandler(nn.Module):
 
 def get_ft_parameters_delta(base_model):
     layer2lora_parameters = defaultdict(lambda: dict())
-    sd = base_model.state_dict()
+    sd = base_model if isinstance(base_model, dict) else base_model.state_dict()
     for key, val in sd.items():
         if 'lora_A.default' in key:
             base_name = key.replace('.lora_A.default', '')

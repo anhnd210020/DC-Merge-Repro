@@ -610,6 +610,17 @@ def prepare_experiment_config(config):
             config['dataset']['train_preprocess'] = models['bases'][0].train_preprocess
             config['dataset']['eval_preprocess'] = models['bases'][0].val_preprocess
     
+    elif len(models['bases']) == 0 and hasattr(models.get('new'), 'train_preprocess'):
+        # With no base models, retain the active model's existing CLIP transforms.
+        preprocess_model = models['new']
+        if isinstance(config['dataset'], list):
+            for dataset_config in config['dataset']:
+                dataset_config['train_preprocess'] = preprocess_model.train_preprocess
+                dataset_config['eval_preprocess'] = preprocess_model.val_preprocess
+        else:
+            config['dataset']['train_preprocess'] = preprocess_model.train_preprocess
+            config['dataset']['eval_preprocess'] = preprocess_model.val_preprocess
+    
     
     data = prepare_data(config['dataset'], device=config['device'])
     if config['eval_type'] == 'logits':
