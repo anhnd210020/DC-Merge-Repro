@@ -1,0 +1,5140 @@
+{
+  "payload": {
+    "allocation_test_labels_used_for_fit_or_tuning": false,
+    "estimator": {
+      "alpha": 1.0,
+      "class": "sklearn.linear_model.Ridge",
+      "median_imputer_statistic": 167.5,
+      "preprocessing": "SimpleImputer(strategy=median) then StandardScaler",
+      "ridge_coefficient_standardized": 3.541401144555029,
+      "ridge_intercept": -4.222463217318633,
+      "standard_scaler_mean": 181.15254237288136,
+      "standard_scaler_scale": 62.730473647540826
+    },
+    "final_test_labels_used": false,
+    "fit_protocol": "fit once on all 118 previous-experiment validation rank context/task labels after frozen Phase A OOF selection; no allocation-test data; no tuning on final test",
+    "fit_split": "validation",
+    "predictor": "validation-only standardized one-feature Ridge",
+    "schema_version": 1,
+    "selected_feature": "energy_rank_90",
+    "source": {
+      "audit_archive_sha256": "7b01616a8e75774802ce8b95fd03e900c494003a7d0c16fb228153879e3f04ad",
+      "features_member": "output_retry2/features.csv",
+      "features_member_sha256": "7afbb3f4e887b7922fc43f31523f0c55d696c845451ce986c978d2d0dc811134",
+      "model_selection_decision_member": "validation_model_selection_frozen.md",
+      "model_selection_decision_sha256": "aae2def1d87ab44486e88d66c6ee373496046cd996f155da448fa4952f0cfc43",
+      "prior_context_manifest_payload_sha256": "b581008c01ec694751dbaaacb00ad1f0d794dbbce3b1811fc216f8260152010e",
+      "prior_context_manifest_sha256": "82926b55cdfa4ad9daa4dd5b1e9909df34310165a6bcacbcc9fea016e4cb1ebf",
+      "read_members": [
+        "output_retry2/features.csv",
+        "output_retry2/validation/oracle_responses.csv",
+        "output_retry2/context_manifest.json",
+        "output_retry2/registration.json",
+        "validation_model_selection_frozen.md"
+      ],
+      "registration_member_sha256": "ad6eb6c861ed576a1e73dbf7d13fb653bbe9138e9a8f2bede91e05fbe930ac08",
+      "source_adapter_config_sha256": {
+        "dtd": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "eurosat": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "gtsrb": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "mnist": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "resisc45": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "stanford_cars": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "sun397": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b",
+        "svhn": "0a6ea0310ccb0e401820f361cb0b39be75a2eb88d11de7630bb601caccc18b6b"
+      },
+      "source_adapter_model_sha256": {
+        "dtd": "8e401186510ac5142e9d6a3b0bda371facf459ebb0ada32636efe4c05e5232db",
+        "eurosat": "a83879e076a9dbd39b022951aad601ef724b1de8e9e8357d75c83e9dc13c37d3",
+        "gtsrb": "5720af4e376ac6e0de2d4f671abe657f45583c5191a8c0a3717324afcf4bf7c1",
+        "mnist": "aa44f0a2f66118783bb8ca945e941739af54eab8507569e01a2fbffed7e75f92",
+        "resisc45": "201b247a447d4125b035aa00941a6205fd6fb391841c2e8117be0e071f6d2801",
+        "stanford_cars": "e1adf5e052cb319ee33529de70d058d74acce080f4fb75a7e6499232d6752d21",
+        "sun397": "63ff114b5d3add7a50f21d8370560e28b28dd62642f14ebe6d24eeb95596fda7",
+        "svhn": "c42053ed68e858eda6568cfd9ee31ec0b96c3b4ba5eed88f7f1ea2effbb59f99"
+      },
+      "source_dataset_identity": {
+        "mnist_source": "raw",
+        "required_file_sha256": {
+          "cars/cars_test_annos_withlabels.mat": "790f75be8ea34eeded134cc559332baf23e30e91367e9ddca97d26ed9b895f05",
+          "cars/devkit/cars_meta.mat": "fe43dfda289448f97c25b09e09fafc0414e22fc4143831537780884a0a5f4a1a",
+          "cars/devkit/cars_train_annos.mat": "1c1973dd828a2964060b0bbc0e423466393fe3001a3f8e303f41fbf22067dfb1",
+          "gtsrb/GT-final_test.csv": "58a660fab5465cce66d7334eb9422ae09ed16186ad4500766b59b5a077a1c12f",
+          "resisc45/resisc45-test.txt": "e0927e80130b47317a2f18520d98382b6fc56f0d3edd3345140f7d02267c3805",
+          "resisc45/resisc45-train.txt": "ecfa963be4d85eac83665f8be8634abcb4fe6f3546472cc0e87999e2cab4449b",
+          "resisc45/resisc45-val.txt": "08d81f642526bec240589000af7f49a47e8d071a6e7925b0f36246a78ab64342",
+          "svhn/test_32x32.mat": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+          "svhn/train_32x32.mat": "435e94d69a87fde4fd4d7f3dd208dfc32cb6ae8af2240d066de1df7508d083b8"
+        },
+        "resisc45_class_dirs": [
+          "airplane",
+          "airport",
+          "baseball_diamond",
+          "basketball_court",
+          "beach",
+          "bridge",
+          "chaparral",
+          "church",
+          "circular_farmland",
+          "cloud",
+          "commercial_area",
+          "dense_residential",
+          "desert",
+          "forest",
+          "freeway",
+          "golf_course",
+          "ground_track_field",
+          "harbor",
+          "industrial_area",
+          "intersection",
+          "island",
+          "lake",
+          "meadow",
+          "medium_residential",
+          "mobile_home_park",
+          "mountain",
+          "overpass",
+          "palace",
+          "parking_lot",
+          "railway",
+          "railway_station",
+          "rectangular_farmland",
+          "river",
+          "roundabout",
+          "runway",
+          "sea_ice",
+          "ship",
+          "snowberg",
+          "sparse_residential",
+          "stadium",
+          "storage_tank",
+          "tennis_court",
+          "terrace",
+          "thermal_power_station",
+          "wetland"
+        ]
+      },
+      "source_head_sha256": {
+        "dtd": "257f76930c1c4414b45aba5094fa022b9de0fcff565064c41c97dfa35e09a159",
+        "eurosat": "6eefea62299eae606726b60193a5135f85e080dea847d664cb14fcfb7835dcbb",
+        "gtsrb": "6e515dcd8d60927baebc6503b75ad1acb86b397ce3abe4f4ae746b561e7fa7af",
+        "mnist": "6d59ba4eda43719f9ce88cf2dd9c49fe182a0a80b06a41041b429a5a138980b7",
+        "resisc45": "218b38f2781c7030740b5f076bd5d627d8946ab8a692948dd5af6991b51e1943",
+        "stanford_cars": "8999106405938bdc99faa2e750cf565a2edac038235f621c970a2c087099dd3a",
+        "sun397": "596f378b09eb41811caef5ee2791bb0c78ed0ed27487d609d61510049e14a4d1",
+        "svhn": "1d323a3dcfc386c2375f010b677baa534fda354ac35ce17460f916983f98ad22"
+      },
+      "source_model_files": {
+        "config.json": {
+          "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+          "size": 4186
+        },
+        "merges.txt": {
+          "sha256": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+          "size": 524657
+        },
+        "preprocessor_config.json": {
+          "sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd",
+          "size": 316
+        },
+        "pytorch_model.bin": {
+          "sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+          "size": 605247071
+        },
+        "tokenizer.json": {
+          "sha256": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842",
+          "size": 2224041
+        },
+        "vocab.json": {
+          "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363",
+          "size": 862328
+        }
+      },
+      "source_validation_reference_sha256": "ea41870ab35b9aec08e9a35af68adc124e7be22a3419c203f90697d318750ff4",
+      "source_validation_reference_values": {
+        "dtd": 67.5,
+        "eurosat": 98.51851852,
+        "gtsrb": 96.79334917,
+        "mnist": 99.5,
+        "resisc45": 93.98412698,
+        "stanford_cars": 75.43532338,
+        "sun397": 72.36775819,
+        "svhn": 96.44640799
+      },
+      "test_label_files_read": [],
+      "validation_oracle_member": "output_retry2/validation/oracle_responses.csv",
+      "validation_oracle_member_sha256": "abdc129cd8b2055f6dd17e9f5479f75661054bdad91d2eb8b881984065243646"
+    },
+    "task_features": {
+      "dtd": 232.0,
+      "eurosat": 122.0,
+      "gtsrb": 132.0,
+      "mnist": 142.0,
+      "resisc45": 193.0,
+      "stanford_cars": 271.0,
+      "sun397": 262.0,
+      "svhn": 98.0
+    },
+    "training_row_count": 118,
+    "training_rows": [
+      {
+        "context_id": "ctx2-dtd-eurosat",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -4.255319148936167,
+            "normalized_retention_percent": 73.75886524822695,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.758077226162314,
+            "normalized_retention_percent": 72.2616233254531,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.6304176516942448,
+            "normalized_retention_percent": 70.13396375098503,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.0788022064617735,
+            "normalized_retention_percent": 69.58234830575256,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 69.50354609929079,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.0976021614319413
+      },
+      {
+        "context_id": "ctx2-dtd-eurosat",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -20.676691729012383,
+            "normalized_retention_percent": 84.248120299485,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.135338345652094,
+            "normalized_retention_percent": 77.7067669161247,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.142857142749726,
+            "normalized_retention_percent": 70.71428571322234,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.045112781909104,
+            "normalized_retention_percent": 66.61654135238172,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 63.57142857047261,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.416756176043141
+      },
+      {
+        "context_id": "ctx2-dtd-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -4.4917257683215155,
+            "normalized_retention_percent": 72.97084318360915,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.4672970843183606,
+            "normalized_retention_percent": 71.94641449960599,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.1032308904649284,
+            "normalized_retention_percent": 69.58234830575256,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.3152088258471224,
+            "normalized_retention_percent": 68.79432624113475,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.47911741528763,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.4690982776089143
+      },
+      {
+        "context_id": "ctx2-dtd-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -17.87321063369683,
+            "normalized_retention_percent": 62.29038854718596,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -13.333333333146825,
+            "normalized_retention_percent": 57.75051124663596,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.8895705520648605,
+            "normalized_retention_percent": 50.306748465553994,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.4948875255274743,
+            "normalized_retention_percent": 46.91206543901661,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.417177913489134,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.529360210250474
+      },
+      {
+        "context_id": "ctx2-dtd-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -4.412923561859728,
+            "normalized_retention_percent": 73.68006304176517,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.3096926713947994,
+            "normalized_retention_percent": 72.57683215130024,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.5516154452324571,
+            "normalized_retention_percent": 69.8187549251379,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.0788022064617877,
+            "normalized_retention_percent": 69.34594168636723,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 69.26713947990544,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.2045480130586503
+      },
+      {
+        "context_id": "ctx2-dtd-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -23.31658291457289,
+            "normalized_retention_percent": 86.48241206030153,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -17.989949748743726,
+            "normalized_retention_percent": 81.15577889447236,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.849246231155789,
+            "normalized_retention_percent": 73.01507537688443,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.819095477386938,
+            "normalized_retention_percent": 66.98492462311557,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 63.16582914572864,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.425699928212499
+      },
+      {
+        "context_id": "ctx2-dtd-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -3.4672970843183606,
+            "normalized_retention_percent": 72.41922773837668,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.1276595744680833,
+            "normalized_retention_percent": 71.0795902285264,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.024428684003155,
+            "normalized_retention_percent": 69.97635933806147,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.7092198581560325,
+            "normalized_retention_percent": 69.66115051221435,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.95193065405832,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.1989192840256686
+      },
+      {
+        "context_id": "ctx2-dtd-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -8.072960648893613,
+            "normalized_retention_percent": 78.26380679283037,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.809829420961108,
+            "normalized_retention_percent": 76.00067556489786,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.090694139639197,
+            "normalized_retention_percent": 73.28154028357595,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.351123121153762,
+            "normalized_retention_percent": 71.54196926509051,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 70.19084614393675,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -3.090694139639198
+      },
+      {
+        "context_id": "ctx2-dtd-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -3.152088258471238,
+            "normalized_retention_percent": 71.94641449960599,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.758077226162328,
+            "normalized_retention_percent": 71.55240346729708,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.3396375098502773,
+            "normalized_retention_percent": 70.13396375098503,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.7092198581560325,
+            "normalized_retention_percent": 69.50354609929079,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.79432624113475,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.4015535292131045
+      },
+      {
+        "context_id": "ctx2-dtd-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 2.8889662372387335,
+            "normalized_retention_percent": 85.38113469815193,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.740341106770316,
+            "normalized_retention_percent": 86.52975982862034,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.3480682213540547,
+            "normalized_retention_percent": 87.9220327140366,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.2784545770832523,
+            "normalized_retention_percent": 88.54855551247391,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.27010093539066,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.5991745810452065
+      },
+      {
+        "context_id": "ctx2-dtd-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -4.570527974783289,
+            "normalized_retention_percent": 73.44365642237983,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.2308904649330117,
+            "normalized_retention_percent": 72.10401891252955,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.7092198581560183,
+            "normalized_retention_percent": 69.58234830575256,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.3152088258471082,
+            "normalized_retention_percent": 69.18833727344365,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.87312844759654,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.3114938646853451
+      },
+      {
+        "context_id": "ctx2-dtd-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -29.874526986897607,
+            "normalized_retention_percent": 73.03326030730236,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -25.313682533564574,
+            "normalized_retention_percent": 68.47241585396932,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.631149173565468,
+            "normalized_retention_percent": 54.78988249397022,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.182433778165667,
+            "normalized_retention_percent": 47.341167098570416,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 43.15873332040475,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -12.076421885322562
+      },
+      {
+        "context_id": "ctx2-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -20.82706766885974,
+            "normalized_retention_percent": 85.90225563780598,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.172932330613946,
+            "normalized_retention_percent": 79.24812029956018,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.503759398398444,
+            "normalized_retention_percent": 71.57894736734468,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.4436090225196523,
+            "normalized_retention_percent": 67.51879699146589,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.07518796894624,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.081095596026712
+      },
+      {
+        "context_id": "ctx2-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -16.073619631677012,
+            "normalized_retention_percent": 61.30879345517515,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.533742331127009,
+            "normalized_retention_percent": 56.768916154625146,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.603271983561704,
+            "normalized_retention_percent": 50.83844580705984,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.4948875255274814,
+            "normalized_retention_percent": 47.73006134902562,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 45.23517382349814,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -5.933391761529627
+      },
+      {
+        "context_id": "ctx2-eurosat-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -22.70676691695178,
+            "normalized_retention_percent": 90.2631578933795,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.774436090003391,
+            "normalized_retention_percent": 82.33082706643111,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.443609022444463,
+            "normalized_retention_percent": 74.99999999887218,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.7443609022143676,
+            "normalized_retention_percent": 70.30075187864209,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 67.55639097642772,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.6987110632569475
+      },
+      {
+        "context_id": "ctx2-eurosat-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -16.633165829145725,
+            "normalized_retention_percent": 82.31155778894471,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.170854271356788,
+            "normalized_retention_percent": 79.84924623115577,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.236180904522627,
+            "normalized_retention_percent": 72.91457286432161,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.6130653266331763,
+            "normalized_retention_percent": 68.29145728643216,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.67839195979899,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.038765254845664
+      },
+      {
+        "context_id": "ctx2-eurosat-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -21.95488721771497,
+            "normalized_retention_percent": 87.55639097612696,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -13.383458646415292,
+            "normalized_retention_percent": 78.98496240482729,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.751879699161648,
+            "normalized_retention_percent": 71.35338345757364,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.2932330826722875,
+            "normalized_retention_percent": 67.89473684108428,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.601503758412,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.7346938774497564
+      },
+      {
+        "context_id": "ctx2-eurosat-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -6.890727917884064,
+            "normalized_retention_percent": 77.89224793451308,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.201824016441904,
+            "normalized_retention_percent": 76.20334403307092,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.0400270225959076,
+            "normalized_retention_percent": 74.04154703922492,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.3849011991825932,
+            "normalized_retention_percent": 72.38642121581161,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 71.00152001662902,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.871136632451699
+      },
+      {
+        "context_id": "ctx2-eurosat-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -17.556390977179596,
+            "normalized_retention_percent": 81.2030075175759,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.842105262979821,
+            "normalized_retention_percent": 75.48872180337612,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.563909774352403,
+            "normalized_retention_percent": 69.2105263147487,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.9924812029775367,
+            "normalized_retention_percent": 65.63909774337384,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 63.6466165403963,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -5.950590762531345
+      },
+      {
+        "context_id": "ctx2-eurosat-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 2.95857988150955,
+            "normalized_retention_percent": 85.52036198669354,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.0536025059889766,
+            "normalized_retention_percent": 86.42533936221412,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.3132613992186464,
+            "normalized_retention_percent": 88.16568046898445,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.4789418682031,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.4789418682031,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.7408880711679332
+      },
+      {
+        "context_id": "ctx2-eurosat-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -23.2706766913794,
+            "normalized_retention_percent": 83.90977443482844,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -17.25563909748488,
+            "normalized_retention_percent": 77.89473684093392,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.721804511147035,
+            "normalized_retention_percent": 69.36090225459607,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.5338345864130147,
+            "normalized_retention_percent": 64.17293232986205,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 60.639097743449035,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.861439312433875
+      },
+      {
+        "context_id": "ctx2-eurosat-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -27.245568612050626,
+            "normalized_retention_percent": 68.11392153012656,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -23.242381995806333,
+            "normalized_retention_percent": 64.11073491388227,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.47600079673876,
+            "normalized_retention_percent": 51.344353714814694,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.6646086437261047,
+            "normalized_retention_percent": 44.53296156180204,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 40.868352918075935,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -10.966796597237792
+      },
+      {
+        "context_id": "ctx2-gtsrb-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -18.28220858870133,
+            "normalized_retention_percent": 63.026584866194064,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -12.842535787141436,
+            "normalized_retention_percent": 57.58691206463417,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.276073619558112,
+            "normalized_retention_percent": 50.020449897050845,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.0858895705229727,
+            "normalized_retention_percent": 46.830265848015706,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.744376277492734,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.161262050746427
+      },
+      {
+        "context_id": "ctx2-gtsrb-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -21.65829145728644,
+            "normalized_retention_percent": 81.4070351758794,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -17.98994974874371,
+            "normalized_retention_percent": 77.73869346733667,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.94472361809045,
+            "normalized_retention_percent": 68.69346733668341,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.9648241206030193,
+            "normalized_retention_percent": 62.71356783919598,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 59.74874371859296,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.804737975592246
+      },
+      {
+        "context_id": "ctx2-gtsrb-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -17.668711656194567,
+            "normalized_retention_percent": 62.98568507069361,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -12.760736196140513,
+            "normalized_retention_percent": 58.07770961063956,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.094069529567108,
+            "normalized_retention_percent": 51.41104294406615,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.249488752524769,
+            "normalized_retention_percent": 47.566462167023815,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 45.316973414499046,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.380368098070258
+      },
+      {
+        "context_id": "ctx2-gtsrb-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -7.920959297763787,
+            "normalized_retention_percent": 78.93936835340723,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.286269211514011,
+            "normalized_retention_percent": 76.30467826715746,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.8035804763939893,
+            "normalized_retention_percent": 73.82198953203743,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.1484546529806607,
+            "normalized_retention_percent": 72.1668637086241,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 71.01840905564345,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.82770767498603
+      },
+      {
+        "context_id": "ctx2-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -19.71370143121709,
+            "normalized_retention_percent": 65.27607361871884,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.723926380162133,
+            "normalized_retention_percent": 60.286298567663884,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.339468302569806,
+            "normalized_retention_percent": 51.90184049007156,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.7402862985301653,
+            "normalized_retention_percent": 48.302658486031916,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 45.56237218750175,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.157464212578812
+      },
+      {
+        "context_id": "ctx2-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.828750434894701,
+            "normalized_retention_percent": 84.23250956768352,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.3668639052076372,
+            "normalized_retention_percent": 85.69439609737059,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.2784545770832523,
+            "normalized_retention_percent": 87.78280542549497,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.10442046640622493,
+            "normalized_retention_percent": 88.16568046898445,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.06126000257822,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.8303913280875516
+      },
+      {
+        "context_id": "ctx2-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -18.20040899770043,
+            "normalized_retention_percent": 62.78118609319136,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -13.00613496914324,
+            "normalized_retention_percent": 57.58691206463417,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.380368098070271,
+            "normalized_retention_percent": 50.9611451935612,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.576687116528376,
+            "normalized_retention_percent": 47.157464212019306,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.58077709549093,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.646216768823195
+      },
+      {
+        "context_id": "ctx2-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -29.476199960405637,
+            "normalized_retention_percent": 74.22824138677825,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -23.9195379408427,
+            "normalized_retention_percent": 68.67157936721532,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.73491336395854,
+            "normalized_retention_percent": 55.486954790331154,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.983270264919689,
+            "normalized_retention_percent": 48.7353116912923,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.752041426372614,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -11.436253449889048
+      },
+      {
+        "context_id": "ctx2-mnist-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -21.20603015075376,
+            "normalized_retention_percent": 85.0251256281407,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -17.085427135678387,
+            "normalized_retention_percent": 80.90452261306532,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.748743718592962,
+            "normalized_retention_percent": 73.5678391959799,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.0201005025125625,
+            "normalized_retention_percent": 67.8391959798995,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 63.81909547738694,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.109834888729358
+      },
+      {
+        "context_id": "ctx2-mnist-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -8.292518156081073,
+            "normalized_retention_percent": 79.09136970453703,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.8267184599754955,
+            "normalized_retention_percent": 76.62557000843145,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.006248944567062,
+            "normalized_retention_percent": 73.80510049302302,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.3173450431249023,
+            "normalized_retention_percent": 72.11619659158086,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 70.79885154845596,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -3.0762178204839583
+      },
+      {
+        "context_id": "ctx2-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -22.562814070351756,
+            "normalized_retention_percent": 82.36180904522612,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -19.246231155778894,
+            "normalized_retention_percent": 79.04522613065326,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.954773869346731,
+            "normalized_retention_percent": 70.7537688442211,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.5678391959799,
+            "normalized_retention_percent": 63.36683417085427,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 59.79899497487437,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.885139985642498
+      },
+      {
+        "context_id": "ctx2-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.2718412807281965,
+            "normalized_retention_percent": 84.82422554398542,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.879568395311935,
+            "normalized_retention_percent": 86.21649842940168,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.10442046640621072,
+            "normalized_retention_percent": 87.9916463583074,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.20884093281244986,
+            "normalized_retention_percent": 88.30490775752607,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.09606682471362,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.6066331857885032
+      },
+      {
+        "context_id": "ctx2-mnist-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -20.100502512562826,
+            "normalized_retention_percent": 85.77889447236181,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -15.87939698492464,
+            "normalized_retention_percent": 81.55778894472363,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.643216080402013,
+            "normalized_retention_percent": 74.321608040201,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.120603015075389,
+            "normalized_retention_percent": 69.79899497487438,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.67839195979899,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.485283560660454
+      },
+      {
+        "context_id": "ctx2-mnist-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -32.80223063161359,
+            "normalized_retention_percent": 78.17167894904875,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -26.707827126286467,
+            "normalized_retention_percent": 72.07727544372163,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.750647281513068,
+            "normalized_retention_percent": 57.12009559894823,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.122684724191885,
+            "normalized_retention_percent": 49.49213304162705,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 45.369448317435165,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -12.601360002378058
+      },
+      {
+        "context_id": "ctx2-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -7.228508698172519,
+            "normalized_retention_percent": 77.63891234929677,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -4.999155548268831,
+            "normalized_retention_percent": 75.40955919939309,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.3982435400478863,
+            "normalized_retention_percent": 72.80864719117214,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.895119067764341,
+            "normalized_retention_percent": 71.3055227188886,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 70.41040365112426,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.5285304124448515
+      },
+      {
+        "context_id": "ctx2-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 4.142011834113347,
+            "normalized_retention_percent": 84.19770274554811,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.7751479289057102,
+            "normalized_retention_percent": 86.56456665075575,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.06961364427080241,
+            "normalized_retention_percent": 88.27010093539066,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.41768186562489973,
+            "normalized_retention_percent": 88.75739644528636,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.33971457966146,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.576798766815292
+      },
+      {
+        "context_id": "ctx2-resisc45-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -8.022293531850323,
+            "normalized_retention_percent": 78.50025333903227,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.640939030816838,
+            "normalized_retention_percent": 76.11889883799878,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.837358554422835,
+            "normalized_retention_percent": 73.31531836160478,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.1653436919950906,
+            "normalized_retention_percent": 71.64330349917704,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 70.47795980718195,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.925422829283753
+      },
+      {
+        "context_id": "ctx2-resisc45-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -29.416450906431855,
+            "normalized_retention_percent": 73.7900816576371,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -24.716191993826634,
+            "normalized_retention_percent": 69.08982274503188,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.392152957670284,
+            "normalized_retention_percent": 55.76578370887553,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.943437562270482,
+            "normalized_retention_percent": 48.31706831347573,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.37363075120525,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -11.779099211976773
+      },
+      {
+        "context_id": "ctx2-stanford_cars-dtd",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.16488046167204118,
+            "normalized_retention_percent": 82.76999175936142,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.24732069250804045,
+            "normalized_retention_percent": 82.35779060518134,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.24732069250805466,
+            "normalized_retention_percent": 82.85243199019743,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.24732069250805466,
+            "normalized_retention_percent": 82.85243199019743,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 82.60511129768938,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.10010599458659694
+      },
+      {
+        "context_id": "ctx2-stanford_cars-dtd",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -5.200945626477548,
+            "normalized_retention_percent": 73.9952718676123,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.4672970843183464,
+            "normalized_retention_percent": 72.2616233254531,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.576044129235612,
+            "normalized_retention_percent": 70.37037037037037,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.6304176516942448,
+            "normalized_retention_percent": 69.424743892829,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.79432624113475,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.7449060002251437
+      },
+      {
+        "context_id": "ctx2-stanford_cars-eurosat",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.5770816158521086,
+            "normalized_retention_percent": 82.11046991267327,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -1.1541632317042314,
+            "normalized_retention_percent": 82.68755152852539,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.741962077524164,
+            "normalized_retention_percent": 82.27535037434532,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.53338829682116,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.53338829682116,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.5005299729329613
+      },
+      {
+        "context_id": "ctx2-stanford_cars-eurosat",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -18.421052631301926,
+            "normalized_retention_percent": 80.37593984841538,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -15.112781954659958,
+            "normalized_retention_percent": 77.06766917177342,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.406015037482611,
+            "normalized_retention_percent": 69.36090225459607,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.706766917252544,
+            "normalized_retention_percent": 64.661654134366,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 61.95488721711346,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.443609022444458
+      },
+      {
+        "context_id": "ctx2-stanford_cars-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.24732069250805466,
+            "normalized_retention_percent": 82.11046991267327,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.8244023083601775,
+            "normalized_retention_percent": 82.68755152852539,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.41220115418011005,
+            "normalized_retention_percent": 82.27535037434532,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.32976092334408236,
+            "normalized_retention_percent": 82.1929101435093,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.86314922016521,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.40631256626323975
+      },
+      {
+        "context_id": "ctx2-stanford_cars-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -18.93660531670853,
+            "normalized_retention_percent": 63.59918200320037,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -13.701431492650883,
+            "normalized_retention_percent": 58.36400817914272,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.094069529567108,
+            "normalized_retention_percent": 50.75664621605895,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.2085889570243253,
+            "normalized_retention_percent": 46.871165643516164,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 44.66257668649184,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.660823838644779
+      },
+      {
+        "context_id": "ctx2-stanford_cars-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.08244023083601348,
+            "normalized_retention_percent": 82.11046991267327,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.4946413850161093,
+            "normalized_retention_percent": 82.52267106685336,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.0717230008682321,
+            "normalized_retention_percent": 83.09975268270549,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.5770816158521228,
+            "normalized_retention_percent": 82.60511129768938,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 82.02802968183725,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.582970203768983
+      },
+      {
+        "context_id": "ctx2-stanford_cars-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -19.89949748743718,
+            "normalized_retention_percent": 80.65326633165829,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -16.783919597989943,
+            "normalized_retention_percent": 77.53768844221105,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.050251256281406,
+            "normalized_retention_percent": 70.80402010050251,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.567839195979893,
+            "normalized_retention_percent": 64.321608040201,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 60.753768844221106,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.908829863603728
+      },
+      {
+        "context_id": "ctx2-stanford_cars-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.5770816158521228,
+            "normalized_retention_percent": 82.44023083601734,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -1.3190436933762868,
+            "normalized_retention_percent": 83.1821929135415,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.0824402308360277,
+            "normalized_retention_percent": 81.94558945100124,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.32976092334408236,
+            "normalized_retention_percent": 82.1929101435093,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.86314922016521,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.4416440937643874
+      },
+      {
+        "context_id": "ctx2-stanford_cars-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -8.98496875567237,
+            "normalized_retention_percent": 79.19270393862357,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -6.282722513364888,
+            "normalized_retention_percent": 76.49045769631608,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.2089174127401208,
+            "normalized_retention_percent": 73.41665259569132,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.4355683162258401,
+            "normalized_retention_percent": 71.64330349917704,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 70.2077351829512,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -3.3150770865450627
+      },
+      {
+        "context_id": "ctx2-stanford_cars-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.1541632317042456,
+            "normalized_retention_percent": 82.76999175936142,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.08244023083601348,
+            "normalized_retention_percent": 81.53338829682116,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.24732069250805466,
+            "normalized_retention_percent": 81.36850783514912,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.24732069250805466,
+            "normalized_retention_percent": 81.36850783514912,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.61582852765717,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.07655164291915945
+      },
+      {
+        "context_id": "ctx2-stanford_cars-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 2.123216150259779,
+            "normalized_retention_percent": 85.41594152028733,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.9745910197913616,
+            "normalized_retention_percent": 86.56456665075575,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.24364775494782975,
+            "normalized_retention_percent": 87.29550991559928,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.20884093281242144,
+            "normalized_retention_percent": 87.33031673773469,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 87.53915767054711,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.4897817114767763
+      },
+      {
+        "context_id": "ctx2-stanford_cars-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 0.32976092334406815,
+            "normalized_retention_percent": 81.7807089893292,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.41220115418009584,
+            "normalized_retention_percent": 82.52267106685336,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.8244023083601775,
+            "normalized_retention_percent": 82.93487222103344,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.4946413850161093,
+            "normalized_retention_percent": 82.60511129768938,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 82.11046991267327,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.44164409376438335
+      },
+      {
+        "context_id": "ctx2-stanford_cars-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -20.43417645903797,
+            "normalized_retention_percent": 61.74068910625507,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -19.318860784860455,
+            "normalized_retention_percent": 60.62537343207755,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.520015933158035,
+            "normalized_retention_percent": 50.82652858037513,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.987452698689758,
+            "normalized_retention_percent": 44.293965345906855,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 41.3065126472171,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.17290238150075
+      },
+      {
+        "context_id": "ctx2-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 4.246432300519572,
+            "normalized_retention_percent": 83.95405499060027,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.332057083072229,
+            "normalized_retention_percent": 85.86843020804761,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.3480682213540547,
+            "normalized_retention_percent": 87.85241906976579,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.13922728854161903,
+            "normalized_retention_percent": 88.06126000257822,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.20048729111984,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.9422703992370681
+      },
+      {
+        "context_id": "ctx2-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "A",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -20.89225253950373,
+            "normalized_retention_percent": 64.38956383242665,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -18.801035650420907,
+            "normalized_retention_percent": 62.29834694334382,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.818761203027016,
+            "normalized_retention_percent": 53.31607249594993,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.0671181039881645,
+            "normalized_retention_percent": 46.56442939691108,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 43.497311292922916,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.202776908487655
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.3152088258471224,
+            "normalized_retention_percent": 74.3892828999212,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.5516154452324713,
+            "normalized_retention_percent": 74.62568951930655,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.9700551615445363,
+            "normalized_retention_percent": 76.04412923561861,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.3152088258471224,
+            "normalized_retention_percent": 73.75886524822695,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 74.07407407407408,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.6135314645952995
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -12.255639097560078,
+            "normalized_retention_percent": 83.57142857017186,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -8.721804511147042,
+            "normalized_retention_percent": 80.03759398375882,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.5112781954209,
+            "normalized_retention_percent": 75.82706766803268,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.7894736841986543,
+            "normalized_retention_percent": 72.10526315681044,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 71.31578947261178,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.25886143924853
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -14.355828220658097,
+            "normalized_retention_percent": 77.42331288235262,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -12.719836400640062,
+            "normalized_retention_percent": 75.78732106233458,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.738241308629256,
+            "normalized_retention_percent": 74.80572597032378,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.394683026537365,
+            "normalized_retention_percent": 66.46216768823189,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 63.06748466169452,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.074788197374627
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -13.668341708542712,
+            "normalized_retention_percent": 93.46733668341709,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.10552763819095,
+            "normalized_retention_percent": 90.90452261306532,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.201005025125625,
+            "normalized_retention_percent": 90.0,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.311557788944711,
+            "normalized_retention_percent": 82.11055276381909,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 79.79899497487438,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.931083991385493
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.9591285256729236,
+            "normalized_retention_percent": 80.3073805135754,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.9013680123314316,
+            "normalized_retention_percent": 82.2496200002339,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.08714744149006,
+            "normalized_retention_percent": 82.43539942939253,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.5066711704326536,
+            "normalized_retention_percent": 78.85492315833513,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 78.34825198790247,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.2884647864541483
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.012182387498527,
+            "normalized_retention_percent": 84.23250956768352,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.2182387747392482,
+            "normalized_retention_percent": 88.0264531804428,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.8005569091143343,
+            "normalized_retention_percent": 90.04524886429638,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.8701705533851509,
+            "normalized_retention_percent": 90.1148625085672,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 89.24469195518205,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.14171349012273782
+      },
+      {
+        "context_id": "ctx4-dtd-eurosat-resisc45-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -30.21310495941578,
+            "normalized_retention_percent": 83.36984664476893,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -23.381796455078522,
+            "normalized_retention_percent": 76.53853814043167,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -12.168890659329627,
+            "normalized_retention_percent": 65.32563234468277,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.10695080663735,
+            "normalized_retention_percent": 56.2636924919905,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 53.15674168535315,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -11.53299001346566
+      },
+      {
+        "context_id": "ctx4-dtd-gtsrb-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.1032308904649284,
+            "normalized_retention_percent": 75.49251379038613,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.7880220646177918,
+            "normalized_retention_percent": 75.17730496453899,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.758077226162328,
+            "normalized_retention_percent": 77.14736012608353,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.4728132387706978,
+            "normalized_retention_percent": 74.8620961386919,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 74.3892828999212,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.1707756388607433
+      },
+      {
+        "context_id": "ctx4-dtd-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -2.2852639873916445,
+            "normalized_retention_percent": 76.20173364854216,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -1.8912529550827344,
+            "normalized_retention_percent": 75.80772261623325,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.9156816390858893,
+            "normalized_retention_percent": 76.8321513002364,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.3940110323089101,
+            "normalized_retention_percent": 74.31048069345943,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 73.91646966115051,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.514128109872789
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -13.270676691529758,
+            "normalized_retention_percent": 86.76691729192831,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -9.135338345727291,
+            "normalized_retention_percent": 82.63157894612584,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -5.33834586458137,
+            "normalized_retention_percent": 78.83458646497992,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.9022556390841743,
+            "normalized_retention_percent": 74.39849623948272,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 73.49624060039855,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.6885069816695575
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -13.292433537646374,
+            "normalized_retention_percent": 78.40490797436341,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.820040899630172,
+            "normalized_retention_percent": 76.93251533634721,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.73824130862927,
+            "normalized_retention_percent": 76.8507157453463,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.1267893660234165,
+            "normalized_retention_percent": 67.23926380274045,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.11247443671704,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.443762781081975
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -13.819095477386938,
+            "normalized_retention_percent": 92.96482412060301,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.959798994974875,
+            "normalized_retention_percent": 91.10552763819095,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.954773869346738,
+            "normalized_retention_percent": 90.10050251256281,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.211055276381913,
+            "normalized_retention_percent": 81.35678391959799,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 79.14572864321607,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.311557788944726
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -0.709339638605698,
+            "normalized_retention_percent": 79.96959973328696,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.6853572032930515,
+            "normalized_retention_percent": 81.94561729797431,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.0569160616103233,
+            "normalized_retention_percent": 82.31717615629158,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.1520013511297975,
+            "normalized_retention_percent": 79.10825874355146,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 79.26026009468126,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.4560764350290683
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.673512008071242,
+            "normalized_retention_percent": 84.85903236612083,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.366863905207623,
+            "normalized_retention_percent": 88.16568046898445,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.06961364427080241,
+            "normalized_retention_percent": 90.46293072992127,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.3132613992186606,
+            "normalized_retention_percent": 90.21928297497341,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 90.53254437419207,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 1.021828849832283
+      },
+      {
+        "context_id": "ctx4-eurosat-gtsrb-resisc45-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -28.958374825966082,
+            "normalized_retention_percent": 84.56482772424484,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -22.764389564015993,
+            "normalized_retention_percent": 78.37084246229475,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -12.587134037146193,
+            "normalized_retention_percent": 68.19358693542495,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.1268671579619536,
+            "normalized_retention_percent": 58.73332005624071,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 55.606452898278754,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -11.436253449889046
+      },
+      {
+        "context_id": "ctx4-eurosat-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -8.383458646490453,
+            "normalized_retention_percent": 76.95488721688788,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -4.624060150306406,
+            "normalized_retention_percent": 73.19548872070384,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.4210526315274876,
+            "normalized_retention_percent": 71.99248120192492,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.9774436090078638,
+            "normalized_retention_percent": 67.59398496138957,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.57142857039743,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.2878625133920116
+      },
+      {
+        "context_id": "ctx4-gtsrb-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -9.775051124607657,
+            "normalized_retention_percent": 77.42331288235262,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -7.730061349585114,
+            "normalized_retention_percent": 75.37832310733008,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.525562372082874,
+            "normalized_retention_percent": 75.17382412982784,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.040899795500450864,
+            "normalized_retention_percent": 67.68916155324541,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 67.64826175774496,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.51650598883545
+      },
+      {
+        "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -11.10552763819095,
+            "normalized_retention_percent": 93.91959798994975,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -8.140703517587937,
+            "normalized_retention_percent": 90.95477386934674,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.839195979899486,
+            "normalized_retention_percent": 90.65326633165829,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.40201005025124914,
+            "normalized_retention_percent": 83.21608040201005,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 82.8140703517588,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.892318736539836
+      },
+      {
+        "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.6213477453844973,
+            "normalized_retention_percent": 81.20249958133975,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.1075831786535986,
+            "normalized_retention_percent": 82.68873501460885,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.340483026706394,
+            "normalized_retention_percent": 83.92163486266165,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.1857794291586572,
+            "normalized_retention_percent": 79.76693126511391,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 79.58115183595525,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.0749390789146784
+      },
+      {
+        "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 7.030978071352095,
+            "normalized_retention_percent": 83.39714583643376,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.088409328124399,
+            "normalized_retention_percent": 88.33971457966146,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.06961364427081662,
+            "normalized_retention_percent": 90.35851026351504,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.24364775494785818,
+            "normalized_retention_percent": 90.184476152838,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 90.42812390778586,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 1.0392322608999993
+      },
+      {
+        "context_id": "ctx4-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -31.029675363724316,
+            "normalized_retention_percent": 86.3174666408095,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -27.165903206752226,
+            "normalized_retention_percent": 82.45369448383741,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -15.554670384511347,
+            "normalized_retention_percent": 70.84246166159653,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.819757020552807,
+            "normalized_retention_percent": 60.10754829763799,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 55.287791277085184,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -13.858935328874114
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.2976092334406957,
+            "normalized_retention_percent": 82.1929101435093,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.16488046167204118,
+            "normalized_retention_percent": 85.32563891527795,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.7312448475563542,
+            "normalized_retention_percent": 87.22176422450634,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.8244023083601633,
+            "normalized_retention_percent": 86.31492168531015,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 85.49051937694999,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.4593098575149466
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -3.4672970843183606,
+            "normalized_retention_percent": 77.14736012608353,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.7580772261623423,
+            "normalized_retention_percent": 76.43814026792751,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.5460992907801483,
+            "normalized_retention_percent": 77.22616233254531,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.5516154452324855,
+            "normalized_retention_percent": 74.23167848699765,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 73.68006304176517,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.009456264775423
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -10.225563909620675,
+            "normalized_retention_percent": 74.24812029963537,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -12.819548871987678,
+            "normalized_retention_percent": 76.84210526200238,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.984962405879926,
+            "normalized_retention_percent": 73.00751879589463,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.105263157863064,
+            "normalized_retention_percent": 66.12781954787776,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 64.0225563900147,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.646079484325405
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-gtsrb",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -12.474437627637357,
+            "normalized_retention_percent": 77.54601226885394,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -11.083844580622056,
+            "normalized_retention_percent": 76.15541922183864,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.206543967123409,
+            "normalized_retention_percent": 76.27811860834,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.9406952965103557,
+            "normalized_retention_percent": 66.01226993772694,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 65.07157464121659,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.736780601717042
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-mnist",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -9.44723618090454,
+            "normalized_retention_percent": 91.20603015075378,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -6.984924623115589,
+            "normalized_retention_percent": 88.74371859296483,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.648241206030164,
+            "normalized_retention_percent": 91.4070351758794,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.9597989949748893,
+            "normalized_retention_percent": 83.71859296482413,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 81.75879396984924,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -5.488155061019394
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -2.8035804763940178,
+            "normalized_retention_percent": 82.63806789756559,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -4.171592636562181,
+            "normalized_retention_percent": 84.00608005773375,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.610707650937144,
+            "normalized_retention_percent": 84.44519507210872,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.2533355852163339,
+            "normalized_retention_percent": 80.08782300638791,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 79.83448742117157,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.483895095049605
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.116602853904752,
+            "normalized_retention_percent": 83.88444134632945,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.3922728854162614,
+            "normalized_retention_percent": 87.60877131481794,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.1486251304684032,
+            "normalized_retention_percent": 90.14966933070261,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.6961364427080952,
+            "normalized_retention_percent": 89.6971806429423,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 89.0010442002342,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.1367410869605387
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-eurosat-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -22.60505875341918,
+            "normalized_retention_percent": 75.12447719638519,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -18.30312686730594,
+            "normalized_retention_percent": 70.82254531027195,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.778928500377816,
+            "normalized_retention_percent": 62.29834694334382,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.537741485764144,
+            "normalized_retention_percent": 53.05715992873015,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 52.51941844296601,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.484365664278917
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.1327287717686403,
+            "normalized_retention_percent": 82.27535037434532,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.24732069250805466,
+            "normalized_retention_percent": 85.16075845360591,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.236603462540259,
+            "normalized_retention_percent": 86.64468260865422,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.32976092334405394,
+            "normalized_retention_percent": 85.07831822276991,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 85.40807914611396,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.017665763750570232
+      },
+      {
+        "context_id": "ctx4-stanford_cars-dtd-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.7336485421591874,
+            "normalized_retention_percent": 74.7832939322301,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.44286840031522,
+            "normalized_retention_percent": 75.49251379038613,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.3096926713948136,
+            "normalized_retention_percent": 76.35933806146572,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.8668242710796079,
+            "normalized_retention_percent": 73.91646966115051,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 73.0496453900709,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.8405943937858953
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-gtsrb-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 2.2258862325724635,
+            "normalized_retention_percent": 82.52267106685336,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.7419620775241498,
+            "normalized_retention_percent": 84.00659522190168,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.16488046167204118,
+            "normalized_retention_percent": 84.91343776109787,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.9892827700322044,
+            "normalized_retention_percent": 83.75927452939362,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 84.74855729942583,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.5535272641846832
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -12.781954887025833,
+            "normalized_retention_percent": 66.87969924711459,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -16.578947368171754,
+            "normalized_retention_percent": 70.67669172826051,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.46616541336141,
+            "normalized_retention_percent": 65.56390977345016,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -5.4511278194668975,
+            "normalized_retention_percent": 59.54887217955565,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 54.097744360088754,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.299140708775308
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-gtsrb-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -10.961145194120718,
+            "normalized_retention_percent": 80.53169734038684,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -9.325153374102698,
+            "normalized_retention_percent": 78.89570552036882,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.834355828097287,
+            "normalized_retention_percent": 78.40490797436341,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 1.2269938650134975,
+            "normalized_retention_percent": 68.34355828125263,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 69.57055214626612,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.95471808348314
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-mnist-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -10.050251256281413,
+            "normalized_retention_percent": 93.16582914572864,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -7.035175879397002,
+            "normalized_retention_percent": 90.15075376884423,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -8.190954773869365,
+            "normalized_retention_percent": 91.30653266331659,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.3517587939698643,
+            "normalized_retention_percent": 83.46733668341709,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 83.11557788944722,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.666188083273524
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-resisc45-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -2.6853572032930373,
+            "normalized_retention_percent": 82.70562405362327,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -3.8844789733170018,
+            "normalized_retention_percent": 83.90474582364723,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.492484377836178,
+            "normalized_retention_percent": 84.51275122816641,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.08444519507210657,
+            "normalized_retention_percent": 80.10471204540234,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 80.02026685033023,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.3318937439197986
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.812739296612861,
+            "normalized_retention_percent": 84.0932822791419,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.5060911937492563,
+            "normalized_retention_percent": 87.39993038200551,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.27845457708323806,
+            "normalized_retention_percent": 90.184476152838,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.3480682213540547,
+            "normalized_retention_percent": 90.25408979710882,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 89.90602157575476,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.773208691722247
+      },
+      {
+        "context_id": "ctx4-stanford_cars-eurosat-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -22.326229834874816,
+            "normalized_retention_percent": 72.81418044273178,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -20.115514837844394,
+            "normalized_retention_percent": 70.60346544570136,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.953993228529129,
+            "normalized_retention_percent": 61.441943836386095,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.206532563260346,
+            "normalized_retention_percent": 53.69448317111731,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 50.487950607856966,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.951062679683279
+      },
+      {
+        "context_id": "ctx4-stanford_cars-gtsrb-mnist-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 1.3190436933762868,
+            "normalized_retention_percent": 83.59439406772158,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.41220115418008163,
+            "normalized_retention_percent": 84.50123660691779,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.577081615852137,
+            "normalized_retention_percent": 84.33635614524573,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 0.906842539196191,
+            "normalized_retention_percent": 84.00659522190168,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 84.91343776109787,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.6065245554364174
+      },
+      {
+        "context_id": "ctx4-stanford_cars-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "B",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 2.3907666942445047,
+            "normalized_retention_percent": 82.02802968183725,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.16488046167204118,
+            "normalized_retention_percent": 84.25391591440972,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": 0.0824402308360277,
+            "normalized_retention_percent": 84.33635614524573,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": 1.0717230008682321,
+            "normalized_retention_percent": 83.34707337521353,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 84.41879637608176,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.5358615004341191
+      },
+      {
+        "context_id": "ctx6-dtd-eurosat-gtsrb-mnist-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.073286052009479,
+            "normalized_retention_percent": 73.0496453900709,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.4728132387706836,
+            "normalized_retention_percent": 76.59574468085107,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.600472813238767,
+            "normalized_retention_percent": 78.72340425531915,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.4428684003151915,
+            "normalized_retention_percent": 78.56579984239558,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 76.12293144208039,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.3227513227513148
+      },
+      {
+        "context_id": "ctx6-dtd-eurosat-gtsrb-mnist-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -5.33834586458137,
+            "normalized_retention_percent": 73.30827067558934,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -8.270676691604947,
+            "normalized_retention_percent": 76.24060150261292,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.060150375803602,
+            "normalized_retention_percent": 77.03007518681157,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.6842105262603866,
+            "normalized_retention_percent": 71.65413533726836,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 67.96992481100797,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -5.794844253403726
+      },
+      {
+        "context_id": "ctx6-dtd-eurosat-gtsrb-mnist-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 4.458077709549087,
+            "normalized_retention_percent": 64.53987729971074,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -9.938650306609432,
+            "normalized_retention_percent": 78.93660531586926,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -12.924335378142331,
+            "normalized_retention_percent": 81.92229038740216,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -6.952965235076576,
+            "normalized_retention_percent": 75.9509202443364,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 68.99795500925983,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.49050540451106
+      },
+      {
+        "context_id": "ctx6-dtd-eurosat-gtsrb-mnist-resisc45-sun397",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 9.154194221611874,
+            "normalized_retention_percent": 82.17890706169453,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.714932126561692,
+            "normalized_retention_percent": 88.61816915674471,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.6613296205727295,
+            "normalized_retention_percent": 91.99443090387913,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.17403411067705576,
+            "normalized_retention_percent": 91.50713539398346,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 91.3331012833064,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.9969668340212721
+      },
+      {
+        "context_id": "ctx6-eurosat-gtsrb-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -2.562814070351749,
+            "normalized_retention_percent": 89.49748743718592,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -4.874371859296474,
+            "normalized_retention_percent": 91.80904522613065,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.0201005025125625,
+            "normalized_retention_percent": 90.95477386934674,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.5075376884422127,
+            "normalized_retention_percent": 88.44221105527639,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 86.93467336683418,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.806891600861448
+      },
+      {
+        "context_id": "ctx6-eurosat-gtsrb-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.7084951868745435,
+            "normalized_retention_percent": 77.68957946634002,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.06046275975946,
+            "normalized_retention_percent": 85.45853741297402,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.458706299807346,
+            "normalized_retention_percent": 87.85678095302191,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.246242188918117,
+            "normalized_retention_percent": 85.64431684213268,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 83.39807465321456,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.9494776462361207
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 4.018912529550832,
+            "normalized_retention_percent": 73.28605200945627,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.8668242710795795,
+            "normalized_retention_percent": 78.17178881008668,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.018912529550818,
+            "normalized_retention_percent": 81.32387706855792,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.9700551615445079,
+            "normalized_retention_percent": 79.27501970055161,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 77.3049645390071,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.609816503433515
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-resisc45",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.476482617538295,
+            "normalized_retention_percent": 70.26584866977377,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -9.4069529651036,
+            "normalized_retention_percent": 83.14928425241567,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -11.451942740126128,
+            "normalized_retention_percent": 85.1942740274382,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -6.175869120568009,
+            "normalized_retention_percent": 79.91820040788008,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 73.74233128731207,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.803973122896361
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 4.097714736012591,
+            "normalized_retention_percent": 73.6012608353034,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 0.3152088258471366,
+            "normalized_retention_percent": 77.38376674546886,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -2.9156816390859035,
+            "normalized_retention_percent": 80.6146572104019,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.4972419227738243,
+            "normalized_retention_percent": 79.19621749408982,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 77.698975571316,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.9005966452774936
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-mnist-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.157894736794624,
+            "normalized_retention_percent": 39.88721804451297,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -6.240601503665552,
+            "normalized_retention_percent": 49.285714284973146,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.360902255498324,
+            "normalized_retention_percent": 52.40601503680592,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -5.150375939772168,
+            "normalized_retention_percent": 48.19548872107976,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 43.045112781307594,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -5.2577873253774285
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.7037037037037237,
+            "normalized_retention_percent": 70.52797478329393,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -0.8668242710795653,
+            "normalized_retention_percent": 75.09850275807722,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.309692671394771,
+            "normalized_retention_percent": 77.54137115839242,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.812450748620961,
+            "normalized_retention_percent": 76.04412923561861,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 74.23167848699765,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -1.3846673421141356
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-gtsrb-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -9.998008364948404,
+            "normalized_retention_percent": 69.64748058212064,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -14.439354710333845,
+            "normalized_retention_percent": 74.08882692750608,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.256920932168185,
+            "normalized_retention_percent": 69.90639314934042,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.102768372867281,
+            "normalized_retention_percent": 63.75224059003951,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 59.64947221717223,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -7.911059265435129
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.523495466013159,
+            "normalized_retention_percent": 78.64798021756054,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.8961253092283812,
+            "normalized_retention_percent": 82.27535037434532,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -1.8961253092283954,
+            "normalized_retention_percent": 86.0676009928021,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -1.3190436933762868,
+            "normalized_retention_percent": 85.49051937694999,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 84.1714756835737,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -0.11777175833717338
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-eurosat-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 262.0,
+        "focal_task": "sun397",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 6.787330316404251,
+            "normalized_retention_percent": 83.78002087992323,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 2.471284371613862,
+            "normalized_retention_percent": 88.09606682471362,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.24364775494782975,
+            "normalized_retention_percent": 90.81099895127531,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.24364775494782975,
+            "normalized_retention_percent": 90.81099895127531,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 90.56735119632748,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.8751429565473714
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 232.0,
+        "focal_task": "dtd",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 3.388494877856587,
+            "normalized_retention_percent": 73.28605200945627,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.127659574468069,
+            "normalized_retention_percent": 78.80220646178093,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -3.8613081166272565,
+            "normalized_retention_percent": 80.53585500394011,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.6004728132387527,
+            "normalized_retention_percent": 79.27501970055161,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 76.67454688731286,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.0601148260722613
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 142.0,
+        "focal_task": "mnist",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -3.0653266331658244,
+            "normalized_retention_percent": 91.70854271356784,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -5.829145728643212,
+            "normalized_retention_percent": 94.47236180904522,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -6.231155778894475,
+            "normalized_retention_percent": 94.87437185929649,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.914572864321599,
+            "normalized_retention_percent": 91.55778894472361,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 88.64321608040201,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.081119885139983
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 193.0,
+        "focal_task": "resisc45",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.624049991802451,
+            "normalized_retention_percent": 78.09491640268614,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -2.4657996961055773,
+            "normalized_retention_percent": 86.18476609059417,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -4.779598041081357,
+            "normalized_retention_percent": 88.49856443556995,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.3137983449757797,
+            "normalized_retention_percent": 86.03276473946437,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 83.71896639448859,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -2.1533524743387735
+      },
+      {
+        "context_id": "ctx6-stanford_cars-dtd-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -19.518024298106447,
+            "normalized_retention_percent": 76.51862178910709,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -19.896434973273806,
+            "normalized_retention_percent": 76.89703246427445,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.69508066130934,
+            "normalized_retention_percent": 67.69567815230998,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.162517426841056,
+            "normalized_retention_percent": 61.163114917841696,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 57.00059749100064,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -9.90269439789496
+      },
+      {
+        "context_id": "ctx6-stanford_cars-eurosat-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 271.0,
+        "focal_task": "stanford_cars",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 5.770816158521214,
+            "normalized_retention_percent": 79.22506183341265,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": 1.6488046167203407,
+            "normalized_retention_percent": 83.34707337521353,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -0.8244023083601775,
+            "normalized_retention_percent": 85.82028030029404,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -0.7419620775241924,
+            "normalized_retention_percent": 85.73784006945806,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 84.99587799193387,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": 0.3179837475103397
+      },
+      {
+        "context_id": "ctx6-stanford_cars-eurosat-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 122.0,
+        "focal_task": "eurosat",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": 0.1127819548855058,
+            "normalized_retention_percent": 64.73684210428968,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -7.255639097635253,
+            "normalized_retention_percent": 72.10526315681044,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -7.030075187864227,
+            "normalized_retention_percent": 71.87969924703941,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -2.2180451127486123,
+            "normalized_retention_percent": 67.0676691719238,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 64.84962405917518,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -4.189044038605115
+      },
+      {
+        "context_id": "ctx6-stanford_cars-gtsrb-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 132.0,
+        "focal_task": "gtsrb",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -1.226993865013526,
+            "normalized_retention_percent": 71.0838445797828,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -9.897750511108995,
+            "normalized_retention_percent": 79.75460122587828,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -9.693251533606741,
+            "normalized_retention_percent": 79.55010224837602,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -4.703476482551807,
+            "normalized_retention_percent": 74.56032719732109,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 69.85685071476928,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -6.321939818783908
+      },
+      {
+        "context_id": "ctx6-stanford_cars-gtsrb-mnist-resisc45-sun397-svhn",
+        "feature_name": "energy_rank_90",
+        "feature_value": 98.0,
+        "focal_task": "svhn",
+        "phase": "C",
+        "rank_axis": "(rank - 2) / (16 - 2)",
+        "rank_response_curve": [
+          {
+            "deficit_pp": -12.965544712313573,
+            "normalized_retention_percent": 79.12766381262948,
+            "rank": 2,
+            "rank_x": 0.0
+          },
+          {
+            "deficit_pp": -15.952997411003338,
+            "normalized_retention_percent": 82.11511651131924,
+            "rank": 4,
+            "rank_x": 0.14285714285714285
+          },
+          {
+            "deficit_pp": -10.097590121571386,
+            "normalized_retention_percent": 76.25970922188729,
+            "rank": 8,
+            "rank_x": 0.42857142857142855
+          },
+          {
+            "deficit_pp": -3.684524995050708,
+            "normalized_retention_percent": 69.84664409536661,
+            "rank": 12,
+            "rank_x": 0.7142857142857143
+          },
+          {
+            "deficit_pp": 0.0,
+            "normalized_retention_percent": 66.1621191003159,
+            "rank": 16,
+            "rank_x": 1.0
+          }
+        ],
+        "split": "validation",
+        "target_demand_auc_signed": -8.282356957986568
+      }
+    ],
+    "training_rows_sha256": "19a7a77cfaea9917c29b7282dc5db1b3fa6e5b4e267902569be875bb3d45dd95"
+  },
+  "sha256": "2aeee677c235a8eebea5df4227e2e7ddb79f430c555f1575272b0d245bf7d4c4"
+}

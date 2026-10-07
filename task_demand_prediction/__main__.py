@@ -22,6 +22,27 @@ def parser():
         if name=='analyze':
             s.add_argument('--stage',choices=('validation','final_test'),required=True)
             s.add_argument('--analysis-output-dir',required=True)
+    s=sub.add_parser('pdra-preflight',help='Check frozen PDRA artifacts; optionally perform asset/dependency-only server preflight')
+    s.add_argument('--repo-root',default=str(Path(__file__).resolve().parents[1]))
+    s.add_argument('--output-dir'); s.add_argument('--model-dir'); s.add_argument('--data-dir'); s.add_argument('--adapter-dir')
+    s.add_argument('--head-dir'); s.add_argument('--reference-dir'); s.add_argument('--device',choices=('cpu','cuda'),default='cuda')
+    s.add_argument('--min-free-gib',type=float,default=10); s.add_argument('--stage',choices=('validation','final-test'),default='validation')
+    s.add_argument('--confirm-oracle-policy',choices=('same-split-posthoc',),help='Acknowledge final-test labels are used only for the Oracle-Ranked diagnostic')
+    s.add_argument('--static-only',action='store_true',help='Do not inspect server assets/dependencies; never loads an evaluator')
+    s=sub.add_parser('pdra-fit-predictor',help='Rebuild the frozen predictor from the hash-verified prior audit archive')
+    s.add_argument('--repo-root',default=str(Path(__file__).resolve().parents[1]))
+    s.add_argument('--audit-archive',required=True); s.add_argument('--artifact-output')
+    s=sub.add_parser('pdra-freeze-contexts',help='Rebuild the fresh held-out context manifest from the hash-verified prior audit archive')
+    s.add_argument('--repo-root',default=str(Path(__file__).resolve().parents[1]))
+    s.add_argument('--audit-archive',required=True); s.add_argument('--artifact-output')
+    s=sub.add_parser('pdra-run',help='Run a PDRA evaluation stage with sealed checkpoints')
+    s.add_argument('--repo-root',default=str(Path(__file__).resolve().parents[1]))
+    s.add_argument('--model-dir'); s.add_argument('--data-dir'); s.add_argument('--adapter-dir'); s.add_argument('--head-dir')
+    s.add_argument('--reference-dir'); s.add_argument('--output-dir',required=True); s.add_argument('--device',choices=('cpu','cuda'),default='cuda')
+    s.add_argument('--min-free-gib',type=float,default=10); s.add_argument('--stage',choices=('validation','final-test'),required=True)
+    s.add_argument('--confirm-oracle-policy',choices=('same-split-posthoc',),required=True,
+                   help='Acknowledge final-test labels are used only for the Oracle-Ranked diagnostic')
+    s.add_argument('--resume',action='store_true',help='Continue without overwriting hash-verified completed units')
     return p
 
 def _real_preflight(args,stage):
@@ -54,6 +75,38 @@ def _real_preflight(args,stage):
 
 def main(argv=None):
     args=parser().parse_args(argv); design=make_design(); validate_design(design)
+    if args.command.startswith('pdra-'):
+        from . import pdra
+        if args.command=='pdra-freeze-contexts':
+            artifact=pdra.build_context_manifest_from_archive(Path(args.audit_archive))
+            pdra.validate_context_manifest(artifact)
+            destination=Path(args.artifact_output) if args.artifact_output else Path(args.repo_root).resolve()/'task_demand_prediction'/pdra.MANIFEST_FILENAME
+            pdra.write_artifact_if_frozen(destination,artifact)
+            print(json.dumps({'status':'context manifest frozen','path':str(destination.resolve()),'sha256':artifact['sha256'],
+                              'fresh_context_counts':artifact['payload']['fresh_context_counts'],
+                              'prior_reused_context_counts':artifact['payload']['prior_reused_context_counts']},indent=2)); return 0
+        if args.command=='pdra-fit-predictor':
+            artifact=pdra.build_predictor_artifact(Path(args.audit_archive))
+            pdra.validate_predictor_artifact(artifact)
+            destination=Path(args.artifact_output) if args.artifact_output else Path(args.repo_root).resolve()/'task_demand_prediction'/pdra.PREDICTOR_FILENAME
+            pdra.write_artifact_if_frozen(destination,artifact)
+            print(json.dumps({'status':'predictor frozen','path':str(destination.resolve()),'sha256':artifact['sha256'],
+                              'training_rows':artifact['payload']['training_row_count'],'fit_split':'validation only',
+                              'final_test_labels_used':False},indent=2)); return 0
+        if args.command=='pdra-preflight':
+            static=pdra.static_preflight(Path(args.repo_root))
+            if args.static_only:
+                if args.output_dir:
+                    static['planned_output']=str(pdra.validate_output_path(args.repo_root,args.output_dir))
+                print(json.dumps(static,indent=2)); return 0
+            if not args.output_dir: raise SystemExit('full pdra-preflight requires --output-dir outside the repository')
+            if args.confirm_oracle_policy != 'same-split-posthoc':
+                raise SystemExit('full pdra-preflight requires --confirm-oracle-policy same-split-posthoc after protocol review')
+            report=pdra.full_preflight(args,stage=args.stage)
+            print(json.dumps(report,indent=2)); return 0
+        if args.command=='pdra-run':
+            report=pdra.run_experiment(args)
+            print(json.dumps(report,indent=2)); return 0
     if args.command=='analyze':
         if not args.output_dir: raise SystemExit('analyze requires --output-dir pointing to sealed experiment outputs')
         result=rebuild_analysis(Path(args.output_dir),args.stage,Path(args.analysis_output_dir))
