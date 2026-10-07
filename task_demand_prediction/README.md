@@ -83,6 +83,12 @@ python -m task_demand_prediction simulate --device cpu --output-dir "$env:TEMP/d
 
 Simulation outputs are synthetic only and are not experimental results.
 
+## Predicted Demand-Ranked Allocation (PDRA)
+
+The separate PDRA experiment uses `pdra_context_manifest.json` and the validation-only `pdra_predictor.json`. Its templates, Oracle-Ranked sweep policy, local static preflight, resume behavior, GPU asset layout, and exact commands are documented in [`docs/pdra_runbook.md`](../docs/pdra_runbook.md). Run it with the `pdra-preflight` and `pdra-run` subcommands; the earlier `preflight` and `run` commands above belong to the original task-demand experiment.
+
+The frozen PDRA plan contains 45 new four-task and 19 new six-task memberships. It runs 256 allocation units plus 1,240 same-split oracle sweep units per split. The final-test oracle sweep is post-hoc diagnostic only and must not select or tune the PDRA method.
+
 ## Server preflight and run commands
 
 The protocol is frozen. Before server evaluation, supply all assets below and
