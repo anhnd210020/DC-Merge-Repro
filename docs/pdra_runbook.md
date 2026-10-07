@@ -34,18 +34,18 @@ $Out = Join-Path $env:TEMP 'dcmerge-pdra-run'
 
 ## Verified local asset inventory (2026-10-07)
 
-These paths were checked on the preparation machine. The CLIP base model is the only missing runtime asset. The `DCMERGE_*` environment variables are unset, so use explicit paths after transfer.
+These paths were checked on the preparation machine. The datasets, adapters, heads, references, and exact CLIP base-model snapshot are available. The `DCMERGE_*` environment variables are unset, so use explicit paths after transfer.
 
 | Asset | Local path and result |
 |---|---|
-| CLIP ViT-B/32 base model | **Missing.** No model root is present in this repo, the sibling `D:\Research\DC-Merge-Repro` repo, the searched Hugging Face/model caches, or either supplied archive. Restore the exact source snapshot described below. |
+| CLIP ViT-B/32 base model | **Available** at `D:\pdra-assets\clip-vit-base-patch32-d2bce4b`. Restored from `openai/clip-vit-base-patch32` at revision `d2bce4bc6684fb94eb627c995ba3164d618ef0f7`; all six files match the frozen sizes and SHA-256 values below. |
 | Eight datasets | **Available** at `D:\Research\DC_Merge\datasets8`. All preflight layout checks passed for Cars (`cars`), DTD (`dtd`), EuroSAT (`eurosat`), GTSRB (`gtsrb`), MNIST (`MNIST\raw`), RESISC45 (`resisc45`, 45 class directories), SUN397 (`sun397`), and SVHN (`svhn`). The dataset metadata identity matches the frozen predictor. |
 | Eight adapters and eight heads | **Available** under `C:\Users\Admin\Downloads\DC-Merge-Repro-model-weights-20261007`. The extracted tree has `artifacts\selftrained_b32_r16_8task\checkpoints\<task>\{adapter_config.json,adapter_model.bin}` and `assets\heads\ViT-B-32\<task>_head.pt`. All 24 files match the per-file hashes in `pdra_predictor.json`. |
 | Validation/test references | **Available** at `D:\Research\DC-Merge-PDRA\reproduction\selftrained_b32_r16_8task\results\selftrained_{val,test}_acc.json` (also present identically in the sibling reproduction repo). Validation SHA-256 `ea41870ab35b9aec08e9a35af68adc124e7be22a3419c203f90697d318750ff4` matches the predictor. Test SHA-256 is `b597460ce56127fda5cb3edc0abe1b8463c68e8cb4c1555f29808ae32bf7be96`. |
 | Prior audit archive | **Available** at `C:\Users\Admin\Downloads\DC-Merge-Repro-final-audit-20261006.tar.gz`. SHA-256 `7b01616a8e75774802ce8b95fd03e900c494003a7d0c16fb228153879e3f04ad` matches the pinned `AUDIT_ARCHIVE_SHA256`. It contains the predictor source members but no model, dataset, adapter, head, or reference files. |
 | Adapter/head archive | **Available** at `C:\Users\Admin\Downloads\DC-Merge-Repro-model-weights-20261007.tar.gz`. Measured SHA-256 `ba5ccb94b489aa863295a324d22fbb70d05af8cb5d703f2df5d6ffa3510a0a4e`; it contains the 8 configs, 8 adapter weights, and 8 heads, and no base model, datasets, or references. The archive itself has no pinned checksum sidecar; the 24 member hashes do match the frozen predictor. |
 
-The missing base model must be restored from the original experiment's trusted model store as the exact six-file snapshot recorded in `task_demand_prediction/pdra_predictor.json` under `payload.source.source_model_files`:
+The exact snapshot recorded in `task_demand_prediction/pdra_predictor.json` under `payload.source.source_model_files` was recovered from the official Hugging Face repository `openai/clip-vit-base-patch32` at immutable revision `d2bce4bc6684fb94eb627c995ba3164d618ef0f7`. The local copy is at `D:\pdra-assets\clip-vit-base-patch32-d2bce4b`. Each downloaded file was checked against both the frozen size and SHA-256 below:
 
 | File | Size | SHA-256 |
 |---|---:|---|
@@ -60,7 +60,7 @@ Do not substitute a similarly named CLIP checkpoint. The server preflight compar
 
 ## Windows-to-Linux transfer
 
-The commands below transfer only available experiment inputs. They do not transfer generated results or the prior audit archive, which is provenance-only and not needed by `pdra-preflight`. Set `$Server` to the SSH destination. The base model transfer is intentionally omitted until the exact snapshot above is restored from its source.
+The commands below transfer available experiment inputs. They do not transfer generated results or the prior audit archive, which is provenance-only and not needed by `pdra-preflight`. Set `$Server` to the SSH destination.
 
 ```powershell
 $Server = 'user@gpu-host'
@@ -68,11 +68,13 @@ $Remote = '/srv/pdra'
 $Weights = 'C:\Users\Admin\Downloads\DC-Merge-Repro-model-weights-20261007.tar.gz'
 $Data = 'D:\Research\DC_Merge\datasets8'
 $References = 'D:\Research\DC-Merge-PDRA\reproduction\selftrained_b32_r16_8task\results'
+$Model = 'D:\pdra-assets\clip-vit-base-patch32-d2bce4b'
 
-ssh $Server "mkdir -p $Remote/transfer $Remote/assets/references $Remote/results"
+ssh $Server "mkdir -p $Remote/transfer $Remote/assets/references $Remote/assets/clip-vit-base-patch32 $Remote/results"
 scp -p $Weights "${Server}:$Remote/transfer/"
 scp -r $Data "${Server}:$Remote/assets/"
 scp -p "$References\selftrained_val_acc.json" "$References\selftrained_test_acc.json" "${Server}:$Remote/assets/references/"
+scp -p "$Model\config.json" "$Model\merges.txt" "$Model\preprocessor_config.json" "$Model\pytorch_model.bin" "$Model\tokenizer.json" "$Model\vocab.json" "${Server}:$Remote/assets/clip-vit-base-patch32/"
 ```
 
 On the Linux host, clone the pushed experiment branch, verify and unpack the adapter/head archive, and confirm the references:
@@ -89,9 +91,18 @@ printf '%s  %s\n' 'ba5ccb94b489aa863295a324d22fbb70d05af8cb5d703f2df5d6ffa3510a0
 tar -xzf "$WEIGHTS" -C "$ASSETS"
 printf '%s  %s\n' 'ea41870ab35b9aec08e9a35af68adc124e7be22a3419c203f90697d318750ff4' "$ASSETS/references/selftrained_val_acc.json" | sha256sum -c -
 printf '%s  %s\n' 'b597460ce56127fda5cb3edc0abe1b8463c68e8cb4c1555f29808ae32bf7be96' "$ASSETS/references/selftrained_test_acc.json" | sha256sum -c -
+(cd "$ASSETS/clip-vit-base-patch32" && sha256sum -c <<'SHA256'
+b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770  config.json
+f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85  merges.txt
+910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd  preprocessor_config.json
+a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f  pytorch_model.bin
+b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842  tokenizer.json
+5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363  vocab.json
+SHA256
+)
 ```
 
-Restore the model snapshot from the original experiment's trusted model store into `$ASSETS/clip-vit-base-patch32`, then verify all six files against the table above. The known archives do not contain this model. Before full preflight, also confirm the data copy is at `$ASSETS/datasets8` and each reference SHA-256 matches this inventory.
+Before full preflight, confirm the data copy is at `$ASSETS/datasets8` and each reference SHA-256 matches this inventory. The model transfer above targets `$ASSETS/clip-vit-base-patch32` and verifies all six frozen file hashes on the Linux host.
 
 ## Linux server preflight and run
 
