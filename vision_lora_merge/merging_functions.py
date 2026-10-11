@@ -210,14 +210,21 @@ def _validate_task_densities(task_densities, num_tasks):
     return values
 
 
-def _baseline_topk_mask(matrix, percent):
+def _baseline_topk_mask(matrix, percent, *, count=None):
     flat_abs = matrix.abs().reshape(-1)
-    k = max(1, int(percent * flat_abs.numel()))
+    k = max(1, int(percent * flat_abs.numel())) if count is None else int(count)
+    if k < 1 or k > flat_abs.numel():
+        raise ValueError("top-k count must be in [1, matrix.numel()]")
     threshold = torch.topk(flat_abs, k).values.min()
     return matrix.abs() >= threshold
 
 
-def _density_filter_matrix(matrix, density, baseline_percent=1e-3):
+def _keep_topk_count(matrix, count):
+    """Retain a requested count using the legacy magnitude-threshold tie rule."""
+    return matrix * _baseline_topk_mask(matrix, 0.0, count=count)
+
+
+def _density_filter_matrix(matrix, density, baseline_percent=1e-3, *, baseline_count=None):
     """Apply a fraction of the legacy per-matrix top-k support.
 
     Density one delegates to the original helper, preserving its exact threshold
@@ -225,10 +232,11 @@ def _density_filter_matrix(matrix, density, baseline_percent=1e-3):
     stable descending magnitude order leaves equal magnitudes in flat-index
     order, making tie resolution deterministic.
     """
-    baseline_mask = _baseline_topk_mask(matrix, baseline_percent)
+    baseline_mask = _baseline_topk_mask(matrix, baseline_percent, count=baseline_count)
     baseline_count = int(baseline_mask.sum().item())
     if density == 1.0:
-        filtered = keep_topk_percent([matrix], baseline_percent)[0]
+        filtered = (keep_topk_percent([matrix], baseline_percent)[0] if baseline_count is None
+                    else _keep_topk_count(matrix, baseline_count))
         retained_mask = baseline_mask
         target_count = baseline_count
     else:
@@ -259,7 +267,7 @@ def _density_filter_matrix(matrix, density, baseline_percent=1e-3):
     return filtered, stats
 
 
-def _density_filter_modules(matrices, density, baseline_percent=1e-3):
+def _density_filter_modules(matrices, density, baseline_percent=1e-3, *, baseline_count=None):
     """Allocate one deterministic retained-coordinate budget across modules.
 
     The candidate pool is the union of each module's legacy post-projection
@@ -274,9 +282,10 @@ def _density_filter_modules(matrices, density, baseline_percent=1e-3):
     masks = {}
     for name in names:
         matrix = matrices[name]
-        mask = _baseline_topk_mask(matrix, baseline_percent)
+        mask = _baseline_topk_mask(matrix, baseline_percent, count=baseline_count)
         masks[name] = mask
-        baseline[name] = keep_topk_percent([matrix], baseline_percent)[0]
+        baseline[name] = (keep_topk_percent([matrix], baseline_percent)[0] if baseline_count is None
+                          else _keep_topk_count(matrix, baseline_count))
     per_module_target = {name: 0 for name in names}
     candidates = []
     for name in names:
@@ -335,6 +344,7 @@ def _dc_merge_matrix_group(
     task_ranks=None,
     task_densities=None,
     top_percent=1e-3,
+    topk_policy='legacy',
 ):
     """Merge one module's task matrices, optionally exposing test diagnostics.
 
@@ -351,6 +361,8 @@ def _dc_merge_matrix_group(
     N = len(vecs)
     if N == 0:
         raise ValueError("dc_merge requires at least one task delta")
+    if topk_policy not in ('legacy', 'rank'):
+        raise ValueError("topk_policy must be 'legacy' or 'rank'")
     scales = _validate_task_scales(task_scales, N)
     ranks = _validate_task_ranks(task_ranks, N)
     densities = _validate_task_densities(task_densities, N)
@@ -427,15 +439,19 @@ def _dc_merge_matrix_group(
         for i in range(N)
     ]
     if task_densities is None:
-        filtered_Ms = keep_topk_percent(Ms, top_percent)
+        filtered_Ms = (keep_topk_percent(Ms, top_percent) if topk_policy == 'legacy'
+                       else [_keep_topk_count(matrix, ranks[i]) for i, matrix in enumerate(Ms)])
         density_stats = [
-            _density_filter_matrix(matrix, 1.0, top_percent)[1]
-            for matrix in Ms
+            _density_filter_matrix(matrix, 1.0, top_percent,
+                                   baseline_count=ranks[i] if topk_policy == 'rank' else None)[1]
+            for i, matrix in enumerate(Ms)
         ] if return_intermediates else []
     else:
         filtered_Ms = []
-        for matrix, density in zip(Ms, densities):
-            filtered, stats = _density_filter_matrix(matrix, density, top_percent)
+        for i, (matrix, density) in enumerate(zip(Ms, densities)):
+            filtered, stats = _density_filter_matrix(
+                matrix, density, top_percent,
+                baseline_count=ranks[i] if topk_policy == 'rank' else None)
             filtered_Ms.append(filtered)
             density_stats.append(stats)
     agg_M = ties_small(filtered_Ms)
@@ -450,6 +466,7 @@ def _dc_merge_matrix_group(
     if not return_intermediates:
         return merged
     return merged, {
+        'topk_policy': topk_policy,
         'task_scales': scales,
         'task_ranks': ranks,
         'task_densities': densities,
@@ -472,6 +489,7 @@ def _dc_merge_matrix_group(
 def dc_merge(
     deltas_dict, smoothing_strategy='avg', rho=5.0, task_scales=None,
     task_ranks=None, task_densities=None, return_intermediates=False,
+    topk_policy='legacy',
 ):
     """Run DC-Merge with an optional post-smoothing task-amplitude intervention.
 
@@ -479,6 +497,8 @@ def dc_merge(
     and an explicit all-ones sequence reproduce the original implementation.
     """
     dc_dict = {}
+    if topk_policy not in ('legacy', 'rank'):
+        raise ValueError("topk_policy must be 'legacy' or 'rank'")
     intermediate_dict = OrderedDict()
     requested_densities = None if task_densities is None else _validate_task_densities(
         task_densities, len(next(iter(deltas_dict.values()))) if deltas_dict else 0)
@@ -495,6 +515,7 @@ def dc_merge(
             task_ranks=task_ranks,
             task_densities=None if defer_global_density else task_densities,
             return_intermediates=need_intermediates,
+            topk_policy=topk_policy,
         )
         if return_intermediates:
             dc_dict[k], intermediate_dict[k] = result
@@ -505,7 +526,10 @@ def dc_merge(
         module_names = list(intermediate_dict)
         for task_index, density in enumerate(requested_densities):
             matrices = {name: intermediate_dict[name]['projected_matrices'][task_index] for name in module_names}
-            filtered, stats, _task_stats = _density_filter_modules(matrices, density)
+            filtered, stats, _task_stats = _density_filter_modules(
+                matrices, density,
+                baseline_count=intermediate_dict[module_names[0]]['task_ranks'][task_index]
+                if topk_policy == 'rank' else None)
             for name in module_names:
                 detail = intermediate_dict[name]
                 detail['filtered_matrices'][task_index] = filtered[name]

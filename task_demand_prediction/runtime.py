@@ -19,7 +19,10 @@ def _vision_imports(repo: Path):
 
 class RealEvaluator:
     mode='real'
-    def __init__(self, paths, device: str): self.paths=paths; self.device=device; self.runtime=None
+    def __init__(self, paths, device: str, *, topk_policy: str = 'legacy'):
+        if topk_policy not in ('legacy', 'rank'):
+            raise ValueError('topk_policy must be legacy or rank')
+        self.paths=paths; self.device=device; self.runtime=None; self.topk_policy=topk_policy
     def _load(self):
         if self.runtime is not None: return self.runtime
         os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',HF_DATASETS_OFFLINE='1',WANDB_MODE='disabled',DCMERGE_MODEL_DIR=str(self.paths.model),DCMERGE_DATA_DIR=str(self.paths.data))
@@ -83,7 +86,8 @@ class RealEvaluator:
         ranks=tuple(configuration['rank_by_task'][t] for t in tasks)
         densities=tuple(configuration['density_by_task'][t] for t in tasks)
         with torch.no_grad():
-            merged,details=r['dc_merge'](grouped,smoothing_strategy='linear',rho=RHO,task_scales=scales,task_ranks=ranks,task_densities=densities,return_intermediates=True)
+            merge_options={'topk_policy':self.topk_policy} if self.topk_policy != 'legacy' else {}
+            merged,details=r['dc_merge'](grouped,smoothing_strategy='linear',rho=RHO,task_scales=scales,task_ranks=ranks,task_densities=densities,return_intermediates=True,**merge_options)
             model=r['apply_merge'](r['prepared']['models']['new'],merged,scaling_coeffs=ALPHA).to(self.device)
         density={t:{'nominal_density':densities[i],'requested_density':densities[i],
                     'baseline_mask_count':0,'target_mask_count':0,'retained_mask_count':0,
