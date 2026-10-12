@@ -252,9 +252,10 @@ def main(argv=None):
         if not running_path.exists():
             atomic_json(running_path, seal(expected_running))
         try:
+            validation_split = pdra.normalize_stage("validation")[2]
             for unit in units:
                 pdra.run_unit(output, "validation", unit,
-                              lambda item: evaluator(item, "validation"),
+                              lambda item: evaluator(item, validation_split),
                               identity_sha256=run_identity, resume=args.resume)
             results = {unit["run_id"]: pdra._read_unit(output, "validation", unit["run_id"],
                                                         run_identity)["result"] for unit in units}

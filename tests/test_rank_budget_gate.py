@@ -56,12 +56,48 @@ class GatePlanTests(unittest.TestCase):
                       SimpleNamespace(output=output), {"asset": "identity"}, {},
                       {task: 100 for task in tasks}, {})),
                   patch.object(gate, "_registration", return_value={"protocol": gate.GATE_NAME}),
-                  patch("task_demand_prediction.runtime.RealEvaluator", return_value=lambda *_: new)):
+                  patch("task_demand_prediction.runtime.RealEvaluator",
+                        return_value=lambda _item, split: new if split == "val" else
+                        self.fail(f"expected validation loader key val, got {split!r}"))):
                 self.assertEqual(gate.main(args), 0)
                 summary = json.loads((output / "validation" / "summary.json").read_text())
                 self.assertEqual(summary["mean_paired_difference_pp"], 2.0)
                 self.assertEqual(gate.main(["verify", *args[1:]]), 0)
                 self.assertEqual(len(list((output / "validation" / "runs").glob("*.unit.json"))), 1)
+
+
+class RuntimeSplitTests(unittest.TestCase):
+    def test_validation_stage_maps_to_a_real_evaluator_loader_key(self):
+        from contextlib import nullcontext
+        from task_demand_prediction.design import TASKS
+        from task_demand_prediction.runtime import RealEvaluator
+
+        tasks = TASKS[:4]
+        loader = SimpleNamespace(dataset=[0, 1])
+        model = SimpleNamespace()
+        model.to = lambda _device: model
+        model.cpu = lambda: model
+        runtime = {
+            "torch": SimpleNamespace(no_grad=nullcontext),
+            "dc_merge": lambda *_args, **_kwargs: ({}, {}),
+            "apply_merge": lambda *_args, **_kwargs: model,
+            "prepared": {"models": {"new": object()},
+                         "data": [{"test": {"val": loader}} for _ in TASKS]},
+            "heads": {task: object() for task in TASKS},
+            "evaluate": lambda _model, selected, **_kwargs:
+                0.5 if selected is loader else self.fail("wrong loader"),
+        }
+        evaluator = RealEvaluator(None, "cpu", topk_policy="rank")
+        evaluator.runtime = runtime
+        unit = {"tasks": list(tasks),
+                "scale_by_task": {task: 1.0 for task in tasks},
+                "rank_by_task": {task: 8 for task in tasks},
+                "density_by_task": {task: 1.0 for task in tasks}}
+        with patch.object(evaluator, "_context_delta", return_value={}):
+            result = evaluator(unit, pdra.normalize_stage("validation")[2])
+        self.assertEqual(set(result["per_task"]), set(tasks))
+        self.assertTrue(all(row == {"accuracy_percent": 50.0, "examples": 2}
+                            for row in result["per_task"].values()))
 
 
 try:
