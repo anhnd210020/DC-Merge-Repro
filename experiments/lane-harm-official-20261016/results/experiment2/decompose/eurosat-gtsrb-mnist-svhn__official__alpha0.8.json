@@ -1,0 +1,318 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "operator": "official",
+  "alpha": 0.8,
+  "alpha_source": "selected",
+  "tasks": [
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "svhn"
+  ],
+  "companions": [
+    "gtsrb",
+    "mnist",
+    "svhn"
+  ],
+  "target": "eurosat",
+  "solo_acc": 68.85185185185185,
+  "standalone_acc": 98.56,
+  "lane_checks": {
+    "max_rel_sum_error": 9.538803169562016e-08,
+    "max_abs_diff_vs_official": 0.0
+  },
+  "results": [
+    {
+      "kind": "subset",
+      "name": "none",
+      "scales": {
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "acc": {
+        "eurosat": 86.59259259259258,
+        "gtsrb": 36.342042755344416,
+        "mnist": 56.55,
+        "svhn": 28.85132539377641
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "gtsrb",
+      "scales": {
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "acc": {
+        "eurosat": 86.81481481481481,
+        "gtsrb": 69.08155186064924,
+        "mnist": 54.1,
+        "svhn": 34.40261237034191
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "mnist",
+      "scales": {
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "acc": {
+        "eurosat": 86.59259259259258,
+        "gtsrb": 34.24386381631037,
+        "mnist": 86.4,
+        "svhn": 28.774490971955437
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "svhn",
+      "scales": {
+        "gtsrb": 0.0,
+        "mnist": 0.0
+      },
+      "acc": {
+        "eurosat": 78.4074074074074,
+        "gtsrb": 35.62945368171022,
+        "mnist": 64.5,
+        "svhn": 55.397618132923554
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "gtsrb+mnist",
+      "scales": {
+        "svhn": 0.0
+      },
+      "acc": {
+        "eurosat": 84.88888888888889,
+        "gtsrb": 67.18131433095805,
+        "mnist": 83.45,
+        "svhn": 35.01728774490972
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "gtsrb+svhn",
+      "scales": {
+        "mnist": 0.0
+      },
+      "acc": {
+        "eurosat": 69.11111111111111,
+        "gtsrb": 72.20902612826603,
+        "mnist": 60.45,
+        "svhn": 63.46523242412601
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "mnist+svhn",
+      "scales": {
+        "gtsrb": 0.0
+      },
+      "acc": {
+        "eurosat": 73.29629629629629,
+        "gtsrb": 29.928741092636578,
+        "mnist": 94.6,
+        "svhn": 56.12754514022282
+      }
+    },
+    {
+      "kind": "subset",
+      "name": "gtsrb+mnist+svhn",
+      "scales": {},
+      "acc": {
+        "eurosat": 59.44444444444444,
+        "gtsrb": 64.76642913697546,
+        "mnist": 92.15,
+        "svhn": 64.80983480599308
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb=0.25",
+      "scales": {
+        "gtsrb": 0.25
+      },
+      "acc": {
+        "eurosat": 72.18518518518519,
+        "gtsrb": 35.55027711797308,
+        "mnist": 94.6,
+        "svhn": 59.239339223972344
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb=0.5",
+      "scales": {
+        "gtsrb": 0.5
+      },
+      "acc": {
+        "eurosat": 71.0,
+        "gtsrb": 43.23040380047506,
+        "mnist": 94.25,
+        "svhn": 61.87091817134076
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb=0.75",
+      "scales": {
+        "gtsrb": 0.75
+      },
+      "acc": {
+        "eurosat": 66.55555555555556,
+        "gtsrb": 52.850356294536816,
+        "mnist": 93.15,
+        "svhn": 63.96465616596235
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "mnist=0.25",
+      "scales": {
+        "mnist": 0.25
+      },
+      "acc": {
+        "eurosat": 66.96296296296296,
+        "gtsrb": 71.21931908155186,
+        "mnist": 67.4,
+        "svhn": 64.1183250096043
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "mnist=0.5",
+      "scales": {
+        "mnist": 0.5
+      },
+      "acc": {
+        "eurosat": 64.77777777777777,
+        "gtsrb": 70.46714172604909,
+        "mnist": 76.85,
+        "svhn": 64.48328851325394
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "mnist=0.75",
+      "scales": {
+        "mnist": 0.75
+      },
+      "acc": {
+        "eurosat": 62.22222222222222,
+        "gtsrb": 68.36896278701504,
+        "mnist": 85.35000000000001,
+        "svhn": 64.7714175950826
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "svhn=0.25",
+      "scales": {
+        "svhn": 0.25
+      },
+      "acc": {
+        "eurosat": 80.85185185185185,
+        "gtsrb": 68.17102137767222,
+        "mnist": 85.6,
+        "svhn": 40.741452170572416
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "svhn=0.5",
+      "scales": {
+        "svhn": 0.5
+      },
+      "acc": {
+        "eurosat": 75.51851851851852,
+        "gtsrb": 68.68566904196358,
+        "mnist": 88.1,
+        "svhn": 48.92431809450634
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "svhn=0.75",
+      "scales": {
+        "svhn": 0.75
+      },
+      "acc": {
+        "eurosat": 68.33333333333333,
+        "gtsrb": 67.45843230403801,
+        "mnist": 90.5,
+        "svhn": 56.8190549366116
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb+svhn=0.25",
+      "scales": {
+        "gtsrb": 0.25,
+        "svhn": 0.25
+      },
+      "acc": {
+        "eurosat": 85.44444444444444,
+        "gtsrb": 40.53840063341251,
+        "mnist": 88.64999999999999,
+        "svhn": 36.68843641951594
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb+svhn=0.5",
+      "scales": {
+        "gtsrb": 0.5,
+        "svhn": 0.5
+      },
+      "acc": {
+        "eurosat": 80.62962962962963,
+        "gtsrb": 47.70387965162312,
+        "mnist": 89.85,
+        "svhn": 46.40799077986938
+      }
+    },
+    {
+      "kind": "dose",
+      "name": "gtsrb+svhn=0.75",
+      "scales": {
+        "gtsrb": 0.75,
+        "svhn": 0.75
+      },
+      "acc": {
+        "eurosat": 74.07407407407408,
+        "gtsrb": 55.819477434679335,
+        "mnist": 91.14999999999999,
+        "svhn": 56.281213983864774
+      }
+    },
+    {
+      "kind": "self",
+      "name": "eurosat=1.25",
+      "scales": {
+        "eurosat": 1.25
+      },
+      "acc": {
+        "eurosat": 70.51851851851852,
+        "gtsrb": 59.580364212193196,
+        "mnist": 91.45,
+        "svhn": 61.89012677679601
+      }
+    },
+    {
+      "kind": "self",
+      "name": "eurosat=1.5",
+      "scales": {
+        "eurosat": 1.5
+      },
+      "acc": {
+        "eurosat": 77.96296296296296,
+        "gtsrb": 54.27553444180523,
+        "mnist": 91.2,
+        "svhn": 58.47099500576258
+      }
+    }
+  ]
+}

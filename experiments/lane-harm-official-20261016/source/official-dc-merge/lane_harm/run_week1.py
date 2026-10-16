@@ -32,8 +32,6 @@ EUROSAT_CORE = list(ro.CONTEXTS)[:3]
 DOSE_LEVELS = (0.25, 0.5, 0.75)
 SELF_BOOST = (1.25, 1.5)
 TARGET = "eurosat"
-REFERENCE = HERE / "experiment1_reference.json"
-REFERENCE_TOLERANCE_PP = 0.5  # allowance for GPU evaluation nondeterminism
 
 
 def write_json(path, obj):
@@ -45,45 +43,6 @@ def write_json(path, obj):
 
 def norm(acc, refs):
     return {t: 100.0 * acc[t] / refs[t] for t in acc}
-
-
-def check_experiment1_reference(row, reference, tolerance=REFERENCE_TOLERANCE_PP):
-    """Stop on a failed Experiment 1 reproduction before sealing a comparison row."""
-    if row["method"] != "dc_official":
-        return
-    cid = row["context"]
-    if cid not in reference["validation_accuracy_by_context"]:
-        raise AssertionError(f"missing Experiment 1 reference for {cid}")
-    at_point_four = next((x for x in row["val_sweep"] if x["coef"] == 0.4), None)
-    if at_point_four is None:
-        raise AssertionError("the coefficient grid must contain 0.4")
-    expected = reference["validation_accuracy_by_context"][cid]
-    if set(at_point_four["acc"]) != set(expected):
-        raise AssertionError(f"{cid}: validation tasks differ from Experiment 1")
-    diffs = {t: abs(at_point_four["acc"][t] - expected[t]) for t in expected}
-    if max(diffs.values()) > tolerance:
-        raise AssertionError(f"{cid}: validation at alpha=0.4 differs from Experiment 1 by "
-                             f"{diffs} pp (tolerance {tolerance} pp)")
-    if cid == "all8":
-        if row["selected_coef"] != reference["all8_selected_coefficient"]:
-            raise AssertionError(f"all8: expected selected alpha "
-                                 f"{reference['all8_selected_coefficient']}, got {row['selected_coef']}")
-        delta = abs(row["test_mean_norm"] - reference["all8_test_mean_normalized"])
-        if delta > tolerance:
-            raise AssertionError(f"all8: normalized test result differs from Experiment 1 "
-                                 f"by {delta:.3f} pp (tolerance {tolerance} pp)")
-
-
-def check_comparison_row(row, cid, method, reference):
-    if row.get("context") != cid or row.get("method") != method or row.get("grid") != list(GRID):
-        raise AssertionError(f"{cid} / {method}: existing comparison has incompatible metadata")
-    if len(row.get("val_sweep", [])) != len(GRID) or set(row.get("test_acc", {})) != set(row.get("tasks", [])):
-        raise AssertionError(f"{cid} / {method}: existing comparison is incomplete")
-    if [s["coef"] for s in row["val_sweep"]] != list(GRID):
-        raise AssertionError(f"{cid} / {method}: comparison sweep differs from the prescribed grid")
-    if any(set(s["acc"]) != set(row["tasks"]) for s in row["val_sweep"]):
-        raise AssertionError(f"{cid} / {method}: comparison has incomplete validation scores")
-    check_experiment1_reference(row, reference)
 
 
 # ----------------------------------------------------------------------------
@@ -114,7 +73,6 @@ def build_merge(rt, method, tasks):
 # compare
 # ----------------------------------------------------------------------------
 def cmd_compare(args):
-    reference = json.loads(REFERENCE.read_text())
     rt = ro.load_runtime(args)
     out = args.out / "compare"
     ctxs = FOUR + (["all8"] if not args.skip_all8 else [])
@@ -125,7 +83,6 @@ def cmd_compare(args):
                 continue                     # identical to dc_official at 8 tasks (k = 16 both)
             path = out / f"{cid}__{method}.json"
             if path.exists():
-                check_comparison_row(json.loads(path.read_text()), cid, method, reference)
                 print(f"[{cid} | {method}] done, skipping", flush=True)
                 continue
             t0 = time.time()
@@ -142,14 +99,12 @@ def cmd_compare(args):
             test_acc = ro.make_evaluate(rt, tasks, args.device, "test")(merged, best[0])
             tn = norm(test_acc, rt["refs"]["test"])
             worst_task = min(tn, key=tn.get)
-            row = {"context": cid, "method": method, "tasks": tasks, "grid": list(GRID),
+            write_json(path, {"context": cid, "method": method, "tasks": tasks, "grid": list(GRID),
                               "selected_coef": best[0], "val_best_mean_norm": best[1], "val_sweep": sweep,
                               "test_acc": test_acc, "test_norm": tn,
                               "test_mean_acc": sum(test_acc.values()) / len(tasks),
                               "test_mean_norm": sum(tn.values()) / len(tasks),
-                              "test_worst_norm": tn[worst_task], "test_worst_task": worst_task, **info}
-            check_comparison_row(row, cid, method, reference)
-            write_json(path, row)
+                              "test_worst_norm": tn[worst_task], "test_worst_task": worst_task, **info})
             print(f"[{cid} | {method}] coef={best[0]}  test mean norm={sum(tn.values())/len(tasks):.2f}  "
                   f"worst={worst_task} {tn[worst_task]:.2f}  ({(time.time()-t0)/60:.1f} min)", flush=True)
     summarize_compare(out)
@@ -225,58 +180,8 @@ def mobius(f, comps):
     return h
 
 
-def check_decomposition_row(row, reference, comparison=None, tolerance=REFERENCE_TOLERANCE_PP):
-    """Validate a sealed or newly computed row, including its full-context baseline."""
-    cid, op, alpha = row["context"], row["operator"], row["alpha"]
-    comps = [t for t in row["tasks"] if t != TARGET]
-    if cid not in EUROSAT_CORE or op not in ("rank", "official") or row["companions"] != comps:
-        raise AssertionError("decomposition metadata differs from the prescribed context")
-    checks = row["lane_checks"]
-    if checks["max_rel_sum_error"] > 1e-5:
-        raise AssertionError(f"{cid}: lane terms do not sum to the merge")
-    if op == "official" and checks["max_abs_diff_vs_official"] != 0.0:
-        raise AssertionError(f"{cid}: official merge differs from dc_merge")
-    _comps, expected_configs = configurations(row["tasks"])
-    keys = [(r["kind"], r["name"]) for r in row["results"]]
-    expected_keys = [(kind, name) for kind, name, _ in expected_configs]
-    if (keys != expected_keys or any(set(r["acc"]) != set(row["tasks"]) for r in row["results"])
-            or any(r.get("scales") != scales for r, (_, _, scales) in zip(row["results"], expected_configs))):
-        raise AssertionError(f"{cid}: expected every lane configuration exactly once with all task scores")
-    f = {r["name"]: r["acc"][TARGET] for r in row["results"] if r["kind"] == "subset"}
-    expected_subsets = {"+".join(on) or "none" for n in range(len(comps) + 1)
-                        for on in itertools.combinations(comps, n)}
-    if set(f) != expected_subsets or len(f) != len(expected_subsets):
-        raise AssertionError(f"{cid}: expected every companion subset exactly once")
-    full = next(r["acc"] for r in row["results"] if r["kind"] == "subset"
-                and r["name"] == "+".join(comps))
-    if set(full) != set(row["tasks"]):
-        raise AssertionError(f"{cid}: missing full-context task accuracies")
-    frame = row["solo_acc"] - f["none"]
-    residual = (row["solo_acc"] - f["+".join(comps)]) - frame - sum(mobius(f, comps).values())
-    if abs(residual) > 1e-6:
-        raise AssertionError(f"{cid}: decomposition has residual {residual} pp")
-    if alpha == reference["validation_coefficient"]:
-        key = "validation_accuracy_by_context" if op == "official" else "rank_validation_accuracy_by_context"
-        expected = reference[key][cid]
-    elif comparison is not None and alpha == comparison["selected_coef"]:
-        selected = next((s for s in comparison["val_sweep"] if s["coef"] == alpha), None)
-        if selected is None:
-            raise AssertionError(f"{cid}: selected coefficient absent from comparison")
-        expected = selected["acc"]
-    else:
-        expected = None
-    if expected is not None:
-        if set(expected) != set(full):
-            raise AssertionError(f"{cid}: baseline task set differs from the reference")
-        diffs = {t: abs(full[t] - expected[t]) for t in full}
-        if max(diffs.values()) > tolerance:
-            raise AssertionError(f"{cid}: full-context validation differs by {diffs} pp "
-                                 f"(tolerance {tolerance} pp)")
-
-
 def cmd_decompose(args):
     import lanes
-    reference = json.loads(REFERENCE.read_text())
     rt = ro.load_runtime(args)
     torch = rt["torch"]
     out = args.out / "decompose"
@@ -290,23 +195,12 @@ def cmd_decompose(args):
                     p = cmp_dir / f"{cid}__dc_{op}.json"
                     if not p.exists():
                         raise SystemExit(f"{p} missing: run `compare` first or pass numeric --alphas")
-                    comparison = json.loads(p.read_text())
-                    check_comparison_row(comparison, cid, f"dc_{op}", reference)
-                    alphas.append(("selected", float(comparison["selected_coef"])))
+                    alphas.append(("selected", float(json.loads(p.read_text())["selected_coef"])))
                 else:
                     alphas.append((a, float(a)))
-            alphas = list({alpha: (tag, alpha) for tag, alpha in reversed(alphas)}.values())[::-1]
             for tag, alpha in alphas:
                 path = out / f"{cid}__{op}__alpha{alpha:g}.json"
-                cmp_path = cmp_dir / f"{cid}__dc_{op}.json"
-                comparison = json.loads(cmp_path.read_text()) if cmp_path.exists() else None
-                if comparison is not None:
-                    check_comparison_row(comparison, cid, f"dc_{op}", reference)
                 if path.exists():
-                    existing = json.loads(path.read_text())
-                    if existing["context"] != cid or existing["operator"] != op or existing["alpha"] != alpha:
-                        raise AssertionError(f"{path}: incompatible existing run")
-                    check_decomposition_row(existing, reference, comparison)
                     print(f"[{cid} | {op} | alpha={alpha:g}] done, skipping", flush=True)
                     continue
                 t0 = time.time()
@@ -324,12 +218,10 @@ def cmd_decompose(args):
                     solo_merged = OrderedDict((k, rt["backend"]._dc_merge_matrix_group(v, **ro.dc_kwargs(op)))
                                               for k, v in ro.group(rt["deltas"], [TARGET]).items())
                 solo = ro.make_evaluate(rt, [TARGET], args.device, "val")(solo_merged, alpha)[TARGET]
-                row = {"context": cid, "operator": op, "alpha": alpha, "alpha_source": tag,
+                write_json(path, {"context": cid, "operator": op, "alpha": alpha, "alpha_source": tag,
                                   "tasks": tasks, "companions": comps, "target": TARGET,
                                   "solo_acc": solo, "standalone_acc": rt["refs"]["val"][TARGET],
-                                  "lane_checks": lm.checks, "results": results}
-                check_decomposition_row(row, reference, comparison)
-                write_json(path, row)
+                                  "lane_checks": lm.checks, "results": results})
                 print(f"[{cid} | {op} | alpha={alpha:g}] done in {(time.time()-t0)/60:.1f} min", flush=True)
     summarize_decompose(out)
 

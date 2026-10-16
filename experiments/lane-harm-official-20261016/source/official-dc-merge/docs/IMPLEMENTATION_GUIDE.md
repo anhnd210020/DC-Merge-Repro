@@ -13,9 +13,9 @@ Experiment 1 ran on official DC-Merge with the authors' checkpoints. It reproduc
 1. **Keeping 16 instead of 4 coefficients per task** raises accuracy in every one of 28 task–context pairs (+8.30 pp on average).
 2. **EuroSAT is still a victim** when merged with GTSRB and SVHN. In context `dtd-eurosat-gtsrb-svhn` it scores 63.3%, against 85.0% when merged alone: 21.7 pp of harm.
 3. **Conflict inside EuroSAT's own lane is not the cause.** All four TIES-level interventions recover 0 pp.
-4. Replacing EuroSAT's own lane with its smoothed update recovers 17–21% of its harm, but this intervention changes several stages at once and has no matched control for that replacement. It does not isolate a cause.
+4. **EuroSAT's own lane being slightly crooked** explains only 17–21% of its harm.
 
-At least roughly **80% of the harm remains after that replacement**. A hypothesis to test is that **neighbours' lane terms**, particularly GTSRB's and SVHN's, change shared layers that EuroSAT's images also pass through. The results so far do not establish this hypothesis.
+So about **80% of the harm is still unexplained**. The most likely cause: the **neighbours' own updates**, GTSRB's and SVHN's lanes, change shared layers that EuroSAT's images also pass through.
 
 ### Why that matters for a paper
 
@@ -68,7 +68,6 @@ lane_harm/
 - on the official operator, the merge is **bit-for-bit identical** to official `dc_merge`;
 - the decomposition parts sum exactly to the harm;
 - CT-Merging's bases are orthonormal.
-- at α = 0.4, the official validation scores match the sealed Experiment 1 reference (within 0.5 pp); the all8 official winner is α = 0.4 and its normalized test score matches within 0.5 pp. The decomposition's full-context scores are likewise checked against the corresponding references.
 
 ### 2. Setup
 
@@ -108,12 +107,12 @@ Defaults: both operators (`rank`, `official`), and two α values per context:
 
 Validation split.
 
-- Both commands verify completed result files before skipping them on rerun; after an interruption, run the same command again.
+- Both commands skip finished pieces when rerun, so after an interruption just run the same command again.
 - To rebuild the summaries: `"$PYTHON" lane_harm/run_week1.py summarize --out "$OUT"`.
 
 **Cost (rough estimate):**
 - 2a: about 350 validation evaluations of 4 tasks (8 for `all8`), plus 23 test evaluations. There is no attribution step, so it's faster per merge than Experiment 1.
-- 2b+2c: 2 operators × 2 α × 3 contexts × 22 lane configurations, plus one solo evaluation per setting ≈ 276 evaluations. If the selected coefficient is 0.4, its duplicate setting runs once.
+- 2b+2c: 2 operators × 2 α × 3 contexts × 23 merges ≈ 280 evaluations.
 - **Expect roughly 5–10 hours in total on one RTX 3090/4090.**
 
 ### 4. Output
@@ -140,7 +139,7 @@ Validation split.
 
 ### 2a: Does CT-Merging rescue EuroSAT?
 
-- **All 8 tasks:** Table 2 of the CT-Merging paper reports 72.55 normalized for CT-Merging and 72.86 for DC-Merge on ViT-B/32, 8 tasks, DC-Merge adapters. **Expect CT-Merging close to `dc_official`**; its precise value can differ with our selected coefficient grid and evaluation setup. A large gap either way calls for checking our independent CT-Merging implementation before drawing a conclusion.
+- **All 8 tasks:** the CT-Merging paper reports DC-Merge ahead of CT-Merging on exactly this setting (ViT-B/32, 8 tasks, DC-Merge benchmark). **Expect CT-Merging close to, or slightly below, `dc_official`.** A large gap either way means our CT-Merging implementation needs checking before anything else.
 - **4-task contexts:** compare EuroSAT and worst-task accuracy against `dc_rank`.
 
 | Result (3 EuroSAT core contexts) | Meaning |
@@ -186,6 +185,5 @@ For each dose setting, compare EuroSAT's gain with the **summed losses of the ot
 ## Known limitations
 
 - **CT-Merging is our implementation** from the paper's equations; no official code exists. Unstated details are handled conservatively and noted in `ct_merging.py`: the eigen-solver (an equivalent SVD route, checked), degenerate residual directions, and which split γ is selected on (we use validation).
-- **Removing a lane keeps the full merge's frame and TIES votes.** That is intended: it isolates each neighbour's *contribution* to the real merge, rather than re-merging without that neighbour. The exact additive decomposition is an accounting identity over subset accuracies in this fixed frame; interaction terms do not by themselves prove a unique biological or causal mechanism. At k = 16 the TIES interventions inside EuroSAT's lane had no measured accuracy effect in Experiment 1.
-- The packaged `lane_harm/experiment1_reference.json` was extracted from the sealed Experiment 1 archive (hash recorded inside the file). The 0.5 pp tolerance is an explicit allowance for evaluation nondeterminism, not an equivalence proof when that margin is reached.
+- **Removing a lane keeps the full merge's frame and TIES votes.** That is intended: it isolates each neighbour's *contribution* to the real merge, rather than re-merging without that neighbour. At k = 16 the TIES votes inside lanes are inactive anyway (Experiment 1).
 - One seed, the validation split for 2b/2c, 3 contexts. Enough to decide whether to build the method; not enough to publish.

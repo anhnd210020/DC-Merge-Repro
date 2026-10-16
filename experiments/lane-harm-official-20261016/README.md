@@ -72,33 +72,40 @@ The archive contains 845 files (all per-context JSON/JSONL outputs, both `interv
 ad630671fdb22ac9fd82ebef33ea2dbca9891175072346843bee0cd1fc036030
 ~~~
 
-## Experiment 2 source (added after the Experiment 1 run)
+## Experiment 2 source and results
 
-The next experiment's code is now in the **same source snapshot** at
-`source/official-dc-merge/lane_harm/{ct_merging.py,lanes.py,run_week1.py}`.
-Its instructions are in `source/official-dc-merge/docs/IMPLEMENTATION_GUIDE.md`.
-The supplied `DC-Merge-official-experiment2.zip` has SHA-256
-`42ecfcf62112dbe76c33b51167e30bfe8b81df662a3606a2d66e8b49c88652cc`;
-all common files were byte-identical to the published Experiment 1 snapshot.
-Only these three new modules, the guide, the sealed Experiment 1 reference JSON,
-and small CPU-independent checks were added. The official merging code was not
-modified. The reference JSON was derived from the Experiment 1 result archive
-above, and carries that archive's SHA-256.
+The code actually executed on the server is preserved in
+`source/official-dc-merge/lane_harm/{ct_merging.py,lanes.py,run_week1.py}`
+and the run guide in `source/official-dc-merge/docs/IMPLEMENTATION_GUIDE.md`.
+These files were checked byte for byte against the server handoff. The initial
+pre-run branch draft had added a reference JSON and stronger runtime checks;
+those were not part of the server run and were removed from this published
+snapshot. Historical Experiment 1 validation data were not available to the
+server runner; see the result note for the internal cross-check and its limits.
 
-Experiment 2a compares official DC-Merge, the rank top-k variant, and a local
-implementation of CT-Merging on validation-selected coefficients, evaluating
-each chosen merge once on test. Experiment 2b/2c measures all eight subsets of
-three companion lanes in the fixed full-context frame and then tests partial
-lane scales. The runner checks Experiment 1's validation baseline at alpha 0.4
-and the all-eight official selected coefficient/test score, allowing 0.5
-percentage points for evaluation nondeterminism. It checks existing result
-files before resuming. See the guide for the complete commands and caveats.
+Experiment 2a compares official DC-Merge, the rank top-k variant, and an
+independent CT-Merging implementation. Experiment 2b/2c measures the neighbor
+lane terms in a fixed full-context frame and tests partial doses.
 
-No Experiment 2 GPU run or result is included in this commit. Running it
-requires the external model, checkpoints, heads, datasets, and Python/CUDA
-environment described above; this publication contains code and a run plan.
-The Git snapshot also omits the five upstream dataset split-index `.pt` files
-listed in `EXCLUDED_FILES.md`; restore those byte-identical files from the
-official DC-Merge commit before using this source snapshot as `--repo`.
-The supplied Experiment 2 ZIP contains them, so its independent unpacked
-source can be used directly with the external assets.
+- [Experiment 2 result note](results/experiment2/experiment2-results-note.md)
+- [Compare summary](results/experiment2/compare/compare_summary.md) and [CSV](results/experiment2/compare/compare.csv)
+- [Decomposition summary](results/experiment2/decompose/decompose_summary.md) and [CSV](results/experiment2/decompose/decompose.csv)
+- [Compare log](results/experiment2/logs/experiment2-compare.log) and [decomposition log](results/experiment2/logs/experiment2-decompose.log)
+- [Original server handoff](results/experiment2-handoff-20261016.tar.gz)
+
+The handoff archive (SHA-256
+`c33d78145dafb55a503e69f557fee38e036785458159426617203d2430f53d8a`)
+contains the entire server source snapshot, all 40 Experiment 2 result files,
+and the two logs. It also preserves the five upstream dataset split-index
+tensors and unrelated source-side files omitted from the readable source tree.
+All result files and logs published here match the handoff byte for byte.
+The official eight-task baseline selected α=0.4 and reached 73.856% mean
+normalized test accuracy. Across the three core contexts CT improves EuroSAT
+accuracy by 5.85–15.96 percentage points versus the rank variant, while
+lowering mean normalized accuracy and the worst-task score. See the result
+note for dose outcomes and the one-seed limitation.
+
+The five upstream `.pt` split-index tensors remain excluded from the readable
+Git source tree as described in `EXCLUDED_FILES.md`; restore them from the
+official commit or extract them from the handoff before rerunning. External
+model weights, LoRA adapters, heads, and image datasets are still required.
