@@ -1,0 +1,105 @@
+{
+  "source_archive_sha256": "ad630671fdb22ac9fd82ebef33ea2dbca9891175072346843bee0cd1fc036030",
+  "source": "Experiment 1 official context_report.json and alpha_selection_all8_official.json",
+  "validation_coefficient": 0.4,
+  "validation_accuracy_by_context": {
+    "dtd-eurosat-gtsrb-svhn": {
+      "dtd": 47.28723404255319,
+      "eurosat": 61.111111111111114,
+      "gtsrb": 53.048297703879655,
+      "svhn": 50.69150979638878
+    },
+    "eurosat-gtsrb-mnist-svhn": {
+      "eurosat": 63.59259259259259,
+      "gtsrb": 52.96912114014252,
+      "mnist": 74.0,
+      "svhn": 49.212447176335
+    },
+    "eurosat-gtsrb-sun397-svhn": {
+      "eurosat": 63.2962962962963,
+      "gtsrb": 53.24623911322248,
+      "sun397": 64.98740554156171,
+      "svhn": 49.78870533999232
+    },
+    "stanford_cars-eurosat-gtsrb-mnist": {
+      "stanford_cars": 62.93532338308457,
+      "eurosat": 65.70370370370371,
+      "gtsrb": 52.57323832145685,
+      "mnist": 70.89999999999999
+    },
+    "stanford_cars-eurosat-gtsrb-resisc45": {
+      "stanford_cars": 62.93532338308457,
+      "eurosat": 70.2962962962963,
+      "gtsrb": 53.20665083135392,
+      "resisc45": 71.95238095238096
+    },
+    "stanford_cars-eurosat-mnist-resisc45": {
+      "stanford_cars": 63.30845771144279,
+      "eurosat": 70.92592592592592,
+      "mnist": 72.6,
+      "resisc45": 71.55555555555554
+    },
+    "stanford_cars-eurosat-mnist-sun397": {
+      "stanford_cars": 63.49502487562189,
+      "eurosat": 66.96296296296296,
+      "mnist": 72.55,
+      "sun397": 65.088161209068
+    },
+    "all8": {
+      "stanford_cars": 62.375621890547265,
+      "dtd": 48.88297872340426,
+      "eurosat": 59.333333333333336,
+      "gtsrb": 58.392715756136184,
+      "mnist": 86.25,
+      "resisc45": 75.82539682539682,
+      "sun397": 65.84382871536523,
+      "svhn": 57.85631963119477
+    }
+  },
+  "all8_selected_coefficient": 0.4,
+  "all8_test_mean_normalized": 73.85626221971975,
+  "rank_validation_accuracy_by_context": {
+    "dtd-eurosat-gtsrb-svhn": {
+      "dtd": 52.18085106382979,
+      "eurosat": 63.33333333333333,
+      "gtsrb": 68.36896278701504,
+      "svhn": 60.276603918555516
+    },
+    "eurosat-gtsrb-mnist-svhn": {
+      "eurosat": 64.4074074074074,
+      "gtsrb": 66.90419635787806,
+      "mnist": 89.05,
+      "svhn": 60.526315789473685
+    },
+    "eurosat-gtsrb-sun397-svhn": {
+      "eurosat": 69.18518518518518,
+      "gtsrb": 69.79414093428346,
+      "sun397": 66.92695214105794,
+      "svhn": 60.54552439492893
+    },
+    "stanford_cars-eurosat-gtsrb-mnist": {
+      "stanford_cars": 65.73383084577115,
+      "eurosat": 70.33333333333334,
+      "gtsrb": 66.34996041171813,
+      "mnist": 82.69999999999999
+    },
+    "stanford_cars-eurosat-gtsrb-resisc45": {
+      "stanford_cars": 64.05472636815921,
+      "eurosat": 80.51851851851852,
+      "gtsrb": 67.10213776722091,
+      "resisc45": 79.0952380952381
+    },
+    "stanford_cars-eurosat-mnist-resisc45": {
+      "stanford_cars": 65.17412935323384,
+      "eurosat": 79.66666666666666,
+      "mnist": 84.45,
+      "resisc45": 79.39682539682539
+    },
+    "stanford_cars-eurosat-mnist-sun397": {
+      "stanford_cars": 66.66666666666666,
+      "eurosat": 77.96296296296296,
+      "mnist": 85.1,
+      "sun397": 66.77581863979849
+    }
+  }
+}

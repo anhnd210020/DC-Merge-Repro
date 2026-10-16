@@ -71,3 +71,34 @@ The archive contains 845 files (all per-context JSON/JSONL outputs, both `interv
 ~~~text
 ad630671fdb22ac9fd82ebef33ea2dbca9891175072346843bee0cd1fc036030
 ~~~
+
+## Experiment 2 source (added after the Experiment 1 run)
+
+The next experiment's code is now in the **same source snapshot** at
+`source/official-dc-merge/lane_harm/{ct_merging.py,lanes.py,run_week1.py}`.
+Its instructions are in `source/official-dc-merge/docs/IMPLEMENTATION_GUIDE.md`.
+The supplied `DC-Merge-official-experiment2.zip` has SHA-256
+`42ecfcf62112dbe76c33b51167e30bfe8b81df662a3606a2d66e8b49c88652cc`;
+all common files were byte-identical to the published Experiment 1 snapshot.
+Only these three new modules, the guide, the sealed Experiment 1 reference JSON,
+and small CPU-independent checks were added. The official merging code was not
+modified. The reference JSON was derived from the Experiment 1 result archive
+above, and carries that archive's SHA-256.
+
+Experiment 2a compares official DC-Merge, the rank top-k variant, and a local
+implementation of CT-Merging on validation-selected coefficients, evaluating
+each chosen merge once on test. Experiment 2b/2c measures all eight subsets of
+three companion lanes in the fixed full-context frame and then tests partial
+lane scales. The runner checks Experiment 1's validation baseline at alpha 0.4
+and the all-eight official selected coefficient/test score, allowing 0.5
+percentage points for evaluation nondeterminism. It checks existing result
+files before resuming. See the guide for the complete commands and caveats.
+
+No Experiment 2 GPU run or result is included in this commit. Running it
+requires the external model, checkpoints, heads, datasets, and Python/CUDA
+environment described above; this publication contains code and a run plan.
+The Git snapshot also omits the five upstream dataset split-index `.pt` files
+listed in `EXCLUDED_FILES.md`; restore those byte-identical files from the
+official DC-Merge commit before using this source snapshot as `--repo`.
+The supplied Experiment 2 ZIP contains them, so its independent unpacked
+source can be used directly with the external assets.
