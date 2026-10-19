@@ -1,0 +1,7 @@
+# Experiment 3 baseline provenance warning
+
+Experiment 3 uses the current-environment direct replay of Experiment 2 `dc_rank` at each archived selected alpha as its primary baseline. The archived Oct 16 `compare/` directory is unchanged. The separate `/srv/dcmerge/results/experiment2-current-baseline/` overlay copies the archived alpha and CT results and substitutes current direct `dc_rank` accuracy values at that alpha. The oracle’s 0.1 pp reproduction check remains unchanged and is evaluated against this current baseline.
+
+Across the seven contexts, archived-to-current maximum absolute differences were 0.158353 pp on validation (`dtd-eurosat-gtsrb-svhn`, GTSRB) and 0.148148 pp on test (`stanford_cars-eurosat-gtsrb-resisc45`, EuroSAT). Full per-task differences and source provenance are in `/srv/dcmerge/results/experiment2-current-baseline/manifest.json` and `/srv/dcmerge/results/experiment2-recreated/replay-diagnosis.md`.
+
+The archived Experiment 2 note reported a 0.32 pp difference between different evaluation arithmetic paths. Current identical-input repeats were stable, while AMP/FP32 and old/fixed lane arithmetic changed some near-tie predictions. These observations make numerical sensitivity a plausible explanation but do not prove the cause of each archived-to-current difference. Exact Oct 16 per-example predictions, complete old environment records, and a cryptographic hash of every extracted dataset image are unavailable.

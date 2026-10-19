@@ -1,0 +1,8 @@
+Experiment 3 runner lifecycle
+
+- Core phase completed; final verification records wrapper exit 0.
+- An earlier four phase invocation was interrupted (exit 130); the completed four phase was resumed and finished using saved validation caches.
+- The final four wrapper exited 0 and rebuilt oracle_summary.md and oracle.csv.
+- Machine-readable completion evidence: results/experiment3/final_verification.json.
+
+No explicit END lines found in the wrapper log excerpt.

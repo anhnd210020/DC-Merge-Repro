@@ -1,0 +1,10 @@
+[dtd-eurosat-gtsrb-svhn] baseline validation diff vs Experiment 2a: 0.000 pp
+[dtd-eurosat-gtsrb-svhn] baseline test diff vs Experiment 2a: 0.000 pp
+[dtd-eurosat-gtsrb-svhn] done in 53.9 min; 78 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+[eurosat-gtsrb-mnist-svhn] baseline validation diff vs Experiment 2a: 0.000 pp
+[eurosat-gtsrb-mnist-svhn] baseline test diff vs Experiment 2a: 0.000 pp
+[eurosat-gtsrb-mnist-svhn] done in 37.3 min; 57 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+[eurosat-gtsrb-sun397-svhn] baseline validation diff vs Experiment 2a: 0.000 pp
+[eurosat-gtsrb-sun397-svhn] baseline test diff vs Experiment 2a: 0.000 pp
+[eurosat-gtsrb-sun397-svhn] done in 97.3 min; 82 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+Extracted from /srv/dcmerge/results/experiment3-core.log; selected each context’s last completion/check lines.

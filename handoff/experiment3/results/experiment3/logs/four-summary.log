@@ -1,0 +1,13 @@
+[stanford_cars-eurosat-gtsrb-mnist] baseline validation diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-gtsrb-mnist] baseline test diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-gtsrb-mnist] done in 30.9 min; 50 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+[stanford_cars-eurosat-gtsrb-resisc45] baseline validation diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-gtsrb-resisc45] baseline test diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-gtsrb-resisc45] done in 54.9 min; 70 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+[stanford_cars-eurosat-mnist-resisc45] baseline validation diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-mnist-resisc45] baseline test diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-mnist-resisc45] done in 52.6 min; 71 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+[stanford_cars-eurosat-mnist-sun397] baseline validation diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-mnist-sun397] baseline test diff vs Experiment 2a: 0.000 pp
+[stanford_cars-eurosat-mnist-sun397] done in 104.9 min; 99 validation merges; baseline vs Experiment 2a: val diff 0.000 pp, test diff 0.000 pp
+Extracted from /srv/dcmerge/results/experiment3-four.log; selected each context’s last completion/check lines.
