@@ -1,0 +1,258 @@
+{
+  "alpha": 0.6,
+  "coefficient_ratios": {
+    "eurosat": {
+      "fallback": null,
+      "mean_c_over_alpha": 1.2944444444444445,
+      "source_contexts": [
+        {
+          "context": "dtd-eurosat-gtsrb-svhn",
+          "ratio": 1.6
+        },
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 1.6666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-mnist",
+          "ratio": 1.5
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-sun397",
+          "ratio": 1.0
+        }
+      ],
+      "source_count": 6,
+      "transfer_coefficient": 0.7766666666666667
+    },
+    "gtsrb": {
+      "fallback": null,
+      "mean_c_over_alpha": 1.1833333333333333,
+      "source_contexts": [
+        {
+          "context": "dtd-eurosat-gtsrb-svhn",
+          "ratio": 1.4
+        },
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 1.1666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-mnist",
+          "ratio": 1.1666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-resisc45",
+          "ratio": 1.0
+        }
+      ],
+      "source_count": 4,
+      "transfer_coefficient": 0.71
+    },
+    "sun397": {
+      "fallback": null,
+      "mean_c_over_alpha": 0.7142857142857143,
+      "source_contexts": [
+        {
+          "context": "stanford_cars-eurosat-mnist-sun397",
+          "ratio": 0.7142857142857143
+        }
+      ],
+      "source_count": 1,
+      "transfer_coefficient": 0.42857142857142855
+    },
+    "svhn": {
+      "fallback": null,
+      "mean_c_over_alpha": 0.9166666666666667,
+      "source_contexts": [
+        {
+          "context": "dtd-eurosat-gtsrb-svhn",
+          "ratio": 1.0
+        },
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 0.8333333333333334
+        }
+      ],
+      "source_count": 2,
+      "transfer_coefficient": 0.55
+    }
+  },
+  "context": "eurosat-gtsrb-sun397-svhn",
+  "evaluation_source": {
+    "test": "new evaluation",
+    "val": "new evaluation"
+  },
+  "lane_checks": {
+    "max_abs_diff_vs_official": null,
+    "max_rel_sum_error": 1.676945942108432e-07
+  },
+  "tasks": [
+    "eurosat",
+    "gtsrb",
+    "sun397",
+    "svhn"
+  ],
+  "test": {
+    "dc_rank": {
+      "accuracy": {
+        "eurosat": 62.44444444444445,
+        "gtsrb": 79.1270783847981,
+        "sun397": 65.91939546599497,
+        "svhn": 69.1779506386248
+      },
+      "mean_norm": 76.68051434370996,
+      "normalized_accuracy": {
+        "eurosat": 63.59552341831597,
+        "gtsrb": 80.50369150961247,
+        "sun397": 90.9358469664712,
+        "svhn": 71.68699548044019
+      },
+      "worst_norm": 63.59552341831597,
+      "worst_task": "eurosat"
+    },
+    "delta_mean_norm_vs_dc_rank": 2.1141563564589347,
+    "delta_mean_norm_vs_oracle_fair": 0.1869332759800244,
+    "delta_worst_norm_vs_dc_rank": 1.6776081644156662,
+    "delta_worst_norm_vs_oracle_fair": 1.8559900960786067,
+    "loco_transfer": {
+      "accuracy": {
+        "eurosat": 72.96296296296296,
+        "gtsrb": 86.56967537608867,
+        "sun397": 63.44458438287154,
+        "svhn": 62.98857197733603
+      },
+      "mean_norm": 78.7946707001689,
+      "normalized_accuracy": {
+        "eurosat": 74.30793661570726,
+        "gtsrb": 88.0757710612358,
+        "sun397": 87.52184354100089,
+        "svhn": 65.27313158273164
+      },
+      "worst_norm": 65.27313158273164,
+      "worst_task": "svhn"
+    },
+    "oracle_fair": {
+      "accuracy": {
+        "eurosat": 83.74074074074073,
+        "gtsrb": 80.41369754552652,
+        "sun397": 60.83123425692695,
+        "svhn": 61.19754153462018
+      },
+      "mean_norm": 78.60773742418887,
+      "normalized_accuracy": {
+        "eurosat": 85.28438816655539,
+        "gtsrb": 81.8126946235899,
+        "sun397": 83.91672541995716,
+        "svhn": 63.41714148665303
+      },
+      "worst_norm": 63.41714148665303,
+      "worst_task": "svhn"
+    },
+    "oracle_mean": {
+      "accuracy": {
+        "eurosat": 89.14814814814814,
+        "gtsrb": 82.5217735550277,
+        "sun397": 61.94584382871536,
+        "svhn": 55.81484682608278
+      },
+      "mean_norm": 79.51061730724824,
+      "normalized_accuracy": {
+        "eurosat": 90.79147382436922,
+        "gtsrb": 83.95744587956831,
+        "sun397": 85.45433001616135,
+        "svhn": 57.83921950889407
+      },
+      "worst_norm": 57.83921950889407,
+      "worst_task": "svhn"
+    }
+  },
+  "transfer_coefficients": {
+    "eurosat": 0.7766666666666667,
+    "gtsrb": 0.71,
+    "sun397": 0.42857142857142855,
+    "svhn": 0.55
+  },
+  "validation": {
+    "dc_rank": {
+      "accuracy": {
+        "eurosat": 61.14814814814815,
+        "gtsrb": 78.85985748218528,
+        "sun397": 66.39798488664988,
+        "svhn": 68.7475989243181
+      },
+      "mean_norm": 75.83067372076417,
+      "normalized_accuracy": {
+        "eurosat": 62.041546416546424,
+        "gtsrb": 80.15842395017818,
+        "sun397": 89.97016922310283,
+        "svhn": 71.15255529322924
+      },
+      "worst_norm": 62.041546416546424,
+      "worst_task": "eurosat"
+    },
+    "delta_mean_norm_vs_dc_rank": 2.7493978235478806,
+    "delta_mean_norm_vs_oracle_fair": -0.14860309037314323,
+    "delta_worst_norm_vs_dc_rank": 3.2661216857888746,
+    "delta_worst_norm_vs_oracle_fair": 1.590445494120793,
+    "loco_transfer": {
+      "accuracy": {
+        "eurosat": 72.44444444444444,
+        "gtsrb": 87.41092636579573,
+        "sun397": 63.95465994962216,
+        "svhn": 63.100268920476374
+      },
+      "mean_norm": 78.58007154431205,
+      "normalized_accuracy": {
+        "eurosat": 73.502886002886,
+        "gtsrb": 88.85030124598062,
+        "sun397": 86.65943082604629,
+        "svhn": 65.3076681023353
+      },
+      "worst_norm": 65.3076681023353,
+      "worst_task": "svhn"
+    },
+    "oracle_fair": {
+      "accuracy": {
+        "eurosat": 84.4074074074074,
+        "gtsrb": 80.64133016627079,
+        "sun397": 61.68765743073048,
+        "svhn": 61.56358048405686
+      },
+      "mean_norm": 78.72867463468519,
+      "normalized_accuracy": {
+        "eurosat": 85.64063251563252,
+        "gtsrb": 81.96923172013702,
+        "sun397": 83.58761169475675,
+        "svhn": 63.717222608214506
+      },
+      "worst_norm": 63.717222608214506,
+      "worst_task": "svhn"
+    },
+    "oracle_mean": {
+      "accuracy": {
+        "eurosat": 89.74074074074075,
+        "gtsrb": 82.46239113222487,
+        "sun397": 62.7455919395466,
+        "svhn": 56.10833653476758
+      },
+      "mean_norm": 79.49110899577344,
+      "normalized_accuracy": {
+        "eurosat": 91.05188792688793,
+        "gtsrb": 83.82027966276162,
+        "sun397": 85.02112728935855,
+        "svhn": 58.07114110408567
+      },
+      "worst_norm": 58.07114110408567,
+      "worst_task": "svhn"
+    }
+  }
+}

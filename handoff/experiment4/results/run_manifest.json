@@ -1,0 +1,49 @@
+{
+  "baseline_or_oracle_results_modified": false,
+  "coefficient_selection_split": "validation",
+  "coefficient_source": "oracle_fair",
+  "completed_utc": "2026-10-19T09:22:52Z",
+  "contexts": [
+    "dtd-eurosat-gtsrb-svhn",
+    "eurosat-gtsrb-mnist-svhn",
+    "eurosat-gtsrb-sun397-svhn",
+    "stanford_cars-eurosat-gtsrb-mnist",
+    "stanford_cars-eurosat-gtsrb-resisc45",
+    "stanford_cars-eurosat-mnist-resisc45",
+    "stanford_cars-eurosat-mnist-sun397"
+  ],
+  "driver_sha256": {
+    "run_loco_task_transfer.py": "e9e7dfda195b35609ddc4211c572d199a9c164dcc54bcfdaab7d9b0502d478e2",
+    "run_loco_task_transfer.sh": "46580ea823b12d2d81cda073bdad6bf14352fe278c44da4f11bde47eaad95d4b"
+  },
+  "elapsed_seconds": 1166.0,
+  "experiment": "leave-one-context-out task-coefficient transfer",
+  "experiment3_results": "/srv/dcmerge/results/experiment3",
+  "formula": "c_transfer(task, heldout) = alpha_heldout * mean_{other contexts containing task}(c_oracle_fair / alpha_other)",
+  "log_file": "run.log",
+  "missing_history_policy": "neutral ratio 1.0; flagged; no value from the held-out context used",
+  "new_evaluations": {
+    "test": 7,
+    "val": 7
+  },
+  "runtime": {
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "python": "3.9.23",
+    "torch": "2.8.0+cu128"
+  },
+  "searches_run": 0,
+  "source_commit": null,
+  "source_commit_note": "The execution source directory has no Git metadata; exact source file SHA-256 hashes are recorded above.",
+  "source_repo": "/workspace/ducanh/DC-Merge",
+  "source_sha256": {
+    "lane_harm/lanes.py": "fec6bebc7bb6c414b95f68245d347af704bf8272fc8385147a6c5d780bbae369",
+    "lane_harm/run_official.py": "8aa9bec9f2cbc3a075d09c0d1071e1fc7d253c6f1a9abb86af3dc6482ad499fe",
+    "lane_harm/run_oracle.py": "94871b494e8262c1efb68bfd5cf001edd99dae8614d863e0f3feb2f1982c5ee5"
+  },
+  "started_utc": "2026-10-19T09:03:26Z",
+  "status": "complete",
+  "test_accuracies_used_to_construct_transfer_coefficients": false,
+  "validation_and_test": "one evaluation of each transferred vector per split, reusing exact saved evaluations only when the coefficient vector matches an existing baseline/oracle vector",
+  "validation_selected_vectors_verified_equal_test_record_vectors": true
+}

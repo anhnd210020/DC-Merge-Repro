@@ -1,0 +1,270 @@
+{
+  "alpha": 0.6,
+  "coefficient_ratios": {
+    "eurosat": {
+      "fallback": null,
+      "mean_c_over_alpha": 1.3222222222222222,
+      "source_contexts": [
+        {
+          "context": "dtd-eurosat-gtsrb-svhn",
+          "ratio": 1.6
+        },
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 1.6666666666666667
+        },
+        {
+          "context": "eurosat-gtsrb-sun397-svhn",
+          "ratio": 1.6666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-sun397",
+          "ratio": 1.0
+        }
+      ],
+      "source_count": 6,
+      "transfer_coefficient": 0.7933333333333333
+    },
+    "gtsrb": {
+      "fallback": null,
+      "mean_c_over_alpha": 1.1833333333333333,
+      "source_contexts": [
+        {
+          "context": "dtd-eurosat-gtsrb-svhn",
+          "ratio": 1.4
+        },
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 1.1666666666666667
+        },
+        {
+          "context": "eurosat-gtsrb-sun397-svhn",
+          "ratio": 1.1666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-gtsrb-resisc45",
+          "ratio": 1.0
+        }
+      ],
+      "source_count": 4,
+      "transfer_coefficient": 0.71
+    },
+    "mnist": {
+      "fallback": null,
+      "mean_c_over_alpha": 0.8412698412698413,
+      "source_contexts": [
+        {
+          "context": "eurosat-gtsrb-mnist-svhn",
+          "ratio": 0.6666666666666667
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-sun397",
+          "ratio": 0.8571428571428572
+        }
+      ],
+      "source_count": 3,
+      "transfer_coefficient": 0.5047619047619047
+    },
+    "stanford_cars": {
+      "fallback": null,
+      "mean_c_over_alpha": 0.9523809523809524,
+      "source_contexts": [
+        {
+          "context": "stanford_cars-eurosat-gtsrb-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-resisc45",
+          "ratio": 1.0
+        },
+        {
+          "context": "stanford_cars-eurosat-mnist-sun397",
+          "ratio": 0.8571428571428572
+        }
+      ],
+      "source_count": 3,
+      "transfer_coefficient": 0.5714285714285714
+    }
+  },
+  "context": "stanford_cars-eurosat-gtsrb-mnist",
+  "evaluation_source": {
+    "test": "new evaluation",
+    "val": "new evaluation"
+  },
+  "lane_checks": {
+    "max_abs_diff_vs_official": null,
+    "max_rel_sum_error": 1.7320007827947848e-07
+  },
+  "tasks": [
+    "stanford_cars",
+    "eurosat",
+    "gtsrb",
+    "mnist"
+  ],
+  "test": {
+    "dc_rank": {
+      "accuracy": {
+        "eurosat": 70.85185185185185,
+        "gtsrb": 74.94061757719716,
+        "mnist": 89.47500000000001,
+        "stanford_cars": 67.20037307632519
+      },
+      "mean_norm": 81.59046486961422,
+      "normalized_accuracy": {
+        "eurosat": 72.15791002327309,
+        "gtsrb": 76.24439676182435,
+        "mnist": 90.24205748865354,
+        "stanford_cars": 87.71749520470591
+      },
+      "worst_norm": 72.15791002327309,
+      "worst_task": "eurosat"
+    },
+    "delta_mean_norm_vs_dc_rank": 1.5567951449477988,
+    "delta_mean_norm_vs_oracle_fair": -0.9461995322874941,
+    "delta_worst_norm_vs_dc_rank": 7.581672720688914,
+    "delta_worst_norm_vs_oracle_fair": 1.822584921600054,
+    "loco_transfer": {
+      "accuracy": {
+        "eurosat": 78.29629629629629,
+        "gtsrb": 82.99683293745052,
+        "mnist": 82.5,
+        "stanford_cars": 65.27281206280118
+      },
+      "mean_norm": 83.14726001456202,
+      "normalized_accuracy": {
+        "eurosat": 79.739582743962,
+        "gtsrb": 84.44077010626769,
+        "mnist": 83.2072617246596,
+        "stanford_cars": 85.2014254833588
+      },
+      "worst_norm": 79.739582743962,
+      "worst_task": "eurosat"
+    },
+    "oracle_fair": {
+      "accuracy": {
+        "eurosat": 89.81481481481481,
+        "gtsrb": 82.08630245447348,
+        "mnist": 82.7625,
+        "stanford_cars": 59.69221203171149
+      },
+      "mean_norm": 84.09345954684952,
+      "normalized_accuracy": {
+        "eurosat": 91.47042959040108,
+        "gtsrb": 83.51439867176057,
+        "mnist": 83.47201210287443,
+        "stanford_cars": 77.91699782236195
+      },
+      "worst_norm": 77.91699782236195,
+      "worst_task": "stanford_cars"
+    },
+    "oracle_mean": {
+      "accuracy": {
+        "eurosat": 89.81481481481481,
+        "gtsrb": 82.08630245447348,
+        "mnist": 82.7625,
+        "stanford_cars": 59.69221203171149
+      },
+      "mean_norm": 84.09345954684952,
+      "normalized_accuracy": {
+        "eurosat": 91.47042959040108,
+        "gtsrb": 83.51439867176057,
+        "mnist": 83.47201210287443,
+        "stanford_cars": 77.91699782236195
+      },
+      "worst_norm": 77.91699782236195,
+      "worst_task": "stanford_cars"
+    }
+  },
+  "transfer_coefficients": {
+    "eurosat": 0.7933333333333333,
+    "gtsrb": 0.71,
+    "mnist": 0.5047619047619047,
+    "stanford_cars": 0.5714285714285714
+  },
+  "validation": {
+    "dc_rank": {
+      "accuracy": {
+        "eurosat": 68.74074074074073,
+        "gtsrb": 74.54473475851148,
+        "mnist": 90.9,
+        "stanford_cars": 66.04477611940298
+      },
+      "mean_norm": 80.71674081744037,
+      "normalized_accuracy": {
+        "eurosat": 69.74506974506973,
+        "gtsrb": 75.77224512961118,
+        "mnist": 91.21926743602609,
+        "stanford_cars": 86.13038095905449
+      },
+      "worst_norm": 69.74506974506973,
+      "worst_task": "eurosat"
+    },
+    "delta_mean_norm_vs_dc_rank": 2.0834191475239123,
+    "delta_mean_norm_vs_oracle_fair": -1.1281120720208264,
+    "delta_worst_norm_vs_dc_rank": 9.131493506493527,
+    "delta_worst_norm_vs_oracle_fair": 1.2618979240536987,
+    "loco_transfer": {
+      "accuracy": {
+        "eurosat": 77.74074074074075,
+        "gtsrb": 82.97703879651624,
+        "mnist": 84.15,
+        "stanford_cars": 64.05472636815921
+      },
+      "mean_norm": 82.80015996496428,
+      "normalized_accuracy": {
+        "eurosat": 78.87656325156325,
+        "gtsrb": 84.34340190741639,
+        "mnist": 84.44555945810336,
+        "stanford_cars": 83.53511524277413
+      },
+      "worst_norm": 78.87656325156325,
+      "worst_task": "eurosat"
+    },
+    "oracle_fair": {
+      "accuracy": {
+        "eurosat": 89.77777777777777,
+        "gtsrb": 81.47268408551069,
+        "mnist": 83.89999999999999,
+        "stanford_cars": 59.51492537313433
+      },
+      "mean_norm": 83.9282720369851,
+      "normalized_accuracy": {
+        "eurosat": 91.08946608946609,
+        "gtsrb": 82.81427534611781,
+        "mnist": 84.19468138484696,
+        "stanford_cars": 77.61466532750956
+      },
+      "worst_norm": 77.61466532750956,
+      "worst_task": "stanford_cars"
+    },
+    "oracle_mean": {
+      "accuracy": {
+        "eurosat": 89.77777777777777,
+        "gtsrb": 81.47268408551069,
+        "mnist": 83.89999999999999,
+        "stanford_cars": 59.51492537313433
+      },
+      "mean_norm": 83.9282720369851,
+      "normalized_accuracy": {
+        "eurosat": 91.08946608946609,
+        "gtsrb": 82.81427534611781,
+        "mnist": 84.19468138484696,
+        "stanford_cars": 77.61466532750956
+      },
+      "worst_norm": 77.61466532750956,
+      "worst_task": "stanford_cars"
+    }
+  }
+}
