@@ -4,7 +4,8 @@ This folder preserves selected small, non-secret research and recovery artifacts
 
 - Target branch: `codex/experiment5-signal-check`
 - Verified remote branch before this recovery: `13ded01ec4e4d7ba02372f4fd603649e50bb30d3`
-- Payload content commit: recorded in `MANIFEST.csv` after the first push.
+- Payload content commit: `e01bba9ef6b3a0d266e2cc295be60f57d63ba61b` (the exact content SHA recorded in `MANIFEST.csv`).
+- `remote_file_commit` is the first GitHub commit containing the file bytes; for an already-present duplicate it records the pre-recovery branch commit, and for excluded records it says `not uploaded`. The final branch tip is verified separately because a commit cannot include its own SHA in its contents.
 
 ## What was compared
 
