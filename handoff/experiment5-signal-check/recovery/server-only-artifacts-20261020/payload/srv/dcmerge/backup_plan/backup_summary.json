@@ -1,0 +1,42 @@
+{
+  "manifest_sha256": "cb495846836508503ded6fb22ac3c3a898fc336b8561b1d42a525b9f7fd78157",
+  "dataset_contents_manifest_sha256": "44bff04cd8f0858e90037bd30965c8cd9b541f17a969a366baf5aa650b003462",
+  "file_count": 107,
+  "payload_bytes": 19197225149,
+  "payload_gib": 17.878809151239693,
+  "category_counts": {
+    "unique_legacy_dataset_file": 1,
+    "adapter_head_metadata": 1,
+    "adapter": 16,
+    "head": 8,
+    "base_model": 10,
+    "dataset_archive": 1,
+    "project_source_archive": 1,
+    "verified_dataset_archive": 1,
+    "environment_manifest": 4,
+    "xet_diagnostic_log": 12,
+    "git_bundle": 1,
+    "download_recovery_source_or_config": 5,
+    "server_only_result_or_log": 40,
+    "server_only_project_script": 6
+  },
+  "category_bytes": {
+    "unique_legacy_dataset_file": 156160,
+    "adapter_head_metadata": 1519,
+    "adapter": 38033928,
+    "head": 1565245,
+    "base_model": 608872212,
+    "dataset_archive": 3914311680,
+    "project_source_archive": 1074449,
+    "verified_dataset_archive": 14591037440,
+    "environment_manifest": 7399,
+    "xet_diagnostic_log": 4356146,
+    "git_bundle": 17999385,
+    "download_recovery_source_or_config": 19662,
+    "server_only_result_or_log": 19780067,
+    "server_only_project_script": 9857
+  },
+  "server_result_files_already_in_git_bundle": 126,
+  "server_result_files_total": 166,
+  "git_blob_hashes_checked": 529
+}
