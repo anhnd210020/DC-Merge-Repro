@@ -1,0 +1,20 @@
+Setting Seed to 400
+Preparing Models: 0it [00:00, ?it/s]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/stanford_cars
+Preparing Models: 1it [00:01,  1.84s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/dtd
+Preparing Models: 2it [00:03,  1.74s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/eurosat
+Preparing Models: 3it [00:05,  1.71s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/gtsrb
+Preparing Models: 4it [00:06,  1.75s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/mnist
+Preparing Models: 5it [00:08,  1.72s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/resisc45
+Preparing Models: 6it [00:10,  1.71s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/sun397
+Preparing Models: 7it [00:12,  1.75s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/svhn
+Preparing Models: 8it [00:13,  1.72s/it]Preparing Models: 8it [00:13,  1.73s/it]
+splitting cars
+splitting gtsrb
+splitting mnist
+splitting sun397
+splitting svhn
+[dtd-eurosat-gtsrb-svhn] 78 vectors in 13.9 min  rho(mean)=0.35  rho(worst)=0.09
+[eurosat-gtsrb-mnist-svhn] 57 vectors in 9.5 min  rho(mean)=0.43  rho(worst)=0.12
+[eurosat-gtsrb-sun397-svhn] 82 vectors in 17.9 min  rho(mean)=0.01  rho(worst)=-0.28
+wrote /srv/dcmerge/results/experiment5/check_summary.md

@@ -1,0 +1,213 @@
+{
+  "experiment": 5,
+  "status": "signal_check_complete_negative_gate",
+  "source_zip": {
+    "path": "/workspace/DC-Merge-official-experiment5.zip",
+    "sha256": "bfa2f28c8b68cadcf8c2107532cf220397df05dcf6f4acc8c199ba561bbf4fe1"
+  },
+  "git": {
+    "base_branch": "codex/experiment4-task-transfer",
+    "base_commit": "d001237e20a9a5d188cd098f3cec38b8c1083a6d",
+    "handoff_branch": "codex/experiment5-signal-check"
+  },
+  "runtime": {
+    "environment": "dcmerge_vision",
+    "python": "3.9.23",
+    "torch": "2.8.0+cu128",
+    "torch_cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_driver": "580.142"
+  },
+  "execution": {
+    "started_utc": "2026-10-19T17:01:51Z",
+    "check_completed_utc": "2026-10-19T17:44:25Z",
+    "subset_metadata_completed_utc": "2026-10-19T17:46:02Z",
+    "tmux_session": "exp5-check-20261019 (completed)",
+    "source_repo": "/workspace/experiment5_package_20261019/DC-Merge",
+    "exp3_input": "/srv/dcmerge/results/experiment3",
+    "output": "/srv/dcmerge/results/experiment5",
+    "command": "/workspace/bin/micromamba run -n dcmerge_vision python lane_harm/run_entropy.py check --repo /workspace/experiment5_package_20261019/DC-Merge --model /workspace/models/clip-vit-base-patch32 --ft-dir /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints --heads /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads --data /workspace/datasets8 --exp3 /srv/dcmerge/results/experiment3 --out /srv/dcmerge/results/experiment5 --device cuda --contexts core"
+  },
+  "protocol": {
+    "contexts": [
+      "dtd-eurosat-gtsrb-svhn",
+      "eurosat-gtsrb-mnist-svhn",
+      "eurosat-gtsrb-sun397-svhn"
+    ],
+    "n_unlabeled": 500,
+    "seed": 0,
+    "tau": 100,
+    "max_passes": 2,
+    "grid": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "labels_used_for_entropy": false,
+    "validation_labels_used_only_for_cached_accuracy_diagnostic": true
+  },
+  "vectors_checked": {
+    "dtd-eurosat-gtsrb-svhn": 78,
+    "eurosat-gtsrb-mnist-svhn": 57,
+    "eurosat-gtsrb-sun397-svhn": 82
+  },
+  "subset_info": {
+    "dtd-eurosat-gtsrb-svhn": {
+      "dtd": {
+        "n": 500,
+        "of": 1880,
+        "first_indices": [
+          1045,
+          38,
+          1754,
+          1226,
+          1631
+        ]
+      },
+      "eurosat": {
+        "n": 500,
+        "of": 2700,
+        "first_indices": [
+          1548,
+          1212,
+          447,
+          78,
+          306
+        ]
+      },
+      "gtsrb": {
+        "n": 500,
+        "of": 2526,
+        "first_indices": [
+          1888,
+          1024,
+          1259,
+          1752,
+          2344
+        ]
+      },
+      "svhn": {
+        "n": 500,
+        "of": 5206,
+        "first_indices": [
+          3091,
+          2738,
+          4595,
+          4577,
+          953
+        ]
+      }
+    },
+    "eurosat-gtsrb-mnist-svhn": {
+      "eurosat": {
+        "n": 500,
+        "of": 2700,
+        "first_indices": [
+          1548,
+          1212,
+          447,
+          78,
+          306
+        ]
+      },
+      "gtsrb": {
+        "n": 500,
+        "of": 2526,
+        "first_indices": [
+          1888,
+          1024,
+          1259,
+          1752,
+          2344
+        ]
+      },
+      "mnist": {
+        "n": 500,
+        "of": 2000,
+        "first_indices": [
+          1530,
+          732,
+          1329,
+          1027,
+          1529
+        ]
+      },
+      "svhn": {
+        "n": 500,
+        "of": 5206,
+        "first_indices": [
+          3091,
+          2738,
+          4595,
+          4577,
+          953
+        ]
+      }
+    },
+    "eurosat-gtsrb-sun397-svhn": {
+      "eurosat": {
+        "n": 500,
+        "of": 2700,
+        "first_indices": [
+          1548,
+          1212,
+          447,
+          78,
+          306
+        ]
+      },
+      "gtsrb": {
+        "n": 500,
+        "of": 2526,
+        "first_indices": [
+          1888,
+          1024,
+          1259,
+          1752,
+          2344
+        ]
+      },
+      "sun397": {
+        "n": 500,
+        "of": 3970,
+        "first_indices": [
+          3480,
+          2752,
+          1125,
+          3189,
+          2036
+        ]
+      },
+      "svhn": {
+        "n": 500,
+        "of": 5206,
+        "first_indices": [
+          3091,
+          2738,
+          4595,
+          4577,
+          953
+        ]
+      }
+    }
+  },
+  "gate": {
+    "decision": "stop before step 2",
+    "reason": "mean-entropy pick scored below dc_rank on validation in each core context; fair-objective correlation was negative in the third context",
+    "coefficient_search_run": false,
+    "test_evaluations_run": false,
+    "four_context_phase_run": false
+  },
+  "handoff_code_sha256": {
+    "dc_trace.py": "15cff9c94ffed1737576e58f22aa1511166844f76e8afa249ff0de689ec191fb",
+    "lanes.py": "fec6bebc7bb6c414b95f68245d347af704bf8272fc8385147a6c5d780bbae369",
+    "run_entropy.py": "c1d87ec452089173d375567a90c08465eff09fde5ff8291a000de2c92aef4a4c",
+    "run_official.py": "8aa9bec9f2cbc3a075d09c0d1071e1fc7d253c6f1a9abb86af3dc6482ad499fe",
+    "run_oracle.py": "94871b494e8262c1efb68bfd5cf001edd99dae8614d863e0f3feb2f1982c5ee5"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "context": "dtd-eurosat-gtsrb-svhn",
+    "vectors": 78,
+    "spearman(-mean H, val mean acc)": 0.35259677031828923,
+    "spearman(-max H, val worst acc)": 0.09185809038038405,
+    "best val mean acc among cached": 74.5529320400422,
+    "val mean acc of lowest-mean-H vector": 68.72210159052567,
+    "val worst acc of lowest-max-H vector": 54.123032235436554,
+    "best val worst acc among cached": 68.31709956709956,
+    "dc_rank val mean acc": 71.16389908821996,
+    "dc_rank val worst acc": 62.07912457912458
+  },
+  {
+    "context": "eurosat-gtsrb-mnist-svhn",
+    "vectors": 57,
+    "spearman(-mean H, val mean acc)": 0.4310992999740731,
+    "spearman(-max H, val worst acc)": 0.11942765472877828,
+    "best val mean acc among cached": 77.46506759760996,
+    "val mean acc of lowest-mean-H vector": 68.89331861817342,
+    "val worst acc of lowest-max-H vector": 48.32966245259578,
+    "best val worst acc among cached": 69.32354297499033,
+    "dc_rank val mean acc": 73.7407363137464,
+    "dc_rank val worst acc": 53.699194324194316
+  },
+  {
+    "context": "eurosat-gtsrb-sun397-svhn",
+    "vectors": 82,
+    "spearman(-mean H, val mean acc)": 0.0139637139343281,
+    "spearman(-max H, val worst acc)": -0.27866631113652096,
+    "best val mean acc among cached": 79.59672145544134,
+    "val mean acc of lowest-mean-H vector": 70.7685492679512,
+    "val worst acc of lowest-max-H vector": 47.64436443625048,
+    "best val worst acc among cached": 70.57178932178932,
+    "dc_rank val mean acc": 75.83067372076417,
+    "dc_rank val worst acc": 62.041546416546424
+  }
+]
