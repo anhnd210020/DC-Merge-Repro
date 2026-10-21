@@ -1,0 +1,37 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "tolerance_pp": 0.05,
+  "grouping": "depth",
+  "uniform_alpha_val": [
+    0.0,
+    {
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "mnist": 0.0,
+      "svhn": 0.0
+    }
+  ],
+  "uniform_alpha_test": [
+    0.0,
+    {
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "mnist": 0.0,
+      "svhn": 0.0
+    }
+  ],
+  "oracle_fair_val": [
+    0.0,
+    {
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "mnist": 0.0,
+      "svhn": 0.0
+    }
+  ],
+  "lane_checks": {
+    "max_rel_sum_error": 1.6994164298012038e-07,
+    "max_abs_diff_vs_official": null
+  },
+  "passed": true
+}

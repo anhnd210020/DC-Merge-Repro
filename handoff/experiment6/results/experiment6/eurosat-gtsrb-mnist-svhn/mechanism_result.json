@@ -1,0 +1,1019 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "tasks": [
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "svhn"
+  ],
+  "alpha": 0.6,
+  "grouping": "depth",
+  "groups": [
+    "early",
+    "mid",
+    "late"
+  ],
+  "boost_factor": 1.5,
+  "split": "val",
+  "configs": {
+    "baseline": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "off[svhn]": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "only[svhn]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "off[svhn]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "only[svhn]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.0
+    },
+    "off[svhn]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.6
+    },
+    "only[svhn]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.6
+    },
+    "off[svhn]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.0
+    },
+    "off[gtsrb]": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "only[gtsrb]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "off[gtsrb]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "only[gtsrb]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "off[gtsrb]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "only[gtsrb]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "off[gtsrb]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "off[svhn+gtsrb]": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "only[svhn+gtsrb]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "off[svhn+gtsrb]@early": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "only[svhn+gtsrb]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.0
+    },
+    "off[svhn+gtsrb]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.6
+    },
+    "only[svhn+gtsrb]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.6
+    },
+    "off[svhn+gtsrb]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.0
+    },
+    "only[svhn]@early|gtsrb_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "only[gtsrb]@early|svhn_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "only[svhn]@mid|gtsrb_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.0
+    },
+    "only[gtsrb]@mid|svhn_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "only[svhn]@late|gtsrb_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.0,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.6
+    },
+    "only[gtsrb]@late|svhn_off": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.0,
+      "gtsrb@mid": 0.0,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.0,
+      "svhn@mid": 0.0,
+      "svhn@late": 0.0
+    },
+    "boost[eurosat]@early": {
+      "eurosat@early": 0.9,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "boost[eurosat]@mid": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.9,
+      "eurosat@late": 0.6,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "boost[eurosat]@late": {
+      "eurosat@early": 0.6,
+      "eurosat@mid": 0.6,
+      "eurosat@late": 0.9,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    },
+    "boost[eurosat]@all": {
+      "eurosat@early": 0.9,
+      "eurosat@mid": 0.9,
+      "eurosat@late": 0.9,
+      "gtsrb@early": 0.6,
+      "gtsrb@mid": 0.6,
+      "gtsrb@late": 0.6,
+      "mnist@early": 0.6,
+      "mnist@mid": 0.6,
+      "mnist@late": 0.6,
+      "svhn@early": 0.6,
+      "svhn@mid": 0.6,
+      "svhn@late": 0.6
+    }
+  },
+  "val_acc": {
+    "baseline": {
+      "eurosat": 52.888888888888886,
+      "gtsrb": 73.1987331749802,
+      "mnist": 94.69999999999999,
+      "svhn": 69.41990011525164
+    },
+    "off[svhn]": {
+      "eurosat": 83.11111111111111,
+      "gtsrb": 77.47426761678543,
+      "mnist": 89.45,
+      "svhn": 34.88282750672301
+    },
+    "only[svhn]@early": {
+      "eurosat": 82.11111111111111,
+      "gtsrb": 78.1076801266825,
+      "mnist": 89.45,
+      "svhn": 44.94813676527084
+    },
+    "off[svhn]@early": {
+      "eurosat": 57.96296296296296,
+      "gtsrb": 72.9612034837688,
+      "mnist": 94.69999999999999,
+      "svhn": 58.413369189396846
+    },
+    "only[svhn]@mid": {
+      "eurosat": 63.22222222222222,
+      "gtsrb": 79.57244655581948,
+      "mnist": 93.4,
+      "svhn": 59.00883595850941
+    },
+    "off[svhn]@mid": {
+      "eurosat": 78.37037037037037,
+      "gtsrb": 73.1987331749802,
+      "mnist": 91.95,
+      "svhn": 42.873607376104495
+    },
+    "only[svhn]@late": {
+      "eurosat": 79.51851851851852,
+      "gtsrb": 73.0799683293745,
+      "mnist": 92.05,
+      "svhn": 33.38455628121398
+    },
+    "off[svhn]@late": {
+      "eurosat": 58.81481481481482,
+      "gtsrb": 79.57244655581948,
+      "mnist": 92.60000000000001,
+      "svhn": 69.07414521705724
+    },
+    "off[gtsrb]": {
+      "eurosat": 77.11111111111111,
+      "gtsrb": 27.157561361836898,
+      "mnist": 96.1,
+      "svhn": 58.086822896657694
+    },
+    "only[gtsrb]@early": {
+      "eurosat": 78.4074074074074,
+      "gtsrb": 28.622327790973873,
+      "mnist": 95.55,
+      "svhn": 55.82020745293892
+    },
+    "off[gtsrb]@early": {
+      "eurosat": 55.51851851851852,
+      "gtsrb": 69.51702296120348,
+      "mnist": 95.5,
+      "svhn": 72.93507491356127
+    },
+    "only[gtsrb]@mid": {
+      "eurosat": 65.44444444444444,
+      "gtsrb": 40.340459224069676,
+      "mnist": 94.6,
+      "svhn": 67.11486746062236
+    },
+    "off[gtsrb]@mid": {
+      "eurosat": 73.70370370370371,
+      "gtsrb": 45.605700712589076,
+      "mnist": 95.89999999999999,
+      "svhn": 63.29235497502881
+    },
+    "only[gtsrb]@late": {
+      "eurosat": 72.70370370370371,
+      "gtsrb": 42.95328582739509,
+      "mnist": 96.65,
+      "svhn": 66.0007683442182
+    },
+    "off[gtsrb]@late": {
+      "eurosat": 63.18518518518519,
+      "gtsrb": 42.87410926365796,
+      "mnist": 93.65,
+      "svhn": 62.869765655013445
+    },
+    "off[svhn+gtsrb]": {
+      "eurosat": 88.85185185185185,
+      "gtsrb": 31.71021377672209,
+      "mnist": 93.0,
+      "svhn": 28.44794467921629
+    },
+    "only[svhn+gtsrb]@early": {
+      "eurosat": 87.85185185185185,
+      "gtsrb": 32.541567695961994,
+      "mnist": 91.4,
+      "svhn": 36.669227814060704
+    },
+    "off[svhn+gtsrb]@early": {
+      "eurosat": 58.74074074074074,
+      "gtsrb": 68.44813935075219,
+      "mnist": 95.5,
+      "svhn": 60.103726469458316
+    },
+    "only[svhn+gtsrb]@mid": {
+      "eurosat": 70.51851851851852,
+      "gtsrb": 50.0,
+      "mnist": 93.5,
+      "svhn": 57.89473684210527
+    },
+    "off[svhn+gtsrb]@mid": {
+      "eurosat": 87.48148148148148,
+      "gtsrb": 45.17022961203484,
+      "mnist": 94.3,
+      "svhn": 36.57318478678448
+    },
+    "only[svhn+gtsrb]@late": {
+      "eurosat": 88.66666666666667,
+      "gtsrb": 42.39904988123516,
+      "mnist": 94.85,
+      "svhn": 28.467153284671532
+    },
+    "off[svhn+gtsrb]@late": {
+      "eurosat": 68.22222222222221,
+      "gtsrb": 51.979414093428346,
+      "mnist": 91.7,
+      "svhn": 66.05839416058394
+    },
+    "only[svhn]@early|gtsrb_off": {
+      "eurosat": 87.96296296296296,
+      "gtsrb": 30.95803642121932,
+      "mnist": 92.5,
+      "svhn": 38.10987322320399
+    },
+    "only[gtsrb]@early|svhn_off": {
+      "eurosat": 89.11111111111111,
+      "gtsrb": 32.85827395091053,
+      "mnist": 91.9,
+      "svhn": 28.908951210142142
+    },
+    "only[svhn]@mid|gtsrb_off": {
+      "eurosat": 80.33333333333333,
+      "gtsrb": 33.09580364212193,
+      "mnist": 95.55,
+      "svhn": 54.417979254706104
+    },
+    "only[gtsrb]@mid|svhn_off": {
+      "eurosat": 84.77777777777777,
+      "gtsrb": 49.6437054631829,
+      "mnist": 90.4,
+      "svhn": 33.57664233576642
+    },
+    "only[svhn]@late|gtsrb_off": {
+      "eurosat": 89.03703703703704,
+      "gtsrb": 28.859857482185276,
+      "mnist": 94.55,
+      "svhn": 26.29658086822897
+    },
+    "only[gtsrb]@late|svhn_off": {
+      "eurosat": 89.11111111111111,
+      "gtsrb": 45.605700712589076,
+      "mnist": 93.35,
+      "svhn": 30.19592777564349
+    },
+    "boost[eurosat]@early": {
+      "eurosat": 55.629629629629626,
+      "gtsrb": 72.05067300079176,
+      "mnist": 94.1,
+      "svhn": 64.54091432961967
+    },
+    "boost[eurosat]@mid": {
+      "eurosat": 62.29629629629629,
+      "gtsrb": 71.10055423594616,
+      "mnist": 93.75,
+      "svhn": 67.3069535151748
+    },
+    "boost[eurosat]@late": {
+      "eurosat": 62.74074074074074,
+      "gtsrb": 69.51702296120348,
+      "mnist": 94.45,
+      "svhn": 68.24817518248175
+    },
+    "boost[eurosat]@all": {
+      "eurosat": 75.70370370370371,
+      "gtsrb": 65.83531274742677,
+      "mnist": 93.4,
+      "svhn": 61.98616980407222
+    }
+  },
+  "val_norm": {
+    "baseline": {
+      "eurosat": 53.66161616161616,
+      "gtsrb": 74.40407925897561,
+      "mnist": 95.03261414952331,
+      "svhn": 71.8483751969071
+    },
+    "off[svhn]": {
+      "eurosat": 84.32539682539682,
+      "gtsrb": 78.75001790687683,
+      "mnist": 89.76417461113898,
+      "svhn": 36.103112716542135
+    },
+    "only[svhn]@early": {
+      "eurosat": 83.31078643578644,
+      "gtsrb": 79.39386066952888,
+      "mnist": 89.76417461113898,
+      "svhn": 46.520530703033366
+    },
+    "off[svhn]@early": {
+      "eurosat": 58.809824434824435,
+      "gtsrb": 74.16263822298109,
+      "mnist": 95.03261414952331,
+      "svhn": 60.45680934526686
+    },
+    "only[svhn]@mid": {
+      "eurosat": 64.14592352092352,
+      "gtsrb": 80.8827470581617,
+      "mnist": 93.72804816859006,
+      "svhn": 61.07310697423867
+    },
+    "off[svhn]@mid": {
+      "eurosat": 79.51539201539201,
+      "gtsrb": 74.40407925897561,
+      "mnist": 92.27295534370296,
+      "svhn": 44.37342928597028
+    },
+    "only[svhn]@late": {
+      "eurosat": 80.68031505531506,
+      "gtsrb": 74.28335874097834,
+      "mnist": 92.37330657300551,
+      "svhn": 34.55242835977435
+    },
+    "off[svhn]@late": {
+      "eurosat": 59.674122174122175,
+      "gtsrb": 80.8827470581617,
+      "mnist": 92.92523833416959,
+      "svhn": 71.4905249607299
+    },
+    "off[gtsrb]": {
+      "eurosat": 78.23773448773449,
+      "gtsrb": 27.604758448705933,
+      "mnist": 96.43753135975915,
+      "svhn": 60.11883967776619
+    },
+    "only[gtsrb]@early": {
+      "eurosat": 79.55297017797018,
+      "gtsrb": 29.09364483733876,
+      "mnist": 95.88559959859508,
+      "svhn": 57.77293257393802
+    },
+    "off[gtsrb]@early": {
+      "eurosat": 56.32966570466571,
+      "gtsrb": 70.66174320106067,
+      "mnist": 95.8354239839438,
+      "svhn": 75.4865192647084
+    },
+    "only[gtsrb]@mid": {
+      "eurosat": 66.40061327561327,
+      "gtsrb": 41.00473594640138,
+      "mnist": 94.93226292022077,
+      "svhn": 69.46270695572589
+    },
+    "off[gtsrb]@mid": {
+      "eurosat": 74.78054353054354,
+      "gtsrb": 46.356678910946414,
+      "mnist": 96.23682890115403,
+      "svhn": 65.5064737891004
+    },
+    "only[gtsrb]@late": {
+      "eurosat": 73.76593314093314,
+      "gtsrb": 43.66058734234102,
+      "mnist": 96.98946312092322,
+      "svhn": 68.3096339724883
+    },
+    "off[gtsrb]@late": {
+      "eurosat": 64.10834535834536,
+      "gtsrb": 43.580106997009516,
+      "mnist": 93.97892624184645,
+      "svhn": 65.06910127821718
+    },
+    "off[svhn+gtsrb]": {
+      "eurosat": 90.15001202501202,
+      "gtsrb": 32.232378305267424,
+      "mnist": 93.32664325137982,
+      "svhn": 29.443122209911294
+    },
+    "only[svhn+gtsrb]@early": {
+      "eurosat": 89.13540163540162,
+      "gtsrb": 33.07742193124822,
+      "mnist": 91.72102358253888,
+      "svhn": 37.95200560345757
+    },
+    "off[svhn+gtsrb]@early": {
+      "eurosat": 59.59896584896585,
+      "gtsrb": 69.57525853908538,
+      "mnist": 95.8354239839438,
+      "svhn": 62.20629938879974
+    },
+    "only[svhn+gtsrb]@mid": {
+      "eurosat": 71.54882154882155,
+      "gtsrb": 50.82333807684489,
+      "mnist": 93.82839939789262,
+      "svhn": 59.9200339910011
+    },
+    "off[svhn+gtsrb]@mid": {
+      "eurosat": 88.75962000962001,
+      "gtsrb": 45.91403701162314,
+      "mnist": 94.6312092323131,
+      "svhn": 37.852602760075015
+    },
+    "only[svhn+gtsrb]@late": {
+      "eurosat": 89.96212121212122,
+      "gtsrb": 43.09722492502049,
+      "mnist": 95.18314099347717,
+      "svhn": 29.463002778587796
+    },
+    "off[svhn+gtsrb]@late": {
+      "eurosat": 69.21897546897546,
+      "gtsrb": 52.8353467101325,
+      "mnist": 92.02207727044656,
+      "svhn": 68.36927567851785
+    },
+    "only[svhn]@early|gtsrb_off": {
+      "eurosat": 89.24813612313612,
+      "gtsrb": 31.467815024618133,
+      "mnist": 92.82488710486703,
+      "svhn": 39.44304825419581
+    },
+    "only[gtsrb]@early|svhn_off": {
+      "eurosat": 90.41305916305916,
+      "gtsrb": 33.39934331257423,
+      "mnist": 92.22277972905168,
+      "svhn": 29.920255858147527
+    },
+    "only[svhn]@mid|gtsrb_off": {
+      "eurosat": 81.50703463203463,
+      "gtsrb": 33.640784348568744,
+      "mnist": 95.88559959859508,
+      "svhn": 56.32165106055279
+    },
+    "only[gtsrb]@mid|svhn_off": {
+      "eurosat": 86.01641414141413,
+      "gtsrb": 50.461176522853116,
+      "mnist": 90.7175112895133,
+      "svhn": 34.75123404653946
+    },
+    "only[svhn]@late|gtsrb_off": {
+      "eurosat": 90.33790283790285,
+      "gtsrb": 29.335085873333277,
+      "mnist": 94.88208730556948,
+      "svhn": 27.21649851814217
+    },
+    "only[gtsrb]@late|svhn_off": {
+      "eurosat": 90.41305916305916,
+      "gtsrb": 46.356678910946414,
+      "mnist": 93.67787255393878,
+      "svhn": 31.2522539594737
+    },
+    "boost[eurosat]@early": {
+      "eurosat": 56.442400192400186,
+      "gtsrb": 73.2371142516688,
+      "mnist": 94.43050677370798,
+      "svhn": 66.79871075307355
+    },
+    "boost[eurosat]@mid": {
+      "eurosat": 63.20646945646944,
+      "gtsrb": 72.27135010769076,
+      "mnist": 94.07927747114901,
+      "svhn": 69.66151264249099
+    },
+    "boost[eurosat]@late": {
+      "eurosat": 63.657407407407405,
+      "gtsrb": 70.66174320106067,
+      "mnist": 94.78173607626692,
+      "svhn": 70.63566050763997
+    },
+    "boost[eurosat]@all": {
+      "eurosat": 76.80976430976432,
+      "gtsrb": 66.91940714314573,
+      "mnist": 93.72804816859006,
+      "svhn": 64.15459511909772
+    }
+  },
+  "analysis": {
+    "eurosat_baseline": 52.888888888888886,
+    "neighbours": {
+      "svhn": {
+        "eurosat_neighbour_off": 83.11111111111111,
+        "harm_total": 30.22222222222223,
+        "per_group": {
+          "early": {
+            "eurosat_only_g": 82.11111111111111,
+            "eurosat_off_g": 57.96296296296296,
+            "harm_created_only_g": 1.0,
+            "harm_recovered_off_g": 5.074074074074076,
+            "share_only_g": 0.03308823529411764,
+            "share_off_g": 0.16789215686274514
+          },
+          "mid": {
+            "eurosat_only_g": 63.22222222222222,
+            "eurosat_off_g": 78.37037037037037,
+            "harm_created_only_g": 19.888888888888893,
+            "harm_recovered_off_g": 25.48148148148148,
+            "share_only_g": 0.6580882352941176,
+            "share_off_g": 0.8431372549019606
+          },
+          "late": {
+            "eurosat_only_g": 79.51851851851852,
+            "eurosat_off_g": 58.81481481481482,
+            "harm_created_only_g": 3.5925925925925952,
+            "harm_recovered_off_g": 5.925925925925931,
+            "share_only_g": 0.1188725490196079,
+            "share_off_g": 0.19607843137254916
+          }
+        },
+        "sum_share_only": 0.8100490196078431,
+        "sum_share_off": 1.2071078431372548
+      },
+      "gtsrb": {
+        "eurosat_neighbour_off": 77.11111111111111,
+        "harm_total": 24.22222222222223,
+        "per_group": {
+          "early": {
+            "eurosat_only_g": 78.4074074074074,
+            "eurosat_off_g": 55.51851851851852,
+            "harm_created_only_g": -1.2962962962962905,
+            "harm_recovered_off_g": 2.6296296296296333,
+            "share_only_g": -0.05351681957186519,
+            "share_off_g": 0.10856269113149859
+          },
+          "mid": {
+            "eurosat_only_g": 65.44444444444444,
+            "eurosat_off_g": 73.70370370370371,
+            "harm_created_only_g": 11.666666666666671,
+            "harm_recovered_off_g": 20.814814814814824,
+            "share_only_g": 0.48165137614678905,
+            "share_off_g": 0.8593272171253824
+          },
+          "late": {
+            "eurosat_only_g": 72.70370370370371,
+            "eurosat_off_g": 63.18518518518519,
+            "harm_created_only_g": 4.407407407407405,
+            "harm_recovered_off_g": 10.296296296296305,
+            "share_only_g": 0.18195718654434234,
+            "share_off_g": 0.42507645259938864
+          }
+        },
+        "sum_share_only": 0.6100917431192662,
+        "sum_share_off": 1.3929663608562697
+      },
+      "svhn+gtsrb": {
+        "eurosat_neighbour_off": 88.85185185185185,
+        "harm_total": 35.96296296296296,
+        "per_group": {
+          "early": {
+            "eurosat_only_g": 87.85185185185185,
+            "eurosat_off_g": 58.74074074074074,
+            "harm_created_only_g": 1.0,
+            "harm_recovered_off_g": 5.851851851851855,
+            "share_only_g": 0.02780638516992791,
+            "share_off_g": 0.1627188465499486
+          },
+          "mid": {
+            "eurosat_only_g": 70.51851851851852,
+            "eurosat_off_g": 87.48148148148148,
+            "harm_created_only_g": 18.33333333333333,
+            "harm_recovered_off_g": 34.592592592592595,
+            "share_only_g": 0.5097837281153449,
+            "share_off_g": 0.9618949536560248
+          },
+          "late": {
+            "eurosat_only_g": 88.66666666666667,
+            "eurosat_off_g": 68.22222222222221,
+            "harm_created_only_g": 0.18518518518517624,
+            "harm_recovered_off_g": 15.333333333333329,
+            "share_only_g": 0.005149330587023438,
+            "share_off_g": 0.42636457260556115
+          }
+        },
+        "sum_share_only": 0.5427394438722963,
+        "sum_share_off": 1.5509783728115345
+      }
+    },
+    "interaction": {
+      "all_groups": {
+        "reference_both_off": 88.85185185185185,
+        "interaction_pp": 18.481481481481495
+      },
+      "early": {
+        "harm_svhn_only_g": 0.8888888888888857,
+        "harm_gtsrb_only_g": -0.25925925925926663,
+        "harm_both_only_g": 1.0,
+        "interaction_pp": 0.3703703703703809
+      },
+      "mid": {
+        "harm_svhn_only_g": 8.518518518518519,
+        "harm_gtsrb_only_g": 4.074074074074076,
+        "harm_both_only_g": 18.33333333333333,
+        "interaction_pp": 5.740740740740733
+      },
+      "late": {
+        "harm_svhn_only_g": -0.18518518518519045,
+        "harm_gtsrb_only_g": -0.25925925925926663,
+        "harm_both_only_g": 0.18518518518517624,
+        "interaction_pp": 0.6296296296296333
+      }
+    }
+  },
+  "checks": {
+    "context": "eurosat-gtsrb-mnist-svhn",
+    "tolerance_pp": 0.05,
+    "grouping": "depth",
+    "uniform_alpha_val": [
+      0.0,
+      {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    ],
+    "uniform_alpha_test": [
+      0.0,
+      {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    ],
+    "oracle_fair_val": [
+      0.0,
+      {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    ],
+    "lane_checks": {
+      "max_rel_sum_error": 1.6994164298012038e-07,
+      "max_abs_diff_vs_official": null
+    },
+    "passed": true
+  },
+  "new_val_evals": 33
+}

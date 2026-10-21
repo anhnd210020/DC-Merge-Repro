@@ -1,0 +1,32 @@
+{
+  "dtd": {
+    "expert_val_acc": 67.4468085106383,
+    "reference_val_acc": 67.55,
+    "diff_pp": -0.10319148936169142
+  },
+  "eurosat": {
+    "expert_val_acc": 98.51851851851852,
+    "reference_val_acc": 98.56,
+    "diff_pp": -0.04148148148148323
+  },
+  "gtsrb": {
+    "expert_val_acc": 98.37688044338876,
+    "reference_val_acc": 98.38,
+    "diff_pp": -0.0031195566112387496
+  },
+  "svhn": {
+    "expert_val_acc": 96.65770265078756,
+    "reference_val_acc": 96.62,
+    "diff_pp": 0.037702650787551306
+  },
+  "mnist": {
+    "expert_val_acc": 99.65,
+    "reference_val_acc": 99.65,
+    "diff_pp": 0.0
+  },
+  "sun397": {
+    "expert_val_acc": 73.82871536523929,
+    "reference_val_acc": 73.8,
+    "diff_pp": 0.028715365239293078
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "tasks": [
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "svhn"
+  ],
+  "dc_rank_alpha": 0.6,
+  "grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "max_passes": 2,
+  "val_evals": 57,
+  "checks": {
+    "max_val_acc_diff_vs_exp2_pp": 0.0,
+    "max_test_acc_diff_vs_exp2_pp": 0.0,
+    "lane_checks": {
+      "max_rel_sum_error": 1.7230965454473335e-07,
+      "max_abs_diff_vs_official": null
+    }
+  },
+  "val_baseline": {
+    "mean_norm": 73.73667119175555,
+    "worst_norm": 53.66161616161616
+  },
+  "val_chosen": {
+    "mean": {
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.43984929266182,
+      "val_worst_norm": 57.47472404379037
+    },
+    "fair": {
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.43984929266182,
+      "val_worst_norm": 57.47472404379037
+    }
+  },
+  "search_log": [
+    {
+      "objective": "mean",
+      "pass": 1,
+      "after_task": "eurosat",
+      "c": [
+        0.9,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "val_mean_norm": 75.38901256602496,
+      "val_worst_norm": 64.19435625645075
+    },
+    {
+      "objective": "mean",
+      "pass": 1,
+      "after_task": "gtsrb",
+      "c": [
+        0.9,
+        0.7,
+        0.6,
+        0.6
+      ],
+      "val_mean_norm": 75.58274432235214,
+      "val_worst_norm": 64.37328137453933
+    },
+    {
+      "objective": "mean",
+      "pass": 1,
+      "after_task": "mnist",
+      "c": [
+        0.9,
+        0.7,
+        0.3,
+        0.6
+      ],
+      "val_mean_norm": 76.80521027792508,
+      "val_worst_norm": 64.57208706130443
+    },
+    {
+      "objective": "mean",
+      "pass": 1,
+      "after_task": "svhn",
+      "c": [
+        0.9,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.1036615042526,
+      "val_worst_norm": 59.40313920541184
+    },
+    {
+      "objective": "mean",
+      "pass": 2,
+      "after_task": "eurosat",
+      "c": [
+        1.0,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.37017992540201,
+      "val_worst_norm": 57.37532120040782
+    },
+    {
+      "objective": "mean",
+      "pass": 2,
+      "after_task": "gtsrb",
+      "c": [
+        1.0,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.37017992540201,
+      "val_worst_norm": 57.37532120040782
+    },
+    {
+      "objective": "mean",
+      "pass": 2,
+      "after_task": "mnist",
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.46506759760996,
+      "val_worst_norm": 57.61388802452594
+    },
+    {
+      "objective": "mean",
+      "pass": 2,
+      "after_task": "svhn",
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.46506759760996,
+      "val_worst_norm": 57.61388802452594
+    },
+    {
+      "objective": "fair",
+      "pass": 1,
+      "after_task": "eurosat",
+      "c": [
+        0.9,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "val_mean_norm": 75.38901256602496,
+      "val_worst_norm": 64.19435625645075
+    },
+    {
+      "objective": "fair",
+      "pass": 1,
+      "after_task": "gtsrb",
+      "c": [
+        0.9,
+        0.7,
+        0.6,
+        0.6
+      ],
+      "val_mean_norm": 75.58274432235214,
+      "val_worst_norm": 64.37328137453933
+    },
+    {
+      "objective": "fair",
+      "pass": 1,
+      "after_task": "mnist",
+      "c": [
+        0.9,
+        0.7,
+        0.3,
+        0.6
+      ],
+      "val_mean_norm": 76.80521027792508,
+      "val_worst_norm": 64.57208706130443
+    },
+    {
+      "objective": "fair",
+      "pass": 1,
+      "after_task": "svhn",
+      "c": [
+        0.9,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.1036615042526,
+      "val_worst_norm": 59.40313920541184
+    },
+    {
+      "objective": "fair",
+      "pass": 2,
+      "after_task": "eurosat",
+      "c": [
+        1.0,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.37017992540201,
+      "val_worst_norm": 57.37532120040782
+    },
+    {
+      "objective": "fair",
+      "pass": 2,
+      "after_task": "gtsrb",
+      "c": [
+        1.0,
+        0.7,
+        0.3,
+        0.5
+      ],
+      "val_mean_norm": 77.37017992540201,
+      "val_worst_norm": 57.37532120040782
+    },
+    {
+      "objective": "fair",
+      "pass": 2,
+      "after_task": "mnist",
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.46506759760996,
+      "val_worst_norm": 57.61388802452594
+    },
+    {
+      "objective": "fair",
+      "pass": 2,
+      "after_task": "svhn",
+      "c": [
+        1.0,
+        0.7,
+        0.4,
+        0.5
+      ],
+      "val_mean_norm": 77.46506759760996,
+      "val_worst_norm": 57.61388802452594
+    }
+  ],
+  "test": {
+    "dc_rank": {
+      "c": {
+        "eurosat": 0.6,
+        "gtsrb": 0.6,
+        "mnist": 0.6,
+        "svhn": 0.6
+      },
+      "test_acc": {
+        "eurosat": 54.629629629629626,
+        "gtsrb": 72.5059382422803,
+        "mnist": 93.3625,
+        "svhn": 69.24037261115913
+      },
+      "test_norm": {
+        "eurosat": 55.63665304983158,
+        "gtsrb": 73.76736009999011,
+        "mnist": 94.16288451840644,
+        "svhn": 71.75168146234107
+      },
+      "test_mean_norm": 73.8296447826423,
+      "test_worst_norm": 55.63665304983158,
+      "test_worst_task": "eurosat"
+    },
+    "oracle_mean": {
+      "c": {
+        "eurosat": 1.0,
+        "gtsrb": 0.7,
+        "mnist": 0.4,
+        "svhn": 0.5
+      },
+      "test_acc": {
+        "eurosat": 86.25925925925925,
+        "gtsrb": 79.56254948535233,
+        "mnist": 82.6875,
+        "svhn": 54.278305963699225
+      },
+      "test_norm": {
+        "eurosat": 87.84933217156457,
+        "gtsrb": 80.94673871742022,
+        "mnist": 83.39636913767019,
+        "svhn": 56.24694918518054
+      },
+      "test_mean_norm": 77.10984730295888,
+      "test_worst_norm": 56.24694918518054,
+      "test_worst_task": "svhn"
+    },
+    "oracle_fair": {
+      "c": {
+        "eurosat": 1.0,
+        "gtsrb": 0.7,
+        "mnist": 0.4,
+        "svhn": 0.5
+      },
+      "test_acc": {
+        "eurosat": 86.25925925925925,
+        "gtsrb": 79.56254948535233,
+        "mnist": 82.6875,
+        "svhn": 54.278305963699225
+      },
+      "test_norm": {
+        "eurosat": 87.84933217156457,
+        "gtsrb": 80.94673871742022,
+        "mnist": 83.39636913767019,
+        "svhn": 56.24694918518054
+      },
+      "test_mean_norm": 77.10984730295888,
+      "test_worst_norm": 56.24694918518054,
+      "test_worst_task": "svhn"
+    },
+    "ct": {
+      "c": {
+        "gamma": 0.6
+      },
+      "test_acc": {
+        "eurosat": 70.51851851851852,
+        "gtsrb": 65.24148851939826,
+        "mnist": 88.6875,
+        "svhn": 51.46931719965428
+      },
+      "test_norm": {
+        "eurosat": 71.81843214025717,
+        "gtsrb": 66.37652713337904,
+        "mnist": 89.44780635400907,
+        "svhn": 53.33607999964174
+      },
+      "test_mean_norm": 70.24471140682176,
+      "test_worst_norm": 53.33607999964174,
+      "test_worst_task": "svhn"
+    }
+  },
+  "replay": {
+    "source": "/workspace/ducanh/repo-exp5/handoff/experiment3/results/experiment3/contexts/eurosat-gtsrb-mnist-svhn",
+    "note": "dc_rank/oracle_mean/oracle_fair re-evaluated on this machine with Experiment 3's code path; ct is the archived Experiment 2 record (not re-evaluated)",
+    "runtime": {
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 3090"
+    },
+    "lane_checks": {
+      "max_rel_sum_error": 1.6994164298012038e-07,
+      "max_abs_diff_vs_official": null
+    },
+    "diffs_vs_archive": {
+      "dc_rank": {
+        "vector": "0.6,0.6,0.6,0.6",
+        "val_acc_diff_pp": {
+          "eurosat": -0.03703703703703809,
+          "gtsrb": 0.11876484560571043,
+          "mnist": 0.0,
+          "svhn": -0.09604302727620961
+        },
+        "test_acc_diff_pp": {
+          "eurosat": 0.18518518518518334,
+          "gtsrb": -0.1880443388756845,
+          "mnist": 0.037499999999994316,
+          "svhn": 0.019206760779795218
+        }
+      },
+      "oracle_mean": {
+        "vector": "1,0.7,0.4,0.5",
+        "val_acc_diff_pp": {
+          "eurosat": -0.11111111111110006,
+          "gtsrb": 0.19794140934283178,
+          "mnist": -0.04999999999999716,
+          "svhn": -0.13446023818670483
+        },
+        "test_acc_diff_pp": {
+          "eurosat": 0.03703703703702388,
+          "gtsrb": -0.009897070467147273,
+          "mnist": -0.07500000000000284,
+          "svhn": 0.038413521559590436
+        }
+      },
+      "oracle_fair": {
+        "vector": "1,0.7,0.4,0.5",
+        "val_acc_diff_pp": {
+          "eurosat": -0.11111111111110006,
+          "gtsrb": 0.19794140934283178,
+          "mnist": -0.04999999999999716,
+          "svhn": -0.13446023818670483
+        },
+        "test_acc_diff_pp": {
+          "eurosat": 0.03703703703702388,
+          "gtsrb": -0.009897070467147273,
+          "mnist": -0.07500000000000284,
+          "svhn": 0.038413521559590436
+        }
+      }
+    },
+    "max_abs_val_diff_pp": 0.19794140934283178,
+    "max_abs_test_diff_pp": 0.1880443388756845,
+    "oracle_fair_still_meets_val_floor": true,
+    "determinism": null,
+    "finished_utc": "2026-10-21T09:37:30Z"
+  }
+}
