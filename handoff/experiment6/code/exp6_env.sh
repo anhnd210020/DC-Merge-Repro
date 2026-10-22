@@ -1,0 +1,9 @@
+source /workspace/dcmerge_env.sh
+export PYTHON=/venv/dcmerge_vision/bin/python
+export MODEL=/workspace/models/clip-vit-base-patch32
+export FT_DIR=/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints
+export HEADS=/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads
+export DATA=/workspace/datasets8
+export EXP3=/workspace/ducanh/repo-exp5/handoff/experiment3/results/experiment3/contexts
+export EXP5=/workspace/ducanh/repo-exp5/handoff/experiment5
+export OUT=/workspace/ducanh/results/experiment6

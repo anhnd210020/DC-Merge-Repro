@@ -1,0 +1,184 @@
+=== REPLAY
+  [dtd-eurosat-gtsrb-svhn] determinism: repeat 0.000 pp, vs cached 0.000 pp
+[dtd-eurosat-gtsrb-svhn] replay done in 6.8 min; max |diff| vs archive: val 0.148 pp, test 0.053 pp; oracle_fair still meets its validation floor: True
+[eurosat-gtsrb-mnist-svhn] replay done in 3.8 min; max |diff| vs archive: val 0.198 pp, test 0.188 pp; oracle_fair still meets its validation floor: True
+[eurosat-gtsrb-sun397-svhn] replay done in 7.6 min; max |diff| vs archive: val 0.158 pp, test 0.185 pp; oracle_fair still meets its validation floor: True
+[stanford_cars-eurosat-gtsrb-mnist] replay done in 3.6 min; max |diff| vs archive: val 0.187 pp, test 0.100 pp; oracle_fair still meets its validation floor: True
+[stanford_cars-eurosat-gtsrb-resisc45] replay done in 3.9 min; max |diff| vs archive: val 0.079 pp, test 0.074 pp; oracle_fair still meets its validation floor: True
+[stanford_cars-eurosat-mnist-resisc45] replay done in 3.7 min; max |diff| vs archive: val 0.185 pp, test 0.148 pp; oracle_fair still meets its validation floor: True
+[stanford_cars-eurosat-mnist-sun397] replay done in 7.1 min; max |diff| vs archive: val 0.185 pp, test 0.138 pp; oracle_fair still meets its validation floor: True
+# Experiment 3 current-environment replay (for Experiment 6)
+
+Archive: `/workspace/ducanh/repo-exp5/handoff/experiment3/results/experiment3/contexts`. Experiment 3's chosen vectors re-evaluated on this machine with Experiment 3's code path; nothing re-selected. Differences are this machine minus archive, in accuracy pp.
+
+| context | vector | max |val diff| | max |test diff| | test mean norm: archive → replay | test worst norm: archive → replay |
+|---|---|---:|---:|---|---|
+| dtd-eurosat-gtsrb-svhn | dc_rank | 0.079 | 0.053 | 71.19 → 71.20 | 62.20 → 62.20 |
+| dtd-eurosat-gtsrb-svhn | oracle_mean | 0.106 | 0.053 | 73.85 → 73.84 | 57.99 → 58.01 |
+| dtd-eurosat-gtsrb-svhn | oracle_fair | 0.148 | 0.053 | 74.14 → 74.16 | 62.01 → 61.99 |
+| eurosat-gtsrb-mnist-svhn | dc_rank | 0.119 | 0.188 | 73.82 → 73.83 | 55.45 → 55.64 |
+| eurosat-gtsrb-mnist-svhn | oracle_mean | 0.198 | 0.075 | 77.11 → 77.11 | 56.21 → 56.25 |
+| eurosat-gtsrb-mnist-svhn | oracle_fair | 0.198 | 0.075 | 77.11 → 77.11 | 56.21 → 56.25 |
+| eurosat-gtsrb-sun397-svhn | dc_rank | 0.154 | 0.074 | 76.68 → 76.66 | 63.60 → 63.52 |
+| eurosat-gtsrb-sun397-svhn | oracle_mean | 0.158 | 0.053 | 79.51 → 79.51 | 57.84 → 57.78 |
+| eurosat-gtsrb-sun397-svhn | oracle_fair | 0.148 | 0.185 | 78.61 → 78.68 | 63.42 → 63.45 |
+| stanford_cars-eurosat-gtsrb-mnist | dc_rank | 0.158 | 0.100 | 81.59 → 81.60 | 72.16 → 72.20 |
+| stanford_cars-eurosat-gtsrb-mnist | oracle_mean | 0.187 | 0.087 | 84.09 → 84.10 | 77.92 → 77.92 |
+| stanford_cars-eurosat-gtsrb-mnist | oracle_fair | 0.187 | 0.087 | 84.09 → 84.10 | 77.92 → 77.92 |
+| stanford_cars-eurosat-gtsrb-resisc45 | dc_rank | 0.062 | 0.074 | 85.50 → 85.51 | 80.58 → 80.53 |
+| stanford_cars-eurosat-gtsrb-resisc45 | oracle_mean | 0.079 | 0.032 | 85.54 → 85.54 | 80.45 → 80.41 |
+| stanford_cars-eurosat-gtsrb-resisc45 | oracle_fair | 0.062 | 0.074 | 85.50 → 85.51 | 80.58 → 80.53 |
+| stanford_cars-eurosat-mnist-resisc45 | dc_rank | 0.124 | 0.148 | 87.68 → 87.61 | 85.93 → 85.77 |
+| stanford_cars-eurosat-mnist-resisc45 | oracle_mean | 0.185 | 0.037 | 87.69 → 87.70 | 75.08 → 75.06 |
+| stanford_cars-eurosat-mnist-resisc45 | oracle_fair | 0.124 | 0.148 | 87.68 → 87.61 | 85.93 → 85.77 |
+| stanford_cars-eurosat-mnist-sun397 | dc_rank | 0.100 | 0.138 | 89.61 → 89.57 | 84.76 → 84.67 |
+| stanford_cars-eurosat-mnist-sun397 | oracle_mean | 0.185 | 0.062 | 90.52 → 90.55 | 82.95 → 83.01 |
+| stanford_cars-eurosat-mnist-sun397 | oracle_fair | 0.111 | 0.111 | 90.32 → 90.31 | 86.70 → 86.72 |
+
+Determinism (same evaluation twice on this machine): max diff 0.000 pp.
+=== 6a CHECK
+  expert check dtd: full-val acc 67.45 vs reference 67.55 (-0.10 pp) ok
+  expert check eurosat: full-val acc 98.52 vs reference 98.56 (-0.04 pp) ok
+  expert check gtsrb: full-val acc 98.38 vs reference 98.38 (-0.00 pp) ok
+  expert check svhn: full-val acc 96.66 vs reference 96.62 (+0.04 pp) ok
+  expert check mnist: full-val acc 99.65 vs reference 99.65 (+0.00 pp) ok
+  expert check sun397: full-val acc 73.83 vs reference 73.80 (+0.03 pp) ok
+[dtd-eurosat-gtsrb-svhn] unlabeled subset identical to Experiment 5 (n, split size and first indices match)
+  expert check dtd: full-val acc 67.45 vs reference 67.55 (-0.10 pp) ok
+  expert check eurosat: full-val acc 98.52 vs reference 98.56 (-0.04 pp) ok
+  expert check gtsrb: full-val acc 98.38 vs reference 98.38 (-0.00 pp) ok
+  expert check svhn: full-val acc 96.66 vs reference 96.62 (+0.04 pp) ok
+  expert check mnist: full-val acc 99.65 vs reference 99.65 (+0.00 pp) ok
+  expert check sun397: full-val acc 73.83 vs reference 73.80 (+0.03 pp) ok
+[dtd-eurosat-gtsrb-svhn] unlabeled subset identical to Experiment 5 (n, split size and first indices match)
+[eurosat-gtsrb-mnist-svhn] unlabeled subset identical to Experiment 5 (n, split size and first indices match)
+[eurosat-gtsrb-sun397-svhn] unlabeled subset identical to Experiment 5 (n, split size and first indices match)
+GATE: PASS (top1: rho_mean >= 0.5 and pick > dc_rank in all three core contexts)
+# Experiment 6a check: does agreement with the experts pick high accuracy? (validation, Exp. 3 vectors)
+
+Proxies: 500 unlabeled validation images per task (seed 0, Experiment 5's subset); labels are not read by the proxy. Accuracies: Experiment 3's cached validation accuracies, normalized by the single-task (expert) accuracy. **Not data-free:** needs unlabeled images and the experts.
+
+| context | proxy | vectors | ρ(−mean loss, mean acc) | ρ(−max loss, worst acc) | mean acc: best / pick / dc_rank | worst acc: best / fair pick / dc_rank | pick > dc_rank? |
+|---|---|---:|---:|---:|---|---|:---:|
+| dtd-eurosat-gtsrb-svhn | kl | 78 | -0.20 | -0.20 | 74.55 / 66.71 / 71.16 | 68.32 / 56.07 / 62.08 | no |
+| dtd-eurosat-gtsrb-svhn | top1 | 78 | 0.95 | 0.52 | 74.55 / 74.55 / 71.16 | 68.32 / 63.54 / 62.08 | yes |
+| dtd-eurosat-gtsrb-svhn | cos | 78 | -0.25 | -0.14 | 74.55 / 61.02 / 71.16 | 68.32 / 56.07 / 62.08 | no |
+| dtd-eurosat-gtsrb-svhn | entropy (Exp 5) | 78 | 0.35 | 0.09 | 74.55 / 68.72 / 71.16 | 68.32 / 54.12 / 62.08 | no |
+| eurosat-gtsrb-mnist-svhn | kl | 57 | -0.14 | 0.39 | 77.47 / 71.98 / 73.74 | 69.32 / 53.38 / 53.70 | no |
+| eurosat-gtsrb-mnist-svhn | top1 | 57 | 0.98 | 0.99 | 77.47 / 77.47 / 73.74 | 69.32 / 69.32 / 53.70 | yes |
+| eurosat-gtsrb-mnist-svhn | cos | 57 | -0.29 | 0.06 | 77.47 / 69.06 / 73.74 | 69.32 / 54.00 / 53.70 | no |
+| eurosat-gtsrb-mnist-svhn | entropy (Exp 5) | 57 | 0.43 | 0.12 | 77.47 / 68.89 / 73.74 | 69.32 / 48.33 / 53.70 | no |
+| eurosat-gtsrb-sun397-svhn | kl | 82 | 0.27 | 0.38 | 79.60 / 76.54 / 75.83 | 70.57 / 59.86 / 62.04 | yes |
+| eurosat-gtsrb-sun397-svhn | top1 | 82 | 0.97 | 0.99 | 79.60 / 79.49 / 75.83 | 70.57 / 69.34 / 62.04 | yes |
+| eurosat-gtsrb-sun397-svhn | cos | 82 | 0.10 | 0.38 | 79.60 / 76.54 / 75.83 | 70.57 / 60.89 / 62.04 | yes |
+| eurosat-gtsrb-sun397-svhn | entropy (Exp 5) | 82 | 0.01 | -0.28 | 79.60 / 70.77 / 75.83 | 70.57 / 47.64 / 62.04 | no |
+
+Proxy losses: `kl` = KL(expert || merged); `top1` = 1 - top-1 agreement; `cos` = 1 - feature cosine. The entropy rows are Experiment 5's reference on the same vectors.
+
+## Gate (pre-registered, core contexts, validation)
+
+**PASS** — top1: rho_mean >= 0.5 and pick > dc_rank in all three core contexts
+
+GATE PASSES -> run the coordinate search with the selected proxy (core, then four)
+
+| proxy | ρ_mean per core context | min ρ_mean | pick beats dc_rank | passes | fails (per-proxy reading) |
+|---|---|---:|---|:---:|:---:|
+| kl | -0.20, -0.14, 0.27 | -0.20 | no, no, yes | no | yes |
+| top1 | 0.95, 0.98, 0.97 | 0.95 | yes, yes, yes | yes | no |
+| cos | -0.25, -0.29, 0.10 | -0.29 | no, no, yes | no | yes |
+
+FAIL uses the literal reading (*every* proxy has a core ρ_mean ≤ 0.3, *or* *every* proxy's pick is below dc_rank in all three core contexts). Under the stricter per-proxy reading (each proxy fails at least one of the two), the gate would not fail.
+=== 6b CHECKS
+[dtd-eurosat-gtsrb-svhn] checks: uniform alpha=0.5 val diff 0.079 pp, test diff 0.053 pp (vs Exp 3 dc_rank); constant-over-group oracle_fair val diff 0.148 pp (vs Exp 3); lane sum error 1.66e-07 -> FAIL
+[dtd-eurosat-gtsrb-svhn] checks: uniform alpha=0.5 val diff 0.000 pp, test diff 0.000 pp (vs Exp 3 dc_rank); constant-over-group oracle_fair val diff 0.000 pp (vs Exp 3); lane sum error 1.66e-07 -> PASS
+[eurosat-gtsrb-mnist-svhn] checks: uniform alpha=0.6 val diff 0.000 pp, test diff 0.000 pp (vs Exp 3 dc_rank); constant-over-group oracle_fair val diff 0.000 pp (vs Exp 3); lane sum error 1.70e-07 -> PASS
+[eurosat-gtsrb-sun397-svhn] checks: uniform alpha=0.6 val diff 0.000 pp, test diff 0.000 pp (vs Exp 3 dc_rank); constant-over-group oracle_fair val diff 0.000 pp (vs Exp 3); lane sum error 1.65e-07 -> PASS
+=== 6b MECHANISM
+# Experiment 6b-1: where in depth is EuroSAT's harm created? (VALIDATION, grouping = depth)
+
+All other lanes at the context's selected α. `harm` = EuroSAT accuracy with the neighbour lane(s) fully off minus with all lanes on (pp). *only g*: neighbour on only in group g; the harm it creates there is (neighbour off) − (only g). *off g*: neighbour off only in g; the harm it removes is (off g) − (all on). Shares are relative to the total harm.
+
+## dtd-eurosat-gtsrb-svhn (α = 0.5); EuroSAT with all lanes on: 61.19%
+
+| neighbour | EuroSAT if fully off | total harm (pp) | early: created / share (only g) | mid: created / share (only g) | late: created / share (only g) | early: removed / share (off g) | mid: removed / share (off g) | late: removed / share (off g) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| svhn | 81.30 | +20.11 | -0.41 / -2% | +13.85 / 69% | +3.44 / 17% | +1.30 / 6% | +16.22 / 81% | +5.33 / 27% |
+| gtsrb | 73.70 | +12.52 | -1.56 / -12% | +6.78 / 54% | +2.44 / 20% | -0.63 / -5% | +11.22 / 90% | +6.33 / 51% |
+| svhn+gtsrb | 85.52 | +24.33 | +0.04 / 0% | +15.74 / 65% | +2.67 / 11% | -0.93 / -4% | +23.89 / 98% | +10.59 / 44% |
+
+SVHN × GTSRB interaction on EuroSAT (reference: both fully off; interaction = harm(both in g) − harm(SVHN in g) − harm(GTSRB in g)):
+
+| scope | harm SVHN | harm GTSRB | harm both | interaction (pp) |
+|---|---:|---:|---:|---:|
+| only early | +0.41 | -0.81 | +0.04 | +0.44 |
+| only mid | +8.11 | +3.93 | +15.74 | +3.70 |
+| only late | +0.44 | +0.00 | +2.67 | +2.22 |
+| all groups | | | | +8.30 |
+
+EuroSAT's own lane boosted ×1.5 (validation accuracy, Δ vs all lanes on):
+
+| boosted in | dtd | eurosat | gtsrb | svhn | Δ mean normalized |
+|---|---:|---:|---:|---:|---:|
+| early | 53.14 (-0.37) | 64.78 (+3.59) | 72.33 (-1.70) | 62.45 (-3.23) | -0.49 |
+| mid | 53.03 (-0.48) | 69.93 (+8.74) | 72.21 (-1.82) | 64.66 (-1.02) | +1.31 |
+| late | 53.30 (-0.21) | 70.19 (+9.00) | 71.85 (-2.18) | 65.17 (-0.50) | +1.52 |
+| all | 51.91 (-1.60) | 80.41 (+19.22) | 67.97 (-6.06) | 60.81 (-4.86) | +1.49 |
+
+All four tasks' accuracies for every configuration are in `mechanism_result.json`.
+
+## eurosat-gtsrb-mnist-svhn (α = 0.6); EuroSAT with all lanes on: 52.89%
+
+| neighbour | EuroSAT if fully off | total harm (pp) | early: created / share (only g) | mid: created / share (only g) | late: created / share (only g) | early: removed / share (off g) | mid: removed / share (off g) | late: removed / share (off g) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| svhn | 83.11 | +30.22 | +1.00 / 3% | +19.89 / 66% | +3.59 / 12% | +5.07 / 17% | +25.48 / 84% | +5.93 / 20% |
+| gtsrb | 77.11 | +24.22 | -1.30 / -5% | +11.67 / 48% | +4.41 / 18% | +2.63 / 11% | +20.81 / 86% | +10.30 / 43% |
+| svhn+gtsrb | 88.85 | +35.96 | +1.00 / 3% | +18.33 / 51% | +0.19 / 1% | +5.85 / 16% | +34.59 / 96% | +15.33 / 43% |
+
+SVHN × GTSRB interaction on EuroSAT (reference: both fully off; interaction = harm(both in g) − harm(SVHN in g) − harm(GTSRB in g)):
+
+| scope | harm SVHN | harm GTSRB | harm both | interaction (pp) |
+|---|---:|---:|---:|---:|
+| only early | +0.89 | -0.26 | +1.00 | +0.37 |
+| only mid | +8.52 | +4.07 | +18.33 | +5.74 |
+| only late | -0.19 | -0.26 | +0.19 | +0.63 |
+| all groups | | | | +18.48 |
+
+EuroSAT's own lane boosted ×1.5 (validation accuracy, Δ vs all lanes on):
+
+| boosted in | eurosat | gtsrb | mnist | svhn | Δ mean normalized |
+|---|---:|---:|---:|---:|---:|
+| early | 55.63 (+2.74) | 72.05 (-1.15) | 94.10 (-0.60) | 64.54 (-4.88) | -1.01 |
+| mid | 62.30 (+9.41) | 71.10 (-2.10) | 93.75 (-0.95) | 67.31 (-2.11) | +1.07 |
+| late | 62.74 (+9.85) | 69.52 (-3.68) | 94.45 (-0.25) | 68.25 (-1.17) | +1.20 |
+| all | 75.70 (+22.81) | 65.84 (-7.36) | 93.40 (-1.30) | 61.99 (-7.43) | +1.67 |
+
+All four tasks' accuracies for every configuration are in `mechanism_result.json`.
+
+## eurosat-gtsrb-sun397-svhn (α = 0.6); EuroSAT with all lanes on: 61.11%
+
+| neighbour | EuroSAT if fully off | total harm (pp) | early: created / share (only g) | mid: created / share (only g) | late: created / share (only g) | early: removed / share (off g) | mid: removed / share (off g) | late: removed / share (off g) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| svhn | 88.63 | +27.52 | +2.00 / 7% | +15.56 / 57% | +1.33 / 5% | +3.44 / 13% | +23.81 / 87% | +8.78 / 32% |
+| gtsrb | 84.04 | +22.93 | -1.85 / -8% | +12.07 / 53% | +4.00 / 17% | +0.93 / 4% | +20.96 / 91% | +10.15 / 44% |
+| svhn+gtsrb | 91.89 | +30.78 | +0.74 / 2% | +13.41 / 44% | +0.04 / 0% | +3.37 / 11% | +29.63 / 96% | +16.52 / 54% |
+
+SVHN × GTSRB interaction on EuroSAT (reference: both fully off; interaction = harm(both in g) − harm(SVHN in g) − harm(GTSRB in g)):
+
+| scope | harm SVHN | harm GTSRB | harm both | interaction (pp) |
+|---|---:|---:|---:|---:|
+| only early | +0.81 | -0.37 | +0.74 | +0.30 |
+| only mid | +3.63 | +1.74 | +13.41 | +8.04 |
+| only late | +0.11 | -0.26 | +0.04 | +0.19 |
+| all groups | | | | +19.67 |
+
+EuroSAT's own lane boosted ×1.5 (validation accuracy, Δ vs all lanes on):
+
+| boosted in | eurosat | gtsrb | sun397 | svhn | Δ mean normalized |
+|---|---:|---:|---:|---:|---:|
+| early | 65.70 (+4.59) | 76.56 (-2.26) | 66.12 (-0.30) | 65.71 (-3.19) | -0.34 |
+| mid | 71.81 (+10.70) | 76.60 (-2.22) | 65.54 (-0.88) | 67.40 (-1.50) | +1.47 |
+| late | 72.56 (+11.44) | 74.27 (-4.55) | 65.84 (-0.58) | 68.08 (-0.83) | +1.34 |
+| all | 83.48 (+22.37) | 69.95 (-8.87) | 65.16 (-1.26) | 63.20 (-5.70) | +1.52 |
+
+All four tasks' accuracies for every configuration are in `mechanism_result.json`.
+
