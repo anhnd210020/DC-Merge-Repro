@@ -1,0 +1,50 @@
+{
+  "experiment": "6b",
+  "subcommand": "oracle",
+  "grouping": "depth",
+  "contexts": "stanford_cars-eurosat-mnist-sun397",
+  "grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "check_tolerance_pp": 0.05,
+  "lane_sum_tolerance": 1e-05,
+  "boost": null,
+  "max_passes": 2,
+  "argv": [
+    "lane_harm/run_layer_oracle.py",
+    "oracle",
+    "--repo",
+    "/workspace/ducanh/DC-Merge",
+    "--model",
+    "/workspace/models/clip-vit-base-patch32",
+    "--ft-dir",
+    "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints",
+    "--heads",
+    "/workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads",
+    "--data",
+    "/workspace/datasets8",
+    "--device",
+    "cuda",
+    "--exp3",
+    "/workspace/ducanh/results/experiment6_exp3_current",
+    "--out",
+    "/workspace/ducanh/results/experiment6",
+    "--contexts",
+    "stanford_cars-eurosat-mnist-sun397"
+  ],
+  "started_utc": "2026-10-21T23:01:44Z",
+  "code_sha256": {
+    "run_layer_oracle.py": "380a4859427147f1979f9c30b630102f1fbcf7b2f1f5c265faa2672b08611456",
+    "lanes.py": "fec6bebc7bb6c414b95f68245d347af704bf8272fc8385147a6c5d780bbae369",
+    "run_oracle.py": "94871b494e8262c1efb68bfd5cf001edd99dae8614d863e0f3feb2f1982c5ee5",
+    "run_official.py": "8aa9bec9f2cbc3a075d09c0d1071e1fc7d253c6f1a9abb86af3dc6482ad499fe",
+    "dc_trace.py": "15cff9c94ffed1737576e58f22aa1511166844f76e8afa249ff0de689ec191fb"
+  }
+}

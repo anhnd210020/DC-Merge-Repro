@@ -1,0 +1,443 @@
+{
+  "context": "dtd-eurosat-gtsrb-svhn",
+  "tasks": [
+    "dtd",
+    "eurosat",
+    "gtsrb",
+    "svhn"
+  ],
+  "dc_rank_alpha": 0.5,
+  "grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "proxy": "top1",
+  "gate_verdict": "PASS",
+  "tau": 100.0,
+  "n_unlabeled": 500,
+  "seed": 0,
+  "unlabeled_subset": {
+    "dtd": {
+      "n": 500,
+      "of": 1880,
+      "first_indices": [
+        1045,
+        38,
+        1754,
+        1226,
+        1631
+      ]
+    },
+    "eurosat": {
+      "n": 500,
+      "of": 2700,
+      "first_indices": [
+        1548,
+        1212,
+        447,
+        78,
+        306
+      ]
+    },
+    "gtsrb": {
+      "n": 500,
+      "of": 2526,
+      "first_indices": [
+        1888,
+        1024,
+        1259,
+        1752,
+        2344
+      ]
+    },
+    "svhn": {
+      "n": 500,
+      "of": 5206,
+      "first_indices": [
+        3091,
+        2738,
+        4595,
+        4577,
+        953
+      ]
+    }
+  },
+  "subset_vs_exp5": "identical",
+  "max_passes": 2,
+  "proxy_evals": 134,
+  "lane_checks": {
+    "max_rel_sum_error": 1.6639150146602333e-07,
+    "max_abs_diff_vs_official": null
+  },
+  "search_log": [
+    {
+      "objective": "agreement_mean",
+      "pass": 1,
+      "after_task": "dtd",
+      "c": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3315,
+      "max_loss": 0.396
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 1,
+      "after_task": "eurosat",
+      "c": [
+        0.5,
+        0.9,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3215,
+      "max_loss": 0.41600000000000004
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 1,
+      "after_task": "gtsrb",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.5
+      ],
+      "mean_loss": 0.301,
+      "max_loss": 0.44799999999999995
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 1,
+      "after_task": "svhn",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.3
+      ],
+      "mean_loss": 0.29100000000000004,
+      "max_loss": 0.506
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 2,
+      "after_task": "dtd",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.3
+      ],
+      "mean_loss": 0.29100000000000004,
+      "max_loss": 0.506
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 2,
+      "after_task": "eurosat",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.3
+      ],
+      "mean_loss": 0.29100000000000004,
+      "max_loss": 0.506
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 2,
+      "after_task": "gtsrb",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.3
+      ],
+      "mean_loss": 0.29100000000000004,
+      "max_loss": 0.506
+    },
+    {
+      "objective": "agreement_mean",
+      "pass": 2,
+      "after_task": "svhn",
+      "c": [
+        0.5,
+        0.9,
+        0.7,
+        0.3
+      ],
+      "mean_loss": 0.29100000000000004,
+      "max_loss": 0.506
+    },
+    {
+      "objective": "agreement_fair",
+      "pass": 1,
+      "after_task": "dtd",
+      "c": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3315,
+      "max_loss": 0.396
+    },
+    {
+      "objective": "agreement_fair",
+      "pass": 1,
+      "after_task": "eurosat",
+      "c": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3315,
+      "max_loss": 0.396
+    },
+    {
+      "objective": "agreement_fair",
+      "pass": 1,
+      "after_task": "gtsrb",
+      "c": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3315,
+      "max_loss": 0.396
+    },
+    {
+      "objective": "agreement_fair",
+      "pass": 1,
+      "after_task": "svhn",
+      "c": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mean_loss": 0.3315,
+      "max_loss": 0.396
+    }
+  ],
+  "results": {
+    "agreement_mean": {
+      "c": {
+        "dtd": 0.5,
+        "eurosat": 0.9,
+        "gtsrb": 0.7,
+        "svhn": 0.3
+      },
+      "test_acc": {
+        "dtd": 51.11702127659574,
+        "eurosat": 89.07407407407408,
+        "gtsrb": 84.88717339667458,
+        "svhn": 45.548833189282625
+      },
+      "test_norm": {
+        "dtd": 75.90885250459718,
+        "eurosat": 90.71603429481013,
+        "gtsrb": 86.36399775834224,
+        "svhn": 47.200863408583025
+      },
+      "test_mean_norm": 75.04743699158314,
+      "test_worst_norm": 47.200863408583025,
+      "test_worst_task": "svhn",
+      "val_mean_norm": 74.45544387423374,
+      "val_worst_norm": 47.9718122164186,
+      "proxies": {
+        "dtd": {
+          "kl": 0.5097200352245602,
+          "top1_agree": 0.566,
+          "feat_cos": 0.8453927677199193
+        },
+        "eurosat": {
+          "kl": 0.17488903214746193,
+          "top1_agree": 0.916,
+          "feat_cos": 0.9402700783088296
+        },
+        "gtsrb": {
+          "kl": 0.1935374895615606,
+          "top1_agree": 0.86,
+          "feat_cos": 0.9580116365925623
+        },
+        "svhn": {
+          "kl": 0.1117998144219468,
+          "top1_agree": 0.494,
+          "feat_cos": 0.8744138833149017
+        }
+      }
+    },
+    "agreement_fair": {
+      "c": {
+        "dtd": 0.5,
+        "eurosat": 0.5,
+        "gtsrb": 0.5,
+        "svhn": 0.5
+      },
+      "test_acc": {
+        "dtd": 53.56382978723404,
+        "eurosat": 61.07407407407407,
+        "gtsrb": 73.93111638954869,
+        "svhn": 65.44703735714972
+      },
+      "test_norm": {
+        "dtd": 79.54236677640932,
+        "eurosat": 62.19989212147273,
+        "gtsrb": 75.21733278008819,
+        "svhn": 67.8207641006733
+      },
+      "test_mean_norm": 71.19508894466088,
+      "test_worst_norm": 62.19989212147273,
+      "test_worst_task": "eurosat",
+      "val_mean_norm": 71.12906317464035,
+      "val_worst_norm": 62.07912457912458,
+      "proxies": {
+        "dtd": {
+          "kl": 0.6551979363870728,
+          "top1_agree": 0.604,
+          "feat_cos": 0.8329624816285952
+        },
+        "eurosat": {
+          "kl": 0.24273685465806746,
+          "top1_agree": 0.634,
+          "feat_cos": 0.90534149035928
+        },
+        "gtsrb": {
+          "kl": 0.24347800009239892,
+          "top1_agree": 0.772,
+          "feat_cos": 0.9409099599165851
+        },
+        "svhn": {
+          "kl": 0.0788581186402973,
+          "top1_agree": 0.664,
+          "feat_cos": 0.907778853226267
+        }
+      }
+    },
+    "dc_rank": {
+      "c": {
+        "dtd": 0.5,
+        "eurosat": 0.5,
+        "gtsrb": 0.5,
+        "svhn": 0.5
+      },
+      "test_acc": {
+        "dtd": 53.56382978723404,
+        "eurosat": 61.07407407407407,
+        "gtsrb": 73.93111638954869,
+        "svhn": 65.44703735714972
+      },
+      "test_norm": {
+        "dtd": 79.54236677640932,
+        "eurosat": 62.19989212147273,
+        "gtsrb": 75.21733278008819,
+        "svhn": 67.8207641006733
+      },
+      "test_mean_norm": 71.19508894466088,
+      "test_worst_norm": 62.19989212147273,
+      "test_worst_task": "eurosat",
+      "proxies": {
+        "dtd": {
+          "kl": 0.6551979363870728,
+          "top1_agree": 0.604,
+          "feat_cos": 0.8329624816285952
+        },
+        "eurosat": {
+          "kl": 0.24273685465806746,
+          "top1_agree": 0.634,
+          "feat_cos": 0.90534149035928
+        },
+        "gtsrb": {
+          "kl": 0.24347800009239892,
+          "top1_agree": 0.772,
+          "feat_cos": 0.9409099599165851
+        },
+        "svhn": {
+          "kl": 0.0788581186402973,
+          "top1_agree": 0.664,
+          "feat_cos": 0.907778853226267
+        }
+      }
+    },
+    "oracle_fair": {
+      "c": {
+        "dtd": 0.3,
+        "eurosat": 0.8,
+        "gtsrb": 0.7,
+        "svhn": 0.5
+      },
+      "test_acc": {
+        "dtd": 46.11702127659574,
+        "eurosat": 76.74074074074075,
+        "gtsrb": 86.51029295328583,
+        "svhn": 59.819456448669925
+      },
+      "test_norm": {
+        "dtd": 68.48384507958976,
+        "eurosat": 78.15535262322105,
+        "gtsrb": 88.01535553289838,
+        "svhn": 61.98907404007246
+      },
+      "test_mean_norm": 74.1609068189454,
+      "test_worst_norm": 61.98907404007246,
+      "test_worst_task": "svhn"
+    },
+    "oracle_mean": {
+      "c": {
+        "dtd": 0.4,
+        "eurosat": 0.7,
+        "gtsrb": 0.6,
+        "svhn": 0.4
+      },
+      "test_acc": {
+        "dtd": 49.52127659574468,
+        "eurosat": 79.48148148148148,
+        "gtsrb": 81.44299287410927,
+        "svhn": 55.98290598290598
+      },
+      "test_norm": {
+        "dtd": 73.53916928385014,
+        "eurosat": 80.9466152169075,
+        "gtsrb": 82.85989711477187,
+        "svhn": 58.013374075550246
+      },
+      "test_mean_norm": 73.83976392276993,
+      "test_worst_norm": 58.013374075550246,
+      "test_worst_task": "svhn"
+    },
+    "ct": {
+      "c": {
+        "gamma": 0.7
+      },
+      "test_acc": {
+        "dtd": 56.11702127659575,
+        "eurosat": 66.92592592592592,
+        "gtsrb": 69.65558194774347,
+        "svhn": 53.346778065879185
+      },
+      "test_norm": {
+        "dtd": 83.33385992960461,
+        "eurosat": 68.15961495664112,
+        "gtsrb": 70.86741473979394,
+        "svhn": 55.28163530142921
+      },
+      "test_mean_norm": 69.41063123186723,
+      "test_worst_norm": 55.28163530142921,
+      "test_worst_task": "svhn"
+    }
+  }
+}

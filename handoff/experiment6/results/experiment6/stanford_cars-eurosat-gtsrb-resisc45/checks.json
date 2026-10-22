@@ -1,0 +1,37 @@
+{
+  "context": "stanford_cars-eurosat-gtsrb-resisc45",
+  "tolerance_pp": 0.05,
+  "grouping": "depth",
+  "uniform_alpha_val": [
+    0.0,
+    {
+      "stanford_cars": 0.0,
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "resisc45": 0.0
+    }
+  ],
+  "uniform_alpha_test": [
+    0.0,
+    {
+      "stanford_cars": 0.0,
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "resisc45": 0.0
+    }
+  ],
+  "oracle_fair_val": [
+    0.0,
+    {
+      "stanford_cars": 0.0,
+      "eurosat": 0.0,
+      "gtsrb": 0.0,
+      "resisc45": 0.0
+    }
+  ],
+  "lane_checks": {
+    "max_rel_sum_error": 1.6332761276771635e-07,
+    "max_abs_diff_vs_official": null
+  },
+  "passed": true
+}
