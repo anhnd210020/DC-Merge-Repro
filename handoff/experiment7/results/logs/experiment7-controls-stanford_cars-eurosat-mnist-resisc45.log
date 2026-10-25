@@ -1,0 +1,250 @@
+paths used:
+  repo    = /workspace/ducanh/DC-Merge
+  model   = /workspace/models/clip-vit-base-patch32
+  ft_dir  = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints
+  heads   = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads
+  data    = /workspace/datasets8
+  exp3r   = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6_exp3_current
+  exp6    = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6
+  out     = /workspace/ducanh/results/experiment7
+  reference mode = current; unlabeled = 500 per task, seed 0
+Setting Seed to 400
+Preparing Models: 0it [00:00, ?it/s]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/stanford_cars
+Preparing Models: 1it [00:01,  1.39s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/dtd
+Preparing Models: 2it [00:02,  1.19s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/eurosat
+Preparing Models: 3it [00:03,  1.13s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/gtsrb
+Preparing Models: 4it [00:04,  1.21s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/mnist
+Preparing Models: 5it [00:05,  1.15s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/resisc45
+Preparing Models: 6it [00:06,  1.12s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/sun397
+Preparing Models: 7it [00:08,  1.19s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/svhn
+Preparing Models: 8it [00:09,  1.15s/it]Preparing Models: 8it [00:09,  1.16s/it]
+splitting cars
+splitting gtsrb
+splitting mnist
+splitting sun397
+splitting svhn
+[split] controls: coefficients selected on VALIDATION (labels); each chosen vector scored ONCE on TEST
+module -> block -> group mapping (depth); 48 lane modules:
+  block proj      group  module
+      0 k_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.k_proj.weight
+      0 out_proj  early  vision_model.base_model.model.encoder.layers.0.self_attn.out_proj.weight
+      0 q_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.q_proj.weight
+      0 v_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.v_proj.weight
+      1 k_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.k_proj.weight
+      1 out_proj  early  vision_model.base_model.model.encoder.layers.1.self_attn.out_proj.weight
+      1 q_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.q_proj.weight
+      1 v_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.v_proj.weight
+      2 k_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.k_proj.weight
+      2 out_proj  early  vision_model.base_model.model.encoder.layers.2.self_attn.out_proj.weight
+      2 q_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.q_proj.weight
+      2 v_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.v_proj.weight
+      3 k_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.k_proj.weight
+      3 out_proj  early  vision_model.base_model.model.encoder.layers.3.self_attn.out_proj.weight
+      3 q_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.q_proj.weight
+      3 v_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.v_proj.weight
+      4 k_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.k_proj.weight
+      4 out_proj  mid    vision_model.base_model.model.encoder.layers.4.self_attn.out_proj.weight
+      4 q_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.q_proj.weight
+      4 v_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.v_proj.weight
+      5 k_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.k_proj.weight
+      5 out_proj  mid    vision_model.base_model.model.encoder.layers.5.self_attn.out_proj.weight
+      5 q_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.q_proj.weight
+      5 v_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.v_proj.weight
+      6 k_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.k_proj.weight
+      6 out_proj  mid    vision_model.base_model.model.encoder.layers.6.self_attn.out_proj.weight
+      6 q_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.q_proj.weight
+      6 v_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.v_proj.weight
+      7 k_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.k_proj.weight
+      7 out_proj  mid    vision_model.base_model.model.encoder.layers.7.self_attn.out_proj.weight
+      7 q_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.q_proj.weight
+      7 v_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.v_proj.weight
+      8 k_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.k_proj.weight
+      8 out_proj  late   vision_model.base_model.model.encoder.layers.8.self_attn.out_proj.weight
+      8 q_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.q_proj.weight
+      8 v_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.v_proj.weight
+      9 k_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.k_proj.weight
+      9 out_proj  late   vision_model.base_model.model.encoder.layers.9.self_attn.out_proj.weight
+      9 q_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.q_proj.weight
+      9 v_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.v_proj.weight
+     10 k_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.k_proj.weight
+     10 out_proj  late   vision_model.base_model.model.encoder.layers.10.self_attn.out_proj.weight
+     10 q_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.q_proj.weight
+     10 v_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.v_proj.weight
+     11 k_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.k_proj.weight
+     11 out_proj  late   vision_model.base_model.model.encoder.layers.11.self_attn.out_proj.weight
+     11 q_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.q_proj.weight
+     11 v_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.v_proj.weight
+  modules per group: early=16, late=16, mid=16
+  non-block modules: 0 (choice: they receive the context's scalar alpha for every task)
+paths used:
+  repo    = /workspace/ducanh/DC-Merge
+  model   = /workspace/models/clip-vit-base-patch32
+  ft_dir  = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints
+  heads   = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads
+  data    = /workspace/datasets8
+  exp3r   = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6_exp3_current
+  exp6    = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6
+  out     = /workspace/ducanh/results/experiment7
+  reference mode = current; unlabeled = 500 per task, seed 0
+Setting Seed to 400
+Preparing Models: 0it [00:00, ?it/s]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/stanford_cars
+Preparing Models: 1it [00:06,  7.00s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/dtd
+Preparing Models: 2it [00:16,  8.24s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/eurosat
+Preparing Models: 3it [00:24,  8.17s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/gtsrb
+Preparing Models: 4it [00:33,  8.82s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/mnist
+Preparing Models: 5it [00:39,  7.69s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/resisc45
+Preparing Models: 6it [00:45,  7.08s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/sun397
+Preparing Models: 7it [00:54,  7.71s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/svhn
+Preparing Models: 8it [01:02,  7.80s/it]Preparing Models: 8it [01:02,  7.82s/it]
+splitting cars
+splitting gtsrb
+splitting mnist
+splitting sun397
+splitting svhn
+[split] controls: coefficients selected on VALIDATION (labels); each chosen vector scored ONCE on TEST
+module -> block -> group mapping (depth); 48 lane modules:
+  block proj      group  module
+      0 k_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.k_proj.weight
+      0 out_proj  early  vision_model.base_model.model.encoder.layers.0.self_attn.out_proj.weight
+      0 q_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.q_proj.weight
+      0 v_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.v_proj.weight
+      1 k_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.k_proj.weight
+      1 out_proj  early  vision_model.base_model.model.encoder.layers.1.self_attn.out_proj.weight
+      1 q_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.q_proj.weight
+      1 v_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.v_proj.weight
+      2 k_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.k_proj.weight
+      2 out_proj  early  vision_model.base_model.model.encoder.layers.2.self_attn.out_proj.weight
+      2 q_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.q_proj.weight
+      2 v_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.v_proj.weight
+      3 k_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.k_proj.weight
+      3 out_proj  early  vision_model.base_model.model.encoder.layers.3.self_attn.out_proj.weight
+      3 q_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.q_proj.weight
+      3 v_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.v_proj.weight
+      4 k_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.k_proj.weight
+      4 out_proj  mid    vision_model.base_model.model.encoder.layers.4.self_attn.out_proj.weight
+      4 q_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.q_proj.weight
+      4 v_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.v_proj.weight
+      5 k_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.k_proj.weight
+      5 out_proj  mid    vision_model.base_model.model.encoder.layers.5.self_attn.out_proj.weight
+      5 q_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.q_proj.weight
+      5 v_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.v_proj.weight
+      6 k_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.k_proj.weight
+      6 out_proj  mid    vision_model.base_model.model.encoder.layers.6.self_attn.out_proj.weight
+      6 q_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.q_proj.weight
+      6 v_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.v_proj.weight
+      7 k_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.k_proj.weight
+      7 out_proj  mid    vision_model.base_model.model.encoder.layers.7.self_attn.out_proj.weight
+      7 q_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.q_proj.weight
+      7 v_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.v_proj.weight
+      8 k_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.k_proj.weight
+      8 out_proj  late   vision_model.base_model.model.encoder.layers.8.self_attn.out_proj.weight
+      8 q_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.q_proj.weight
+      8 v_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.v_proj.weight
+      9 k_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.k_proj.weight
+      9 out_proj  late   vision_model.base_model.model.encoder.layers.9.self_attn.out_proj.weight
+      9 q_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.q_proj.weight
+      9 v_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.v_proj.weight
+     10 k_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.k_proj.weight
+     10 out_proj  late   vision_model.base_model.model.encoder.layers.10.self_attn.out_proj.weight
+     10 q_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.q_proj.weight
+     10 v_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.v_proj.weight
+     11 k_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.k_proj.weight
+     11 out_proj  late   vision_model.base_model.model.encoder.layers.11.self_attn.out_proj.weight
+     11 q_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.q_proj.weight
+     11 v_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.v_proj.weight
+  modules per group: early=16, late=16, mid=16
+  non-block modules: 0 (choice: they receive the context's scalar alpha for every task)
+paths used:
+  repo    = /workspace/ducanh/DC-Merge
+  model   = /workspace/models/clip-vit-base-patch32
+  ft_dir  = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints
+  heads   = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads
+  data    = /workspace/datasets8
+  exp3r   = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6_exp3_current
+  exp6    = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6
+  out     = /workspace/ducanh/results/experiment7
+  reference mode = current; unlabeled = 500 per task, seed 0
+Setting Seed to 400
+Preparing Models: 0it [00:00, ?it/s]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/stanford_cars
+Preparing Models: 1it [00:01,  1.97s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/dtd
+Preparing Models: 2it [00:03,  1.64s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/eurosat
+Preparing Models: 3it [00:05,  1.72s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/gtsrb
+Preparing Models: 4it [00:07,  1.79s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/mnist
+Preparing Models: 5it [00:08,  1.67s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/resisc45
+Preparing Models: 6it [00:09,  1.58s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/sun397
+Preparing Models: 7it [00:11,  1.56s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/svhn
+Preparing Models: 8it [00:13,  1.60s/it]Preparing Models: 8it [00:13,  1.65s/it]
+splitting cars
+splitting gtsrb
+splitting mnist
+splitting sun397
+splitting svhn
+[split] controls: coefficients selected on VALIDATION (labels); each chosen vector scored ONCE on TEST
+module -> block -> group mapping (depth); 48 lane modules:
+  block proj      group  module
+      0 k_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.k_proj.weight
+      0 out_proj  early  vision_model.base_model.model.encoder.layers.0.self_attn.out_proj.weight
+      0 q_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.q_proj.weight
+      0 v_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.v_proj.weight
+      1 k_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.k_proj.weight
+      1 out_proj  early  vision_model.base_model.model.encoder.layers.1.self_attn.out_proj.weight
+      1 q_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.q_proj.weight
+      1 v_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.v_proj.weight
+      2 k_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.k_proj.weight
+      2 out_proj  early  vision_model.base_model.model.encoder.layers.2.self_attn.out_proj.weight
+      2 q_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.q_proj.weight
+      2 v_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.v_proj.weight
+      3 k_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.k_proj.weight
+      3 out_proj  early  vision_model.base_model.model.encoder.layers.3.self_attn.out_proj.weight
+      3 q_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.q_proj.weight
+      3 v_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.v_proj.weight
+      4 k_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.k_proj.weight
+      4 out_proj  mid    vision_model.base_model.model.encoder.layers.4.self_attn.out_proj.weight
+      4 q_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.q_proj.weight
+      4 v_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.v_proj.weight
+      5 k_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.k_proj.weight
+      5 out_proj  mid    vision_model.base_model.model.encoder.layers.5.self_attn.out_proj.weight
+      5 q_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.q_proj.weight
+      5 v_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.v_proj.weight
+      6 k_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.k_proj.weight
+      6 out_proj  mid    vision_model.base_model.model.encoder.layers.6.self_attn.out_proj.weight
+      6 q_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.q_proj.weight
+      6 v_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.v_proj.weight
+      7 k_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.k_proj.weight
+      7 out_proj  mid    vision_model.base_model.model.encoder.layers.7.self_attn.out_proj.weight
+      7 q_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.q_proj.weight
+      7 v_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.v_proj.weight
+      8 k_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.k_proj.weight
+      8 out_proj  late   vision_model.base_model.model.encoder.layers.8.self_attn.out_proj.weight
+      8 q_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.q_proj.weight
+      8 v_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.v_proj.weight
+      9 k_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.k_proj.weight
+      9 out_proj  late   vision_model.base_model.model.encoder.layers.9.self_attn.out_proj.weight
+      9 q_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.q_proj.weight
+      9 v_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.v_proj.weight
+     10 k_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.k_proj.weight
+     10 out_proj  late   vision_model.base_model.model.encoder.layers.10.self_attn.out_proj.weight
+     10 q_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.q_proj.weight
+     10 v_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.v_proj.weight
+     11 k_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.k_proj.weight
+     11 out_proj  late   vision_model.base_model.model.encoder.layers.11.self_attn.out_proj.weight
+     11 q_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.q_proj.weight
+     11 v_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.v_proj.weight
+  modules per group: early=16, late=16, mid=16
+  non-block modules: 0 (choice: they receive the context's scalar alpha for every task)
+/workspace/ducanh/DC-Merge/vision_lora_merge/utils.py:227: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.no_grad(), autocast():
+    [depth_only_mean] pass 1: c=0.3,0.6,0.7 value=(87.6659,)
+    [depth_only_mean] pass 2: c=0.4,0.6,0.7 value=(87.7886,)
+    [depth_only_fair] pass 1: c=0.6,0.6,0.6 value=(86.9525,)
+    [scalar_matched_mean_run0] pass 1: c=0.2,0.65,0.7,0.7 value=(87.826,)
+    [scalar_matched_mean_run0] pass 2: c=0.2,0.65,0.7,0.7 value=(87.826,)
+    [scalar_matched_fair_run0] pass 1: c=0.6,0.6,0.6,0.6 value=(86.9525,)
+    [scalar_matched_mean_run1] pass 1: c=0.6,0.65,0.65,0.6 value=(87.0935,)
+    [scalar_matched_mean_run1] pass 2: c=0.2,0.65,0.7,0.7 value=(87.826,)
+    [scalar_matched_mean_run1] pass 3: c=0.2,0.65,0.7,0.7 value=(87.826,)
+[stanford_cars-eurosat-mnist-resisc45] controls done in 885.6 min; scalar_matched used 330/330 distinct validation evaluations; test: 4 chosen vectors, 2 new test evaluations
+wrote /workspace/ducanh/results/experiment7/controls_summary.md

@@ -1,0 +1,333 @@
+{
+  "context": "eurosat-gtsrb-sun397-svhn",
+  "reference": "current",
+  "tolerance_pp": 0.05,
+  "check1_dc_rank": {
+    "val_diff_pp": 0.0,
+    "test_diff_pp": 0.0,
+    "pass": true
+  },
+  "check2_6b_val": {
+    "diff_pp": {
+      "layer_mean": 0.0,
+      "layer_fair": 0.0
+    },
+    "pass": true
+  },
+  "check3_lane_sum": {
+    "max_rel_sum_error": 1.652124126394483e-07,
+    "pass": true
+  },
+  "check4_subset_and_agree": {
+    "subset": {
+      "eurosat": {
+        "this_run": {
+          "n": 500,
+          "of": 2700,
+          "first_indices": [
+            1548,
+            1212,
+            447,
+            78,
+            306
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": true
+      },
+      "gtsrb": {
+        "this_run": {
+          "n": 500,
+          "of": 2526,
+          "first_indices": [
+            1888,
+            1024,
+            1259,
+            1752,
+            2344
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": true
+      },
+      "sun397": {
+        "this_run": {
+          "n": 500,
+          "of": 3970,
+          "first_indices": [
+            3480,
+            2752,
+            1125,
+            3189,
+            2036
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": true
+      },
+      "svhn": {
+        "this_run": {
+          "n": 500,
+          "of": 5206,
+          "first_indices": [
+            3091,
+            2738,
+            4595,
+            4577,
+            953
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": true
+      }
+    },
+    "subset_index_hash": {
+      "eurosat": "f1a8e362667d73f3",
+      "gtsrb": "46b775765e307753",
+      "sun397": "8ef537e327abb0aa",
+      "svhn": "dcccc3f6ef1eb018"
+    },
+    "agree_vs_6a": {
+      "0.6,0.6,0.6,0.6": {
+        "eurosat": {
+          "exp6": 0.64,
+          "exp7": 0.64,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.786,
+          "exp7": 0.786,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.738,
+          "exp7": 0.738,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.714,
+          "exp7": 0.714,
+          "diff_images": 0
+        }
+      },
+      "1,0.7,0.4,0.5": {
+        "eurosat": {
+          "exp6": 0.92,
+          "exp7": 0.92,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.83,
+          "exp7": 0.83,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.658,
+          "exp7": 0.658,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.598,
+          "exp7": 0.598,
+          "diff_images": 0
+        }
+      },
+      "1,0.7,0.3,0.6": {
+        "eurosat": {
+          "exp6": 0.87,
+          "exp7": 0.87,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.812,
+          "exp7": 0.812,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.656,
+          "exp7": 0.656,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.654,
+          "exp7": 0.654,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.6,0.4,0.6": {
+        "eurosat": {
+          "exp6": 0.374,
+          "exp7": 0.374,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.868,
+          "exp7": 0.868,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.726,
+          "exp7": 0.726,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.766,
+          "exp7": 0.766,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.6,0.6,0.6": {
+        "eurosat": {
+          "exp6": 0.358,
+          "exp7": 0.358,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.848,
+          "exp7": 0.848,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.758,
+          "exp7": 0.758,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.764,
+          "exp7": 0.764,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.7,0.4,0.6": {
+        "eurosat": {
+          "exp6": 0.32,
+          "exp7": 0.32,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.926,
+          "exp7": 0.926,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.728,
+          "exp7": 0.728,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.754,
+          "exp7": 0.754,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.8,0.3,0.4": {
+        "eurosat": {
+          "exp6": 0.38,
+          "exp7": 0.38,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.958,
+          "exp7": 0.958,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.714,
+          "exp7": 0.714,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.6,
+          "exp7": 0.6,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.8,0.3,0.6": {
+        "eurosat": {
+          "exp6": 0.278,
+          "exp7": 0.278,
+          "diff_images": 0
+        },
+        "gtsrb": {
+          "exp6": 0.958,
+          "exp7": 0.958,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.704,
+          "exp7": 0.704,
+          "diff_images": 0
+        },
+        "svhn": {
+          "exp6": 0.736,
+          "exp7": 0.736,
+          "diff_images": 0
+        }
+      }
+    },
+    "agree_vectors_compared": 8,
+    "max_diff_images": 0,
+    "tolerance_images": 0,
+    "pass": true
+  },
+  "check5_experts": {
+    "files": {
+      "eurosat": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/eurosat_n500_s0.pt",
+        "sha256": "07d2ee093ec1624670b680ffcec4ae38c6c1f805e56cc6758fb45f5729d4ab12",
+        "n": 500,
+        "first_indices": [
+          1548,
+          1212,
+          447,
+          78,
+          306
+        ]
+      },
+      "gtsrb": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/gtsrb_n500_s0.pt",
+        "sha256": "a91397acccc772cf2b977b4020fa1f0947057f6938ab598c1721a664e8d39f20",
+        "n": 500,
+        "first_indices": [
+          1888,
+          1024,
+          1259,
+          1752,
+          2344
+        ]
+      },
+      "sun397": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/sun397_n500_s0.pt",
+        "sha256": "3a8b844dad904dfad1672dc058754a22b2a780b413d2c64a2225c404472b9688",
+        "n": 500,
+        "first_indices": [
+          3480,
+          2752,
+          1125,
+          3189,
+          2036
+        ]
+      },
+      "svhn": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/svhn_n500_s0.pt",
+        "sha256": "fb1470011585499596106c75f04d4976998c97c70517fb724880bac0a7d60681",
+        "n": 500,
+        "first_indices": [
+          3091,
+          2738,
+          4595,
+          4577,
+          953
+        ]
+      }
+    },
+    "recomputed_argmax_mismatches": {
+      "eurosat": 0,
+      "gtsrb": 0,
+      "sun397": 0,
+      "svhn": 0
+    },
+    "pass": true
+  },
+  "passed": true
+}

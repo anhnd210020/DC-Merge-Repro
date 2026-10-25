@@ -1,0 +1,230 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "alpha": 0.6,
+  "reference": {
+    "dc_rank": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "val_acc": {
+        "eurosat": 52.888888888888886,
+        "gtsrb": 73.1987331749802,
+        "mnist": 94.69999999999999,
+        "svhn": 69.41990011525164
+      },
+      "test_acc": {
+        "eurosat": 54.629629629629626,
+        "gtsrb": 72.5059382422803,
+        "mnist": 93.3625,
+        "svhn": 69.24037261115913
+      },
+      "source": "this machine"
+    },
+    "scalar_mean": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "val_acc": {
+        "eurosat": 85.70370370370371,
+        "gtsrb": 79.77038796516231,
+        "mnist": 83.95,
+        "svhn": 55.53207837111026
+      },
+      "test_acc": {
+        "eurosat": 86.25925925925925,
+        "gtsrb": 79.56254948535233,
+        "mnist": 82.6875,
+        "svhn": 54.278305963699225
+      },
+      "source": "this machine"
+    },
+    "scalar_fair": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "val_acc": {
+        "eurosat": 85.70370370370371,
+        "gtsrb": 79.77038796516231,
+        "mnist": 83.95,
+        "svhn": 55.53207837111026
+      },
+      "test_acc": {
+        "eurosat": 86.25925925925925,
+        "gtsrb": 79.56254948535233,
+        "mnist": 82.6875,
+        "svhn": 54.278305963699225
+      },
+      "source": "this machine"
+    },
+    "layer_mean": {
+      "c12": [
+        0.5,
+        1.0,
+        1.0,
+        0.3,
+        0.5,
+        1.0,
+        0.4,
+        0.3,
+        0.7,
+        0.9,
+        0.6,
+        0.3
+      ],
+      "val_acc": {
+        "eurosat": 80.03703703703704,
+        "gtsrb": 82.85827395091053,
+        "mnist": 90.55,
+        "svhn": 73.45370726085287
+      },
+      "test_acc": {
+        "eurosat": 79.2962962962963,
+        "gtsrb": 82.99683293745052,
+        "mnist": 89.05,
+        "svhn": 73.5330836454432
+      },
+      "source": "this machine"
+    },
+    "layer_fair": {
+      "c12": [
+        0.6,
+        1.0,
+        1.0,
+        0.3,
+        0.5,
+        1.0,
+        0.5,
+        0.4,
+        0.6,
+        0.9,
+        0.6,
+        0.3
+      ],
+      "val_acc": {
+        "eurosat": 80.48148148148148,
+        "gtsrb": 83.17498020585906,
+        "mnist": 90.55,
+        "svhn": 72.49327698809066
+      },
+      "test_acc": {
+        "eurosat": 80.07407407407408,
+        "gtsrb": 82.55146476642913,
+        "mnist": 89.1375,
+        "svhn": 72.66877941035244
+      },
+      "source": "this machine"
+    }
+  },
+  "diffs_vs_archive": {
+    "dc_rank": {
+      "val": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "test": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    },
+    "scalar_mean": {
+      "val": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "test": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    },
+    "scalar_fair": {
+      "val": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "test": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    },
+    "layer_mean": {
+      "val": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "test": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    },
+    "layer_fair": {
+      "val": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      },
+      "test": {
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "mnist": 0.0,
+        "svhn": 0.0
+      }
+    }
+  },
+  "max_abs_diff_pp": 0.0,
+  "determinism_pp": 0.0,
+  "lane_checks": {
+    "max_rel_sum_error": 1.6994164298012038e-07,
+    "max_abs_diff_vs_official": null
+  },
+  "finished_utc": "2026-10-22T16:37:06Z"
+}

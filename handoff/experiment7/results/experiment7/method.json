@@ -1,0 +1,15 @@
+{
+  "verdict_all": null,
+  "verdict_core": "PARTIAL",
+  "verdicts": {
+    "core:agree_floor": "PARTIAL",
+    "core:agree_relfair": "PARTIAL",
+    "core:entropy_mean": "NOT VIABLE",
+    "core:entropy_fair": "NOT VIABLE"
+  },
+  "contexts": [
+    "dtd-eurosat-gtsrb-svhn",
+    "eurosat-gtsrb-mnist-svhn",
+    "eurosat-gtsrb-sun397-svhn"
+  ]
+}

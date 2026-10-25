@@ -1,0 +1,230 @@
+{
+  "context": "stanford_cars-eurosat-mnist-resisc45",
+  "alpha": 0.6,
+  "reference": {
+    "dc_rank": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "val_acc": {
+        "stanford_cars": 64.863184079602,
+        "eurosat": 83.5925925925926,
+        "mnist": 90.60000000000001,
+        "resisc45": 82.82539682539682
+      },
+      "test_acc": {
+        "stanford_cars": 65.8946059381315,
+        "eurosat": 84.22222222222221,
+        "mnist": 89.575,
+        "resisc45": 82.98412698412699
+      },
+      "source": "this machine"
+    },
+    "scalar_mean": {
+      "c12": [
+        0.3,
+        0.3,
+        0.3,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "val_acc": {
+        "stanford_cars": 58.02238805970149,
+        "eurosat": 90.29629629629629,
+        "mnist": 94.0,
+        "resisc45": 84.52380952380952
+      },
+      "test_acc": {
+        "stanford_cars": 57.500388621172085,
+        "eurosat": 90.70370370370371,
+        "mnist": 92.80000000000001,
+        "resisc45": 84.34920634920636
+      },
+      "source": "this machine"
+    },
+    "scalar_fair": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "val_acc": {
+        "stanford_cars": 64.863184079602,
+        "eurosat": 83.5925925925926,
+        "mnist": 90.60000000000001,
+        "resisc45": 82.82539682539682
+      },
+      "test_acc": {
+        "stanford_cars": 65.8946059381315,
+        "eurosat": 84.22222222222221,
+        "mnist": 89.575,
+        "resisc45": 82.98412698412699
+      },
+      "source": "this machine"
+    },
+    "layer_mean": {
+      "c12": [
+        0.3,
+        0.3,
+        0.6,
+        0.5,
+        0.6,
+        0.8,
+        0.7,
+        0.6,
+        0.9,
+        0.9,
+        0.4,
+        0.8
+      ],
+      "val_acc": {
+        "stanford_cars": 61.87810945273632,
+        "eurosat": 90.70370370370371,
+        "mnist": 96.15,
+        "resisc45": 83.06349206349206
+      },
+      "test_acc": {
+        "stanford_cars": 62.334836001865376,
+        "eurosat": 91.03703703703704,
+        "mnist": 94.25,
+        "resisc45": 83.38095238095238
+      },
+      "source": "this machine"
+    },
+    "layer_fair": {
+      "c12": [
+        0.5,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.7,
+        0.6,
+        0.6,
+        0.4,
+        0.5,
+        0.7
+      ],
+      "val_acc": {
+        "stanford_cars": 65.48507462686567,
+        "eurosat": 83.51851851851852,
+        "mnist": 91.2,
+        "resisc45": 83.76190476190476
+      },
+      "test_acc": {
+        "stanford_cars": 65.91015078501476,
+        "eurosat": 83.66666666666667,
+        "mnist": 90.275,
+        "resisc45": 83.84126984126983
+      },
+      "source": "this machine"
+    }
+  },
+  "diffs_vs_archive": {
+    "dc_rank": {
+      "val": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      },
+      "test": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      }
+    },
+    "scalar_mean": {
+      "val": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      },
+      "test": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      }
+    },
+    "scalar_fair": {
+      "val": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      },
+      "test": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      }
+    },
+    "layer_mean": {
+      "val": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      },
+      "test": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      }
+    },
+    "layer_fair": {
+      "val": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      },
+      "test": {
+        "stanford_cars": 0.0,
+        "eurosat": 0.0,
+        "mnist": 0.0,
+        "resisc45": 0.0
+      }
+    }
+  },
+  "max_abs_diff_pp": 0.0,
+  "determinism_pp": 0.0,
+  "lane_checks": {
+    "max_rel_sum_error": 1.6414409742537828e-07,
+    "max_abs_diff_vs_official": null
+  },
+  "finished_utc": "2026-10-22T17:09:40Z"
+}

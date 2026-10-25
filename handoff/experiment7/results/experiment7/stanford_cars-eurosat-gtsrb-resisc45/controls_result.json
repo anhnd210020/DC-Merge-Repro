@@ -1,0 +1,720 @@
+{
+  "context": "stanford_cars-eurosat-gtsrb-resisc45",
+  "tasks": [
+    "stanford_cars",
+    "eurosat",
+    "gtsrb",
+    "resisc45"
+  ],
+  "alpha": 0.7,
+  "floor_val_worst": 77.0469509520732,
+  "results": {
+    "depth_only_mean": {
+      "c12": [
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9
+      ],
+      "test_acc": {
+        "stanford_cars": 64.51111456552154,
+        "eurosat": 87.8888888888889,
+        "gtsrb": 85.95605700712589,
+        "resisc45": 82.93650793650794
+      },
+      "test_norm": {
+        "stanford_cars": 84.20717212572973,
+        "eurosat": 89.50900182186466,
+        "gtsrb": 87.4514772684158,
+        "resisc45": 88.25849519687978
+      },
+      "test_mean_norm": 87.3565366032225,
+      "test_worst_norm": 84.20717212572973,
+      "test_worst_task": "stanford_cars",
+      "val_mean_norm": 86.11635179305705,
+      "val_worst_norm": 82.07527827736641,
+      "coords": [
+        0.6,
+        0.5,
+        0.9
+      ],
+      "passes": 2
+    },
+    "depth_only_fair": {
+      "c12": [
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9,
+        0.6,
+        0.5,
+        0.9
+      ],
+      "test_acc": {
+        "stanford_cars": 64.51111456552154,
+        "eurosat": 87.8888888888889,
+        "gtsrb": 85.95605700712589,
+        "resisc45": 82.93650793650794
+      },
+      "test_norm": {
+        "stanford_cars": 84.20717212572973,
+        "eurosat": 89.50900182186466,
+        "gtsrb": 87.4514772684158,
+        "resisc45": 88.25849519687978
+      },
+      "test_mean_norm": 87.3565366032225,
+      "test_worst_norm": 84.20717212572973,
+      "test_worst_task": "stanford_cars",
+      "val_mean_norm": 86.11635179305705,
+      "val_worst_norm": 82.07527827736641,
+      "coords": [
+        0.6,
+        0.5,
+        0.9
+      ],
+      "passes": 2
+    },
+    "scalar_matched_mean": {
+      "c12": [
+        0.45,
+        0.45,
+        0.45,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "test_acc": {
+        "stanford_cars": 59.00823876884813,
+        "eurosat": 89.96296296296296,
+        "gtsrb": 87.3317498020586,
+        "resisc45": 78.98412698412697
+      },
+      "test_norm": {
+        "stanford_cars": 77.02419888898072,
+        "eurosat": 91.62130864951925,
+        "gtsrb": 88.85110367489938,
+        "resisc45": 84.05249226788014
+      },
+      "test_mean_norm": 85.38727587031987,
+      "test_worst_norm": 77.02419888898072,
+      "test_worst_task": "stanford_cars",
+      "val_mean_norm": 84.53465815236059,
+      "val_worst_norm": 74.69499139669415,
+      "coords": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "best_endpoint_run": 0,
+      "val_objective": [
+        84.53465815236059
+      ]
+    },
+    "scalar_matched_fair": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "test_acc": {
+        "stanford_cars": 61.60422819835225,
+        "eurosat": 88.22222222222223,
+        "gtsrb": 86.65874901029295,
+        "resisc45": 78.68253968253968
+      },
+      "test_norm": {
+        "stanford_cars": 80.4127766588595,
+        "eurosat": 89.84847970488056,
+        "gtsrb": 88.16639435374194,
+        "resisc45": 83.73155228534605
+      },
+      "test_mean_norm": 85.53980075070703,
+      "test_worst_norm": 80.4127766588595,
+      "test_worst_task": "stanford_cars",
+      "val_mean_norm": 84.47519288374255,
+      "val_worst_norm": 77.85797148841083,
+      "coords": [
+        0.6,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "best_endpoint_run": 0,
+      "val_objective": [
+        84.47519288374255
+      ]
+    }
+  },
+  "reference": {
+    "dc_rank": {
+      "c12": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "test_mean_norm": 85.50719576772141,
+      "test_worst_norm": 80.5345219679569,
+      "val_mean_norm": 84.05477975417924,
+      "val_worst_norm": 77.0469509520732
+    },
+    "scalar_mean": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "test_mean_norm": 85.53980075070703,
+      "test_worst_norm": 80.4127766588595,
+      "val_mean_norm": 84.47519288374255,
+      "val_worst_norm": 77.85797148841083
+    },
+    "scalar_fair": {
+      "c12": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "test_mean_norm": 85.50719576772141,
+      "test_worst_norm": 80.5345219679569,
+      "val_mean_norm": 84.05477975417924,
+      "val_worst_norm": 77.0469509520732
+    },
+    "layer_mean": {
+      "c12": [
+        0.3,
+        0.3,
+        0.9,
+        0.5,
+        0.8,
+        0.8,
+        0.7,
+        0.6,
+        0.8,
+        0.6,
+        0.3,
+        0.9
+      ],
+      "test_mean_norm": 87.82229036780758,
+      "test_worst_norm": 83.2940823074989,
+      "val_mean_norm": 87.08100192267332,
+      "val_worst_norm": 81.99417622373265
+    },
+    "layer_fair": {
+      "c12": [
+        0.3,
+        0.3,
+        0.7,
+        0.5,
+        0.7,
+        0.8,
+        0.6,
+        0.6,
+        0.8,
+        0.6,
+        0.4,
+        0.9
+      ],
+      "test_mean_norm": 88.1108012716544,
+      "test_worst_norm": 81.42732090133816,
+      "val_mean_norm": 87.02703924617455,
+      "val_worst_norm": 79.48001256108606
+    }
+  },
+  "meta": {
+    "scalar_matched": {
+      "budget": 330,
+      "distinct_val_evaluations": 330,
+      "runs_started": 2,
+      "seed": 0
+    }
+  },
+  "test_log": [
+    {
+      "search": "depth_only_mean",
+      "vector": "0.6,0.5,0.9,0.6,0.5,0.9,0.6,0.5,0.9,0.6,0.5,0.9",
+      "new_test_evaluation": true
+    },
+    {
+      "search": "depth_only_fair",
+      "vector": "0.6,0.5,0.9,0.6,0.5,0.9,0.6,0.5,0.9,0.6,0.5,0.9",
+      "new_test_evaluation": false
+    },
+    {
+      "search": "scalar_matched_mean",
+      "vector": "0.45,0.45,0.45,0.7,0.7,0.7,0.7,0.7,0.7,0.6,0.6,0.6",
+      "new_test_evaluation": true
+    },
+    {
+      "search": "scalar_matched_fair",
+      "vector": "0.6,0.6,0.6,0.7,0.7,0.7,0.7,0.7,0.7,0.6,0.6,0.6",
+      "new_test_evaluation": false
+    }
+  ],
+  "search_log": [
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "early",
+      "c": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "mid",
+      "c": [
+        0.7,
+        0.5,
+        0.7
+      ],
+      "value": [
+        85.0947400831505
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "late",
+      "c": [
+        0.7,
+        0.5,
+        0.8
+      ],
+      "value": [
+        85.96901228103465
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "early",
+      "c": [
+        0.6,
+        0.5,
+        0.8
+      ],
+      "value": [
+        86.07262776206746
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "mid",
+      "c": [
+        0.6,
+        0.5,
+        0.8
+      ],
+      "value": [
+        86.07262776206746
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "late",
+      "c": [
+        0.6,
+        0.5,
+        0.9
+      ],
+      "value": [
+        86.11635179305705
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "early",
+      "c": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "mid",
+      "c": [
+        0.7,
+        0.5,
+        0.7
+      ],
+      "value": [
+        85.0947400831505
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "late",
+      "c": [
+        0.7,
+        0.5,
+        0.8
+      ],
+      "value": [
+        85.96901228103465
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "early",
+      "c": [
+        0.6,
+        0.5,
+        0.8
+      ],
+      "value": [
+        86.07262776206746
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "mid",
+      "c": [
+        0.6,
+        0.5,
+        0.8
+      ],
+      "value": [
+        86.07262776206746
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "late",
+      "c": [
+        0.6,
+        0.5,
+        0.9
+      ],
+      "value": [
+        86.11635179305705
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "stanford_cars",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.46523277428524
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.46523277428524
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.46523277428524
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "resisc45",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "value": [
+        84.53465815236059
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "stanford_cars",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "value": [
+        84.53465815236059
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "eurosat",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "value": [
+        84.53465815236059
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "gtsrb",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "value": [
+        84.53465815236059
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "resisc45",
+      "c": [
+        0.45,
+        0.7,
+        0.7,
+        0.6
+      ],
+      "value": [
+        84.53465815236059
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "stanford_cars",
+      "c": [
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "resisc45",
+      "c": [
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "value": [
+        84.05477975417924
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "stanford_cars",
+      "c": [
+        0.5,
+        0.85,
+        0.25,
+        0.6
+      ],
+      "value": [
+        76.93411385756241
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        0.5,
+        0.55,
+        0.25,
+        0.6
+      ],
+      "value": [
+        78.87383079218723
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        0.5,
+        0.55,
+        0.65,
+        0.6
+      ],
+      "value": [
+        83.86247285107117
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "resisc45",
+      "c": [
+        0.5,
+        0.55,
+        0.65,
+        0.65
+      ],
+      "value": [
+        84.11208964620438
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 2,
+      "after": "stanford_cars",
+      "c": [
+        0.35,
+        0.55,
+        0.65,
+        0.65
+      ],
+      "value": [
+        84.2549290958043
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 2,
+      "after": "eurosat",
+      "c": [
+        0.35,
+        0.55,
+        0.65,
+        0.65
+      ],
+      "value": [
+        84.2549290958043
+      ]
+    }
+  ],
+  "reference_mode": "current"
+}

@@ -1,0 +1,89 @@
+paths used:
+  repo    = /workspace/ducanh/DC-Merge
+  model   = /workspace/models/clip-vit-base-patch32
+  ft_dir  = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints
+  heads   = /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_heads
+  data    = /workspace/datasets8
+  exp3r   = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6_exp3_current
+  exp6    = /workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6
+  out     = /workspace/ducanh/results/experiment7
+  reference mode = current; unlabeled = 500 per task, seed 0
+Setting Seed to 400
+Preparing Models: 0it [00:00, ?it/s]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/stanford_cars
+Preparing Models: 1it [00:01,  1.36s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/dtd
+Preparing Models: 2it [00:02,  1.18s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/eurosat
+Preparing Models: 3it [00:03,  1.12s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/gtsrb
+Preparing Models: 4it [00:04,  1.20s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/mnist
+Preparing Models: 5it [00:05,  1.14s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/resisc45
+Preparing Models: 6it [00:06,  1.11s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/sun397
+Preparing Models: 7it [00:08,  1.19s/it]Loaded model from /workspace/models/DC-Merge-Vision-B32-r16-8task/lora_checkpoints/svhn
+Preparing Models: 8it [00:09,  1.15s/it]Preparing Models: 8it [00:09,  1.16s/it]
+splitting cars
+splitting gtsrb
+splitting mnist
+splitting sun397
+splitting svhn
+[split] gate: agreement uses only the unlabeled VALIDATION subset; accuracies are Exp 6's cached 6b VALIDATION accuracies (no new labelled evaluation); no test split is touched
+module -> block -> group mapping (depth); 48 lane modules:
+  block proj      group  module
+      0 k_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.k_proj.weight
+      0 out_proj  early  vision_model.base_model.model.encoder.layers.0.self_attn.out_proj.weight
+      0 q_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.q_proj.weight
+      0 v_proj    early  vision_model.base_model.model.encoder.layers.0.self_attn.v_proj.weight
+      1 k_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.k_proj.weight
+      1 out_proj  early  vision_model.base_model.model.encoder.layers.1.self_attn.out_proj.weight
+      1 q_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.q_proj.weight
+      1 v_proj    early  vision_model.base_model.model.encoder.layers.1.self_attn.v_proj.weight
+      2 k_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.k_proj.weight
+      2 out_proj  early  vision_model.base_model.model.encoder.layers.2.self_attn.out_proj.weight
+      2 q_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.q_proj.weight
+      2 v_proj    early  vision_model.base_model.model.encoder.layers.2.self_attn.v_proj.weight
+      3 k_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.k_proj.weight
+      3 out_proj  early  vision_model.base_model.model.encoder.layers.3.self_attn.out_proj.weight
+      3 q_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.q_proj.weight
+      3 v_proj    early  vision_model.base_model.model.encoder.layers.3.self_attn.v_proj.weight
+      4 k_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.k_proj.weight
+      4 out_proj  mid    vision_model.base_model.model.encoder.layers.4.self_attn.out_proj.weight
+      4 q_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.q_proj.weight
+      4 v_proj    mid    vision_model.base_model.model.encoder.layers.4.self_attn.v_proj.weight
+      5 k_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.k_proj.weight
+      5 out_proj  mid    vision_model.base_model.model.encoder.layers.5.self_attn.out_proj.weight
+      5 q_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.q_proj.weight
+      5 v_proj    mid    vision_model.base_model.model.encoder.layers.5.self_attn.v_proj.weight
+      6 k_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.k_proj.weight
+      6 out_proj  mid    vision_model.base_model.model.encoder.layers.6.self_attn.out_proj.weight
+      6 q_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.q_proj.weight
+      6 v_proj    mid    vision_model.base_model.model.encoder.layers.6.self_attn.v_proj.weight
+      7 k_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.k_proj.weight
+      7 out_proj  mid    vision_model.base_model.model.encoder.layers.7.self_attn.out_proj.weight
+      7 q_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.q_proj.weight
+      7 v_proj    mid    vision_model.base_model.model.encoder.layers.7.self_attn.v_proj.weight
+      8 k_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.k_proj.weight
+      8 out_proj  late   vision_model.base_model.model.encoder.layers.8.self_attn.out_proj.weight
+      8 q_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.q_proj.weight
+      8 v_proj    late   vision_model.base_model.model.encoder.layers.8.self_attn.v_proj.weight
+      9 k_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.k_proj.weight
+      9 out_proj  late   vision_model.base_model.model.encoder.layers.9.self_attn.out_proj.weight
+      9 q_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.q_proj.weight
+      9 v_proj    late   vision_model.base_model.model.encoder.layers.9.self_attn.v_proj.weight
+     10 k_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.k_proj.weight
+     10 out_proj  late   vision_model.base_model.model.encoder.layers.10.self_attn.out_proj.weight
+     10 q_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.q_proj.weight
+     10 v_proj    late   vision_model.base_model.model.encoder.layers.10.self_attn.v_proj.weight
+     11 k_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.k_proj.weight
+     11 out_proj  late   vision_model.base_model.model.encoder.layers.11.self_attn.out_proj.weight
+     11 q_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.q_proj.weight
+     11 v_proj    late   vision_model.base_model.model.encoder.layers.11.self_attn.v_proj.weight
+  modules per group: early=16, late=16, mid=16
+  non-block modules: 0 (choice: they receive the context's scalar alpha for every task)
+  expert dtd: loaded dtd_n500_s0.pt sha256=f8647617f5a1dfff
+  expert eurosat: loaded eurosat_n500_s0.pt sha256=07d2ee093ec16246
+  expert gtsrb: loaded gtsrb_n500_s0.pt sha256=a91397acccc772cf
+  expert svhn: loaded svhn_n500_s0.pt sha256=fb14700115854995
+[dtd-eurosat-gtsrb-svhn] gate: 341 vectors in 81.4 min (339 new proxy evaluations); rho_mean=0.98 rho_worst(rel)=0.24 rho_worst(raw)=0.11 [validation]
+  expert mnist: loaded mnist_n500_s0.pt sha256=2d05d6725719ad45
+[eurosat-gtsrb-mnist-svhn] gate: 360 vectors in 76.4 min (358 new proxy evaluations); rho_mean=0.98 rho_worst(rel)=0.47 rho_worst(raw)=0.98 [validation]
+  expert sun397: loaded sun397_n500_s0.pt sha256=3a8b844dad904dfa
+[eurosat-gtsrb-sun397-svhn] gate: 360 vectors in 95.1 min (358 new proxy evaluations); rho_mean=0.99 rho_worst(rel)=0.67 rho_worst(raw)=0.94 [validation]
+GATE: IN_BETWEEN (neither the PASS nor the FAIL condition holds); wrote /workspace/ducanh/results/experiment7/gate_summary.md

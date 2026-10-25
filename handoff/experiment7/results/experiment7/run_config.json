@@ -1,0 +1,8 @@
+{
+  "reference": "current",
+  "n_unlabeled": 500,
+  "seed": 0,
+  "exp6": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6",
+  "exp3r": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6_exp3_current",
+  "created_utc": "2026-10-22T16:22:58Z"
+}

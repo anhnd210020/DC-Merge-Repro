@@ -1,0 +1,106 @@
+{
+  "context": "dtd-eurosat-gtsrb-svhn",
+  "torch_threads": 32,
+  "lane_setup_minutes": 0.7473502278327941,
+  "lane_sum_rel_error": 1.6639150146602333e-07,
+  "vectors": [
+    {
+      "name": "dc_rank_uniform_alpha",
+      "key": "0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    },
+    {
+      "name": "exp6_layer_mean",
+      "key": "0.3,0.6,0.3,0.4,1,1,0.3,0.7,0.8,0.9,0.4,0.3",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    },
+    {
+      "name": "exp6_layer_fair",
+      "key": "0.3,0.5,0.4,0.6,1,1,0.4,0.7,0.8,0.9,0.4,0.3",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    },
+    {
+      "name": "cached",
+      "key": "0,0.6,0.3,0.4,1,1,0.3,0.7,0.8,0.9,0.4,0.3",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    },
+    {
+      "name": "cached",
+      "key": "0.1,0.6,0.3,0.4,1,1,0.3,0.7,0.8,0.9,0.4,0.3",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    },
+    {
+      "name": "cached",
+      "key": "0.2,0.6,0.3,0.4,1,1,0.3,0.7,0.8,0.9,0.4,0.3",
+      "diff_pp": {
+        "dtd": 0.0,
+        "eurosat": 0.0,
+        "gtsrb": 0.0,
+        "svhn": 0.0
+      },
+      "diff_images": {
+        "dtd": 0,
+        "eurosat": 0,
+        "gtsrb": 0,
+        "svhn": 0
+      }
+    }
+  ],
+  "max_abs_diff_pp": 0.0,
+  "identical": true
+}

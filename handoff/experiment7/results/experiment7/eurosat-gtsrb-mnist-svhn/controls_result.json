@@ -1,0 +1,902 @@
+{
+  "context": "eurosat-gtsrb-mnist-svhn",
+  "tasks": [
+    "eurosat",
+    "gtsrb",
+    "mnist",
+    "svhn"
+  ],
+  "alpha": 0.6,
+  "floor_val_worst": 53.66161616161616,
+  "results": {
+    "depth_only_mean": {
+      "c12": [
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7
+      ],
+      "test_acc": {
+        "eurosat": 61.7037037037037,
+        "gtsrb": 72.42676167854314,
+        "mnist": 94.6375,
+        "svhn": 66.3833669451647
+      },
+      "test_norm": {
+        "eurosat": 62.84112812272503,
+        "gtsrb": 73.68680606220687,
+        "mnist": 95.44881492687846,
+        "svhn": 68.79105382918621
+      },
+      "test_mean_norm": 75.19195073524915,
+      "test_worst_norm": 62.84112812272503,
+      "test_worst_task": "eurosat",
+      "val_mean_norm": 75.30651918916065,
+      "val_worst_norm": 61.10209235209235,
+      "coords": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "passes": 2
+    },
+    "depth_only_fair": {
+      "c12": [
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7,
+        0.4,
+        0.5,
+        0.7
+      ],
+      "test_acc": {
+        "eurosat": 61.7037037037037,
+        "gtsrb": 72.42676167854314,
+        "mnist": 94.6375,
+        "svhn": 66.3833669451647
+      },
+      "test_norm": {
+        "eurosat": 62.84112812272503,
+        "gtsrb": 73.68680606220687,
+        "mnist": 95.44881492687846,
+        "svhn": 68.79105382918621
+      },
+      "test_mean_norm": 75.19195073524915,
+      "test_worst_norm": 62.84112812272503,
+      "test_worst_task": "eurosat",
+      "val_mean_norm": 75.30651918916065,
+      "val_worst_norm": 61.10209235209235,
+      "coords": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "passes": 2
+    },
+    "scalar_matched_mean": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        0.75,
+        0.75,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "test_acc": {
+        "eurosat": 83.85185185185186,
+        "gtsrb": 83.91726049089469,
+        "mnist": 81.95,
+        "svhn": 54.187073849995194
+      },
+      "test_norm": {
+        "eurosat": 85.39754746089405,
+        "gtsrb": 85.3772107954977,
+        "mnist": 82.65254664649521,
+        "svhn": 56.15240813471004
+      },
+      "test_mean_norm": 77.39492825939925,
+      "test_worst_norm": 56.15240813471004,
+      "test_worst_task": "svhn",
+      "val_mean_norm": 77.70751242593468,
+      "val_worst_norm": 57.43496290643735,
+      "coords": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "best_endpoint_run": 0,
+      "val_objective": [
+        77.70751242593468
+      ]
+    },
+    "scalar_matched_fair": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        0.75,
+        0.75,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "test_acc": {
+        "eurosat": 83.85185185185186,
+        "gtsrb": 83.91726049089469,
+        "mnist": 81.95,
+        "svhn": 54.187073849995194
+      },
+      "test_norm": {
+        "eurosat": 85.39754746089405,
+        "gtsrb": 85.3772107954977,
+        "mnist": 82.65254664649521,
+        "svhn": 56.15240813471004
+      },
+      "test_mean_norm": 77.39492825939925,
+      "test_worst_norm": 56.15240813471004,
+      "test_worst_task": "svhn",
+      "val_mean_norm": 77.70751242593468,
+      "val_worst_norm": 57.43496290643735,
+      "coords": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "best_endpoint_run": 0,
+      "val_objective": [
+        77.70751242593468
+      ]
+    }
+  },
+  "reference": {
+    "dc_rank": {
+      "c12": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "test_mean_norm": 73.8296447826423,
+      "test_worst_norm": 55.63665304983158,
+      "val_mean_norm": 73.73667119175555,
+      "val_worst_norm": 53.66161616161616
+    },
+    "scalar_mean": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "test_mean_norm": 77.10984730295888,
+      "test_worst_norm": 56.24694918518054,
+      "val_mean_norm": 77.43984929266182,
+      "val_worst_norm": 57.47472404379037
+    },
+    "scalar_fair": {
+      "c12": [
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.4,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "test_mean_norm": 77.10984730295888,
+      "test_worst_norm": 56.24694918518054,
+      "val_mean_norm": 77.43984929266182,
+      "val_worst_norm": 57.47472404379037
+    },
+    "layer_mean": {
+      "c12": [
+        0.5,
+        1.0,
+        1.0,
+        0.3,
+        0.5,
+        1.0,
+        0.4,
+        0.3,
+        0.7,
+        0.9,
+        0.6,
+        0.3
+      ],
+      "test_mean_norm": 82.80307179941403,
+      "test_worst_norm": 76.20008667921576,
+      "val_mean_norm": 83.08010586831745,
+      "val_worst_norm": 76.02329461897419
+    },
+    "layer_fair": {
+      "c12": [
+        0.6,
+        1.0,
+        1.0,
+        0.3,
+        0.5,
+        1.0,
+        0.5,
+        0.4,
+        0.6,
+        0.9,
+        0.6,
+        0.3
+      ],
+      "test_mean_norm": 82.68597096611967,
+      "test_worst_norm": 75.30443462212689,
+      "val_mean_norm": 83.02481359292706,
+      "val_worst_norm": 75.02926618514867
+    }
+  },
+  "meta": {
+    "scalar_matched": {
+      "budget": 360,
+      "distinct_val_evaluations": 360,
+      "runs_started": 2,
+      "seed": 0
+    }
+  },
+  "test_log": [
+    {
+      "search": "depth_only_mean",
+      "vector": "0.4,0.5,0.7,0.4,0.5,0.7,0.4,0.5,0.7,0.4,0.5,0.7",
+      "new_test_evaluation": true
+    },
+    {
+      "search": "depth_only_fair",
+      "vector": "0.4,0.5,0.7,0.4,0.5,0.7,0.4,0.5,0.7,0.4,0.5,0.7",
+      "new_test_evaluation": false
+    },
+    {
+      "search": "scalar_matched_mean",
+      "vector": "1,1,1,0.75,0.75,0.75,0.4,0.4,0.4,0.5,0.5,0.5",
+      "new_test_evaluation": true
+    },
+    {
+      "search": "scalar_matched_fair",
+      "vector": "1,1,1,0.75,0.75,0.75,0.4,0.4,0.4,0.5,0.5,0.5",
+      "new_test_evaluation": false
+    }
+  ],
+  "search_log": [
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "early",
+      "c": [
+        0.4,
+        0.6,
+        0.6
+      ],
+      "value": [
+        74.3671134528614
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "mid",
+      "c": [
+        0.4,
+        0.5,
+        0.6
+      ],
+      "value": [
+        74.96098751364632
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 1,
+      "after": "late",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "early",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "mid",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_mean",
+      "pass": 2,
+      "after": "late",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "early",
+      "c": [
+        0.5,
+        0.6,
+        0.6
+      ],
+      "value": [
+        74.31330365976287
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "mid",
+      "c": [
+        0.5,
+        0.5,
+        0.6
+      ],
+      "value": [
+        74.52261356639589
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 1,
+      "after": "late",
+      "c": [
+        0.5,
+        0.5,
+        0.7
+      ],
+      "value": [
+        74.93698968105929
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "early",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "mid",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "depth_only_fair",
+      "pass": 2,
+      "after": "late",
+      "c": [
+        0.4,
+        0.5,
+        0.7
+      ],
+      "value": [
+        75.30651918916065
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "value": [
+        75.40687099497929
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.6,
+        0.6
+      ],
+      "value": [
+        75.93481094906528
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.6
+      ],
+      "value": [
+        77.13133607349265
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 1,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.55
+      ],
+      "value": [
+        77.41985932916518
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 2,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 3,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 3,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 3,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run0",
+      "pass": 3,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.6,
+        0.6,
+        0.6
+      ],
+      "value": [
+        75.40687099497929
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.6,
+        0.6
+      ],
+      "value": [
+        75.93481094906528
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.6
+      ],
+      "value": [
+        77.13133607349265
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 1,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 2,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 2,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.3,
+        0.55
+      ],
+      "value": [
+        77.4075922256103
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 2,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.55
+      ],
+      "value": [
+        77.41985932916518
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 2,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 3,
+      "after": "eurosat",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 3,
+      "after": "gtsrb",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 3,
+      "after": "mnist",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_fair_run0",
+      "pass": 3,
+      "after": "svhn",
+      "c": [
+        1.0,
+        0.75,
+        0.4,
+        0.5
+      ],
+      "value": [
+        77.70751242593468
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "eurosat",
+      "c": [
+        1.1,
+        0.85,
+        0.25,
+        0.6
+      ],
+      "value": [
+        76.07844070209451
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "gtsrb",
+      "c": [
+        1.1,
+        0.75,
+        0.25,
+        0.6
+      ],
+      "value": [
+        76.65389669187228
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "mnist",
+      "c": [
+        1.1,
+        0.75,
+        0.35,
+        0.6
+      ],
+      "value": [
+        77.16560698626522
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 1,
+      "after": "svhn",
+      "c": [
+        1.1,
+        0.75,
+        0.35,
+        0.6
+      ],
+      "value": [
+        77.16560698626522
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 2,
+      "after": "eurosat",
+      "c": [
+        1.05,
+        0.75,
+        0.35,
+        0.6
+      ],
+      "value": [
+        77.20059288602732
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 2,
+      "after": "gtsrb",
+      "c": [
+        1.05,
+        0.7,
+        0.35,
+        0.6
+      ],
+      "value": [
+        77.23580287148502
+      ]
+    },
+    {
+      "search": "scalar_matched_mean_run1",
+      "pass": 2,
+      "after": "mnist",
+      "c": [
+        1.05,
+        0.7,
+        0.35,
+        0.6
+      ],
+      "value": [
+        77.23580287148502
+      ]
+    }
+  ],
+  "reference_mode": "current"
+}

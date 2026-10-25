@@ -1,0 +1,50 @@
+10:27:00 scheduler v3 start; 16 jobs queued
+10:27:00 START controls eurosat-gtsrb-sun397-svhn (free GPU 24124 MiB)
+10:28:20 setup finished for controls eurosat-gtsrb-sun397-svhn after 80s
+10:28:20 START controls dtd-eurosat-gtsrb-svhn (free GPU 19661 MiB)
+10:30:41 setup finished for controls dtd-eurosat-gtsrb-svhn after 141s
+10:30:41 START controls eurosat-gtsrb-mnist-svhn (free GPU 18544 MiB)
+10:33:22 setup finished for controls eurosat-gtsrb-mnist-svhn after 161s
+10:33:22 START method eurosat-gtsrb-sun397-svhn (free GPU 17391 MiB)
+10:34:42 setup finished for method eurosat-gtsrb-sun397-svhn after 80s
+10:34:43 START method eurosat-gtsrb-mnist-svhn (free GPU 16362 MiB)
+10:37:04 setup finished for method eurosat-gtsrb-mnist-svhn after 141s
+13:01:43 DONE method eurosat-gtsrb-mnist-svhn
+13:01:43 START method dtd-eurosat-gtsrb-svhn (free GPU 19416 MiB)
+13:02:23 setup finished for method dtd-eurosat-gtsrb-svhn after 40s
+13:15:53 DONE method eurosat-gtsrb-sun397-svhn
+13:15:54 START entropy eurosat-gtsrb-sun397-svhn (free GPU 19840 MiB)
+13:16:34 setup finished for entropy eurosat-gtsrb-sun397-svhn after 40s
+13:52:06 DONE method dtd-eurosat-gtsrb-svhn
+13:52:06 START entropy eurosat-gtsrb-mnist-svhn (free GPU 19418 MiB)
+13:52:46 setup finished for entropy eurosat-gtsrb-mnist-svhn after 40s
+16:02:52 DONE entropy eurosat-gtsrb-mnist-svhn
+16:02:52 START entropy dtd-eurosat-gtsrb-svhn (free GPU 19410 MiB)
+16:03:53 setup finished for entropy dtd-eurosat-gtsrb-svhn after 61s
+16:04:23 DONE entropy eurosat-gtsrb-sun397-svhn
+16:04:23 START controls stanford_cars-eurosat-gtsrb-mnist (free GPU 16189 MiB)
+16:11:27 setup finished for controls stanford_cars-eurosat-gtsrb-mnist after 424s
+19:07:05 DONE controls dtd-eurosat-gtsrb-svhn
+19:07:05 START controls stanford_cars-eurosat-gtsrb-resisc45 (free GPU 19667 MiB)
+19:12:27 setup finished for controls stanford_cars-eurosat-gtsrb-resisc45 after 322s
+19:28:28 DONE entropy dtd-eurosat-gtsrb-svhn
+19:28:28 START controls stanford_cars-eurosat-mnist-resisc45 (free GPU 19496 MiB)
+19:34:11 setup finished for controls stanford_cars-eurosat-mnist-resisc45 after 343s
+20:23:43 DONE controls eurosat-gtsrb-mnist-svhn
+20:23:43 START controls stanford_cars-eurosat-mnist-sun397 (free GPU 19497 MiB)
+20:30:27 setup finished for controls stanford_cars-eurosat-mnist-sun397 after 404s
+20:37:27 DONE controls eurosat-gtsrb-sun397-svhn
+20:37:27 START wide eurosat-gtsrb-sun397-svhn (free GPU 19497 MiB)
+20:46:53 setup finished for wide eurosat-gtsrb-sun397-svhn after 566s
+02:26:47 DONE controls stanford_cars-eurosat-gtsrb-mnist
+02:26:47 START wide dtd-eurosat-gtsrb-svhn (free GPU 19747 MiB)
+02:35:53 setup finished for wide dtd-eurosat-gtsrb-svhn after 546s
+09:26:17 DONE controls stanford_cars-eurosat-gtsrb-resisc45
+09:26:17 START wide eurosat-gtsrb-mnist-svhn (free GPU 19411 MiB)
+09:31:40 setup finished for wide eurosat-gtsrb-mnist-svhn after 323s
+10:12:12 DONE controls stanford_cars-eurosat-mnist-sun397
+10:15:12 DONE controls stanford_cars-eurosat-mnist-resisc45
+01:26:28 DONE wide eurosat-gtsrb-mnist-svhn
+01:39:58 DONE wide dtd-eurosat-gtsrb-svhn
+01:58:29 DONE wide eurosat-gtsrb-sun397-svhn
+01:58:29 SCHEDULER END (left: none)

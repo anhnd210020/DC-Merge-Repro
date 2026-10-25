@@ -1,0 +1,333 @@
+{
+  "context": "stanford_cars-eurosat-mnist-sun397",
+  "reference": "current",
+  "tolerance_pp": 0.05,
+  "check1_dc_rank": {
+    "val_diff_pp": 0.0,
+    "test_diff_pp": 0.0,
+    "pass": true
+  },
+  "check2_6b_val": {
+    "diff_pp": {
+      "layer_mean": 0.0,
+      "layer_fair": 0.0
+    },
+    "pass": true
+  },
+  "check3_lane_sum": {
+    "max_rel_sum_error": 1.6371808442272595e-07,
+    "pass": true
+  },
+  "check4_subset_and_agree": {
+    "subset": {
+      "stanford_cars": {
+        "this_run": {
+          "n": 500,
+          "of": 1608,
+          "first_indices": [
+            1004,
+            129,
+            641,
+            723,
+            987
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": false
+      },
+      "eurosat": {
+        "this_run": {
+          "n": 500,
+          "of": 2700,
+          "first_indices": [
+            1548,
+            1212,
+            447,
+            78,
+            306
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": false
+      },
+      "mnist": {
+        "this_run": {
+          "n": 500,
+          "of": 2000,
+          "first_indices": [
+            1530,
+            732,
+            1329,
+            1027,
+            1529
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": false
+      },
+      "sun397": {
+        "this_run": {
+          "n": 500,
+          "of": 3970,
+          "first_indices": [
+            3480,
+            2752,
+            1125,
+            3189,
+            2036
+          ]
+        },
+        "matches_expert_cache": true,
+        "in_exp6_gate_metadata": false
+      }
+    },
+    "subset_index_hash": {
+      "stanford_cars": "41b83107ed8df3a7",
+      "eurosat": "f1a8e362667d73f3",
+      "mnist": "416c894bad4b51f7",
+      "sun397": "8ef537e327abb0aa"
+    },
+    "agree_vs_6a": {
+      "0.7,0.7,0.7,0.7": {
+        "stanford_cars": {
+          "exp6": 0.714,
+          "exp7": 0.714,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.88,
+          "exp7": 0.88,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.944,
+          "exp7": 0.944,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.73,
+          "exp7": 0.73,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.3,0.7,0.7": {
+        "stanford_cars": {
+          "exp6": 0.672,
+          "exp7": 0.672,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.6,
+          "exp7": 0.6,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.978,
+          "exp7": 0.978,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.76,
+          "exp7": 0.76,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.4,0.7,0.7": {
+        "stanford_cars": {
+          "exp6": 0.678,
+          "exp7": 0.678,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.696,
+          "exp7": 0.696,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.972,
+          "exp7": 0.972,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.76,
+          "exp7": 0.76,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.5,0.7,0.7": {
+        "stanford_cars": {
+          "exp6": 0.676,
+          "exp7": 0.676,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.778,
+          "exp7": 0.778,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.968,
+          "exp7": 0.968,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.754,
+          "exp7": 0.754,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.6,0.7,0.7": {
+        "stanford_cars": {
+          "exp6": 0.666,
+          "exp7": 0.666,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.878,
+          "exp7": 0.878,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.964,
+          "exp7": 0.964,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.744,
+          "exp7": 0.744,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.7,0.3,0.7": {
+        "stanford_cars": {
+          "exp6": 0.688,
+          "exp7": 0.688,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.944,
+          "exp7": 0.944,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.726,
+          "exp7": 0.726,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.748,
+          "exp7": 0.748,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.7,0.4,0.7": {
+        "stanford_cars": {
+          "exp6": 0.692,
+          "exp7": 0.692,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.944,
+          "exp7": 0.944,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.784,
+          "exp7": 0.784,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.752,
+          "exp7": 0.752,
+          "diff_images": 0
+        }
+      },
+      "0.3,0.7,0.5,0.7": {
+        "stanford_cars": {
+          "exp6": 0.688,
+          "exp7": 0.688,
+          "diff_images": 0
+        },
+        "eurosat": {
+          "exp6": 0.94,
+          "exp7": 0.94,
+          "diff_images": 0
+        },
+        "mnist": {
+          "exp6": 0.852,
+          "exp7": 0.852,
+          "diff_images": 0
+        },
+        "sun397": {
+          "exp6": 0.75,
+          "exp7": 0.75,
+          "diff_images": 0
+        }
+      }
+    },
+    "agree_vectors_compared": 8,
+    "max_diff_images": 0,
+    "tolerance_images": 0,
+    "pass": true
+  },
+  "check5_experts": {
+    "files": {
+      "stanford_cars": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/stanford_cars_n500_s0.pt",
+        "sha256": "b4bc0c210e7c0f43058f2d3003d4833a9a4b890747d1d557a96cb1299021614e",
+        "n": 500,
+        "first_indices": [
+          1004,
+          129,
+          641,
+          723,
+          987
+        ]
+      },
+      "eurosat": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/eurosat_n500_s0.pt",
+        "sha256": "07d2ee093ec1624670b680ffcec4ae38c6c1f805e56cc6758fb45f5729d4ab12",
+        "n": 500,
+        "first_indices": [
+          1548,
+          1212,
+          447,
+          78,
+          306
+        ]
+      },
+      "mnist": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/mnist_n500_s0.pt",
+        "sha256": "2d05d6725719ad450a1a12f5bf7e2b63e428bba2d959b3c04456d8dc92583172",
+        "n": 500,
+        "first_indices": [
+          1530,
+          732,
+          1329,
+          1027,
+          1529
+        ]
+      },
+      "sun397": {
+        "path": "/workspace/ducanh/repo-exp6/handoff/experiment6/results/experiment6/experts/sun397_n500_s0.pt",
+        "sha256": "3a8b844dad904dfad1672dc058754a22b2a780b413d2c64a2225c404472b9688",
+        "n": 500,
+        "first_indices": [
+          3480,
+          2752,
+          1125,
+          3189,
+          2036
+        ]
+      }
+    },
+    "recomputed_argmax_mismatches": {
+      "stanford_cars": 0,
+      "eurosat": 0,
+      "mnist": 0,
+      "sun397": 0
+    },
+    "pass": true
+  },
+  "passed": true
+}

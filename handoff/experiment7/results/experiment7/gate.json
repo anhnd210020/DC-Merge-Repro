@@ -1,0 +1,31 @@
+{
+  "decision": {
+    "verdict": "IN_BETWEEN",
+    "reason": "neither the PASS nor the FAIL condition holds",
+    "rho_mean": {
+      "dtd-eurosat-gtsrb-svhn": 0.9828960146682509,
+      "eurosat-gtsrb-mnist-svhn": 0.9785950314525086,
+      "eurosat-gtsrb-sun397-svhn": 0.9866541476987635
+    },
+    "rule_passes_all_three": {
+      "ii_max_mean_agree_rel_ge1": false,
+      "iii_max_min_rel": false
+    },
+    "worst_beaten_by_some_rule": {
+      "dtd-eurosat-gtsrb-svhn": true,
+      "eurosat-gtsrb-mnist-svhn": true,
+      "eurosat-gtsrb-sun397-svhn": true
+    },
+    "alt_pass_if_rules_may_differ_per_context": false,
+    "alt_fail_if_any_context_has_no_worst_win": false,
+    "thresholds": {
+      "rho_pass": 0.7,
+      "rho_fail": 0.5
+    }
+  },
+  "contexts": [
+    "dtd-eurosat-gtsrb-svhn",
+    "eurosat-gtsrb-mnist-svhn",
+    "eurosat-gtsrb-sun397-svhn"
+  ]
+}
