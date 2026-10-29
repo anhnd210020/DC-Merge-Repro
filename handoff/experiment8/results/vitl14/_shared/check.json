@@ -1,0 +1,65 @@
+{
+ "assets": {
+  "sun397": {
+   "expert": 82.76070528967254,
+   "zeroshot": 68.22670025188917,
+   "ref_expert": 82.8,
+   "ref_zeroshot": 68.3
+  },
+  "stanford-cars": {
+   "expert": 92.77453053102847,
+   "zeroshot": 77.92563114040543,
+   "ref_expert": 92.9,
+   "ref_zeroshot": 77.8
+  },
+  "resisc45": {
+   "expert": 97.38095238095238,
+   "zeroshot": 71.33333333333334,
+   "ref_expert": 97.4,
+   "ref_zeroshot": 71.0
+  },
+  "eurosat": {
+   "expert": 99.11111111111111,
+   "zeroshot": 61.25925925925926,
+   "ref_expert": 99.2,
+   "ref_zeroshot": 58.9
+  },
+  "svhn": {
+   "expert": 97.92178856791641,
+   "zeroshot": 58.44729563614014,
+   "ref_expert": 97.9,
+   "ref_zeroshot": 58.4
+  },
+  "gtsrb": {
+   "expert": 99.23990498812351,
+   "zeroshot": 50.55423594615994,
+   "ref_expert": 99.2,
+   "ref_zeroshot": 50.6
+  },
+  "mnist": {
+   "expert": 99.76,
+   "zeroshot": 76.36,
+   "ref_expert": 99.8,
+   "ref_zeroshot": 76.4
+  },
+  "dtd": {
+   "expert": 85.42553191489361,
+   "zeroshot": 55.53191489361702,
+   "ref_expert": 85.5,
+   "ref_zeroshot": 55.5
+  }
+ },
+ "pass": false,
+ "problems": [
+  "eurosat zeroshot 61.26 vs reference 58.90",
+  "operator or hybrid identity failed"
+ ],
+ "throughput_images_per_s": 90.33728407179429,
+ "determinism_identical": true,
+ "block_runner_rel_error": 0.0,
+ "ta_single_is_expert_maxabs": 0.0,
+ "tsvm_single_reconstructs_rel": 0.0010186644503846765,
+ "iso_cts_isotropic_spread": 0.0013384242774918675,
+ "iso_cts_nonmatrix_is_mean_maxabs": 2.9103830456733704e-11,
+ "hybrid_identities": true
+}

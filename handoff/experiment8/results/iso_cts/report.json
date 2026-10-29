@@ -1,0 +1,418 @@
+{
+ "alpha": 2.4,
+ "split": "rep",
+ "pairs": {
+  "iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb": {
+   "id": "iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb",
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "svhn",
+    "gtsrb"
+   ],
+   "neighbours": [
+    "stanford-cars",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 3.8129884128267406,
+   "alone": 92.6300188628402,
+   "in_context": 88.81703045001346,
+   "H_ci": [
+    2.742393942103284,
+    4.844827277606287
+   ],
+   "interaction_ci": [
+    3.8005214023082283,
+    6.940392295736804
+   ],
+   "interaction_share_ci": [
+    0.8836177841710481,
+    2.2203278269713596
+   ],
+   "sum_singles_ci": [
+    -3.658853598534115,
+    0.5379824289907641
+   ],
+   "interaction": 5.375909458367062,
+   "interaction_share": 1.4098939929328704,
+   "sum_singles": -1.562921045540321,
+   "singles": {
+    "stanford-cars": -3.314470493128539,
+    "svhn": -0.21557531662625706,
+    "gtsrb": 1.967124764214475
+   },
+   "shapley": {
+    "stanford-cars": -0.9992814156112383,
+    "svhn": 1.5337285547471542,
+    "gtsrb": 3.278541273690825
+   },
+   "by_order": {
+    "1": -1.562921045540321,
+    "2": 4.6348693074643705,
+    "3": 0.7410401509026912
+   },
+   "dividends": {
+    "stanford-cars": -3.314470493128539,
+    "svhn": -0.21557531662625706,
+    "gtsrb": 1.967124764214475,
+    "stanford-cars+svhn": 2.5060630557801318,
+    "gtsrb+stanford-cars": 1.6302883319860086,
+    "gtsrb+svhn": 0.4985179196982301,
+    "gtsrb+stanford-cars+svhn": 0.7410401509026912
+   },
+   "fake_all_harm": -5.268121800053876,
+   "culprit": "gtsrb",
+   "culprit_single": 1.967124764214475,
+   "fake_culprit_single": -5.268121800053876
+  },
+  "iso_cts|sun397|sun397-svhn-gtsrb-dtd": {
+   "id": "iso_cts|sun397|sun397-svhn-gtsrb-dtd",
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 2.4791161412018283,
+   "alone": 92.6300188628402,
+   "in_context": 90.15090272163837,
+   "H_ci": [
+    1.4502151453243914,
+    3.5281513020667026
+   ],
+   "interaction_ci": [
+    1.831244102834098,
+    4.940618326758484
+   ],
+   "interaction_share_ci": [
+    0.6115481783301563,
+    2.831789394518306
+   ],
+   "sum_singles_ci": [
+    -2.951951231484168,
+    1.1857240219101914
+   ],
+   "interaction": 3.381837779574269,
+   "interaction_share": 1.364130434782623,
+   "sum_singles": -0.9027216383724408,
+   "singles": {
+    "svhn": -0.21557531662625706,
+    "gtsrb": 1.967124764214475,
+    "dtd": -2.6542710859606586
+   },
+   "shapley": {
+    "svhn": 1.019491601544954,
+    "gtsrb": 2.7440941345549255,
+    "dtd": -1.2844695948980511
+   },
+   "by_order": {
+    "1": -0.9027216383724408,
+    "2": 2.9506871463217976,
+    "3": 0.4311506332524715
+   },
+   "dividends": {
+    "svhn": -0.21557531662625706,
+    "gtsrb": 1.967124764214475,
+    "dtd": -2.6542710859606586,
+    "gtsrb+svhn": 0.4985179196982301,
+    "dtd+svhn": 1.6841821611425445,
+    "dtd+gtsrb": 0.767987065481023,
+    "dtd+gtsrb+svhn": 0.4311506332524715
+   },
+   "fake_all_harm": -5.456750202101873,
+   "culprit": "gtsrb",
+   "culprit_single": 1.967124764214475,
+   "fake_culprit_single": -5.268121800053876
+  },
+  "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn": {
+   "id": "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn",
+   "victim": "stanford-cars",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "resisc45",
+    "svhn"
+   ],
+   "neighbours": [
+    "sun397",
+    "resisc45",
+    "svhn"
+   ],
+   "harmers": [
+    "sun397"
+   ],
+   "H": -1.6466117796073405,
+   "alone": 83.12222925902469,
+   "in_context": 84.76884103863203,
+   "H_ci": [
+    -3.2835659633765544,
+    0.1929575848856292
+   ],
+   "interaction_ci": [
+    12.402489247480883,
+    18.144161384746653
+   ],
+   "interaction_share_ci": [
+    4.714445629818121,
+    105.82313360465572
+   ],
+   "sum_singles_ci": [
+    -20.63988540105789,
+    -13.200952100800823
+   ],
+   "interaction": 15.357821405953132,
+   "interaction_share": 9.326923076923109,
+   "sum_singles": -17.004433185560472,
+   "singles": {
+    "sun397": -6.016466117796085,
+    "resisc45": -6.364787840405313,
+    "svhn": -4.623179227359074
+   },
+   "shapley": {
+    "sun397": -0.021110407430872613,
+    "resisc45": -1.794384631623385,
+    "svhn": 0.16888325944691712
+   },
+   "by_order": {
+    "1": -17.004433185560472,
+    "2": 16.37112096263455,
+    "3": -1.0132995566814174
+   },
+   "dividends": {
+    "sun397": -6.016466117796085,
+    "resisc45": -6.364787840405313,
+    "svhn": -4.623179227359074,
+    "resisc45+sun397": 6.111462951234955,
+    "sun397+svhn": 6.5547815072830815,
+    "resisc45+svhn": 3.7048765041165126,
+    "resisc45+sun397+svhn": -1.0132995566814174
+   },
+   "fake_all_harm": -14.692843571880942,
+   "culprit": "sun397",
+   "culprit_single": -6.016466117796085,
+   "fake_culprit_single": -14.692843571880942
+  },
+  "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd": {
+   "id": "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd",
+   "victim": "stanford-cars",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "resisc45",
+    "dtd"
+   ],
+   "neighbours": [
+    "sun397",
+    "resisc45",
+    "dtd"
+   ],
+   "harmers": [
+    "sun397"
+   ],
+   "H": -6.523115896136787,
+   "alone": 83.12222925902469,
+   "in_context": 89.64534515516148,
+   "H_ci": [
+    -8.216690165404566,
+    -4.74521795031743
+   ],
+   "interaction_ci": [
+    13.798493970855365,
+    19.317206324685706
+   ],
+   "interaction_share_ci": [
+    2.0042720853811606,
+    3.4478592964891885
+   ],
+   "sum_singles_ci": [
+    -26.865206521674924,
+    -19.198891829483287
+   ],
+   "interaction": 16.52944901836608,
+   "interaction_share": 2.533980582524279,
+   "sum_singles": -23.052564914502867,
+   "singles": {
+    "sun397": -6.016466117796085,
+    "resisc45": -6.364787840405313,
+    "dtd": -10.671310956301468
+   },
+   "shapley": {
+    "sun397": 0.29554570403209124,
+    "resisc45": -2.190204770952074,
+    "dtd": -4.6284568292168045
+   },
+   "by_order": {
+    "1": -23.052564914502867,
+    "2": 21.53261557948069,
+    "3": -5.003166561114611
+   },
+   "dividends": {
+    "sun397": -6.016466117796085,
+    "resisc45": -6.364787840405313,
+    "dtd": -10.671310956301468,
+    "resisc45+sun397": 6.111462951234955,
+    "dtd+sun397": 9.848005066497805,
+    "dtd+resisc45": 5.5731475617479305,
+    "dtd+resisc45+sun397": -5.003166561114611
+   },
+   "fake_all_harm": -14.914502849904991,
+   "culprit": "sun397",
+   "culprit_single": -6.016466117796085,
+   "fake_culprit_single": -14.692843571880942
+  },
+  "iso_cts|resisc45|sun397-resisc45-eurosat-svhn": {
+   "id": "iso_cts|resisc45|sun397-resisc45-eurosat-svhn",
+   "victim": "resisc45",
+   "context": [
+    "sun397",
+    "resisc45",
+    "eurosat",
+    "svhn"
+   ],
+   "neighbours": [
+    "sun397",
+    "eurosat",
+    "svhn"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn"
+   ],
+   "H": 1.0666666666666629,
+   "alone": 93.33333333333333,
+   "in_context": 92.26666666666667,
+   "H_ci": [
+    -0.03327196297825914,
+    2.136332454236832
+   ],
+   "interaction_ci": [
+    2.009916518601457,
+    5.188184276535039
+   ],
+   "interaction_share_ci": [
+    1.2763743090278048,
+    32.96011535688601
+   ],
+   "sum_singles_ci": [
+    -4.677960259584092,
+    -0.4974069788447088
+   ],
+   "interaction": 3.7000000000000455,
+   "interaction_share": 3.468750000000055,
+   "sum_singles": -2.6333333333333826,
+   "singles": {
+    "sun397": -2.200000000000017,
+    "eurosat": 0.9666666666666544,
+    "svhn": -1.40000000000002
+   },
+   "shapley": {
+    "sun397": -0.75,
+    "eurosat": 1.5500000000000043,
+    "svhn": 0.2666666666666586
+   },
+   "by_order": {
+    "1": -2.6333333333333826,
+    "2": 5.900000000000048,
+    "3": -2.200000000000003
+   },
+   "dividends": {
+    "sun397": -2.200000000000017,
+    "eurosat": 0.9666666666666544,
+    "svhn": -1.40000000000002,
+    "eurosat+sun397": 1.1000000000000227,
+    "sun397+svhn": 3.26666666666668,
+    "eurosat+svhn": 1.5333333333333456,
+    "eurosat+sun397+svhn": -2.200000000000003
+   },
+   "fake_all_harm": -5.933333333333337,
+   "culprit": "eurosat",
+   "culprit_single": 0.9666666666666544,
+   "fake_culprit_single": -4.333333333333343
+  },
+  "iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb": {
+   "id": "iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb",
+   "victim": "resisc45",
+   "context": [
+    "sun397",
+    "resisc45",
+    "eurosat",
+    "gtsrb"
+   ],
+   "neighbours": [
+    "sun397",
+    "eurosat",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "gtsrb"
+   ],
+   "H": 0.8999999999999915,
+   "alone": 93.33333333333333,
+   "in_context": 92.43333333333334,
+   "H_ci": [
+    -0.2326521874805227,
+    1.962170666942487
+   ],
+   "interaction_ci": [
+    2.1077185534268006,
+    5.268635536527473
+   ],
+   "interaction_share_ci": [
+    1.4601911932400966,
+    46.60019226147206
+   ],
+   "sum_singles_ci": [
+    -4.9061135983515864,
+    -0.7729720922435441
+   ],
+   "interaction": 3.7333333333333485,
+   "interaction_share": 4.148148148148204,
+   "sum_singles": -2.833333333333357,
+   "singles": {
+    "sun397": -2.200000000000017,
+    "eurosat": 0.9666666666666544,
+    "gtsrb": -1.5999999999999943
+   },
+   "shapley": {
+    "sun397": -0.35000000000000614,
+    "eurosat": 1.4833333333333296,
+    "gtsrb": -0.2333333333333319
+   },
+   "by_order": {
+    "1": -2.833333333333357,
+    "2": 4.033333333333346,
+    "3": -0.29999999999999716
+   },
+   "dividends": {
+    "sun397": -2.200000000000017,
+    "eurosat": 0.9666666666666544,
+    "gtsrb": -1.5999999999999943,
+    "eurosat+sun397": 1.1000000000000227,
+    "gtsrb+sun397": 2.799999999999997,
+    "eurosat+gtsrb": 0.13333333333332575,
+    "eurosat+gtsrb+sun397": -0.29999999999999716
+   },
+   "fake_all_harm": -6.0,
+   "culprit": "eurosat",
+   "culprit_single": 0.9666666666666544,
+   "fake_culprit_single": -4.333333333333343
+  }
+ }
+}

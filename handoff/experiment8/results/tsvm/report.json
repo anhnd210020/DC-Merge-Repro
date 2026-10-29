@@ -1,0 +1,1126 @@
+{
+ "alpha": 1.0,
+ "split": "rep",
+ "pairs": {
+  "tsvm|sun397|sun397-svhn-gtsrb-mnist": {
+   "id": "tsvm|sun397|sun397-svhn-gtsrb-mnist",
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "H": 9.256265157639461,
+   "alone": 100.0,
+   "in_context": 90.74373484236054,
+   "H_ci": [
+    8.282449037321735,
+    10.20077595213971
+   ],
+   "interaction_ci": [
+    -2.831121854601652,
+    0.09425330372341977
+   ],
+   "interaction_share_ci": [
+    0.014102824980226737,
+    0.29382200361659117
+   ],
+   "sum_singles_ci": [
+    8.605415294838702,
+    12.641823538807968
+   ],
+   "interaction": -1.3473457289140356,
+   "interaction_share": 0.14556040756914063,
+   "sum_singles": 10.603610886553497,
+   "singles": {
+    "svhn": 3.556992724333071,
+    "gtsrb": 5.268121800053905,
+    "mnist": 1.7784963621665213
+   },
+   "shapley": {
+    "svhn": 3.157280158088566,
+    "gtsrb": 4.780831761429991,
+    "mnist": 1.3181532381209042
+   },
+   "by_order": {
+    "1": 10.603610886553497,
+    "2": -2.0075451360819443,
+    "3": 0.6601994071679087
+   },
+   "dividends": {
+    "svhn": 3.556992724333071,
+    "gtsrb": 5.268121800053905,
+    "mnist": 1.7784963621665213,
+    "gtsrb+svhn": -0.6467259498787712,
+    "mnist+svhn": -0.5928321207221785,
+    "gtsrb+mnist": -0.7679870654809946,
+    "gtsrb+mnist+svhn": 0.6601994071679087
+   },
+   "fake_all_harm": -0.12126111560228026,
+   "culprit": "gtsrb",
+   "culprit_single": 5.268121800053905,
+   "fake_culprit_single": -0.6601994071678803
+  },
+  "tsvm|sun397|sun397-eurosat-svhn-gtsrb": {
+   "id": "tsvm|sun397|sun397-eurosat-svhn-gtsrb",
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "neighbours": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 8.609539207760704,
+   "alone": 100.0,
+   "in_context": 91.3904607922393,
+   "H_ci": [
+    7.631053508981974,
+    9.596702243013517
+   ],
+   "interaction_ci": [
+    -4.415952054541526,
+    -1.5885389626764854
+   ],
+   "interaction_share_ci": [
+    0.18962208252285276,
+    0.5054023320009278
+   ],
+   "sum_singles_ci": [
+    9.599121759475914,
+    13.63120657415628
+   ],
+   "interaction": -2.9776340609000442,
+   "interaction_share": 0.34585289514867207,
+   "sum_singles": 11.587173268660749,
+   "singles": {
+    "eurosat": 2.762058744273773,
+    "svhn": 3.556992724333071,
+    "gtsrb": 5.268121800053905
+   },
+   "shapley": {
+    "eurosat": 1.4596245396568719,
+    "svhn": 2.726129524836068,
+    "gtsrb": 4.423785143267764
+   },
+   "by_order": {
+    "1": 11.587173268660749,
+    "2": -3.7995149555376315,
+    "3": 0.8218808946375873
+   },
+   "dividends": {
+    "eurosat": 2.762058744273773,
+    "svhn": 3.556992724333071,
+    "gtsrb": 5.268121800053905,
+    "eurosat+svhn": -1.5629210455402927,
+    "eurosat+gtsrb": -1.5898679601185677,
+    "gtsrb+svhn": -0.6467259498787712,
+    "eurosat+gtsrb+svhn": 0.8218808946375873
+   },
+   "fake_all_harm": -0.12126111560228026,
+   "culprit": "gtsrb",
+   "culprit_single": 5.268121800053905,
+   "fake_culprit_single": -0.6601994071678803
+  },
+  "tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb": {
+   "id": "tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb",
+   "victim": "stanford-cars",
+   "context": [
+    "stanford-cars",
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "neighbours": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 12.982900569981012,
+   "alone": 100.03166561114631,
+   "in_context": 87.0487650411653,
+   "H_ci": [
+    11.393042748602788,
+    14.623524443624381
+   ],
+   "interaction_ci": [
+    -6.5862786311681765,
+    -1.9804060483129362
+   ],
+   "interaction_share_ci": [
+    0.1641397020803673,
+    0.49230736314191775
+   ],
+   "sum_singles_ci": [
+    13.892855799250912,
+    20.49515893500723
+   ],
+   "interaction": -4.338188727042493,
+   "interaction_share": 0.334146341463419,
+   "sum_singles": 17.321089297023505,
+   "singles": {
+    "eurosat": 3.4198860037999026,
+    "svhn": 4.971500949968359,
+    "gtsrb": 8.929702343255244
+   },
+   "shapley": {
+    "eurosat": 1.7468862149039524,
+    "svhn": 4.026810217437202,
+    "gtsrb": 7.209204137639858
+   },
+   "by_order": {
+    "1": 17.321089297023505,
+    "2": -7.631412286257202,
+    "3": 3.2932235592147094
+   },
+   "dividends": {
+    "eurosat": 3.4198860037999026,
+    "svhn": 4.971500949968359,
+    "gtsrb": 8.929702343255244,
+    "eurosat+svhn": -1.9949335022166252,
+    "eurosat+gtsrb": -3.5465484483850815,
+    "gtsrb+svhn": -2.0899303356554952,
+    "eurosat+gtsrb+svhn": 3.2932235592147094
+   },
+   "fake_all_harm": 1.741608613046239,
+   "culprit": "gtsrb",
+   "culprit_single": 8.929702343255244,
+   "fake_culprit_single": -0.15832805573145947
+  },
+  "tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist": {
+   "id": "tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist",
+   "victim": "stanford-cars",
+   "context": [
+    "stanford-cars",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "H": 10.797973400886661,
+   "alone": 100.03166561114631,
+   "in_context": 89.23369221025965,
+   "H_ci": [
+    9.193902303535225,
+    12.390396840197061
+   ],
+   "interaction_ci": [
+    -9.207601060417549,
+    -4.416280662402806
+   ],
+   "interaction_share_ci": [
+    0.4321643713338561,
+    0.842603476531988
+   ],
+   "sum_singles_ci": [
+    14.177485310139286,
+    20.938929708926516
+   ],
+   "interaction": -6.839772007599791,
+   "interaction_share": 0.6334310850439909,
+   "sum_singles": 17.637745408486452,
+   "singles": {
+    "svhn": 4.971500949968359,
+    "gtsrb": 8.929702343255244,
+    "mnist": 3.73654211526285
+   },
+   "shapley": {
+    "svhn": 3.578214059531362,
+    "gtsrb": 6.190626979100699,
+    "mnist": 1.0291323622546003
+   },
+   "by_order": {
+    "1": 17.637745408486452,
+    "2": -8.834705509816402,
+    "3": 1.994933502216611
+   },
+   "dividends": {
+    "svhn": 4.971500949968359,
+    "gtsrb": 8.929702343255244,
+    "mnist": 3.73654211526285,
+    "gtsrb+svhn": -2.0899303356554952,
+    "mnist+svhn": -2.0265991133629058,
+    "gtsrb+mnist": -4.718176060798001,
+    "gtsrb+mnist+svhn": 1.994933502216611
+   },
+   "fake_all_harm": 0.886637112096281,
+   "culprit": "gtsrb",
+   "culprit_single": 8.929702343255244,
+   "fake_culprit_single": -0.15832805573145947
+  },
+  "tsvm|resisc45|resisc45-eurosat-svhn-gtsrb": {
+   "id": "tsvm|resisc45|resisc45-eurosat-svhn-gtsrb",
+   "victim": "resisc45",
+   "context": [
+    "resisc45",
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "neighbours": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 8.799999999999997,
+   "alone": 100.0,
+   "in_context": 91.2,
+   "H_ci": [
+    7.597816287060941,
+    9.927049048495713
+   ],
+   "interaction_ci": [
+    -2.535459426635771,
+    0.4323341204934482
+   ],
+   "interaction_share_ci": [
+    0.007041611798688253,
+    0.2943977985556976
+   ],
+   "sum_singles_ci": [
+    7.981050504281026,
+    11.581036883463687
+   ],
+   "interaction": -1.0333333333333314,
+   "interaction_share": 0.11742424242424225,
+   "sum_singles": 9.833333333333329,
+   "singles": {
+    "eurosat": 4.433333333333337,
+    "svhn": 2.3333333333333286,
+    "gtsrb": 3.066666666666663
+   },
+   "shapley": {
+    "eurosat": 3.438888888888892,
+    "svhn": 2.6055555555555494,
+    "gtsrb": 2.755555555555555
+   },
+   "by_order": {
+    "1": 9.833333333333329,
+    "2": -0.3999999999999915,
+    "3": -0.63333333333334
+   },
+   "dividends": {
+    "eurosat": 4.433333333333337,
+    "svhn": 2.3333333333333286,
+    "gtsrb": 3.066666666666663,
+    "eurosat+svhn": -0.20000000000000284,
+    "eurosat+gtsrb": -1.36666666666666,
+    "gtsrb+svhn": 1.1666666666666714,
+    "eurosat+gtsrb+svhn": -0.63333333333334
+   },
+   "fake_all_harm": 0.46666666666665435,
+   "culprit": "eurosat",
+   "culprit_single": 4.433333333333337,
+   "fake_culprit_single": 0.09999999999999432
+  },
+  "tsvm|resisc45|resisc45-svhn-gtsrb-mnist": {
+   "id": "tsvm|resisc45|resisc45-svhn-gtsrb-mnist",
+   "victim": "resisc45",
+   "context": [
+    "resisc45",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "H": 7.633333333333326,
+   "alone": 100.0,
+   "in_context": 92.36666666666667,
+   "H_ci": [
+    6.552331107423213,
+    8.701577876957463
+   ],
+   "interaction_ci": [
+    -0.3978962940317075,
+    2.3961329505496822
+   ],
+   "interaction_share_ci": [
+    0.008928623161130411,
+    0.3130590279986504
+   ],
+   "sum_singles_ci": [
+    4.894227540851259,
+    8.342088206666777
+   ],
+   "interaction": 1.0,
+   "interaction_share": 0.1310043668122272,
+   "sum_singles": 6.633333333333326,
+   "singles": {
+    "svhn": 2.3333333333333286,
+    "gtsrb": 3.066666666666663,
+    "mnist": 1.2333333333333343
+   },
+   "shapley": {
+    "svhn": 2.855555555555552,
+    "gtsrb": 3.5888888888888864,
+    "mnist": 1.1888888888888876
+   },
+   "by_order": {
+    "1": 6.633333333333326,
+    "2": 1.2333333333333343,
+    "3": -0.23333333333333428
+   },
+   "dividends": {
+    "svhn": 2.3333333333333286,
+    "gtsrb": 3.066666666666663,
+    "mnist": 1.2333333333333343,
+    "gtsrb+svhn": 1.1666666666666714,
+    "mnist+svhn": 0.03333333333333144,
+    "gtsrb+mnist": 0.03333333333333144,
+    "gtsrb+mnist+svhn": -0.23333333333333428
+   },
+   "fake_all_harm": 0.29999999999999716,
+   "culprit": "gtsrb",
+   "culprit_single": 3.066666666666663,
+   "fake_culprit_single": 0.13333333333332575
+  },
+  "tsvm|eurosat|eurosat-svhn-gtsrb-mnist": {
+   "id": "tsvm|eurosat|eurosat-svhn-gtsrb-mnist",
+   "victim": "eurosat",
+   "context": [
+    "eurosat",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "H": 8.389513108614224,
+   "alone": 99.99999999999999,
+   "in_context": 91.61048689138576,
+   "H_ci": [
+    6.891125099059861,
+    9.895238910285695
+   ],
+   "interaction_ci": [
+    2.844262761079072,
+    6.147272621522742
+   ],
+   "interaction_share_ci": [
+    0.3563798428322877,
+    0.7129703665716804
+   ],
+   "sum_singles_ci": [
+    2.2471401955793615,
+    5.618068903481285
+   ],
+   "interaction": 4.494382022471939,
+   "interaction_share": 0.5357142857142897,
+   "sum_singles": 3.8951310861422854,
+   "singles": {
+    "svhn": 2.3220973782771352,
+    "gtsrb": 1.1985018726591647,
+    "mnist": 0.37453183520598543
+   },
+   "shapley": {
+    "svhn": 3.895131086142314,
+    "gtsrb": 3.146067415730336,
+    "mnist": 1.3483146067415746
+   },
+   "by_order": {
+    "1": 3.8951310861422854,
+    "2": 5.8426966292135205,
+    "3": -1.3483146067415817
+   },
+   "dividends": {
+    "svhn": 2.3220973782771352,
+    "gtsrb": 1.1985018726591647,
+    "mnist": 0.37453183520598543,
+    "gtsrb+svhn": 2.9962546816479545,
+    "mnist+svhn": 1.0486891385767905,
+    "gtsrb+mnist": 1.7977528089887755,
+    "gtsrb+mnist+svhn": -1.3483146067415817
+   },
+   "fake_all_harm": 0.2996254681647912,
+   "culprit": "svhn",
+   "culprit_single": 2.3220973782771352,
+   "fake_culprit_single": 0.2996254681647912
+  },
+  "tsvm|eurosat|eurosat-svhn-gtsrb-dtd": {
+   "id": "tsvm|eurosat|eurosat-svhn-gtsrb-dtd",
+   "victim": "eurosat",
+   "context": [
+    "eurosat",
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "H": 5.617977528089881,
+   "alone": 99.99999999999999,
+   "in_context": 94.3820224719101,
+   "H_ci": [
+    4.341153991596581,
+    6.891511773443801
+   ],
+   "interaction_ci": [
+    0.5974660122724227,
+    3.1995864378240126
+   ],
+   "interaction_share_ci": [
+    0.10604180921011078,
+    0.5614127999999338
+   ],
+   "sum_singles_ci": [
+    2.2522591255806645,
+    5.3183394871400935
+   ],
+   "interaction": 1.8726591760299982,
+   "interaction_share": 0.3333333333333401,
+   "sum_singles": 3.7453183520598827,
+   "singles": {
+    "svhn": 2.3220973782771352,
+    "gtsrb": 1.1985018726591647,
+    "dtd": 0.22471910112358273
+   },
+   "shapley": {
+    "svhn": 3.433208489388259,
+    "gtsrb": 2.3470661672908855,
+    "dtd": -0.16229712858926365
+   },
+   "by_order": {
+    "1": 3.7453183520598827,
+    "2": 2.9213483146067887,
+    "3": -1.0486891385767905
+   },
+   "dividends": {
+    "svhn": 2.3220973782771352,
+    "gtsrb": 1.1985018726591647,
+    "dtd": 0.22471910112358273,
+    "gtsrb+svhn": 2.9962546816479545,
+    "dtd+svhn": -0.07490636704118003,
+    "dtd+gtsrb": 1.4210854715202004e-14,
+    "dtd+gtsrb+svhn": -1.0486891385767905
+   },
+   "fake_all_harm": 0.37453183520598543,
+   "culprit": "svhn",
+   "culprit_single": 2.3220973782771352,
+   "fake_culprit_single": 0.2996254681647912
+  },
+  "tsvm|svhn|resisc45-eurosat-svhn-mnist": {
+   "id": "tsvm|svhn|resisc45-eurosat-svhn-mnist",
+   "victim": "svhn",
+   "context": [
+    "resisc45",
+    "eurosat",
+    "svhn",
+    "mnist"
+   ],
+   "neighbours": [
+    "resisc45",
+    "eurosat",
+    "mnist"
+   ],
+   "harmers": [
+    "resisc45",
+    "eurosat",
+    "mnist"
+   ],
+   "H": 4.702540634369569,
+   "alone": 100.0,
+   "in_context": 95.29745936563043,
+   "H_ci": [
+    4.297929366974752,
+    5.133474973908463
+   ],
+   "interaction_ci": [
+    1.4434324897659743,
+    2.3988114606641013
+   ],
+   "interaction_share_ci": [
+    0.30843689362912297,
+    0.5104110346128901
+   ],
+   "sum_singles_ci": [
+    2.2229924469167313,
+    3.3703650584986793
+   ],
+   "interaction": 1.9252011993056612,
+   "interaction_share": 0.40939597315436216,
+   "sum_singles": 2.777339435063908,
+   "singles": {
+    "resisc45": 0.5128609752248678,
+    "eurosat": 0.98627110620167,
+    "mnist": 1.2782073536373701
+   },
+   "shapley": {
+    "resisc45": 1.3768344642575367,
+    "eurosat": 1.6727157961180292,
+    "mnist": 1.6529903739940035
+   },
+   "by_order": {
+    "1": 2.777339435063908,
+    "2": 2.5169638630266604,
+    "3": -0.5917626637209992
+   },
+   "dividends": {
+    "resisc45": 0.5128609752248678,
+    "eurosat": 0.98627110620167,
+    "mnist": 1.2782073536373701,
+    "eurosat+resisc45": 1.3728893798327277,
+    "mnist+resisc45": 0.749566040713276,
+    "eurosat+mnist": 0.39450844248065664,
+    "eurosat+mnist+resisc45": -0.5917626637209992
+   },
+   "fake_all_harm": 0.18147388354111627,
+   "culprit": "mnist",
+   "culprit_single": 1.2782073536373701,
+   "fake_culprit_single": 0.03156067539846674
+  },
+  "tsvm|svhn|sun397-eurosat-svhn-mnist": {
+   "id": "tsvm|svhn|sun397-eurosat-svhn-mnist",
+   "victim": "svhn",
+   "context": [
+    "sun397",
+    "eurosat",
+    "svhn",
+    "mnist"
+   ],
+   "neighbours": [
+    "sun397",
+    "eurosat",
+    "mnist"
+   ],
+   "harmers": [
+    "sun397",
+    "eurosat",
+    "mnist"
+   ],
+   "H": 4.102887801798957,
+   "alone": 100.0,
+   "in_context": 95.89711219820104,
+   "H_ci": [
+    3.7147214231327053,
+    4.519293753706111
+   ],
+   "interaction_ci": [
+    1.0948614416563056,
+    2.0061825984389143
+   ],
+   "interaction_share_ci": [
+    0.2703084446226008,
+    0.4888105724330597
+   ],
+   "sum_singles_ci": [
+    2.035299957529192,
+    3.1043952597252304
+   ],
+   "interaction": 1.5385829256746177,
+   "interaction_share": 0.37500000000000216,
+   "sum_singles": 2.564304876124339,
+   "singles": {
+    "sun397": 0.29982641628529905,
+    "eurosat": 0.98627110620167,
+    "mnist": 1.2782073536373701
+   },
+   "shapley": {
+    "sun397": 0.8850139392983015,
+    "eurosat": 1.563568460365045,
+    "mnist": 1.6543054021356103
+   },
+   "by_order": {
+    "1": 2.564304876124339,
+    "2": 1.617484614170749,
+    "3": -0.07890168849613133
+   },
+   "dividends": {
+    "sun397": 0.29982641628529905,
+    "eurosat": 0.98627110620167,
+    "mnist": 1.2782073536373701,
+    "eurosat+sun397": 0.8126873915101811,
+    "mnist+sun397": 0.4102887801799113,
+    "eurosat+mnist": 0.39450844248065664,
+    "eurosat+mnist+sun397": -0.07890168849613133
+   },
+   "fake_all_harm": 0.22881489663879506,
+   "culprit": "mnist",
+   "culprit_single": 1.2782073536373701,
+   "fake_culprit_single": 0.03156067539846674
+  },
+  "tsvm|gtsrb|resisc45-svhn-gtsrb-mnist": {
+   "id": "tsvm|gtsrb|resisc45-svhn-gtsrb-mnist",
+   "victim": "gtsrb",
+   "context": [
+    "resisc45",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "resisc45",
+    "svhn",
+    "mnist"
+   ],
+   "harmers": [
+    "resisc45",
+    "svhn",
+    "mnist"
+   ],
+   "H": 5.188150520416343,
+   "alone": 100.0,
+   "in_context": 94.81184947958366,
+   "H_ci": [
+    4.601341680483192,
+    5.794835929169188
+   ],
+   "interaction_ci": [
+    0.880143576505807,
+    2.1750269494584282
+   ],
+   "interaction_share_ci": [
+    0.1701335538726337,
+    0.41818159918357506
+   ],
+   "sum_singles_ci": [
+    2.8726772982702835,
+    4.515845086286751
+   ],
+   "interaction": 1.5212169735788734,
+   "interaction_share": 0.2932098765432113,
+   "sum_singles": 3.6669335468374697,
+   "singles": {
+    "resisc45": 0.576461168935154,
+    "svhn": 1.7453963170536468,
+    "mnist": 1.345076060848669
+   },
+   "shapley": {
+    "resisc45": 0.8033093141179677,
+    "svhn": 2.412596744061922,
+    "mnist": 1.9722444622364534
+   },
+   "by_order": {
+    "1": 3.6669335468374697,
+    "2": 1.4411529223378778,
+    "3": 0.08006405124099558
+   },
+   "dividends": {
+    "resisc45": 0.576461168935154,
+    "svhn": 1.7453963170536468,
+    "mnist": 1.345076060848669,
+    "resisc45+svhn": 0.24019215372297253,
+    "mnist+resisc45": 0.16012810248199116,
+    "mnist+svhn": 1.0408326661329141,
+    "mnist+resisc45+svhn": 0.08006405124099558
+   },
+   "fake_all_harm": 0.04803843074459735,
+   "culprit": "svhn",
+   "culprit_single": 1.7453963170536468,
+   "fake_culprit_single": 0.016012810248199116
+  },
+  "tsvm|gtsrb|eurosat-svhn-gtsrb-mnist": {
+   "id": "tsvm|gtsrb|eurosat-svhn-gtsrb-mnist",
+   "victim": "gtsrb",
+   "context": [
+    "eurosat",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "eurosat",
+    "svhn",
+    "mnist"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn",
+    "mnist"
+   ],
+   "H": 4.88390712570056,
+   "alone": 100.0,
+   "in_context": 95.11609287429944,
+   "H_ci": [
+    4.326837431692515,
+    5.477520230465363
+   ],
+   "interaction_ci": [
+    0.2560472067076091,
+    1.5247561369302363
+   ],
+   "interaction_share_ci": [
+    0.052827088160560975,
+    0.31762628162959805
+   ],
+   "sum_singles_ci": [
+    3.171462445655155,
+    4.854685954870959
+   ],
+   "interaction": 0.880704563650923,
+   "interaction_share": 0.1803278688524595,
+   "sum_singles": 4.003202562049637,
+   "singles": {
+    "eurosat": 0.9127301841473212,
+    "svhn": 1.7453963170536468,
+    "mnist": 1.345076060848669
+   },
+   "shapley": {
+    "eurosat": 0.8753669602348566,
+    "svhn": 2.3165198825727273,
+    "mnist": 1.692020282892976
+   },
+   "by_order": {
+    "1": 4.003202562049637,
+    "2": 1.1369095276221088,
+    "3": -0.25620496397118586
+   },
+   "dividends": {
+    "eurosat": 0.9127301841473212,
+    "svhn": 1.7453963170536468,
+    "mnist": 1.345076060848669,
+    "eurosat+svhn": 0.27221777421937077,
+    "eurosat+mnist": -0.17614091273017607,
+    "mnist+svhn": 1.0408326661329141,
+    "eurosat+mnist+svhn": -0.25620496397118586
+   },
+   "fake_all_harm": 0.03202562049639823,
+   "culprit": "svhn",
+   "culprit_single": 1.7453963170536468,
+   "fake_culprit_single": 0.016012810248199116
+  },
+  "tsvm|mnist|stanford-cars-svhn-gtsrb-mnist": {
+   "id": "tsvm|mnist|stanford-cars-svhn-gtsrb-mnist",
+   "victim": "mnist",
+   "context": [
+    "stanford-cars",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "stanford-cars",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "stanford-cars",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 0.7632054629443701,
+   "alone": 100.0,
+   "in_context": 99.23679453705563,
+   "H_ci": [
+    0.5024090518959585,
+    1.0653370099951804
+   ],
+   "interaction_ci": [
+    -0.12048548182692435,
+    0.541409075631633
+   ],
+   "interaction_share_ci": [
+    2.2408219119351806e-05,
+    0.7105157355819945
+   ],
+   "sum_singles_ci": [
+    0.1810187351800238,
+    0.9829571441131272
+   ],
+   "interaction": 0.20084354288007944,
+   "interaction_share": 0.2631578947368186,
+   "sum_singles": 0.5623619200642906,
+   "singles": {
+    "stanford-cars": 0.04016870857603294,
+    "svhn": 0.3012653143201476,
+    "gtsrb": 0.22092789716811012
+   },
+   "shapley": {
+    "stanford-cars": 0.09707437905872023,
+    "svhn": 0.307960099082815,
+    "gtsrb": 0.3581709848028349
+   },
+   "by_order": {
+    "1": 0.5623619200642906,
+    "2": 0.12050612572802777,
+    "3": 0.08033741715205167
+   },
+   "dividends": {
+    "stanford-cars": 0.04016870857603294,
+    "svhn": 0.3012653143201476,
+    "gtsrb": 0.22092789716811012,
+    "stanford-cars+svhn": -0.10042177144005393,
+    "gtsrb+stanford-cars": 0.1606748343040607,
+    "gtsrb+svhn": 0.06025306286402099,
+    "gtsrb+stanford-cars+svhn": 0.08033741715205167
+   },
+   "fake_all_harm": -0.02008435428800226,
+   "culprit": "gtsrb",
+   "culprit_single": 0.22092789716811012,
+   "fake_culprit_single": -0.02008435428800226
+  },
+  "tsvm|mnist|eurosat-svhn-gtsrb-mnist": {
+   "id": "tsvm|mnist|eurosat-svhn-gtsrb-mnist",
+   "victim": "mnist",
+   "context": [
+    "eurosat",
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "neighbours": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 0.6426993372163139,
+   "alone": 100.0,
+   "in_context": 99.35730066278369,
+   "H_ci": [
+    0.401926756617571,
+    0.9225890476733412
+   ],
+   "interaction_ci": [
+    -0.14059804318000282,
+    0.5430297203982043
+   ],
+   "interaction_share_ci": [
+    0.02172398813191672,
+    0.9092050382827376
+   ],
+   "sum_singles_ci": [
+    0.040185776158034515,
+    0.8821396746303711
+   ],
+   "interaction": 0.20084354288010786,
+   "interaction_share": 0.3125000000000152,
+   "sum_singles": 0.44185579433620603,
+   "singles": {
+    "eurosat": -0.08033741715205167,
+    "svhn": 0.3012653143201476,
+    "gtsrb": 0.22092789716811012
+   },
+   "shapley": {
+    "eurosat": 0.013389569525334842,
+    "svhn": 0.3347392381334989,
+    "gtsrb": 0.29457052955748014
+   },
+   "by_order": {
+    "1": 0.44185579433620603,
+    "2": 0.3414340228961663,
+    "3": -0.14059048001605845
+   },
+   "dividends": {
+    "eurosat": -0.08033741715205167,
+    "svhn": 0.3012653143201476,
+    "gtsrb": 0.22092789716811012,
+    "eurosat+svhn": 0.10042177144005393,
+    "eurosat+gtsrb": 0.1807591885920914,
+    "gtsrb+svhn": 0.06025306286402099,
+    "eurosat+gtsrb+svhn": -0.14059048001605845
+   },
+   "fake_all_harm": 0.0,
+   "culprit": "gtsrb",
+   "culprit_single": 0.22092789716811012,
+   "fake_culprit_single": -0.02008435428800226
+  },
+  "tsvm|dtd|svhn-gtsrb-mnist-dtd": {
+   "id": "tsvm|dtd|svhn-gtsrb-mnist-dtd",
+   "victim": "dtd",
+   "context": [
+    "svhn",
+    "gtsrb",
+    "mnist",
+    "dtd"
+   ],
+   "neighbours": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb",
+    "mnist"
+   ],
+   "H": 19.14323962516734,
+   "alone": 100.00000000000001,
+   "in_context": 80.85676037483267,
+   "H_ci": [
+    15.710245867538324,
+    22.624273180222186
+   ],
+   "interaction_ci": [
+    -15.303673759121832,
+    -5.745570090172549
+   ],
+   "interaction_share_ci": [
+    0.3211301869503146,
+    0.7867931228672417
+   ],
+   "sum_singles_ci": [
+    22.523303544291085,
+    36.388446270321474
+   ],
+   "interaction": -10.441767068273109,
+   "interaction_share": 0.5454545454545462,
+   "sum_singles": 29.585006693440448,
+   "singles": {
+    "svhn": 11.914323962516747,
+    "gtsrb": 12.985274431057562,
+    "mnist": 4.68540829986614
+   },
+   "shapley": {
+    "svhn": 8.656849620705051,
+    "gtsrb": 9.326193663543057,
+    "mnist": 1.1601963409192326
+   },
+   "by_order": {
+    "1": 29.585006693440448,
+    "2": -13.922356091030807,
+    "3": 3.480589022757698
+   },
+   "dividends": {
+    "svhn": 11.914323962516747,
+    "gtsrb": 12.985274431057562,
+    "mnist": 4.68540829986614,
+    "gtsrb+svhn": -4.551539491298527,
+    "mnist+svhn": -4.283801874163331,
+    "gtsrb+mnist": -5.087014725568949,
+    "gtsrb+mnist+svhn": 3.480589022757698
+   },
+   "fake_all_harm": -0.2677376171351824,
+   "culprit": "svhn",
+   "culprit_single": 11.914323962516747,
+   "fake_culprit_single": -0.5354752342704074
+  },
+  "tsvm|dtd|resisc45-svhn-gtsrb-dtd": {
+   "id": "tsvm|dtd|resisc45-svhn-gtsrb-dtd",
+   "victim": "dtd",
+   "context": [
+    "resisc45",
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "neighbours": [
+    "resisc45",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "resisc45",
+    "svhn",
+    "gtsrb"
+   ],
+   "H": 18.607764390896932,
+   "alone": 100.00000000000001,
+   "in_context": 81.39223560910308,
+   "H_ci": [
+    15.237650664899045,
+    21.774625324762876
+   ],
+   "interaction_ci": [
+    -18.19388924921488,
+    -8.13990930637409
+   ],
+   "interaction_share_ci": [
+    0.4598543033704044,
+    0.9632747260075835
+   ],
+   "sum_singles_ci": [
+    24.497926033159114,
+    38.642432700885266
+   ],
+   "interaction": -13.253012048192787,
+   "interaction_share": 0.7122302158273386,
+   "sum_singles": 31.86077643908972,
+   "singles": {
+    "resisc45": 6.96117804551541,
+    "svhn": 11.914323962516747,
+    "gtsrb": 12.985274431057562
+   },
+   "shapley": {
+    "resisc45": 1.9857206604194626,
+    "svhn": 7.87594823739403,
+    "gtsrb": 8.74609549308344
+   },
+   "by_order": {
+    "1": 31.86077643908972,
+    "2": -17.001338688085696,
+    "3": 3.748326639892909
+   },
+   "dividends": {
+    "resisc45": 6.96117804551541,
+    "svhn": 11.914323962516747,
+    "gtsrb": 12.985274431057562,
+    "resisc45+svhn": -6.02409638554218,
+    "gtsrb+resisc45": -6.425702811244989,
+    "gtsrb+svhn": -4.551539491298527,
+    "gtsrb+resisc45+svhn": 3.748326639892909
+   },
+   "fake_all_harm": 0.0,
+   "culprit": "gtsrb",
+   "culprit_single": 12.985274431057562,
+   "fake_culprit_single": -0.2677376171351824
+  }
+ }
+}

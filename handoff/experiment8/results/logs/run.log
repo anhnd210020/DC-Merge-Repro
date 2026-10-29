@@ -1,0 +1,682 @@
+[2026-10-28 09:36:17] START prepare-data
+Downloading data:   0%|          | 0/18 [00:00<?, ?files/s]Downloading data:   6%|▌         | 1/18 [00:52<14:55, 52.65s/files]Downloading data:  11%|█         | 2/18 [01:37<13:03, 49.00s/files]Downloading data:  17%|█▋        | 3/18 [01:44<08:44, 34.99s/files]Downloading data:  22%|██▏       | 4/18 [02:19<08:08, 34.92s/files]Downloading data:  28%|██▊       | 5/18 [02:37<06:49, 31.49s/files]Downloading data:  33%|███▎      | 6/18 [02:46<05:33, 27.80s/files]Downloading data:  39%|███▉      | 7/18 [03:00<04:43, 25.75s/files]Downloading data:  44%|████▍     | 8/18 [03:05<03:51, 23.14s/files]Downloading data:  50%|█████     | 9/18 [03:10<03:10, 21.13s/files]Downloading data:  56%|█████▌    | 10/18 [03:14<02:35, 19.48s/files]Downloading data:  61%|██████    | 11/18 [03:23<02:09, 18.54s/files]Downloading data:  67%|██████▋   | 12/18 [03:38<01:49, 18.20s/files]Downloading data:  72%|███████▏  | 13/18 [03:47<01:27, 17.50s/files]Downloading data:  78%|███████▊  | 14/18 [04:00<01:08, 17.14s/files]Downloading data:  83%|████████▎ | 15/18 [04:15<00:51, 17.01s/files]Downloading data:  89%|████████▉ | 16/18 [04:27<00:33, 16.69s/files]Downloading data:  94%|█████████▍| 17/18 [04:33<00:16, 16.09s/files]Downloading data: 100%|██████████| 18/18 [04:44<00:00, 15.79s/files]Downloading data: 100%|██████████| 18/18 [04:44<00:00, 15.79s/files]
+Downloading data:   0%|          | 0/18 [00:00<?, ?files/s]Downloading data:   6%|▌         | 1/18 [00:09<02:49,  9.96s/files]Downloading data:  11%|█         | 2/18 [00:19<02:38,  9.94s/files]Downloading data:  17%|█▋        | 3/18 [00:24<02:02,  8.20s/files]Downloading data:  22%|██▏       | 4/18 [00:29<01:44,  7.48s/files]Downloading data:  28%|██▊       | 5/18 [00:35<01:31,  7.04s/files]Downloading data:  33%|███▎      | 6/18 [00:40<01:20,  6.67s/files]Downloading data:  39%|███▉      | 7/18 [00:46<01:12,  6.59s/files]Downloading data:  44%|████▍     | 8/18 [00:51<01:04,  6.45s/files]Downloading data:  50%|█████     | 9/18 [00:56<00:56,  6.25s/files]Downloading data:  56%|█████▌    | 10/18 [01:01<00:49,  6.17s/files]Downloading data:  61%|██████    | 11/18 [01:06<00:42,  6.07s/files]Downloading data:  67%|██████▋   | 12/18 [01:11<00:35,  5.95s/files]Downloading data:  72%|███████▏  | 13/18 [01:16<00:29,  5.85s/files]Downloading data:  78%|███████▊  | 14/18 [01:21<00:23,  5.83s/files]Downloading data:  83%|████████▎ | 15/18 [01:27<00:17,  5.84s/files]Downloading data:  89%|████████▉ | 16/18 [01:32<00:11,  5.79s/files]Downloading data:  94%|█████████▍| 17/18 [01:37<00:05,  5.76s/files]Downloading data: 100%|██████████| 18/18 [01:42<00:00,  5.72s/files]Downloading data: 100%|██████████| 18/18 [01:42<00:00,  5.72s/files]
+Generating train split:   0%|          | 0/19850 [00:00<?, ? examples/s]Generating train split:   2%|▏         | 300/19850 [00:00<00:11, 1675.30 examples/s]Generating train split:   3%|▎         | 600/19850 [00:00<00:11, 1685.22 examples/s]Generating train split:   5%|▍         | 900/19850 [00:00<00:09, 2010.41 examples/s]Generating train split:   6%|▌         | 1203/19850 [00:00<00:09, 1929.32 examples/s]Generating train split:   9%|▊         | 1703/19850 [00:00<00:06, 2721.31 examples/s]Generating train split:  12%|█▏        | 2306/19850 [00:01<00:07, 2364.83 examples/s]Generating train split:  13%|█▎        | 2606/19850 [00:01<00:06, 2474.50 examples/s]Generating train split:  16%|█▌        | 3106/19850 [00:01<00:06, 2450.65 examples/s]Generating train split:  17%|█▋        | 3409/19850 [00:01<00:07, 2246.91 examples/s]Generating train split:  19%|█▊        | 3709/19850 [00:01<00:07, 2026.60 examples/s]Generating train split:  20%|██        | 4009/19850 [00:01<00:07, 2161.45 examples/s]Generating train split:  22%|██▏       | 4309/19850 [00:01<00:07, 2206.35 examples/s]Generating train split:  24%|██▎       | 4712/19850 [00:02<00:07, 1916.96 examples/s]Generating train split:  26%|██▌       | 5112/19850 [00:02<00:07, 2043.74 examples/s]Generating train split:  27%|██▋       | 5412/19850 [00:02<00:06, 2165.59 examples/s]Generating train split:  30%|███       | 6015/19850 [00:02<00:06, 2090.41 examples/s]Generating train split:  32%|███▏      | 6415/19850 [00:02<00:06, 2189.60 examples/s]Generating train split:  34%|███▍      | 6718/19850 [00:03<00:06, 1896.62 examples/s]Generating train split:  35%|███▌      | 7018/19850 [00:03<00:06, 1967.32 examples/s]Generating train split:  37%|███▋      | 7418/19850 [00:03<00:05, 2206.15 examples/s]Generating train split:  39%|███▉      | 7718/19850 [00:03<00:05, 2184.74 examples/s]Generating train split:  41%|████▏     | 8221/19850 [00:03<00:05, 2138.93 examples/s]Generating train split:  44%|████▍     | 8721/19850 [00:04<00:04, 2269.93 examples/s]Generating train split:  45%|████▌     | 9024/19850 [00:04<00:05, 2090.94 examples/s]Generating train split:  47%|████▋     | 9424/19850 [00:04<00:04, 2308.58 examples/s]Generating train split:  49%|████▉     | 9724/19850 [00:04<00:04, 2247.40 examples/s]Generating train split:  51%|█████     | 10027/19850 [00:04<00:04, 2291.58 examples/s]Generating train split:  53%|█████▎    | 10427/19850 [00:04<00:04, 2154.00 examples/s]Generating train split:  55%|█████▍    | 10827/19850 [00:04<00:03, 2418.59 examples/s]Generating train split:  56%|█████▌    | 11130/19850 [00:05<00:03, 2473.43 examples/s]Generating train split:  58%|█████▊    | 11530/19850 [00:05<00:03, 2578.26 examples/s]Generating train split:  60%|█████▉    | 11830/19850 [00:05<00:03, 2153.76 examples/s]Generating train split:  62%|██████▏   | 12233/19850 [00:05<00:03, 2349.19 examples/s]Generating train split:  64%|██████▎   | 12633/19850 [00:05<00:02, 2671.46 examples/s]Generating train split:  65%|██████▌   | 12933/19850 [00:05<00:02, 2555.26 examples/s]Generating train split:  67%|██████▋   | 13336/19850 [00:05<00:02, 2501.15 examples/s]Generating train split:  69%|██████▉   | 13736/19850 [00:06<00:02, 2378.91 examples/s]Generating train split:  71%|███████   | 14036/19850 [00:06<00:02, 2308.03 examples/s]Generating train split:  73%|███████▎  | 14439/19850 [00:06<00:02, 2191.81 examples/s]Generating train split:  74%|███████▍  | 14739/19850 [00:06<00:02, 2099.63 examples/s]Generating train split:  76%|███████▌  | 15039/19850 [00:06<00:02, 2265.84 examples/s]Generating train split:  78%|███████▊  | 15542/19850 [00:06<00:01, 2435.12 examples/s]Generating train split:  81%|████████  | 16042/19850 [00:07<00:01, 2725.59 examples/s]Generating train split:  82%|████████▏ | 16342/19850 [00:07<00:01, 2421.80 examples/s]Generating train split:  84%|████████▍ | 16644/19850 [00:07<00:01, 2041.47 examples/s]Generating train split:  85%|████████▌ | 16944/19850 [00:07<00:01, 2053.47 examples/s]Generating train split:  87%|████████▋ | 17344/19850 [00:07<00:01, 2216.25 examples/s]Generating train split:  89%|████████▉ | 17746/19850 [00:07<00:01, 2024.81 examples/s]Generating train split:  91%|█████████▏| 18146/19850 [00:08<00:00, 2379.66 examples/s]Generating train split:  93%|█████████▎| 18446/19850 [00:08<00:00, 2057.59 examples/s]Generating train split:  95%|█████████▍| 18848/19850 [00:08<00:00, 2184.23 examples/s]Generating train split:  96%|█████████▋| 19148/19850 [00:08<00:00, 2180.43 examples/s]Generating train split:  98%|█████████▊| 19448/19850 [00:08<00:00, 2330.79 examples/s]Generating train split: 100%|█████████▉| 19848/19850 [00:08<00:00, 2278.45 examples/s]Generating train split: 100%|██████████| 19850/19850 [00:08<00:00, 2222.16 examples/s]
+Generating test split:   0%|          | 0/19850 [00:00<?, ? examples/s]Generating test split:   1%|          | 200/19850 [00:00<00:12, 1538.63 examples/s]Generating test split:   3%|▎         | 600/19850 [00:00<00:10, 1919.46 examples/s]Generating test split:   5%|▍         | 900/19850 [00:00<00:10, 1753.12 examples/s]Generating test split:   6%|▌         | 1203/19850 [00:00<00:09, 1868.61 examples/s]Generating test split:   9%|▉         | 1803/19850 [00:00<00:07, 2438.39 examples/s]Generating test split:  12%|█▏        | 2306/19850 [00:01<00:07, 2274.23 examples/s]Generating test split:  14%|█▎        | 2706/19850 [00:01<00:06, 2518.61 examples/s]Generating test split:  16%|█▌        | 3206/19850 [00:01<00:06, 2387.19 examples/s]Generating test split:  18%|█▊        | 3609/19850 [00:01<00:07, 2039.27 examples/s]Generating test split:  20%|██        | 4009/19850 [00:01<00:07, 2194.72 examples/s]Generating test split:  23%|██▎       | 4512/19850 [00:02<00:07, 2122.08 examples/s]Generating test split:  25%|██▍       | 4912/19850 [00:02<00:07, 2119.12 examples/s]Generating test split:  26%|██▋       | 5212/19850 [00:02<00:06, 2123.90 examples/s]Generating test split:  28%|██▊       | 5615/19850 [00:02<00:07, 1881.38 examples/s]Generating test split:  31%|███▏      | 6215/19850 [00:02<00:05, 2275.83 examples/s]Generating test split:  33%|███▎      | 6515/19850 [00:03<00:05, 2256.54 examples/s]Generating test split:  34%|███▍      | 6818/19850 [00:03<00:06, 2008.79 examples/s]Generating test split:  36%|███▋      | 7218/19850 [00:03<00:05, 2241.23 examples/s]Generating test split:  38%|███▊      | 7518/19850 [00:03<00:05, 2078.77 examples/s]Generating test split:  39%|███▉      | 7821/19850 [00:03<00:06, 1854.13 examples/s]Generating test split:  40%|████      | 8021/19850 [00:03<00:07, 1601.60 examples/s]Generating test split:  43%|████▎     | 8521/19850 [00:04<00:05, 2103.92 examples/s]Generating test split:  45%|████▍     | 8924/19850 [00:04<00:04, 2300.05 examples/s]Generating test split:  47%|████▋     | 9424/19850 [00:04<00:04, 2567.13 examples/s]Generating test split:  49%|████▉     | 9724/19850 [00:04<00:04, 2225.58 examples/s]Generating test split:  51%|█████     | 10027/19850 [00:04<00:04, 1991.14 examples/s]Generating test split:  52%|█████▏    | 10327/19850 [00:04<00:05, 1877.20 examples/s]Generating test split:  54%|█████▎    | 10627/19850 [00:05<00:04, 1933.31 examples/s]Generating test split:  56%|█████▌    | 11130/19850 [00:05<00:03, 2240.83 examples/s]Generating test split:  58%|█████▊    | 11530/19850 [00:05<00:03, 2578.89 examples/s]Generating test split:  60%|█████▉    | 11830/19850 [00:05<00:03, 2333.52 examples/s]Generating test split:  61%|██████    | 12130/19850 [00:05<00:03, 2379.30 examples/s]Generating test split:  63%|██████▎   | 12533/19850 [00:05<00:02, 2552.54 examples/s]Generating test split:  65%|██████▍   | 12833/19850 [00:05<00:03, 2319.14 examples/s]Generating test split:  67%|██████▋   | 13336/19850 [00:06<00:02, 2309.09 examples/s]Generating test split:  69%|██████▉   | 13736/19850 [00:06<00:02, 2374.71 examples/s]Generating test split:  71%|███████   | 14136/19850 [00:06<00:02, 2457.97 examples/s]Generating test split:  73%|███████▎  | 14439/19850 [00:06<00:02, 2162.32 examples/s]Generating test split:  74%|███████▍  | 14739/19850 [00:06<00:02, 2064.16 examples/s]Generating test split:  76%|███████▋  | 15139/19850 [00:06<00:02, 2190.80 examples/s]Generating test split:  78%|███████▊  | 15542/19850 [00:07<00:01, 2178.53 examples/s]Generating test split:  80%|████████  | 15942/19850 [00:07<00:01, 2399.50 examples/s]Generating test split:  82%|████████▏ | 16242/19850 [00:07<00:01, 2271.72 examples/s]Generating test split:  84%|████████▍ | 16644/19850 [00:07<00:01, 1844.77 examples/s]Generating test split:  86%|████████▌ | 17044/19850 [00:07<00:01, 2033.05 examples/s]Generating test split:  88%|████████▊ | 17444/19850 [00:08<00:01, 2115.91 examples/s]Generating test split:  89%|████████▉ | 17746/19850 [00:08<00:01, 2093.82 examples/s]Generating test split:  92%|█████████▏| 18246/19850 [00:08<00:00, 2359.20 examples/s]Generating test split:  95%|█████████▍| 18848/19850 [00:08<00:00, 2505.58 examples/s]Generating test split:  96%|█████████▋| 19148/19850 [00:08<00:00, 2275.57 examples/s]Generating test split:  98%|█████████▊| 19548/19850 [00:08<00:00, 2350.40 examples/s]Generating test split: 100%|██████████| 19850/19850 [00:09<00:00, 2375.21 examples/s]Generating test split: 100%|██████████| 19850/19850 [00:09<00:00, 2190.73 examples/s]
+[data] sun397: 256/19850[data] sun397: 512/19850[data] sun397: 768/19850[data] sun397: 1024/19850[data] sun397: 1280/19850[data] sun397: 1536/19850[data] sun397: 1792/19850[data] sun397: 2048/19850[data] sun397: 2304/19850[data] sun397: 2560/19850[data] sun397: 2816/19850[data] sun397: 3072/19850[data] sun397: 3328/19850[data] sun397: 3584/19850[data] sun397: 3840/19850[data] sun397: 4096/19850[data] sun397: 4352/19850[data] sun397: 4608/19850[data] sun397: 4864/19850[data] sun397: 5120/19850[data] sun397: 5376/19850[data] sun397: 5632/19850[data] sun397: 5888/19850[data] sun397: 6144/19850[data] sun397: 6400/19850[data] sun397: 6656/19850[data] sun397: 6912/19850[data] sun397: 7168/19850[data] sun397: 7424/19850[data] sun397: 7680/19850[data] sun397: 7936/19850[data] sun397: 8192/19850[data] sun397: 8448/19850[data] sun397: 8704/19850[data] sun397: 8960/19850[data] sun397: 9216/19850[data] sun397: 9472/19850[data] sun397: 9728/19850[data] sun397: 9984/19850[data] sun397: 10240/19850[data] sun397: 10496/19850[data] sun397: 10752/19850[data] sun397: 11008/19850[data] sun397: 11264/19850[data] sun397: 11520/19850[data] sun397: 11776/19850[data] sun397: 12032/19850[data] sun397: 12288/19850[data] sun397: 12544/19850[data] sun397: 12800/19850[data] sun397: 13056/19850[data] sun397: 13312/19850[data] sun397: 13568/19850[data] sun397: 13824/19850[data] sun397: 14080/19850[data] sun397: 14336/19850[data] sun397: 14592/19850[data] sun397: 14848/19850[data] sun397: 15104/19850[data] sun397: 15360/19850[data] sun397: 15616/19850[data] sun397: 15872/19850[data] sun397: 16128/19850[data] sun397: 16384/19850[data] sun397: 16640/19850[data] sun397: 16896/19850[data] sun397: 17152/19850[data] sun397: 17408/19850[data] sun397: 17664/19850[data] sun397: 17920/19850[data] sun397: 18176/19850[data] sun397: 18432/19850/venv/main/lib/python3.12/site-packages/PIL/TiffImagePlugin.py:946: UserWarning: Tag data larger than file. Skipping tag 34675
+  warnings.warn(f"Tag data larger than file. Skipping tag {tag}")
+[data] sun397: 18688/19850[data] sun397: 18944/19850[data] sun397: 19200/19850[data] sun397: 19456/19850[data] sun397: 19712/19850[data] sun397: 19850/19850
+[data] sun397: 19850 images written
+Generating train split:   0%|          | 0/8144 [00:00<?, ? examples/s]Generating train split:   7%|▋         | 600/8144 [00:00<00:01, 4361.79 examples/s]Generating train split:  26%|██▌       | 2100/8144 [00:00<00:00, 9137.54 examples/s]Generating train split:  38%|███▊      | 3100/8144 [00:00<00:00, 8058.25 examples/s]Generating train split:  51%|█████     | 4172/8144 [00:00<00:00, 8657.59 examples/s]Generating train split:  66%|██████▌   | 5372/8144 [00:00<00:00, 9522.11 examples/s]Generating train split:  82%|████████▏ | 6672/8144 [00:00<00:00, 10053.26 examples/s]Generating train split: 100%|██████████| 8144/8144 [00:00<00:00, 11270.64 examples/s]Generating train split: 100%|██████████| 8144/8144 [00:00<00:00, 9775.15 examples/s] 
+Generating test split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating test split:  17%|█▋        | 1400/8041 [00:00<00:00, 12584.41 examples/s]Generating test split:  37%|███▋      | 3000/8041 [00:00<00:00, 9227.60 examples/s] Generating test split:  55%|█████▍    | 4421/8041 [00:00<00:00, 8802.82 examples/s]Generating test split:  70%|██████▉   | 5621/8041 [00:00<00:00, 9392.20 examples/s]Generating test split:  85%|████████▍ | 6821/8041 [00:00<00:00, 9996.05 examples/s]Generating test split: 100%|██████████| 8041/8041 [00:00<00:00, 10251.78 examples/s]
+Generating contrast split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating contrast split:  39%|███▊      | 3100/8041 [00:00<00:00, 29720.39 examples/s]Generating contrast split:  78%|███████▊  | 6300/8041 [00:00<00:00, 30661.19 examples/s]Generating contrast split: 100%|██████████| 8041/8041 [00:00<00:00, 31381.51 examples/s]
+Generating gaussian_noise split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating gaussian_noise split:  19%|█▊        | 1500/8041 [00:00<00:00, 13605.06 examples/s]Generating gaussian_noise split:  36%|███▌      | 2900/8041 [00:00<00:00, 8604.32 examples/s] Generating gaussian_noise split:  49%|████▊     | 3900/8041 [00:00<00:00, 9043.09 examples/s]Generating gaussian_noise split:  64%|██████▎   | 5121/8041 [00:00<00:00, 9962.19 examples/s]Generating gaussian_noise split:  79%|███████▊  | 6321/8041 [00:00<00:00, 9844.04 examples/s]Generating gaussian_noise split:  97%|█████████▋| 7821/8041 [00:00<00:00, 10987.19 examples/s]Generating gaussian_noise split: 100%|██████████| 8041/8041 [00:00<00:00, 10440.96 examples/s]
+Generating impulse_noise split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating impulse_noise split:  15%|█▍        | 1200/8041 [00:00<00:00, 11209.22 examples/s]Generating impulse_noise split:  30%|██▉       | 2400/8041 [00:00<00:00, 10585.10 examples/s]Generating impulse_noise split:  44%|████▎     | 3500/8041 [00:00<00:00, 10136.55 examples/s]Generating impulse_noise split:  57%|█████▋    | 4621/8041 [00:00<00:00, 9090.31 examples/s] Generating impulse_noise split:  74%|███████▎  | 5921/8041 [00:00<00:00, 8245.65 examples/s]Generating impulse_noise split:  89%|████████▊ | 7121/8041 [00:00<00:00, 7520.63 examples/s]Generating impulse_noise split: 100%|██████████| 8041/8041 [00:00<00:00, 8498.22 examples/s]
+Generating jpeg_compression split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating jpeg_compression split:  31%|███       | 2500/8041 [00:00<00:00, 22582.66 examples/s]Generating jpeg_compression split:  67%|██████▋   | 5400/8041 [00:00<00:00, 14944.30 examples/s]Generating jpeg_compression split:  98%|█████████▊| 7900/8041 [00:00<00:00, 14688.92 examples/s]Generating jpeg_compression split: 100%|██████████| 8041/8041 [00:00<00:00, 15022.29 examples/s]
+Generating motion_blur split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating motion_blur split:  19%|█▊        | 1500/8041 [00:00<00:00, 13937.74 examples/s]Generating motion_blur split:  46%|████▌     | 3700/8041 [00:00<00:00, 17554.88 examples/s]Generating motion_blur split:  77%|███████▋  | 6200/8041 [00:00<00:00, 20473.91 examples/s]Generating motion_blur split: 100%|██████████| 8041/8041 [00:00<00:00, 21000.26 examples/s]
+Generating pixelate split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating pixelate split: 100%|██████████| 8041/8041 [00:00<00:00, 290464.37 examples/s]
+Generating spatter split:   0%|          | 0/8041 [00:00<?, ? examples/s]Generating spatter split:  20%|█▉        | 1600/8041 [00:00<00:00, 15018.81 examples/s]Generating spatter split:  41%|████      | 3300/8041 [00:00<00:00, 11844.22 examples/s]Generating spatter split:  60%|█████▉    | 4821/8041 [00:00<00:00, 12423.34 examples/s]Generating spatter split:  80%|███████▉  | 6421/8041 [00:00<00:00, 12823.25 examples/s]Generating spatter split: 100%|██████████| 8041/8041 [00:00<00:00, 13387.49 examples/s]
+[data] stanford-cars: 256/8041[data] stanford-cars: 512/8041[data] stanford-cars: 768/8041[data] stanford-cars: 1024/8041[data] stanford-cars: 1280/8041[data] stanford-cars: 1536/8041[data] stanford-cars: 1792/8041[data] stanford-cars: 2048/8041[data] stanford-cars: 2304/8041[data] stanford-cars: 2560/8041[data] stanford-cars: 2816/8041[data] stanford-cars: 3072/8041[data] stanford-cars: 3328/8041[data] stanford-cars: 3584/8041[data] stanford-cars: 3840/8041[data] stanford-cars: 4096/8041[data] stanford-cars: 4352/8041[data] stanford-cars: 4608/8041[data] stanford-cars: 4864/8041[data] stanford-cars: 5120/8041[data] stanford-cars: 5376/8041[data] stanford-cars: 5632/8041[data] stanford-cars: 5888/8041[data] stanford-cars: 6144/8041[data] stanford-cars: 6400/8041[data] stanford-cars: 6656/8041[data] stanford-cars: 6912/8041[data] stanford-cars: 7168/8041[data] stanford-cars: 7424/8041[data] stanford-cars: 7680/8041[data] stanford-cars: 7936/8041[data] stanford-cars: 8041/8041
+[data] stanford-cars: 8041 images written
+Generating train split:   0%|          | 0/18900 [00:00<?, ? examples/s]Generating train split:  35%|███▌      | 6700/18900 [00:00<00:00, 65923.11 examples/s]Generating train split:  79%|███████▉  | 15000/18900 [00:00<00:00, 75276.36 examples/s]Generating train split: 100%|██████████| 18900/18900 [00:00<00:00, 76496.89 examples/s]
+Generating test split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 6300/6300 [00:00<00:00, 79939.12 examples/s]
+Generating contrast split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating contrast split: 100%|██████████| 6300/6300 [00:00<00:00, 96176.52 examples/s]
+Generating gaussian_noise split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating gaussian_noise split: 100%|██████████| 6300/6300 [00:00<00:00, 65690.94 examples/s]
+Generating impulse_noise split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating impulse_noise split: 100%|██████████| 6300/6300 [00:00<00:00, 79548.54 examples/s]
+Generating jpeg_compression split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating jpeg_compression split: 100%|██████████| 6300/6300 [00:00<00:00, 104009.43 examples/s]
+Generating motion_blur split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating motion_blur split: 100%|██████████| 6300/6300 [00:00<00:00, 130495.90 examples/s]
+Generating pixelate split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating pixelate split: 100%|██████████| 6300/6300 [00:00<00:00, 376540.63 examples/s]
+Generating spatter split:   0%|          | 0/6300 [00:00<?, ? examples/s]Generating spatter split: 100%|██████████| 6300/6300 [00:00<00:00, 91627.91 examples/s]
+[data] resisc45: 256/6300[data] resisc45: 512/6300[data] resisc45: 768/6300[data] resisc45: 1024/6300[data] resisc45: 1280/6300[data] resisc45: 1536/6300[data] resisc45: 1792/6300[data] resisc45: 2048/6300[data] resisc45: 2304/6300[data] resisc45: 2560/6300[data] resisc45: 2816/6300[data] resisc45: 3072/6300[data] resisc45: 3328/6300[data] resisc45: 3584/6300[data] resisc45: 3840/6300[data] resisc45: 4096/6300[data] resisc45: 4352/6300[data] resisc45: 4608/6300[data] resisc45: 4864/6300[data] resisc45: 5120/6300[data] resisc45: 5376/6300[data] resisc45: 5632/6300[data] resisc45: 5888/6300[data] resisc45: 6144/6300[data] resisc45: 6300/6300
+[data] resisc45: 6300 images written
+Generating train split:   0%|          | 0/21600 [00:00<?, ? examples/s]Generating train split:  80%|████████  | 17300/21600 [00:00<00:00, 172275.62 examples/s]Generating train split: 100%|██████████| 21600/21600 [00:00<00:00, 187190.00 examples/s]
+Generating test split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 2700/2700 [00:00<00:00, 173188.47 examples/s]
+Generating contrast split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating contrast split: 100%|██████████| 2700/2700 [00:00<00:00, 308228.43 examples/s]
+Generating gaussian_noise split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating gaussian_noise split: 100%|██████████| 2700/2700 [00:00<00:00, 280576.30 examples/s]
+Generating impulse_noise split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating impulse_noise split: 100%|██████████| 2700/2700 [00:00<00:00, 304368.02 examples/s]
+Generating jpeg_compression split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating jpeg_compression split: 100%|██████████| 2700/2700 [00:00<00:00, 292255.82 examples/s]
+Generating motion_blur split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating motion_blur split: 100%|██████████| 2700/2700 [00:00<00:00, 317180.73 examples/s]
+Generating pixelate split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating pixelate split: 100%|██████████| 2700/2700 [00:00<00:00, 354215.41 examples/s]
+Generating spatter split:   0%|          | 0/2700 [00:00<?, ? examples/s]Generating spatter split: 100%|██████████| 2700/2700 [00:00<00:00, 284252.53 examples/s]
+[data] eurosat: 256/2700[data] eurosat: 512/2700[data] eurosat: 768/2700[data] eurosat: 1024/2700[data] eurosat: 1280/2700[data] eurosat: 1536/2700[data] eurosat: 1792/2700[data] eurosat: 2048/2700[data] eurosat: 2304/2700[data] eurosat: 2560/2700[data] eurosat: 2700/2700
+[data] eurosat: 2700 images written
+Generating train split:   0%|          | 0/73257 [00:00<?, ? examples/s]Generating train split:  59%|█████▉    | 43400/73257 [00:00<00:00, 416255.73 examples/s]Generating train split: 100%|██████████| 73257/73257 [00:00<00:00, 430833.91 examples/s]
+Generating test split:   0%|          | 0/26032 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 26032/26032 [00:00<00:00, 354069.30 examples/s]
+Generating extra split:   0%|          | 0/531131 [00:00<?, ? examples/s]Generating extra split:   5%|▌         | 29100/531131 [00:00<00:01, 289516.90 examples/s]Generating extra split:  12%|█▏        | 64000/531131 [00:00<00:01, 324096.48 examples/s]Generating extra split:  19%|█▊        | 98400/531131 [00:00<00:01, 332996.47 examples/s]Generating extra split:  27%|██▋       | 141800/531131 [00:00<00:01, 284092.15 examples/s]Generating extra split:  33%|███▎      | 177200/531131 [00:00<00:01, 280896.60 examples/s]Generating extra split:  40%|████      | 212600/531131 [00:00<00:01, 297010.75 examples/s]Generating extra split:  47%|████▋     | 250100/531131 [00:00<00:00, 319001.21 examples/s]Generating extra split:  54%|█████▎    | 284266/531131 [00:00<00:00, 309832.39 examples/s]Generating extra split:  60%|██████    | 318866/531131 [00:01<00:00, 301376.82 examples/s]Generating extra split:  67%|██████▋   | 354266/531131 [00:01<00:00, 310366.49 examples/s]Generating extra split:  73%|███████▎  | 389666/531131 [00:01<00:00, 317342.72 examples/s]Generating extra split:  80%|████████  | 425166/531131 [00:01<00:00, 322583.62 examples/s]Generating extra split:  87%|████████▋ | 460666/531131 [00:01<00:00, 306465.60 examples/s]Generating extra split:  93%|█████████▎| 496066/531131 [00:01<00:00, 296307.98 examples/s]Generating extra split: 100%|██████████| 531131/531131 [00:01<00:00, 307097.86 examples/s]Generating extra split: 100%|██████████| 531131/531131 [00:01<00:00, 306209.91 examples/s]
+[data] svhn: 256/26032[data] svhn: 512/26032[data] svhn: 768/26032[data] svhn: 1024/26032[data] svhn: 1280/26032[data] svhn: 1536/26032[data] svhn: 1792/26032[data] svhn: 2048/26032[data] svhn: 2304/26032[data] svhn: 2560/26032[data] svhn: 2816/26032[data] svhn: 3072/26032[data] svhn: 3328/26032[data] svhn: 3584/26032[data] svhn: 3840/26032[data] svhn: 4096/26032[data] svhn: 4352/26032[data] svhn: 4608/26032[data] svhn: 4864/26032[data] svhn: 5120/26032[data] svhn: 5376/26032[data] svhn: 5632/26032[data] svhn: 5888/26032[data] svhn: 6144/26032[data] svhn: 6400/26032[data] svhn: 6656/26032[data] svhn: 6912/26032[data] svhn: 7168/26032[data] svhn: 7424/26032[data] svhn: 7680/26032[data] svhn: 7936/26032[data] svhn: 8192/26032[data] svhn: 8448/26032[data] svhn: 8704/26032[data] svhn: 8960/26032[data] svhn: 9216/26032[data] svhn: 9472/26032[data] svhn: 9728/26032[data] svhn: 9984/26032[data] svhn: 10240/26032[data] svhn: 10496/26032[data] svhn: 10752/26032[data] svhn: 11008/26032[data] svhn: 11264/26032[data] svhn: 11520/26032[data] svhn: 11776/26032[data] svhn: 12032/26032[data] svhn: 12288/26032[data] svhn: 12544/26032[data] svhn: 12800/26032[data] svhn: 13056/26032[data] svhn: 13312/26032[data] svhn: 13568/26032[data] svhn: 13824/26032[data] svhn: 14080/26032[data] svhn: 14336/26032[data] svhn: 14592/26032[data] svhn: 14848/26032[data] svhn: 15104/26032[data] svhn: 15360/26032[data] svhn: 15616/26032[data] svhn: 15872/26032[data] svhn: 16128/26032[data] svhn: 16384/26032[data] svhn: 16640/26032[data] svhn: 16896/26032[data] svhn: 17152/26032[data] svhn: 17408/26032[data] svhn: 17664/26032[data] svhn: 17920/26032[data] svhn: 18176/26032[data] svhn: 18432/26032[data] svhn: 18688/26032[data] svhn: 18944/26032[data] svhn: 19200/26032[data] svhn: 19456/26032[data] svhn: 19712/26032[data] svhn: 19968/26032[data] svhn: 20224/26032[data] svhn: 20480/26032[data] svhn: 20736/26032[data] svhn: 20992/26032[data] svhn: 21248/26032[data] svhn: 21504/26032[data] svhn: 21760/26032[data] svhn: 22016/26032[data] svhn: 22272/26032[data] svhn: 22528/26032[data] svhn: 22784/26032[data] svhn: 23040/26032[data] svhn: 23296/26032[data] svhn: 23552/26032[data] svhn: 23808/26032[data] svhn: 24064/26032[data] svhn: 24320/26032[data] svhn: 24576/26032[data] svhn: 24832/26032[data] svhn: 25088/26032[data] svhn: 25344/26032[data] svhn: 25600/26032[data] svhn: 25856/26032[data] svhn: 26032/26032
+[data] svhn: 26032 images written
+Generating train split:   0%|          | 0/26640 [00:00<?, ? examples/s]Generating train split:  25%|██▌       | 6700/26640 [00:00<00:00, 62764.86 examples/s]Generating train split:  49%|████▉     | 13100/26640 [00:00<00:00, 62989.78 examples/s]Generating train split:  74%|███████▍  | 19700/26640 [00:00<00:00, 64195.14 examples/s]Generating train split: 100%|██████████| 26640/26640 [00:00<00:00, 66725.78 examples/s]
+Generating test split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating test split:  52%|█████▏    | 6600/12630 [00:00<00:00, 58036.34 examples/s]Generating test split: 100%|██████████| 12630/12630 [00:00<00:00, 68872.88 examples/s]
+Generating contrast split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating contrast split:  29%|██▊       | 3600/12630 [00:00<00:00, 34031.71 examples/s]Generating contrast split:  60%|██████    | 7600/12630 [00:00<00:00, 36029.16 examples/s]Generating contrast split: 100%|██████████| 12630/12630 [00:00<00:00, 41707.65 examples/s]
+Generating gaussian_noise split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating gaussian_noise split:  61%|██████    | 7700/12630 [00:00<00:00, 75599.05 examples/s]Generating gaussian_noise split: 100%|██████████| 12630/12630 [00:00<00:00, 87552.61 examples/s]
+Generating impulse_noise split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating impulse_noise split:  43%|████▎     | 5400/12630 [00:00<00:00, 52287.43 examples/s]Generating impulse_noise split:  89%|████████▊ | 11200/12630 [00:00<00:00, 55157.56 examples/s]Generating impulse_noise split: 100%|██████████| 12630/12630 [00:00<00:00, 58541.08 examples/s]
+Generating jpeg_compression split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating jpeg_compression split:  43%|████▎     | 5400/12630 [00:00<00:00, 53259.88 examples/s]Generating jpeg_compression split:  95%|█████████▌| 12000/12630 [00:00<00:00, 60009.70 examples/s]Generating jpeg_compression split: 100%|██████████| 12630/12630 [00:00<00:00, 59473.10 examples/s]
+Generating motion_blur split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating motion_blur split:  44%|████▍     | 5600/12630 [00:00<00:00, 54258.70 examples/s]Generating motion_blur split:  92%|█████████▏| 11600/12630 [00:00<00:00, 56774.55 examples/s]Generating motion_blur split: 100%|██████████| 12630/12630 [00:00<00:00, 57202.71 examples/s]
+Generating pixelate split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating pixelate split: 100%|██████████| 12630/12630 [00:00<00:00, 185811.96 examples/s]
+Generating spatter split:   0%|          | 0/12630 [00:00<?, ? examples/s]Generating spatter split:  43%|████▎     | 5400/12630 [00:00<00:00, 53276.66 examples/s]Generating spatter split:  94%|█████████▍| 11900/12630 [00:00<00:00, 60001.05 examples/s]Generating spatter split: 100%|██████████| 12630/12630 [00:00<00:00, 59596.68 examples/s]
+[data] gtsrb: 256/12630[data] gtsrb: 512/12630[data] gtsrb: 768/12630[data] gtsrb: 1024/12630[data] gtsrb: 1280/12630[data] gtsrb: 1536/12630[data] gtsrb: 1792/12630[data] gtsrb: 2048/12630[data] gtsrb: 2304/12630[data] gtsrb: 2560/12630[data] gtsrb: 2816/12630[data] gtsrb: 3072/12630[data] gtsrb: 3328/12630[data] gtsrb: 3584/12630[data] gtsrb: 3840/12630[data] gtsrb: 4096/12630[data] gtsrb: 4352/12630[data] gtsrb: 4608/12630[data] gtsrb: 4864/12630[data] gtsrb: 5120/12630[data] gtsrb: 5376/12630[data] gtsrb: 5632/12630[data] gtsrb: 5888/12630[data] gtsrb: 6144/12630[data] gtsrb: 6400/12630[data] gtsrb: 6656/12630[data] gtsrb: 6912/12630[data] gtsrb: 7168/12630[data] gtsrb: 7424/12630[data] gtsrb: 7680/12630[data] gtsrb: 7936/12630[data] gtsrb: 8192/12630[data] gtsrb: 8448/12630[data] gtsrb: 8704/12630[data] gtsrb: 8960/12630[data] gtsrb: 9216/12630[data] gtsrb: 9472/12630[data] gtsrb: 9728/12630[data] gtsrb: 9984/12630[data] gtsrb: 10240/12630[data] gtsrb: 10496/12630[data] gtsrb: 10752/12630[data] gtsrb: 11008/12630[data] gtsrb: 11264/12630[data] gtsrb: 11520/12630[data] gtsrb: 11776/12630[data] gtsrb: 12032/12630[data] gtsrb: 12288/12630[data] gtsrb: 12544/12630[data] gtsrb: 12630/12630
+[data] gtsrb: 12630 images written
+Generating train split:   0%|          | 0/60000 [00:00<?, ? examples/s]Generating train split:  60%|█████▉    | 35800/60000 [00:00<00:00, 357072.39 examples/s]Generating train split: 100%|██████████| 60000/60000 [00:00<00:00, 379485.16 examples/s]
+Generating test split:   0%|          | 0/10000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 10000/10000 [00:00<00:00, 391643.31 examples/s]
+[data] mnist: 256/10000[data] mnist: 512/10000[data] mnist: 768/10000[data] mnist: 1024/10000[data] mnist: 1280/10000[data] mnist: 1536/10000[data] mnist: 1792/10000[data] mnist: 2048/10000[data] mnist: 2304/10000[data] mnist: 2560/10000[data] mnist: 2816/10000[data] mnist: 3072/10000[data] mnist: 3328/10000[data] mnist: 3584/10000[data] mnist: 3840/10000[data] mnist: 4096/10000[data] mnist: 4352/10000[data] mnist: 4608/10000[data] mnist: 4864/10000[data] mnist: 5120/10000[data] mnist: 5376/10000[data] mnist: 5632/10000[data] mnist: 5888/10000[data] mnist: 6144/10000[data] mnist: 6400/10000[data] mnist: 6656/10000[data] mnist: 6912/10000[data] mnist: 7168/10000[data] mnist: 7424/10000[data] mnist: 7680/10000[data] mnist: 7936/10000[data] mnist: 8192/10000[data] mnist: 8448/10000[data] mnist: 8704/10000[data] mnist: 8960/10000[data] mnist: 9216/10000[data] mnist: 9472/10000[data] mnist: 9728/10000[data] mnist: 9984/10000[data] mnist: 10000/10000
+[data] mnist: 10000 images written
+Generating train split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating train split:  11%|█         | 400/3760 [00:00<00:00, 3698.40 examples/s]Generating train split:  45%|████▌     | 1700/3760 [00:00<00:00, 7854.53 examples/s]Generating train split:  85%|████████▌ | 3200/3760 [00:00<00:00, 9901.38 examples/s]Generating train split: 100%|██████████| 3760/3760 [00:00<00:00, 9056.47 examples/s]
+Generating test split:   0%|          | 0/1880 [00:00<?, ? examples/s]Generating test split:  80%|███████▉  | 1500/1880 [00:00<00:00, 13653.78 examples/s]Generating test split: 100%|██████████| 1880/1880 [00:00<00:00, 14193.74 examples/s]
+[data] dtd: 256/1880[data] dtd: 512/1880[data] dtd: 768/1880[data] dtd: 1024/1880[data] dtd: 1280/1880[data] dtd: 1536/1880[data] dtd: 1792/1880[data] dtd: 1880/1880
+[data] dtd: 1880 images written
+[2026-10-28 09:56:14] END rc=0 prepare-data
+[2026-10-28 09:56:14] START check
+[09:56:15] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+[09:57:43] check sun397: expert 74.86 (ref 75.0), zero-shot 63.17 (ref 63.2)
+[09:57:53] check stanford-cars: expert 78.51 (ref 78.3), zero-shot 59.59 (ref 59.8)
+[09:58:02] check resisc45: expert 95.14 (ref 95.2), zero-shot 60.22 (ref 60.7)
+[09:58:06] check eurosat: expert 99.07 (ref 99.0), zero-shot 45.04 (ref 46.0)
+[09:58:41] check svhn: expert 97.27 (ref 97.3), zero-shot 31.61 (ref 31.6)
+[09:58:58] check gtsrb: expert 98.91 (ref 98.9), zero-shot 32.48 (ref 32.5)
+[09:59:12] check mnist: expert 99.58 (ref 99.6), zero-shot 48.25 (ref 48.3)
+[09:59:14] check dtd: expert 79.68 (ref 79.7), zero-shot 44.20 (ref 43.9)
+[10:00:13] check: PASS [] (throughput 1437 images/s)
+[2026-10-28 10:00:14] END rc=0 check
+[2026-10-28 10:00:14] START alpha --op ta
+[10:00:15] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[10:02:19] [ta] alpha 0.1: mean normalized 70.26
+[10:03:56] [ta] alpha 0.2: mean normalized 80.69
+[10:05:33] [ta] alpha 0.3: mean normalized 85.78
+[10:07:10] [ta] alpha 0.4: mean normalized 86.79
+[10:08:47] [ta] alpha 0.5: mean normalized 85.36
+[10:10:24] [ta] alpha 0.6: mean normalized 81.86
+[10:12:00] [ta] alpha 0.7: mean normalized 77.03
+[10:13:37] [ta] alpha 0.8: mean normalized 71.01
+[10:15:14] [ta] alpha 0.9: mean normalized 64.75
+[10:16:51] [ta] alpha 1.0: mean normalized 58.52
+[10:16:51] [ta] selected alpha = 0.4
+[2026-10-28 10:16:52] END rc=0 alpha --op ta
+[2026-10-28 10:16:52] START subsets --op ta
+[10:16:53] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[10:17:31] [ta] subsets 10/162 (38s)
+[10:18:26] [ta] subsets 20/162 (93s)
+[10:19:06] [ta] subsets 30/162 (133s)
+[10:20:11] [ta] subsets 40/162 (198s)
+[10:21:29] [ta] subsets 50/162 (276s)
+[10:22:48] [ta] subsets 60/162 (355s)
+[10:24:01] [ta] subsets 70/162 (428s)
+[10:25:10] [ta] subsets 80/162 (497s)
+[10:26:17] [ta] subsets 90/162 (563s)
+[10:27:44] [ta] subsets 100/162 (651s)
+[10:29:29] [ta] subsets 110/162 (756s)
+[10:31:10] [ta] subsets 120/162 (857s)
+[10:32:40] [ta] subsets 130/162 (946s)
+[10:34:15] [ta] subsets 140/162 (1042s)
+[10:35:11] [ta] subsets 150/162 (1098s)
+[10:36:13] [ta] subsets 160/162 (1160s)
+[10:36:23] [ta] subsets 162/162 (1170s)
+[2026-10-28 10:36:24] END rc=0 subsets --op ta
+[2026-10-28 10:36:24] START analyze --op ta
+[10:36:26] [ta] analyze: 280 pairs; median context harm 6.44 pp
+[2026-10-28 10:36:27] END rc=0 analyze --op ta
+[2026-10-28 10:36:27] START select --op ta
+[10:36:28] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[10:41:47] [ta] select: 16 pairs over 8 victims (266 eligible candidates); not eligible: []
+[2026-10-28 10:41:48] END rc=0 select --op ta
+[2026-10-28 10:41:48] START report --op ta
+[10:41:49] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[10:43:23] [ta] report 1: ta|sun397|sun397-svhn-gtsrb-mnist H=17.7 interaction=11.6 fake_all=0.1
+[10:44:04] [ta] report 2: ta|sun397|sun397-eurosat-svhn-gtsrb H=13.4 interaction=6.7 fake_all=0.2
+[10:44:35] [ta] report 3: ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist H=21.4 interaction=13.5 fake_all=-0.4
+[10:44:52] [ta] report 4: ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb H=19.2 interaction=9.8 fake_all=-0.3
+[10:45:16] [ta] report 5: ta|resisc45|resisc45-svhn-gtsrb-mnist H=30.5 interaction=20.5 fake_all=-0.0
+[10:45:30] [ta] report 6: ta|resisc45|resisc45-eurosat-svhn-gtsrb H=18.5 interaction=6.4 fake_all=0.0
+[10:45:41] [ta] report 7: ta|eurosat|eurosat-svhn-gtsrb-mnist H=37.8 interaction=30.3 fake_all=0.1
+[10:45:50] [ta] report 8: ta|eurosat|eurosat-svhn-gtsrb-dtd H=22.0 interaction=16.7 fake_all=-0.1
+[10:47:38] [ta] report 9: ta|svhn|sun397-resisc45-eurosat-svhn H=14.4 interaction=7.4 fake_all=0.2
+[10:48:27] [ta] report 10: ta|svhn|stanford-cars-resisc45-eurosat-svhn H=12.2 interaction=5.8 fake_all=0.1
+[10:49:17] [ta] report 11: ta|gtsrb|sun397-resisc45-eurosat-gtsrb H=13.9 interaction=6.4 fake_all=-0.0
+[10:49:39] [ta] report 12: ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb H=12.8 interaction=5.5 fake_all=-0.1
+[10:50:18] [ta] report 13: ta|mnist|resisc45-eurosat-gtsrb-mnist H=2.5 interaction=0.8 fake_all=0.1
+[10:50:35] [ta] report 14: ta|mnist|stanford-cars-eurosat-gtsrb-mnist H=2.0 interaction=0.3 fake_all=0.0
+[10:50:44] [ta] report 15: ta|dtd|svhn-gtsrb-mnist-dtd H=27.2 interaction=16.9 fake_all=-0.1
+[10:50:50] [ta] report 16: ta|dtd|eurosat-svhn-gtsrb-dtd H=21.7 interaction=12.4 fake_all=-0.4
+[2026-10-28 10:50:51] END rc=0 report --op ta
+[2026-10-28 10:50:51] START factorial --op ta
+[10:50:52] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[10:54:03] [ta] factorial ta|sun397|sun397-svhn-gtsrb-mnist: Gamma=17.72 phi E/M/Lt = 9.40/5.59/2.73
+[10:56:47] [ta] factorial ta|sun397|sun397-eurosat-svhn-gtsrb: Gamma=13.41 phi E/M/Lt = 7.25/4.18/1.97
+[10:59:19] [ta] factorial ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist: Gamma=21.44 phi E/M/Lt = 14.08/5.64/1.72
+[11:01:31] [ta] factorial ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: Gamma=19.16 phi E/M/Lt = 12.48/5.61/1.07
+[11:03:58] [ta] factorial ta|resisc45|resisc45-svhn-gtsrb-mnist: Gamma=30.47 phi E/M/Lt = 13.61/13.34/3.51
+[11:06:05] [ta] factorial ta|resisc45|resisc45-eurosat-svhn-gtsrb: Gamma=18.47 phi E/M/Lt = 7.99/6.63/3.84
+[11:08:23] [ta] factorial ta|eurosat|eurosat-svhn-gtsrb-mnist: Gamma=37.83 phi E/M/Lt = 22.70/11.69/3.45
+[11:10:18] [ta] factorial ta|eurosat|eurosat-svhn-gtsrb-dtd: Gamma=22.02 phi E/M/Lt = 11.64/7.55/2.83
+[11:12:45] [ta] factorial ta|svhn|sun397-resisc45-eurosat-svhn: Gamma=14.39 phi E/M/Lt = 10.40/4.70/-0.71
+[11:14:41] [ta] factorial ta|svhn|stanford-cars-resisc45-eurosat-svhn: Gamma=12.21 phi E/M/Lt = 9.09/3.86/-0.75
+[11:16:32] [ta] factorial ta|gtsrb|sun397-resisc45-eurosat-gtsrb: Gamma=13.88 phi E/M/Lt = 6.27/6.35/1.25
+[11:17:51] [ta] factorial ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb: Gamma=12.83 phi E/M/Lt = 5.90/5.57/1.35
+[11:19:16] [ta] factorial ta|mnist|resisc45-eurosat-gtsrb-mnist: Gamma=2.51 phi E/M/Lt = 1.55/1.02/-0.06
+[11:20:45] [ta] factorial ta|mnist|stanford-cars-eurosat-gtsrb-mnist: Gamma=2.01 phi E/M/Lt = 1.37/0.73/-0.09
+[11:23:00] [ta] factorial ta|dtd|svhn-gtsrb-mnist-dtd: Gamma=27.18 phi E/M/Lt = 12.16/10.55/4.46
+[11:24:56] [ta] factorial ta|dtd|eurosat-svhn-gtsrb-dtd: Gamma=21.69 phi E/M/Lt = 9.53/8.99/3.17
+[2026-10-28 11:24:57] END rc=0 factorial --op ta
+[2026-10-28 11:24:57] START random --op ta
+[11:24:58] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[11:29:38] [ta] random ta|sun397|sun397-svhn-gtsrb-mnist: excess E/M/Lt = 6.54/2.23/1.34
+[11:34:11] [ta] random ta|sun397|sun397-eurosat-svhn-gtsrb: excess E/M/Lt = 5.52/2.03/0.86
+[11:38:09] [ta] random ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist: excess E/M/Lt = 12.43/2.63/1.64
+[11:42:07] [ta] random ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: excess E/M/Lt = 10.60/3.30/0.84
+[11:46:00] [ta] random ta|resisc45|resisc45-svhn-gtsrb-mnist: excess E/M/Lt = 6.97/6.08/0.80
+[11:49:53] [ta] random ta|resisc45|resisc45-eurosat-svhn-gtsrb: excess E/M/Lt = 5.88/3.79/1.84
+[11:53:36] [ta] random ta|eurosat|eurosat-svhn-gtsrb-mnist: excess E/M/Lt = 14.16/2.62/-0.15
+[11:57:17] [ta] random ta|eurosat|eurosat-svhn-gtsrb-dtd: excess E/M/Lt = 5.77/1.42/-0.30
+[12:02:06] [ta] random ta|svhn|sun397-resisc45-eurosat-svhn: excess E/M/Lt = 8.66/2.38/-0.02
+[12:06:56] [ta] random ta|svhn|stanford-cars-resisc45-eurosat-svhn: excess E/M/Lt = 8.03/2.15/0.04
+[12:11:05] [ta] random ta|gtsrb|sun397-resisc45-eurosat-gtsrb: excess E/M/Lt = 4.68/4.88/0.69
+[12:15:15] [ta] random ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb: excess E/M/Lt = 4.63/4.02/0.60
+[12:19:18] [ta] random ta|mnist|resisc45-eurosat-gtsrb-mnist: excess E/M/Lt = 1.51/0.87/0.10
+[12:23:20] [ta] random ta|mnist|stanford-cars-eurosat-gtsrb-mnist: excess E/M/Lt = 1.39/0.68/0.06
+[12:27:00] [ta] random ta|dtd|svhn-gtsrb-mnist-dtd: excess E/M/Lt = 9.91/6.34/1.83
+[12:30:39] [ta] random ta|dtd|eurosat-svhn-gtsrb-dtd: excess E/M/Lt = 6.56/5.04/1.29
+[2026-10-28 12:30:40] END rc=0 random --op ta
+[2026-10-28 12:30:40] START probes --op ta
+[12:30:41] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[12:32:36] [ta] probes WARNING ta|sun397|sun397-svhn-gtsrb-mnist: expert final probe 69.8 < head 73.6 - 2
+[12:32:36] [ta] probes ta|sun397|sun397-svhn-gtsrb-mnist: lambda E/M/Lt = 0.62/-3.62/12.24
+[12:33:30] [ta] probes WARNING ta|sun397|sun397-eurosat-svhn-gtsrb: expert final probe 69.8 < head 73.6 - 2
+[12:33:30] [ta] probes ta|sun397|sun397-eurosat-svhn-gtsrb: lambda E/M/Lt = 0.68/-2.46/8.40
+[12:35:18] [ta] probes ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist: lambda E/M/Lt = 0.97/-3.71/10.02
+[12:36:12] [ta] probes ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: lambda E/M/Lt = 0.37/-1.77/7.54
+[12:38:08] [ta] probes ta|resisc45|resisc45-svhn-gtsrb-mnist: lambda E/M/Lt = 1.33/-1.27/6.19
+[12:39:06] [ta] probes ta|resisc45|resisc45-eurosat-svhn-gtsrb: lambda E/M/Lt = 1.43/-0.89/2.70
+[12:40:52] [ta] probes ta|eurosat|eurosat-svhn-gtsrb-mnist: lambda E/M/Lt = 2.59/-1.19/3.11
+[12:41:44] [ta] probes ta|eurosat|eurosat-svhn-gtsrb-dtd: lambda E/M/Lt = 0.96/0.07/2.00
+[12:43:42] [ta] probes ta|svhn|sun397-resisc45-eurosat-svhn: lambda E/M/Lt = 1.20/4.74/-0.80
+[12:44:42] [ta] probes ta|svhn|stanford-cars-resisc45-eurosat-svhn: lambda E/M/Lt = 1.70/3.44/-0.62
+[12:47:00] [ta] probes ta|gtsrb|sun397-resisc45-eurosat-gtsrb: lambda E/M/Lt = -0.48/0.86/-0.02
+[12:48:08] [ta] probes ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb: lambda E/M/Lt = -0.08/0.52/-0.10
+[12:49:59] [ta] probes ta|mnist|resisc45-eurosat-gtsrb-mnist: lambda E/M/Lt = 0.78/-0.56/0.04
+[12:50:54] [ta] probes ta|mnist|stanford-cars-eurosat-gtsrb-mnist: lambda E/M/Lt = 0.78/-0.54/0.06
+[12:52:09] [ta] probes WARNING ta|dtd|svhn-gtsrb-mnist-dtd: expert final probe 75.2 < head 79.5 - 2
+[12:52:09] [ta] probes ta|dtd|svhn-gtsrb-mnist-dtd: lambda E/M/Lt = 4.15/-3.51/9.04
+[12:52:47] [ta] probes WARNING ta|dtd|eurosat-svhn-gtsrb-dtd: expert final probe 75.2 < head 79.5 - 2
+[12:52:47] [ta] probes ta|dtd|eurosat-svhn-gtsrb-dtd: lambda E/M/Lt = 1.70/-1.60/8.40
+[2026-10-28 12:52:48] END rc=0 probes --op ta
+ta n_victims=8
+[2026-10-28 12:52:48] START alpha --op iso_cts
+[12:52:49] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[13:00:29] [iso_cts] alpha 0.2: mean normalized 61.13
+[13:08:01] [iso_cts] alpha 0.4: mean normalized 68.62
+[13:15:34] [iso_cts] alpha 0.6: mean normalized 74.45
+[13:23:06] [iso_cts] alpha 0.8: mean normalized 79.42
+[13:30:39] [iso_cts] alpha 1.0: mean normalized 83.11
+[13:38:11] [iso_cts] alpha 1.2: mean normalized 86.18
+[13:45:44] [iso_cts] alpha 1.4: mean normalized 88.64
+[13:53:17] [iso_cts] alpha 1.6: mean normalized 90.46
+[14:00:49] [iso_cts] alpha 1.8: mean normalized 91.66
+[14:08:22] [iso_cts] alpha 2.0: mean normalized 92.50
+[14:15:54] [iso_cts] alpha 2.2: mean normalized 92.87
+[14:23:27] [iso_cts] alpha 2.4: mean normalized 92.98
+[14:31:00] [iso_cts] alpha 2.6: mean normalized 92.76
+[14:38:32] [iso_cts] alpha 2.8: mean normalized 92.20
+[14:46:05] [iso_cts] alpha 3.0: mean normalized 91.36
+[14:46:05] [iso_cts] selected alpha = 2.4
+[2026-10-28 14:46:06] END rc=0 alpha --op iso_cts
+[2026-10-28 14:46:06] START subsets --op iso_cts
+[14:46:07] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[14:50:35] [iso_cts] subsets 10/162 (268s)
+[14:56:00] [iso_cts] subsets 20/162 (593s)
+[15:01:11] [iso_cts] subsets 30/162 (904s)
+[15:07:05] [iso_cts] subsets 40/162 (1258s)
+[15:13:35] [iso_cts] subsets 50/162 (1648s)
+[15:20:06] [iso_cts] subsets 60/162 (2040s)
+[15:26:33] [iso_cts] subsets 70/162 (2426s)
+[15:32:55] [iso_cts] subsets 80/162 (2808s)
+[15:39:16] [iso_cts] subsets 90/162 (3189s)
+[15:45:54] [iso_cts] subsets 100/162 (3587s)
+[15:53:33] [iso_cts] subsets 110/162 (4046s)
+[16:01:10] [iso_cts] subsets 120/162 (4503s)
+[16:07:59] [iso_cts] subsets 130/162 (4912s)
+[16:15:29] [iso_cts] subsets 140/162 (5362s)
+[16:19:59] [iso_cts] subsets 150/162 (5632s)
+[16:25:10] [iso_cts] subsets 160/162 (5943s)
+[16:25:56] [iso_cts] subsets 162/162 (5989s)
+[2026-10-28 16:25:57] END rc=0 subsets --op iso_cts
+[2026-10-28 16:25:57] START analyze --op iso_cts
+[16:25:59] [iso_cts] analyze: 280 pairs; median context harm -7.91 pp
+[2026-10-28 16:25:59] END rc=0 analyze --op iso_cts
+[2026-10-28 16:25:59] START select --op iso_cts
+[16:26:01] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[16:48:18] [iso_cts] select: 6 pairs over 3 victims (63 eligible candidates); not eligible: ['eurosat', 'svhn', 'gtsrb', 'mnist', 'dtd']
+[2026-10-28 16:48:19] END rc=0 select --op iso_cts
+[2026-10-28 16:48:19] START report --op iso_cts
+[16:48:20] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[16:54:42] [iso_cts] report 1: iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb H=3.8 interaction=5.4 fake_all=-5.3
+[16:58:02] [iso_cts] report 2: iso_cts|sun397|sun397-svhn-gtsrb-dtd H=2.5 interaction=3.4 fake_all=-5.5
+[17:03:35] [iso_cts] report 3: iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn H=-1.6 interaction=15.4 fake_all=-14.7
+[17:06:31] [iso_cts] report 4: iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd H=-6.5 interaction=16.5 fake_all=-14.9
+[17:11:55] [iso_cts] report 5: iso_cts|resisc45|sun397-resisc45-eurosat-svhn H=1.1 interaction=3.7 fake_all=-5.9
+[17:14:48] [iso_cts] report 6: iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb H=0.9 interaction=3.7 fake_all=-6.0
+[2026-10-28 17:14:49] END rc=0 report --op iso_cts
+[2026-10-28 17:14:49] START factorial --op iso_cts
+[17:14:50] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[17:18:56] [iso_cts] factorial iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb: Gamma=7.13 phi E/M/Lt = 2.37/4.52/0.24
+[17:22:39] [iso_cts] factorial iso_cts|sun397|sun397-svhn-gtsrb-dtd: Gamma=5.13 phi E/M/Lt = 1.86/3.38/-0.10
+[17:26:26] [iso_cts] factorial iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn: Gamma=5.64 phi E/M/Lt = 0.09/3.72/1.82
+[17:29:09] [iso_cts] factorial iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd: Gamma=4.94 phi E/M/Lt = 1.06/3.47/0.41
+[17:32:38] [iso_cts] factorial iso_cts|resisc45|sun397-resisc45-eurosat-svhn: Gamma=3.27 phi E/M/Lt = 1.91/0.86/0.49
+[17:35:03] [iso_cts] factorial iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb: Gamma=3.10 phi E/M/Lt = 1.60/1.08/0.42
+[2026-10-28 17:35:05] END rc=0 factorial --op iso_cts
+[2026-10-28 17:35:05] START random --op iso_cts
+[17:35:06] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[17:41:05] [iso_cts] random iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb: excess E/M/Lt = 0.92/2.94/-0.14
+[17:46:57] [iso_cts] random iso_cts|sun397|sun397-svhn-gtsrb-dtd: excess E/M/Lt = 0.47/2.11/-0.89
+[17:52:12] [iso_cts] random iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn: excess E/M/Lt = -1.07/1.82/0.14
+[17:57:27] [iso_cts] random iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd: excess E/M/Lt = -0.03/2.47/-1.13
+[18:02:39] [iso_cts] random iso_cts|resisc45|sun397-resisc45-eurosat-svhn: excess E/M/Lt = 1.17/-0.42/0.17
+[18:07:22] [iso_cts] random iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb: excess E/M/Lt = 0.69/-0.28/-0.20
+[2026-10-28 18:07:23] END rc=0 random --op iso_cts
+[2026-10-28 18:07:23] START probes --op iso_cts
+[18:07:24] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[18:10:20] [iso_cts] probes WARNING iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb: expert final probe 69.8 < head 73.6 - 2
+[18:10:20] [iso_cts] probes iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb: lambda E/M/Lt = -0.78/-1.26/5.36
+[18:12:17] [iso_cts] probes WARNING iso_cts|sun397|sun397-svhn-gtsrb-dtd: expert final probe 69.8 < head 73.6 - 2
+[18:12:17] [iso_cts] probes iso_cts|sun397|sun397-svhn-gtsrb-dtd: lambda E/M/Lt = 0.56/-1.56/3.92
+[18:15:10] [iso_cts] probes iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn: lambda E/M/Lt = -0.70/-0.65/2.34
+[18:17:10] [iso_cts] probes iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd: lambda E/M/Lt = -0.90/0.72/1.82
+[18:20:09] [iso_cts] probes iso_cts|resisc45|sun397-resisc45-eurosat-svhn: lambda E/M/Lt = 0.16/-0.63/1.81
+[18:21:42] [iso_cts] probes iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb: lambda E/M/Lt = -0.19/-0.13/1.65
+[2026-10-28 18:21:43] END rc=0 probes --op iso_cts
+[2026-10-28 18:21:43] START alpha --op tsvm
+[18:21:44] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[18:25:03] [tsvm] alpha 0.2: mean normalized 72.38
+[18:27:46] [tsvm] alpha 0.4: mean normalized 85.10
+[18:30:29] [tsvm] alpha 0.6: mean normalized 91.86
+[18:33:12] [tsvm] alpha 0.8: mean normalized 94.63
+[18:35:54] [tsvm] alpha 1.0: mean normalized 95.25
+[18:38:37] [tsvm] alpha 1.2: mean normalized 94.65
+[18:41:20] [tsvm] alpha 1.4: mean normalized 92.79
+[18:44:03] [tsvm] alpha 1.6: mean normalized 89.95
+[18:46:46] [tsvm] alpha 1.8: mean normalized 86.03
+[18:49:28] [tsvm] alpha 2.0: mean normalized 81.48
+[18:52:11] [tsvm] alpha 2.2: mean normalized 76.55
+[18:54:54] [tsvm] alpha 2.4: mean normalized 71.82
+[18:57:37] [tsvm] alpha 2.6: mean normalized 67.56
+[19:00:19] [tsvm] alpha 2.8: mean normalized 63.78
+[19:03:02] [tsvm] alpha 3.0: mean normalized 60.35
+[19:03:02] [tsvm] selected alpha = 1.0
+[2026-10-28 19:03:03] END rc=0 alpha --op tsvm
+[2026-10-28 19:03:03] START subsets --op tsvm
+[19:03:05] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[19:06:24] [tsvm] subsets 10/162 (200s)
+[19:08:32] [tsvm] subsets 20/162 (327s)
+[19:10:25] [tsvm] subsets 30/162 (440s)
+[19:12:41] [tsvm] subsets 40/162 (576s)
+[19:15:04] [tsvm] subsets 50/162 (719s)
+[19:17:28] [tsvm] subsets 60/162 (863s)
+[19:19:46] [tsvm] subsets 70/162 (1002s)
+[19:22:00] [tsvm] subsets 80/162 (1136s)
+[19:24:12] [tsvm] subsets 90/162 (1268s)
+[19:26:39] [tsvm] subsets 100/162 (1414s)
+[19:29:29] [tsvm] subsets 110/162 (1585s)
+[19:32:17] [tsvm] subsets 120/162 (1753s)
+[19:34:46] [tsvm] subsets 130/162 (1901s)
+[19:37:27] [tsvm] subsets 140/162 (2062s)
+[19:39:03] [tsvm] subsets 150/162 (2158s)
+[19:40:50] [tsvm] subsets 160/162 (2266s)
+[19:41:08] [tsvm] subsets 162/162 (2283s)
+[2026-10-28 19:41:09] END rc=0 subsets --op tsvm
+[2026-10-28 19:41:09] START analyze --op tsvm
+[19:41:11] [tsvm] analyze: 280 pairs; median context harm 3.58 pp
+[2026-10-28 19:41:11] END rc=0 analyze --op tsvm
+[2026-10-28 19:41:11] START select --op tsvm
+[19:41:13] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[19:56:38] [tsvm] select: 16 pairs over 8 victims (270 eligible candidates); not eligible: []
+[2026-10-28 19:56:39] END rc=0 select --op tsvm
+[2026-10-28 19:56:39] START report --op tsvm
+[19:56:40] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[19:59:48] [tsvm] report 1: tsvm|sun397|sun397-svhn-gtsrb-mnist H=9.3 interaction=-1.3 fake_all=-0.1
+[20:01:15] [tsvm] report 2: tsvm|sun397|sun397-eurosat-svhn-gtsrb H=8.6 interaction=-3.0 fake_all=-0.1
+[20:03:23] [tsvm] report 3: tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb H=13.0 interaction=-4.3 fake_all=1.7
+[20:04:25] [tsvm] report 4: tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist H=10.8 interaction=-6.8 fake_all=0.9
+[20:06:30] [tsvm] report 5: tsvm|resisc45|resisc45-eurosat-svhn-gtsrb H=8.8 interaction=-1.0 fake_all=0.5
+[20:07:45] [tsvm] report 6: tsvm|resisc45|resisc45-svhn-gtsrb-mnist H=7.6 interaction=1.0 fake_all=0.3
+[20:09:31] [tsvm] report 7: tsvm|eurosat|eurosat-svhn-gtsrb-mnist H=8.4 interaction=4.5 fake_all=0.3
+[20:10:28] [tsvm] report 8: tsvm|eurosat|eurosat-svhn-gtsrb-dtd H=5.6 interaction=1.9 fake_all=0.4
+[20:13:36] [tsvm] report 9: tsvm|svhn|resisc45-eurosat-svhn-mnist H=4.7 interaction=1.9 fake_all=0.2
+[20:15:08] [tsvm] report 10: tsvm|svhn|sun397-eurosat-svhn-mnist H=4.1 interaction=1.5 fake_all=0.2
+[20:17:31] [tsvm] report 11: tsvm|gtsrb|resisc45-svhn-gtsrb-mnist H=5.2 interaction=1.5 fake_all=0.0
+[20:18:40] [tsvm] report 12: tsvm|gtsrb|eurosat-svhn-gtsrb-mnist H=4.9 interaction=0.9 fake_all=0.0
+[20:20:54] [tsvm] report 13: tsvm|mnist|stanford-cars-svhn-gtsrb-mnist H=0.8 interaction=0.2 fake_all=-0.0
+[20:21:59] [tsvm] report 14: tsvm|mnist|eurosat-svhn-gtsrb-mnist H=0.6 interaction=0.2 fake_all=0.0
+[20:23:44] [tsvm] report 15: tsvm|dtd|svhn-gtsrb-mnist-dtd H=19.1 interaction=-10.4 fake_all=-0.3
+[20:24:51] [tsvm] report 16: tsvm|dtd|resisc45-svhn-gtsrb-dtd H=18.6 interaction=-13.3 fake_all=0.0
+[2026-10-28 20:24:53] END rc=0 report --op tsvm
+[2026-10-28 20:24:53] START factorial --op tsvm
+[20:24:54] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[20:28:39] [tsvm] factorial tsvm|sun397|sun397-svhn-gtsrb-mnist: Gamma=9.26 phi E/M/Lt = 2.62/3.63/3.00
+[20:31:33] [tsvm] factorial tsvm|sun397|sun397-eurosat-svhn-gtsrb: Gamma=8.61 phi E/M/Lt = 2.09/3.25/3.27
+[20:34:09] [tsvm] factorial tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: Gamma=12.98 phi E/M/Lt = 4.18/5.34/3.47
+[20:36:46] [tsvm] factorial tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist: Gamma=10.80 phi E/M/Lt = 4.27/4.32/2.21
+[20:39:18] [tsvm] factorial tsvm|resisc45|resisc45-eurosat-svhn-gtsrb: Gamma=8.80 phi E/M/Lt = 1.74/3.81/3.24
+[20:41:51] [tsvm] factorial tsvm|resisc45|resisc45-svhn-gtsrb-mnist: Gamma=7.63 phi E/M/Lt = 1.77/4.18/1.68
+[20:44:29] [tsvm] factorial tsvm|eurosat|eurosat-svhn-gtsrb-mnist: Gamma=8.39 phi E/M/Lt = 4.01/3.48/0.90
+[20:46:34] [tsvm] factorial tsvm|eurosat|eurosat-svhn-gtsrb-dtd: Gamma=5.62 phi E/M/Lt = 1.92/2.78/0.91
+[20:48:55] [tsvm] factorial tsvm|svhn|resisc45-eurosat-svhn-mnist: Gamma=4.70 phi E/M/Lt = 1.81/2.44/0.45
+[20:51:38] [tsvm] factorial tsvm|svhn|sun397-eurosat-svhn-mnist: Gamma=4.10 phi E/M/Lt = 1.46/2.13/0.51
+[20:54:25] [tsvm] factorial tsvm|gtsrb|resisc45-svhn-gtsrb-mnist: Gamma=5.19 phi E/M/Lt = 1.24/2.63/1.32
+[20:56:49] [tsvm] factorial tsvm|gtsrb|eurosat-svhn-gtsrb-mnist: Gamma=4.88 phi E/M/Lt = 1.15/2.63/1.10
+[20:59:41] [tsvm] factorial tsvm|mnist|stanford-cars-svhn-gtsrb-mnist: Gamma=0.76 phi E/M/Lt = 0.13/0.45/0.18
+[21:02:04] [tsvm] factorial tsvm|mnist|eurosat-svhn-gtsrb-mnist: Gamma=0.64 phi E/M/Lt = 0.10/0.36/0.19
+[21:04:40] [tsvm] factorial tsvm|dtd|svhn-gtsrb-mnist-dtd: Gamma=19.14 phi E/M/Lt = 6.85/8.52/3.77
+[21:06:51] [tsvm] factorial tsvm|dtd|resisc45-svhn-gtsrb-dtd: Gamma=18.61 phi E/M/Lt = 4.64/8.86/5.11
+[2026-10-28 21:06:53] END rc=0 factorial --op tsvm
+[2026-10-28 21:06:53] START random --op tsvm
+[21:06:54] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[21:12:00] [tsvm] random tsvm|sun397|sun397-svhn-gtsrb-mnist: excess E/M/Lt = 1.25/1.29/1.87
+[21:16:34] [tsvm] random tsvm|sun397|sun397-eurosat-svhn-gtsrb: excess E/M/Lt = 0.89/1.12/2.03
+[21:20:50] [tsvm] random tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: excess E/M/Lt = 1.47/2.45/1.79
+[21:24:48] [tsvm] random tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist: excess E/M/Lt = 2.22/2.96/1.74
+[21:28:58] [tsvm] random tsvm|resisc45|resisc45-eurosat-svhn-gtsrb: excess E/M/Lt = 0.53/1.48/1.20
+[21:32:51] [tsvm] random tsvm|resisc45|resisc45-svhn-gtsrb-mnist: excess E/M/Lt = 0.42/2.00/0.87
+[21:36:49] [tsvm] random tsvm|eurosat|eurosat-svhn-gtsrb-mnist: excess E/M/Lt = 1.40/0.60/0.12
+[21:40:36] [tsvm] random tsvm|eurosat|eurosat-svhn-gtsrb-dtd: excess E/M/Lt = 0.75/0.92/0.10
+[21:45:43] [tsvm] random tsvm|svhn|resisc45-eurosat-svhn-mnist: excess E/M/Lt = 0.54/0.83/-0.06
+[21:50:33] [tsvm] random tsvm|svhn|sun397-eurosat-svhn-mnist: excess E/M/Lt = 0.35/0.76/-0.05
+[21:54:59] [tsvm] random tsvm|gtsrb|resisc45-svhn-gtsrb-mnist: excess E/M/Lt = 0.15/0.99/0.26
+[21:59:11] [tsvm] random tsvm|gtsrb|eurosat-svhn-gtsrb-mnist: excess E/M/Lt = 0.15/1.05/0.25
+[22:03:31] [tsvm] random tsvm|mnist|stanford-cars-svhn-gtsrb-mnist: excess E/M/Lt = -0.03/0.13/-0.04
+[22:07:37] [tsvm] random tsvm|mnist|eurosat-svhn-gtsrb-mnist: excess E/M/Lt = 0.01/0.11/-0.02
+[22:11:33] [tsvm] random tsvm|dtd|svhn-gtsrb-mnist-dtd: excess E/M/Lt = 4.06/4.77/1.07
+[22:15:13] [tsvm] random tsvm|dtd|resisc45-svhn-gtsrb-dtd: excess E/M/Lt = 3.75/5.18/2.77
+[2026-10-28 22:15:15] END rc=0 random --op tsvm
+[2026-10-28 22:15:15] START probes --op tsvm
+[22:15:16] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[22:17:45] [tsvm] probes WARNING tsvm|sun397|sun397-svhn-gtsrb-mnist: expert final probe 69.8 < head 73.6 - 2
+[22:17:45] [tsvm] probes tsvm|sun397|sun397-svhn-gtsrb-mnist: lambda E/M/Lt = -1.04/0.22/5.24
+[22:18:50] [tsvm] probes WARNING tsvm|sun397|sun397-eurosat-svhn-gtsrb: expert final probe 69.8 < head 73.6 - 2
+[22:18:50] [tsvm] probes tsvm|sun397|sun397-eurosat-svhn-gtsrb: lambda E/M/Lt = -1.06/0.94/3.32
+[22:21:02] [tsvm] probes tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb: lambda E/M/Lt = -0.50/0.99/1.91
+[22:22:01] [tsvm] probes tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist: lambda E/M/Lt = -0.55/-0.55/3.68
+[22:24:22] [tsvm] probes tsvm|resisc45|resisc45-eurosat-svhn-gtsrb: lambda E/M/Lt = 0.16/-0.16/1.84
+[22:25:26] [tsvm] probes tsvm|resisc45|resisc45-svhn-gtsrb-mnist: lambda E/M/Lt = 0.29/-0.57/2.38
+[22:27:30] [tsvm] probes tsvm|eurosat|eurosat-svhn-gtsrb-mnist: lambda E/M/Lt = 1.56/-0.67/1.19
+[22:28:30] [tsvm] probes tsvm|eurosat|eurosat-svhn-gtsrb-dtd: lambda E/M/Lt = 0.67/0.30/0.74
+[22:30:47] [tsvm] probes tsvm|svhn|resisc45-eurosat-svhn-mnist: lambda E/M/Lt = 3.38/1.40/-2.78
+[22:31:52] [tsvm] probes tsvm|svhn|sun397-eurosat-svhn-mnist: lambda E/M/Lt = 3.12/1.56/-2.52
+[22:34:28] [tsvm] probes tsvm|gtsrb|resisc45-svhn-gtsrb-mnist: lambda E/M/Lt = -0.18/0.26/0.18
+[22:35:41] [tsvm] probes tsvm|gtsrb|eurosat-svhn-gtsrb-mnist: lambda E/M/Lt = 0.32/0.04/-0.16
+[22:37:50] [tsvm] probes tsvm|mnist|stanford-cars-svhn-gtsrb-mnist: lambda E/M/Lt = 0.92/-0.84/0.08
+[22:38:49] [tsvm] probes tsvm|mnist|eurosat-svhn-gtsrb-mnist: lambda E/M/Lt = 0.76/-0.64/0.12
+[22:40:24] [tsvm] probes WARNING tsvm|dtd|svhn-gtsrb-mnist-dtd: expert final probe 75.2 < head 79.5 - 2
+[22:40:24] [tsvm] probes tsvm|dtd|svhn-gtsrb-mnist-dtd: lambda E/M/Lt = 2.02/-1.70/5.85
+[22:41:08] [tsvm] probes WARNING tsvm|dtd|resisc45-svhn-gtsrb-dtd: expert final probe 75.2 < head 79.5 - 2
+[22:41:08] [tsvm] probes tsvm|dtd|resisc45-svhn-gtsrb-dtd: lambda E/M/Lt = 0.85/-0.64/3.94
+[2026-10-28 22:41:10] END rc=0 probes --op tsvm
+[2026-10-28 22:41:10] START select --all-ops
+[22:41:11] select --all-ops: 38 pairs, 8 victims, feasible=True (smallest attainable p 0.00390625)
+[2026-10-28 22:41:11] END rc=0 select --all-ops
+[2026-10-28 22:41:11] START blocks --op ta
+[22:41:12] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[22:45:43] [ta] blocks ta|sun397|sun397-svhn-gtsrb-mnist done
+[22:50:07] [ta] blocks ta|sun397|sun397-eurosat-svhn-gtsrb done
+[22:51:54] [ta] blocks ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[22:53:41] [ta] blocks ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[22:55:05] [ta] blocks ta|resisc45|resisc45-svhn-gtsrb-mnist done
+[22:56:29] [ta] blocks ta|resisc45|resisc45-eurosat-svhn-gtsrb done
+[22:57:05] [ta] blocks ta|eurosat|eurosat-svhn-gtsrb-mnist done
+[22:57:41] [ta] blocks ta|eurosat|eurosat-svhn-gtsrb-dtd done
+[23:03:27] [ta] blocks ta|svhn|sun397-resisc45-eurosat-svhn done
+[23:09:13] [ta] blocks ta|svhn|stanford-cars-resisc45-eurosat-svhn done
+[23:12:02] [ta] blocks ta|gtsrb|sun397-resisc45-eurosat-gtsrb done
+[23:14:50] [ta] blocks ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb done
+[23:17:03] [ta] blocks ta|mnist|resisc45-eurosat-gtsrb-mnist done
+[23:19:15] [ta] blocks ta|mnist|stanford-cars-eurosat-gtsrb-mnist done
+[23:19:40] [ta] blocks ta|dtd|svhn-gtsrb-mnist-dtd done
+[23:20:06] [ta] blocks ta|dtd|eurosat-svhn-gtsrb-dtd done
+[2026-10-28 23:20:07] END rc=0 blocks --op ta
+[2026-10-28 23:20:07] START own --op ta
+[23:20:08] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:21:07] [ta] own sun397: gain 12.31, shares 0.01/0.15/0.83
+[23:21:28] [ta] own stanford-cars: gain 17.45, shares 0.02/0.27/0.72
+[23:21:45] [ta] own resisc45: gain 31.40, shares 0.03/0.33/0.64
+[23:21:52] [ta] own eurosat: gain 53.18, shares 0.15/0.45/0.39
+[23:23:01] [ta] own svhn: gain 63.63, shares 0.31/0.52/0.17
+[23:23:35] [ta] own gtsrb: gain 61.94, shares 0.11/0.45/0.44
+[23:24:01] [ta] own mnist: gain 51.17, shares 0.12/0.58/0.30
+[23:24:06] [ta] own dtd: gain 29.99, shares -0.00/0.28/0.72
+[2026-10-28 23:24:07] END rc=0 own --op ta
+[2026-10-28 23:24:07] START patch --op ta
+[23:24:08] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:24:35] [ta] patch ta|sun397|sun397-svhn-gtsrb-mnist done
+[23:24:54] [ta] patch ta|sun397|sun397-eurosat-svhn-gtsrb done
+[23:25:15] [ta] patch ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[23:25:34] [ta] patch ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[23:25:55] [ta] patch ta|resisc45|resisc45-svhn-gtsrb-mnist done
+[23:26:15] [ta] patch ta|resisc45|resisc45-eurosat-svhn-gtsrb done
+[23:26:28] [ta] patch ta|eurosat|eurosat-svhn-gtsrb-mnist done
+[23:26:42] [ta] patch ta|eurosat|eurosat-svhn-gtsrb-dtd done
+[23:27:02] [ta] patch ta|svhn|sun397-resisc45-eurosat-svhn done
+[23:27:22] [ta] patch ta|svhn|stanford-cars-resisc45-eurosat-svhn done
+[23:27:42] [ta] patch ta|gtsrb|sun397-resisc45-eurosat-gtsrb done
+[23:28:02] [ta] patch ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb done
+[23:28:22] [ta] patch ta|mnist|resisc45-eurosat-gtsrb-mnist done
+[23:28:42] [ta] patch ta|mnist|stanford-cars-eurosat-gtsrb-mnist done
+[23:28:51] [ta] patch ta|dtd|svhn-gtsrb-mnist-dtd done
+[23:29:00] [ta] patch ta|dtd|eurosat-svhn-gtsrb-dtd done
+[2026-10-28 23:29:01] END rc=0 patch --op ta
+[2026-10-28 23:29:01] START crossterm --op ta
+[23:29:02] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:29:12] [ta] crossterm ta|sun397|sun397-svhn-gtsrb-mnist done
+[23:29:15] [ta] crossterm ta|sun397|sun397-eurosat-svhn-gtsrb done
+[23:29:18] [ta] crossterm ta|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[23:29:22] [ta] crossterm ta|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[23:29:25] [ta] crossterm ta|resisc45|resisc45-svhn-gtsrb-mnist done
+[23:29:28] [ta] crossterm ta|resisc45|resisc45-eurosat-svhn-gtsrb done
+[23:29:32] [ta] crossterm ta|eurosat|eurosat-svhn-gtsrb-mnist done
+[23:29:35] [ta] crossterm ta|eurosat|eurosat-svhn-gtsrb-dtd done
+[23:29:38] [ta] crossterm ta|svhn|sun397-resisc45-eurosat-svhn done
+[23:29:42] [ta] crossterm ta|svhn|stanford-cars-resisc45-eurosat-svhn done
+[23:29:45] [ta] crossterm ta|gtsrb|sun397-resisc45-eurosat-gtsrb done
+[23:29:48] [ta] crossterm ta|gtsrb|stanford-cars-resisc45-eurosat-gtsrb done
+[23:29:52] [ta] crossterm ta|mnist|resisc45-eurosat-gtsrb-mnist done
+[23:29:55] [ta] crossterm ta|mnist|stanford-cars-eurosat-gtsrb-mnist done
+[23:29:58] [ta] crossterm ta|dtd|svhn-gtsrb-mnist-dtd done
+[23:30:02] [ta] crossterm ta|dtd|eurosat-svhn-gtsrb-dtd done
+[2026-10-28 23:30:02] END rc=0 crossterm --op ta
+[2026-10-28 23:30:02] START weightspace --op ta
+[23:30:04] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:30:43] [ta] weightspace: 16 pairs
+[2026-10-28 23:30:44] END rc=0 weightspace --op ta
+[2026-10-28 23:30:44] START blocks --op iso_cts
+[23:30:45] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:36:19] [iso_cts] blocks iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb done
+[23:41:46] [iso_cts] blocks iso_cts|sun397|sun397-svhn-gtsrb-dtd done
+[23:44:40] [iso_cts] blocks iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn done
+[23:47:35] [iso_cts] blocks iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd done
+[23:50:01] [iso_cts] blocks iso_cts|resisc45|sun397-resisc45-eurosat-svhn done
+[23:52:01] [iso_cts] blocks iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb done
+[2026-10-28 23:52:02] END rc=0 blocks --op iso_cts
+[2026-10-28 23:52:02] START own --op iso_cts
+[23:52:03] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:53:24] [iso_cts] own sun397: gain 8.66, shares -1.00/0.31/1.69
+[23:54:07] [iso_cts] own stanford-cars: gain 8.26, shares -1.73/0.89/1.85
+[23:54:46] [iso_cts] own resisc45: gain 29.70, shares -0.15/0.48/0.68
+[2026-10-28 23:54:47] END rc=0 own --op iso_cts
+[2026-10-28 23:54:47] START patch --op iso_cts
+[23:54:48] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[23:56:17] [iso_cts] patch iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb done
+[23:57:40] [iso_cts] patch iso_cts|sun397|sun397-svhn-gtsrb-dtd done
+[23:59:07] [iso_cts] patch iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn done
+[00:00:34] [iso_cts] patch iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd done
+[00:01:58] [iso_cts] patch iso_cts|resisc45|sun397-resisc45-eurosat-svhn done
+[00:02:53] [iso_cts] patch iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb done
+[2026-10-29 00:02:54] END rc=0 patch --op iso_cts
+[2026-10-29 00:02:54] START crossterm --op iso_cts
+[00:02:55] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[00:05:11] [iso_cts] crossterm iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb done
+[00:07:20] [iso_cts] crossterm iso_cts|sun397|sun397-svhn-gtsrb-dtd done
+[00:09:29] [iso_cts] crossterm iso_cts|resisc45|sun397-resisc45-eurosat-svhn done
+[00:10:39] [iso_cts] crossterm iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb done
+[2026-10-29 00:10:40] END rc=0 crossterm --op iso_cts
+[2026-10-29 00:10:40] START weightspace --op iso_cts
+[00:10:42] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[00:11:15] [iso_cts] weightspace: 6 pairs
+[2026-10-29 00:11:16] END rc=0 weightspace --op iso_cts
+[2026-10-29 00:11:16] START blocks --op tsvm
+[00:11:17] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[00:16:24] [tsvm] blocks tsvm|sun397|sun397-svhn-gtsrb-mnist done
+[00:20:58] [tsvm] blocks tsvm|sun397|sun397-eurosat-svhn-gtsrb done
+[00:23:10] [tsvm] blocks tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[00:25:04] [tsvm] blocks tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[00:26:53] [tsvm] blocks tsvm|resisc45|resisc45-eurosat-svhn-gtsrb done
+[00:28:24] [tsvm] blocks tsvm|resisc45|resisc45-svhn-gtsrb-mnist done
+[00:29:21] [tsvm] blocks tsvm|eurosat|eurosat-svhn-gtsrb-mnist done
+[00:30:07] [tsvm] blocks tsvm|eurosat|eurosat-svhn-gtsrb-dtd done
+[00:36:16] [tsvm] blocks tsvm|svhn|resisc45-eurosat-svhn-mnist done
+[00:42:09] [tsvm] blocks tsvm|svhn|sun397-eurosat-svhn-mnist done
+[00:45:18] [tsvm] blocks tsvm|gtsrb|resisc45-svhn-gtsrb-mnist done
+[00:48:13] [tsvm] blocks tsvm|gtsrb|eurosat-svhn-gtsrb-mnist done
+[00:50:47] [tsvm] blocks tsvm|mnist|stanford-cars-svhn-gtsrb-mnist done
+[00:53:07] [tsvm] blocks tsvm|mnist|eurosat-svhn-gtsrb-mnist done
+[00:53:53] [tsvm] blocks tsvm|dtd|svhn-gtsrb-mnist-dtd done
+[00:54:25] [tsvm] blocks tsvm|dtd|resisc45-svhn-gtsrb-dtd done
+[2026-10-29 00:54:26] END rc=0 blocks --op tsvm
+[2026-10-29 00:54:26] START own --op tsvm
+[00:54:27] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[00:55:44] [tsvm] own sun397: gain 16.03, shares -0.10/0.10/1.00
+[00:56:24] [tsvm] own stanford-cars: gain 25.17, shares -0.06/0.24/0.82
+[00:56:59] [tsvm] own resisc45: gain 36.37, shares -0.03/0.38/0.65
+[00:57:25] [tsvm] own eurosat: gain 55.13, shares 0.03/0.58/0.39
+[00:58:52] [tsvm] own svhn: gain 67.98, shares 0.28/0.53/0.19
+[00:59:44] [tsvm] own gtsrb: gain 67.05, shares 0.10/0.47/0.43
+[01:00:29] [tsvm] own mnist: gain 52.08, shares 0.11/0.52/0.37
+[01:00:52] [tsvm] own dtd: gain 44.31, shares -0.01/0.29/0.71
+[2026-10-29 01:00:53] END rc=0 own --op tsvm
+[2026-10-29 01:00:53] START patch --op tsvm
+[01:00:54] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[01:01:56] [tsvm] patch tsvm|sun397|sun397-svhn-gtsrb-mnist done
+[01:02:27] [tsvm] patch tsvm|sun397|sun397-eurosat-svhn-gtsrb done
+[01:03:12] [tsvm] patch tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[01:03:38] [tsvm] patch tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[01:04:23] [tsvm] patch tsvm|resisc45|resisc45-eurosat-svhn-gtsrb done
+[01:04:50] [tsvm] patch tsvm|resisc45|resisc45-svhn-gtsrb-mnist done
+[01:05:25] [tsvm] patch tsvm|eurosat|eurosat-svhn-gtsrb-mnist done
+[01:05:48] [tsvm] patch tsvm|eurosat|eurosat-svhn-gtsrb-dtd done
+[01:06:30] [tsvm] patch tsvm|svhn|resisc45-eurosat-svhn-mnist done
+[01:06:56] [tsvm] patch tsvm|svhn|sun397-eurosat-svhn-mnist done
+[01:07:37] [tsvm] patch tsvm|gtsrb|resisc45-svhn-gtsrb-mnist done
+[01:08:04] [tsvm] patch tsvm|gtsrb|eurosat-svhn-gtsrb-mnist done
+[01:08:45] [tsvm] patch tsvm|mnist|stanford-cars-svhn-gtsrb-mnist done
+[01:09:12] [tsvm] patch tsvm|mnist|eurosat-svhn-gtsrb-mnist done
+[01:09:42] [tsvm] patch tsvm|dtd|svhn-gtsrb-mnist-dtd done
+[01:09:58] [tsvm] patch tsvm|dtd|resisc45-svhn-gtsrb-dtd done
+[2026-10-29 01:10:00] END rc=0 patch --op tsvm
+[2026-10-29 01:10:00] START crossterm --op tsvm
+[01:10:01] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[01:10:52] [tsvm] crossterm tsvm|sun397|sun397-svhn-gtsrb-mnist done
+[01:11:26] [tsvm] crossterm tsvm|sun397|sun397-eurosat-svhn-gtsrb done
+[01:12:00] [tsvm] crossterm tsvm|stanford-cars|stanford-cars-eurosat-svhn-gtsrb done
+[01:12:30] [tsvm] crossterm tsvm|stanford-cars|stanford-cars-svhn-gtsrb-mnist done
+[01:13:04] [tsvm] crossterm tsvm|resisc45|resisc45-eurosat-svhn-gtsrb done
+[01:13:35] [tsvm] crossterm tsvm|resisc45|resisc45-svhn-gtsrb-mnist done
+[01:14:05] [tsvm] crossterm tsvm|eurosat|eurosat-svhn-gtsrb-mnist done
+[01:14:39] [tsvm] crossterm tsvm|eurosat|eurosat-svhn-gtsrb-dtd done
+[01:15:09] [tsvm] crossterm tsvm|svhn|resisc45-eurosat-svhn-mnist done
+[01:15:40] [tsvm] crossterm tsvm|svhn|sun397-eurosat-svhn-mnist done
+[01:16:10] [tsvm] crossterm tsvm|gtsrb|resisc45-svhn-gtsrb-mnist done
+[01:16:41] [tsvm] crossterm tsvm|gtsrb|eurosat-svhn-gtsrb-mnist done
+[01:17:11] [tsvm] crossterm tsvm|mnist|stanford-cars-svhn-gtsrb-mnist done
+[01:17:41] [tsvm] crossterm tsvm|mnist|eurosat-svhn-gtsrb-mnist done
+[01:18:12] [tsvm] crossterm tsvm|dtd|svhn-gtsrb-mnist-dtd done
+[01:18:42] [tsvm] crossterm tsvm|dtd|resisc45-svhn-gtsrb-dtd done
+[2026-10-29 01:18:43] END rc=0 crossterm --op tsvm
+[2026-10-29 01:18:43] START weightspace --op tsvm
+[01:18:45] loading assets: base=openai/clip-vit-base-patch32 ft=tanganke/clip-vit-base-patch32_{task}
+[01:19:24] [tsvm] weightspace: 16 pairs
+[2026-10-29 01:19:25] END rc=0 weightspace --op tsvm
+[2026-10-29 01:19:25] START depthstats
+# Experiment 8: depth summary
+
+Operators: ta, iso_cts, tsvm. Pairs: 38. Victims (8): sun397, stanford-cars, resisc45, eurosat, svhn, gtsrb, mnist, dtd. Smallest attainable p: 0.0039. Feasible (>= 5 victims): True.
+
+## Confirmatory claims (fixed sequence, alpha = 0.05; victims as units, exact sign-flip tests)
+
+| Order | Claim | Contrast | n | T (mean z_v) | 95% CI | p | Claim p (IUT) | Verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | localization | phi_M-phi_E | 8 | 0.022 | [-0.049, 0.086] | 0.2617 | 0.2617 | not confirmed |
+|  |  | phi_M-phi_Lt | 8 | 0.303 | [0.250, 0.360] | 0.0039 |  |  |
+| 2 | specificity | e_M-e_E | 8 | -0.046 | [-0.116, 0.021] | 0.8945 | 0.8945 | not tested (sequence stopped earlier); exploratory |
+|  |  | e_M-e_Lt | 8 | 0.176 | [0.122, 0.234] | 0.0039 |  |  |
+| 3 | information | lam_M-lam_E | 8 | -0.259 | [-0.686, -0.020] | 0.9883 | 0.9883 | not tested (sequence stopped earlier); exploratory |
+|  |  | lam_M-lam_Lt | 8 | -0.279 | [-0.584, 0.066] | 0.9336 |  |  |
+| 4 | amplification | kappa_M | 8 | 0.471 | [0.398, 0.552] | 0.0039 | 0.0039 | not tested (sequence stopped earlier); exploratory |
+| 5 | repair | repair | 8 | 0.283 | [0.206, 0.357] | 0.0039 | 0.0039 | not tested (sequence stopped earlier); exploratory |
+
+## Effect sizes (pooled, ratios of sums; two-stage cluster-bootstrap 95% intervals)
+
+| Quantity | Estimate | 95% CI |
+| --- | --- | --- |
+| depth share sigma_E | 0.458 | [0.404, 0.520] |
+| depth share sigma_M | 0.398 | [0.370, 0.427] |
+| depth share sigma_Lt | 0.144 | [0.098, 0.179] |
+| amplification share kappa_M / Gamma | 0.423 | [0.338, 0.508] |
+| victim recovery rho_v (mid removed) | 0.623 | [0.571, 0.671] |
+| harmer cost rho_h (mid removed) | 0.407 | [0.369, 0.460] |
+| information-loss fraction psi | 0.315 | [0.196, 0.454] |
+
+## Per operator (estimates with intervals; not tested)
+
+| Operator | pairs | sigma_E | sigma_M | sigma_Lt |
+| --- | --- | --- | --- | --- |
+| ta | 16 | 0.541 [0.473, 0.619] | 0.355 [0.312, 0.400] | 0.104 [0.055, 0.143] |
+| iso_cts | 6 | 0.305 [0.112, 0.528] | 0.583 [0.319, 0.696] | 0.112 [0.014, 0.252] |
+| tsvm | 16 | 0.307 [0.251, 0.359] | 0.452 [0.419, 0.496] | 0.241 [0.193, 0.299] |
+
+## Sensitivity analyses (pre-declared; do not change verdicts)
+
+- k = 1 (top context per victim): claim p-values {'localization': 0.34765625, 'specificity': 0.88671875, 'information': 0.98046875, 'amplification': 0.00390625, 'repair': 0.00390625}
+- mean of per-pair ratios, sigma: {'E': 0.41102787989043216, 'M': 0.4377008367775051, 'Lt': 0.15127128333206258}
+- specificity with one random seed: {'e_M-e_E': 0.91015625, 'e_M-e_Lt': 0.00390625}
+- pre/post single-unit mean fractions: {'pre': {'removed': 0.059550625557903795, 'created': 0.029709868267453365}, 'post': {'removed': -0.0005423090860521006, 'created': -0.00017298769285111292}}
+- leave one victim out (T, min, max, sign change):
+    - phi_M-phi_E: 0.022, 0.006, 0.044, False
+    - phi_M-phi_Lt: 0.303, 0.286, 0.321, False
+    - e_M-e_E: -0.046, -0.064, -0.026, False
+    - e_M-e_Lt: 0.176, 0.158, 0.195, False
+    - lam_M-lam_E: -0.259, -0.302, -0.077, False
+    - lam_M-lam_Lt: -0.279, -0.411, -0.202, False
+    - kappa_M: 0.471, 0.438, 0.490, False
+    - repair: 0.283, 0.262, 0.300, False
+
+## Exploratory (no p-values)
+
+- harmers' own-skill share by third: {'E': 0.09056754261995079, 'M': 0.4890195371498227, 'Lt': 0.4204129202302266}
+- victim's own-update share by third: {'E': -0.09570567657562681, 'M': 0.4117832680472813, 'Lt': 0.6839224085283455}
+- repair by removed third (rho_v, rho_h): {'E': {'rho_v': 0.633681987221499, 'rho_h': 0.12847682250056136}, 'M': {'rho_v': 0.6226167725930073, 'rho_h': 0.40719542368320905}, 'Lt': {'rho_v': 0.2543411581588442, 'rho_h': 0.29206355711891774}}
+- attention vs MLP (fraction of Gamma): {'E:attn': {'removed': 0.12549101801532306, 'created': 0.0033455711462501464}, 'E:mlp': {'removed': 0.5260518584187528, 'created': 0.17819886939351884}, 'M:attn': {'removed': 0.23566264197311654, 'created': -0.0018977142673734248}, 'M:mlp': {'removed': 0.5420883572341624, 'created': 0.13060596974559346}, 'Lt:attn': {'removed': 0.13442921257348148, 'created': 0.010088182943425615}, 'Lt:mlp': {'removed': 0.18064541754375218, 'created': 0.02687243969575296}}
+- block removed fraction: {'pre': 0.10899974131541912, '0': 0.17414908221843836, '1': 0.14913709656518098, '2': 0.2176915193207528, '3': 0.2498049884797123, '4': 0.25970729297695944, '5': 0.26523436808999307, '6': 0.22432883698201048, '7': 0.17094774418756, '8': 0.12531850315073023, '9': 0.08879927773810053, '10': 0.08972083198389838, '11': 0.04804558744100109, 'post': -0.0005395210264551963}
+- block created fraction: {'pre': 0.04076372277161671, '0': 0.04026334620678135, '1': 0.02521411161621225, '2': 0.0365437950617063, '3': 0.014424335989040667, '4': 0.02115087075840652, '5': 0.033503398585306106, '6': 0.01839485656657666, '7': 0.010039201744108692, '8': 0.0035006342403614437, '9': 0.004306535752512232, '10': 0.004467811834911214, '11': 0.014678367396566989, 'post': -3.7104803787710106e-05}
+- activation patching restored share by block: [0.19242506171886894, 0.2859501315059344, 0.4369576199943284, 0.5649606019543209, 0.7027769083502565, 0.8304489822837894, 0.9140086559203815, 0.9500477549665618, 0.9613712341003816, 0.9808659342067496, 1.0004780093755818, 1.0008622756369288]
+- cross-term transport gain by block: [0.8190425471648389, 0.9095144859811194, 0.9503254956275836, 0.9268210510853476, 0.953678921596116, 0.9444287555119674, 1.0113033274161927, 1.045916227398469, 1.3358792104526056, 1.4255023706692462, 1.26139519294233, 1.0485031413825685]
+- weight space: mean Spearman(STI, removed) 0.385; STI peaks [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; removal peaks [3, 2, 1, 2, 5, 2, 0, 3, 0, 0, 0, 0, 4, 2, 3, 3, 4, 4, 5, 5, 4, 2, 6, 5, 5, 4, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 6, 6]
+
+## Who is responsible (secondary family, Holm)
+
+- W1 interactions exist (two-sided): n=8, T=0.463, p=0.0078, Holm (0.0078125, True)
+- W2 harm exceeds fake neighbours: n=8, T=1.123, p=0.0039, Holm (0.0078125, True)
+- interaction share (ratio of sums): 0.461; fake/real harm: -0.117; cross-operator Shapley Spearman: 0.722 (n=9)
+[2026-10-29 01:21:48] END rc=0 depthstats
+[2026-10-29 01:21:48] START replicate --op ta --backbone ViT-L-14 --tau-device cpu
+[01:21:49] loading assets: base=openai/clip-vit-large-patch14 ft=tanganke/clip-vit-large-patch14_{task}
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+[01:31:16] check sun397: expert 82.76 (ref 82.8), zero-shot 68.23 (ref 68.3)
+[01:34:13] check stanford-cars: expert 92.77 (ref 92.9), zero-shot 77.93 (ref 77.8)
+[01:36:31] check resisc45: expert 97.38 (ref 97.4), zero-shot 71.33 (ref 71.0)
+[01:37:31] check eurosat: expert 99.11 (ref 99.2), zero-shot 61.26 (ref 58.9)
+[01:47:03] check svhn: expert 97.92 (ref 97.9), zero-shot 58.45 (ref 58.4)
+[01:51:40] check gtsrb: expert 99.24 (ref 99.2), zero-shot 50.55 (ref 50.6)
+[01:55:20] check mnist: expert 99.76 (ref 99.8), zero-shot 76.36 (ref 76.4)
+[01:56:01] check dtd: expert 85.43 (ref 85.5), zero-shot 55.53 (ref 55.5)
+[01:59:14] check: FAIL ['eurosat zeroshot 61.26 vs reference 58.90', 'operator or hybrid identity failed'] (throughput 90 images/s)
+must-hold check failed; see _shared/check.json
+[2026-10-29 01:59:16] END rc=1 replicate --op ta --backbone ViT-L-14 --tau-device cpu
+EXPLORATORY STEP FAILED (continuing): replicate --op ta --backbone ViT-L-14 --tau-device cpu
+ALL DONE

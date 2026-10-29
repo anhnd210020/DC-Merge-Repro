@@ -1,0 +1,243 @@
+{
+ "op": "iso_cts",
+ "alpha": 2.4,
+ "k_per_victim": 2,
+ "pairs": [
+  {
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "svhn",
+    "gtsrb"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb"
+   ],
+   "gamma_sel": 6.148522757519302,
+   "gamma_sel_ci": [
+    4.820848174630396,
+    7.408597942674274
+   ],
+   "H_sel": 3.1940377961139177,
+   "shapley_sel": {
+    "stanford-cars": -1.0336261201313093,
+    "svhn": 1.1090409014284361,
+    "gtsrb": 3.118623014816791
+   },
+   "harmer_loss_sel": {
+    "svhn": 64.435318275154,
+    "gtsrb": 70.16585760517799
+   },
+   "eligible": true,
+   "rank": 1,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|sun397|sun397-stanford-cars-svhn-gtsrb"
+  },
+  {
+   "victim": "sun397",
+   "context": [
+    "sun397",
+    "svhn",
+    "gtsrb",
+    "dtd"
+   ],
+   "harmers": [
+    "svhn",
+    "gtsrb"
+   ],
+   "gamma_sel": 5.216928400319404,
+   "gamma_sel_ci": [
+    3.9188387813148444,
+    6.5439257241751045
+   ],
+   "H_sel": 2.155975512376898,
+   "shapley_sel": {
+    "svhn": 0.8384349214798993,
+    "gtsrb": 3.0210274154910883,
+    "dtd": -1.7034868245940895
+   },
+   "harmer_loss_sel": {
+    "svhn": 60.98562628336755,
+    "gtsrb": 73.82686084142395
+   },
+   "eligible": true,
+   "rank": 2,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|sun397|sun397-svhn-gtsrb-dtd"
+  },
+  {
+   "victim": "stanford-cars",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "resisc45",
+    "svhn"
+   ],
+   "harmers": [
+    "sun397"
+   ],
+   "gamma_sel": 4.976228209191774,
+   "gamma_sel_ci": [
+    3.519203557587778,
+    6.369093955976222
+   ],
+   "H_sel": -2.535657686212346,
+   "shapley_sel": {
+    "sun397": 0.052826201796103534,
+    "resisc45": -2.2768092974115155,
+    "svhn": -0.31167459059693436
+   },
+   "harmer_loss_sel": {
+    "sun397": 18.285866382752204
+   },
+   "eligible": true,
+   "rank": 1,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-svhn"
+  },
+  {
+   "victim": "stanford-cars",
+   "context": [
+    "sun397",
+    "stanford-cars",
+    "resisc45",
+    "dtd"
+   ],
+   "harmers": [
+    "sun397"
+   ],
+   "gamma_sel": 4.627575277337556,
+   "gamma_sel_ci": [
+    3.284188045144782,
+    5.961160595078868
+   ],
+   "H_sel": -6.782884310618073,
+   "shapley_sel": {
+    "sun397": 0.21130480718436928,
+    "resisc45": -2.6254622292657217,
+    "dtd": -4.36872688853672
+   },
+   "harmer_loss_sel": {
+    "sun397": 17.91322863987223
+   },
+   "eligible": true,
+   "rank": 2,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|stanford-cars|sun397-stanford-cars-resisc45-dtd"
+  },
+  {
+   "victim": "resisc45",
+   "context": [
+    "sun397",
+    "resisc45",
+    "eurosat",
+    "svhn"
+   ],
+   "harmers": [
+    "eurosat",
+    "svhn"
+   ],
+   "gamma_sel": 4.37541750167,
+   "gamma_sel_ci": [
+    3.309033122288649,
+    5.379236712607382
+   ],
+   "H_sel": 2.3380093520374032,
+   "shapley_sel": {
+    "sun397": -0.3785348474727191,
+    "eurosat": 2.376976174571363,
+    "svhn": 0.3395680249387591
+   },
+   "harmer_loss_sel": {
+    "eurosat": 40.149253731343286,
+    "svhn": 66.09856262833675
+   },
+   "eligible": true,
+   "rank": 1,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|resisc45|sun397-resisc45-eurosat-svhn"
+  },
+  {
+   "victim": "resisc45",
+   "context": [
+    "sun397",
+    "resisc45",
+    "eurosat",
+    "gtsrb"
+   ],
+   "harmers": [
+    "eurosat",
+    "gtsrb"
+   ],
+   "gamma_sel": 3.9746158984635684,
+   "gamma_sel_ci": [
+    2.9086290591306474,
+    5.02998001332445
+   ],
+   "H_sel": 1.9372077488309714,
+   "shapley_sel": {
+    "sun397": -0.22266755733690027,
+    "eurosat": 2.0986417279002416,
+    "gtsrb": 0.06123357826763018
+   },
+   "harmer_loss_sel": {
+    "eurosat": 39.99999999999999,
+    "gtsrb": 74.06957928802589
+   },
+   "eligible": true,
+   "rank": 2,
+   "op": "iso_cts",
+   "alpha": 2.4,
+   "id": "iso_cts|resisc45|sun397-resisc45-eurosat-gtsrb"
+  }
+ ],
+ "victims": [
+  "sun397",
+  "stanford-cars",
+  "resisc45"
+ ],
+ "n_victims": 3,
+ "ineligible_victims": [
+  {
+   "victim": "eurosat",
+   "best_gamma_sel": null,
+   "best_ci": null,
+   "best_context": null
+  },
+  {
+   "victim": "svhn",
+   "best_gamma_sel": null,
+   "best_ci": null,
+   "best_context": null
+  },
+  {
+   "victim": "gtsrb",
+   "best_gamma_sel": null,
+   "best_ci": null,
+   "best_context": null
+  },
+  {
+   "victim": "mnist",
+   "best_gamma_sel": null,
+   "best_ci": null,
+   "best_context": null
+  },
+  {
+   "victim": "dtd",
+   "best_gamma_sel": null,
+   "best_ci": null,
+   "best_context": null
+  }
+ ],
+ "n_candidates": 63,
+ "n_eligible_candidates": 63,
+ "config_sha256": "4e8be67b269745a5bf53eef7cac11c34115425389696f2be59f133e85d69923a",
+ "split": "screen"
+}

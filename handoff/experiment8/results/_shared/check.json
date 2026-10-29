@@ -1,0 +1,62 @@
+{
+ "assets": {
+  "sun397": {
+   "expert": 74.86146095717883,
+   "zeroshot": 63.17380352644836,
+   "ref_expert": 75.0,
+   "ref_zeroshot": 63.2
+  },
+  "stanford-cars": {
+   "expert": 78.51013555527919,
+   "zeroshot": 59.59457778883224,
+   "ref_expert": 78.3,
+   "ref_zeroshot": 59.8
+  },
+  "resisc45": {
+   "expert": 95.14285714285714,
+   "zeroshot": 60.22222222222222,
+   "ref_expert": 95.2,
+   "ref_zeroshot": 60.7
+  },
+  "eurosat": {
+   "expert": 99.07407407407408,
+   "zeroshot": 45.03703703703704,
+   "ref_expert": 99.0,
+   "ref_zeroshot": 46.0
+  },
+  "svhn": {
+   "expert": 97.26874615857406,
+   "zeroshot": 31.60725261216964,
+   "ref_expert": 97.3,
+   "ref_zeroshot": 31.6
+  },
+  "gtsrb": {
+   "expert": 98.90736342042756,
+   "zeroshot": 32.478226444972286,
+   "ref_expert": 98.9,
+   "ref_zeroshot": 32.5
+  },
+  "mnist": {
+   "expert": 99.58,
+   "zeroshot": 48.25,
+   "ref_expert": 99.6,
+   "ref_zeroshot": 48.3
+  },
+  "dtd": {
+   "expert": 79.68085106382978,
+   "zeroshot": 44.20212765957447,
+   "ref_expert": 79.7,
+   "ref_zeroshot": 43.9
+  }
+ },
+ "pass": true,
+ "problems": [],
+ "throughput_images_per_s": 1437.3003465856482,
+ "determinism_identical": true,
+ "block_runner_rel_error": 0.0,
+ "ta_single_is_expert_maxabs": 0.0,
+ "tsvm_single_reconstructs_rel": 0.0006225657998584211,
+ "iso_cts_isotropic_spread": 0.0008314260630868375,
+ "iso_cts_nonmatrix_is_mean_maxabs": 5.820766091346741e-11,
+ "hybrid_identities": true
+}

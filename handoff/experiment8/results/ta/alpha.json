@@ -1,0 +1,78 @@
+{
+ "alpha": 0.4,
+ "grid": {
+  "0.1": 70.25703021528778,
+  "0.2": 80.68869515991238,
+  "0.3": 85.78248319457741,
+  "0.4": 86.79021982390981,
+  "0.5": 85.3613122206113,
+  "0.6": 81.85706332633623,
+  "0.7": 77.02726720199385,
+  "0.8": 71.01264336849961,
+  "0.9": 64.74678824833481,
+  "1.0": 58.51597690946528
+ },
+ "contexts": [
+  [
+   "stanford-cars",
+   "eurosat",
+   "gtsrb",
+   "dtd"
+  ],
+  [
+   "stanford-cars",
+   "svhn",
+   "mnist",
+   "dtd"
+  ],
+  [
+   "sun397",
+   "stanford-cars",
+   "eurosat",
+   "svhn"
+  ],
+  [
+   "sun397",
+   "svhn",
+   "mnist",
+   "dtd"
+  ],
+  [
+   "eurosat",
+   "svhn",
+   "gtsrb",
+   "mnist"
+  ],
+  [
+   "resisc45",
+   "svhn",
+   "gtsrb",
+   "dtd"
+  ],
+  [
+   "stanford-cars",
+   "svhn",
+   "gtsrb",
+   "mnist"
+  ],
+  [
+   "resisc45",
+   "eurosat",
+   "gtsrb",
+   "mnist"
+  ],
+  [
+   "stanford-cars",
+   "eurosat",
+   "mnist",
+   "dtd"
+  ],
+  [
+   "eurosat",
+   "gtsrb",
+   "mnist",
+   "dtd"
+  ]
+ ],
+ "split": "screen"
+}
